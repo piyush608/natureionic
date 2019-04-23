@@ -1,0 +1,71 @@
+<ion-content padding>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-9>
+        <mian-header [text]="'Community Forum'"></mian-header>
+        <p class="subtitle">Welcome to the conscious community. <br /> Discuss everything here!</p>
+      </ion-col>
+      <ion-col col-3 (click)="selectOption()">
+        <img class="add-forum-btn" src="./assets/imgs/forum_post.svg">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <searchbar (keyup)="getItems($event)"></searchbar>
+      </ion-col>
+    </ion-row>
+    <!-- Loading Spinner -->
+    <ion-row class="align-things-center" *ngIf="flag && !searchList">
+      <ion-col col-12>
+        <div class="main-spinner"></div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="!flag && !searchList && trendingForums && trendingForums.length>0">
+    <ion-row style="margin-bottom: -25px;" *ngIf="!flag && !searchList">
+      <ion-col col-12>
+        <section-header [text]="'Trending Now'"></section-header>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of trendingForums" style="margin-top: 20px;">
+      <forum-card col-12 [item]="item"></forum-card>
+    </ion-row>
+    <ion-row style="margin-top: 30px;" *ngIf="trendingForums && trendingForums.length>3 && !searchList && !flag">
+      <ion-col col-12 class="show-button">
+        <button col-12 (click)="viewAllTopics('trending')">More Trending Discussion</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="!flag && !searchList && latestForums && latestForums.length>0">
+    <ion-row style="margin-bottom: -25px; margin-top: -20px;">
+      <ion-col col-12>
+        <section-header [text]="'Latest Discussion'"></section-header>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of latestForums" style="margin-top: 20px;">
+      <forum-card col-12 [item]="item"></forum-card>
+    </ion-row>
+    <ion-row style="margin-top: 30px;" *ngIf="latestForums && latestForums.length>3 && !searchList && !flag">
+      <ion-col col-12 class="show-button last-button">
+        <button col-12 (click)="viewAllTopics('latest')">More Discussion</button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <ion-grid *ngIf="searchList">
+    <ion-row *ngFor="let item of searchedForums">
+      <forum-card col-12 [item]="item"></forum-card>
+    </ion-row>
+  </ion-grid>
+
+  <div class="card-background-page" *ngIf="searchList && searchedForums.length===0">
+    <ion-card class="align-things-center">
+      <img src="assets/imgs/no_result.svg" />
+      <div class="card-title"> Sorry, no result found :( </div>
+      <div class="card-subtitle"> Please check the spelling or try a different keyword. </div>
+    </ion-card>
+  </div>
+</ion-content>

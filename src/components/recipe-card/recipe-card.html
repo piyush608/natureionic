@@ -1,0 +1,53 @@
+<ion-card class="recipe-card" *ngIf="item">
+  <ion-row>
+    <ion-col col-5 class="recipe-col">
+      <div *ngIf="item.photos && item.photos.length>0; else showDummy" class="recipe-slider-image" [ngStyle]="{'background-image':'url(' + item.photos[0].thumb400Url + ')'}" (click)="openRecipe()"></div>
+      <ng-template #showDummy>
+        <div class="recipe-slider-image" [ngStyle]="{'background-image':'url(assets/imgs/default_image_company.png)'}" (click)="openRecipe()"></div> 
+      </ng-template>
+      <div class="bookmark-fab" (click)="bookmark()">
+        <bookmark [flag]="isBookmarked?.flag"></bookmark>
+      </div>
+    </ion-col>
+    <ion-col col-7 class="recipe-col recipe-details" (click)="openRecipe()">
+      <ion-row class="r-category">
+        <ion-col col-8>
+          <div class="category same-line">
+            <button>
+              {{ item?.category?.name }}
+            </button>
+          </div>
+        </ion-col>
+        <ion-col col-4 class="recipe-likes">
+          <p>{{ item.likes }} Likes</p>
+        </ion-col>
+      </ion-row>
+      <ion-row class="recipe-name">
+        <ion-col col-12>
+          <h2>{{ recipeName }}</h2>
+        </ion-col>
+      </ion-row>
+      <ion-row class="posted-by" *ngIf="item.addedBy; else showNHStuff">
+        <ion-col col-2>
+          <div class="avatar" *ngIf="item.addedBy.photo; else showDummyImage" [ngStyle]="{'background-image':'url('+ item.addedBy.photo.thumb200Url +')'}"></div>
+          <ng-template #showDummyImage>
+            <div class="avatar" [ngStyle]="{'background-image':'url(assets/imgs/defaultUser.png)'}"></div>
+          </ng-template>
+        </ion-col>
+        <ion-col col-10 class="username">
+          <h2>{{ item?.addedBy.name }}</h2>
+        </ion-col>
+      </ion-row>
+      <ng-template #showNHStuff>
+        <ion-row class="posted-by">
+          <ion-col col-2>
+            <div class="avatar" [ngStyle]="{'background-image':'url(assets/imgs/defaultIcon.png)'}"></div>
+          </ion-col>
+          <ion-col col-10 class="username">
+            <h2>Naturehub Staff</h2>
+          </ion-col>
+        </ion-row>
+      </ng-template>
+    </ion-col>
+  </ion-row>
+</ion-card>

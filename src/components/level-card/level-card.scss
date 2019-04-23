@@ -1,0 +1,41 @@
+level-card {
+  .card {
+    margin-top: 7px !important;
+    margin-bottom: 7px !important;
+  }
+
+  .side-border {
+    border-right: 1px solid $gray;
+  }
+
+  .level-icon {
+    width: 25% !important;
+  }
+
+  .points {
+    color: $secondary-color;
+    font-weight: bold;
+  }
+
+  .dummy-card {
+    margin-top: 7px !important;
+    margin-bottom: 7px !important;
+  }
+
+  .dummy-card h1 {
+    height: 15px;
+    width: 55%;
+    margin-top: 24px !important;
+    margin-left: 20px !important;
+    background: $light-gray;
+  }
+
+  .dummy-card p {
+    height: 12px;
+    width: 47%;
+    margin-top: 7px !important;
+    margin-left: 20px !important;
+    margin-bottom: 24px !important;
+    background: $light-gray;
+  }
+}

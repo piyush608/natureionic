@@ -1,0 +1,13 @@
+{
+  "name": "naturehubApp",
+  "integrations": {
+    "cordova": {}
+  },
+  "proxies": [
+    {
+      "path": "http://192.168.2.5:8100",
+      "proxyUrl": " https://storage.googleapis.com/"
+    }
+  ],
+  "type": "ionic-angular"
+}

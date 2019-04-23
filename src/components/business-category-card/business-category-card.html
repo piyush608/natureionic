@@ -1,0 +1,12 @@
+<ion-row *ngIf="businesses && businesses.length>0">
+  <ion-col>
+    <section-header [text]="category.name"></section-header>
+  </ion-col>
+</ion-row>
+<ion-scroll *ngIf="businesses && businesses.length>0" class="guide-scroll" scrollX="true" style="height:270px">
+  <ion-row nowrap>
+    <ion-col *ngFor="let item of businesses" class="popular-business custom-col">
+      <business-card [item]="item"></business-card>
+    </ion-col>
+  </ion-row>
+</ion-scroll>

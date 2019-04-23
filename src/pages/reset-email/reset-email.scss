@@ -1,0 +1,55 @@
+page-reset-email {
+    section-header {
+        margin-left: 5%;
+    }
+    .account {
+        color: #000000 !important;
+        font-size: 2.6rem !important;
+        margin-left: 5%;
+    }
+    .item{
+        margin-top: 10px;
+        margin-bottom:10px;   
+    }
+    .name{
+        color: #000000 !important;
+        margin-bottom: 8%;
+        @media screen and (min-width: 320px), screen and (min-width: 360px) {
+            font-size: 1.5rem !important;
+        }
+        @media screen and (min-width: 375px) {
+            font-size: 1.7rem !important;
+        }
+        @media screen and (min-width: 414px) {
+            font-size: 2.1rem !important;
+        }
+    }
+    #next-button{
+        background: $main-color;
+        width: 41%;
+        height: 40px;
+        border-radius: 25px;
+        margin-left: 28%;
+        @media screen and (min-width: 320px), screen and (min-width: 360px) {
+            font-size: 1.2rem !important;
+            height: 30px;
+        }
+        @media screen and (min-width: 375px) {
+            font-size: 1.5rem !important;
+        }
+        @media screen and (min-width: 375px) and (min-height: 812px) {
+            font-size: 1.3rem !important;
+        }
+    }
+    .text-1{
+        margin-top: 12px;
+        font-size:13px;
+        color: #b2b2b2;
+        @media screen and (min-width: 320px), screen and (min-width: 360px) {
+            font-size: 1.5rem !important;
+        }
+        @media screen and (min-width: 375px) {
+            font-size: 1.7rem !important;
+        }
+    }
+}

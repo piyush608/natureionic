@@ -1,0 +1,27 @@
+<ion-content padding>
+  <!-- Refresher -->
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-3 class="back-arrow above-map" (tap)="prevStep()">
+        <img src="assets/icon/custom/back_arrow.png" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin-bottom: -40px;">
+      <ion-col col-12>
+        <mian-header [text]="sectionHeader"></mian-header>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row *ngFor="let item of forums" style="margin-top: 20px;">
+      <forum-card col-12 [item]="item"></forum-card>
+    </ion-row>
+    <ion-infinite-scroll *ngIf="moreForumsFlag" (ionInfinite)="moreDiscussions($event)">
+      <ion-infinite-scroll-content></ion-infinite-scroll-content>
+    </ion-infinite-scroll>
+  </ion-grid>
+</ion-content>

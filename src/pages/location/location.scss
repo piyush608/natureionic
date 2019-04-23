@@ -1,0 +1,24 @@
+page-location {
+    .header {
+        font-size: 1.9rem;
+        font-weight: bold;
+    }
+    .full {
+        width: 100% !important;
+    }
+    .loc {
+        color: $dark-gray !important;
+    }
+    .current {
+        color: $secondary-color !important;
+    }
+    .searchbar {
+        border-bottom: 1px solid $dark-gray;
+    }
+    .item-ios.item-input {
+        border-top: none !important;
+    }
+    .item-md.item-input .item-inner {
+        border-bottom: none !important;
+    }
+}

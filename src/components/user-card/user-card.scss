@@ -1,0 +1,27 @@
+user-card {
+    h2 {
+        @media screen and (min-width: 320px) {
+            font-size: 1.2rem !important;
+        }
+    }
+
+    .following {
+        @media screen and (min-width: 320px) {
+            font-size: 1rem !important;
+            padding-left: 20px !important;
+            padding-right: 20px !important;
+        }
+        @media screen and (min-width: 414px) {
+            padding-left: 25px !important;
+            padding-right: 25px !important;
+        }
+    }
+
+    .follow-color {
+        background: $main-color;
+    }
+
+    .unfollow-color {
+        background: white;
+    }
+}

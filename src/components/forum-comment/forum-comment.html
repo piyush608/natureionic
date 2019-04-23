@@ -1,0 +1,25 @@
+<ion-row style="margin-top: 15px;">
+  <ion-col col-2>
+    <div *ngIf="comment.addedBy.photo; else showDiv" class="avatar" [ngStyle]="{'background-image':'url('+ comment.addedBy.photo.thumb200Url +')'}"></div>
+    <ng-template #showDiv>
+      <div class="avatar" [ngStyle]="{'background-image':'url(assets/imgs/defaultUser.png)'}"></div>
+    </ng-template>
+  </ion-col>
+  <ion-col col-10>
+    <ion-row>
+      <ion-col col-6>
+        <h5 class="commenter-name" (click)="openUser(comment.addedBy._id)">{{ comment.addedBy.name }}</h5>
+      </ion-col>
+      <ion-col col-6>
+        <ion-note>
+          Posted {{ publishedTime }}
+        </ion-note>
+      </ion-col>
+    </ion-row>
+    <ion-row class="comment-section">
+      <ion-col col-12>
+        <p class="forum-comment">{{ comment.comment }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-col>
+</ion-row>

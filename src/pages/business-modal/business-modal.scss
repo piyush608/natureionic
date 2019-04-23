@@ -1,0 +1,22 @@
+page-business-modal {
+    ion-grid {
+        margin-top: 25%;
+        text-align: center;
+    }
+    .first-para p {
+        width: 100%;
+        font-weight: bold;
+        font-size: 2.6rem;
+    }
+    .second-para {
+        width: 80%;
+        color: $light-color;
+        font-size: 1.9rem;
+    }
+
+    .bottom {
+        font-size: 1.8rem;
+        color: $light-color;
+        text-decoration: underline;
+    }
+}

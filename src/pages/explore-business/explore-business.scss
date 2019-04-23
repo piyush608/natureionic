@@ -1,0 +1,42 @@
+page-explore-business {
+  .searchbar-search-icon {
+    background-image: url("./../assets/icon/custom/back_arrow.png") !important;
+    top: 14px !important;
+  }
+
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  ion-grid {
+    padding: 1em !important;
+  }
+
+  .search-bar {
+    @media screen and (min-width: 320px) {
+      margin-left: -10px;
+    }
+
+    @media screen and (min-width: 753px) {
+      margin-left: 0px;
+    }
+  }
+
+  .ovrlay {
+    height: 70px;
+    width: 50px;
+    position: absolute;
+    z-index: 20;
+  }
+
+  .example-text {
+    color: #4AB4F7;
+    margin-left: 13%;
+    margin-top: 5px;
+    font-size: 1.7rem;
+  }
+
+  .pin-icon {
+    color: $dark-gray;
+  }
+}

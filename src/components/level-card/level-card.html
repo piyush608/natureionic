@@ -1,0 +1,27 @@
+<ion-col col-12 class="card" *ngIf="!flag; else showDummy">
+  <ion-card class="points-card align-things-center">
+    <ion-row>
+      <ion-col col-6 class="align-things-center side-border">
+        <img class="level-icon" [src]="userLevel?.icon">
+        <p class="level-name">{{ userLevel?.name }}</p>
+      </ion-col>
+      <ion-col col-6 class="align-things-center">
+        <p class="points">{{ points }}</p>
+        <p class="level">Level {{ userLevel?.level }}</p>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-col>
+
+<ng-template #showDummy>
+  <ion-col col-12 class="dummy-card">
+    <ion-card class="points-card align-things-center">
+      <ion-row>
+        <ion-col col-12 class="align-things-center">
+          <h1></h1>
+          <p></p>
+        </ion-col>
+      </ion-row>
+    </ion-card>
+  </ion-col>
+</ng-template>

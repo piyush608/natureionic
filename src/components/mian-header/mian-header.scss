@@ -1,0 +1,11 @@
+mian-header {
+    .heading {
+        font-weight: bold !important;
+        margin-top: 30px !important;
+        text-transform: capitalize;
+        @media screen and (min-width: 320px) {
+            margin-top: 0px !important;
+            font-size: 1.6em;
+        }
+    }
+}

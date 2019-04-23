@@ -1,0 +1,15 @@
+current-location {
+  div {
+    @media screen and (min-width: 320px) {
+      font-size: 1.2rem;
+    }
+
+    @media screen and (min-width: 360px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .item-ios.item-input .item-inner {
+    border-bottom: none !important;
+  }
+}

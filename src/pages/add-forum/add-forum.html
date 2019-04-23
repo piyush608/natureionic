@@ -1,0 +1,165 @@
+<ion-content padding>
+  <ion-grid *ngIf="!stayFlag">
+    <ion-row class="top-row">
+      <ion-col col-3 class="back-arrow above-map" (tap)="prevStep()">
+        <img src="assets/icon/custom/back_arrow.png" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-grid>
+          <ion-row text-wrap>
+            <ion-item class="item-label">
+              <ion-label stacked class="label-1">Title *</ion-label>
+              <ion-input type="text" [(ngModel)]="forum.title" (keyup)="checkName()" placeholder="Your post title"
+                class="input"></ion-input>
+              <span *ngIf="titleCheck">Field Required</span>
+            </ion-item>
+            <p class="invalid-details" *ngIf="!nameFlag">* {{ nameText }}</p>
+          </ion-row>
+          <ion-row text-wrap>
+            <ion-item class="item-label txtarea">
+              <ion-label stacked class="label-1">Description (Optional)</ion-label>
+              <ion-textarea rows="12" [(ngModel)]="forum.description" class="text-area" placeholder="Your post description">
+              </ion-textarea>
+            </ion-item>
+          </ion-row>
+          <ion-row text-wrap>
+            <ion-item class="item-label txtarea">
+              <ion-label stacked class="label-1">Upload Photo (Optional)</ion-label>
+            </ion-item>
+          </ion-row>
+          <ion-row text-wrap class="non-underline-row" style="margin-top: -35px;">
+            <ion-item class="item-label">
+              <ion-row>
+                <ion-col col-4 *ngFor="let img of image; let i = index">
+                  <img [src]="sanitize(img)" class="uploaded-image">
+                  <ion-fab top right>
+                    <img src="assets/imgs/delete_photo.png" alt="" (tap)="deleteImage(i)">
+                  </ion-fab>
+                </ion-col>
+                <ion-col col-4 (click)="presentModal()" *ngIf="!imageFlag">
+                  <img src="assets/imgs/add_photo.png" class="add-image">
+                </ion-col>
+              </ion-row>
+            </ion-item>
+          </ion-row>
+          <ion-row text-wrap style="margin-top: -35px;">
+            <ion-item class="item-label">
+              <ion-label stacked class="label-1">Tag (Only one):</ion-label>
+              <ion-input type="text" [(ngModel)]="hashTag.name" (keyup)="checkHashtag()" placeholder="e.g. permaculture"
+                class="input" (keyup)="checkHashTags($event.target.value)">
+              </ion-input>
+            </ion-item>
+            <p class="invalid-details" *ngIf="!hashtagFlag">* {{ hashtagText }}</p>
+          </ion-row>
+          <ion-row class="inner-body" *ngIf="searchList" col-12>
+            <ion-list col-12>
+              <ion-item *ngFor="let item of searchedHashtags" (click)="selectHashtag(item)">
+                {{ item.name }}
+              </ion-item>
+            </ion-list>
+          </ion-row>
+          <ion-row>
+            <button col-8 class="submit-button" round (click)="nextStep()">Post Now</button>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+
+  <ion-grid *ngIf="stayFlag">
+    <ion-row class="top-row">
+      <ion-col col-3 class="back-arrow above-map" (tap)="homePage()">
+        <img src="assets/icon/custom/back_arrow.png">
+      </ion-col>
+    </ion-row>
+    <ion-row style="margin-top: 20px;">
+      <ion-card class="forum-card">
+        <ion-row>
+          <ion-col col-12>
+            <div class="single-row forum-tag"># {{ hashTag.name }}</div>
+            <div class="single-row">
+              <ion-note>
+                Posted {{ publishedTime }}
+              </ion-note>
+            </div>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col col-8>
+            <ion-row>
+              <ion-col col-3 (click)="openUser()">
+                <div class="avatar" *ngIf="user.photo; else showDummyImage" [ngStyle]="{'background-image':'url('+ user.photo.thumb400Url +')'}"></div>
+                <ng-template #showDummyImage>
+                  <div class="avatar" [ngStyle]="{'background-image':'url(assets/imgs/defaultUser.png)'}"></div>
+                </ng-template>
+              </ion-col>
+              <ion-col col-9 class="user-details" (click)="openUser()">
+                <h2>{{ user.name }}</h2>
+              </ion-col>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 10px;">
+          <ion-slides>
+            <ion-slide col-12 *ngFor="let img of image; let i = index">
+              <img [src]="sanitize(img)">
+            </ion-slide>
+          </ion-slides>
+        </ion-row>
+        <ion-row class="forum-name" style="margin-top: 20px;">
+          <ion-col col-12>
+            <h2>{{ forum?.title }}</h2>
+          </ion-col>
+          <ion-col col-12>
+            <p class="description">{{ forum?.description }}</p>
+          </ion-col>
+        </ion-row>
+        <ion-row style="margin-top: 20px;">
+          <div class="single-row buttons">
+            <button ion-button icon-start clear small (click)="like()">
+              <ion-icon [class.likeActive]="isLiked?.flag" class="thumbs-up"></ion-icon>
+              <div id="count" class="dynamik-font">{{ forum?.likes }}</div>
+            </button>
+          </div>
+          <div class="single-row">
+            <button ion-button icon-start clear small (click)="dislike()">
+              <ion-icon [class.dislikeActive]="isDisliked?.flag" class="thumbs-down"></ion-icon>
+              <div id="count-dislike" class="dynamik-font">{{ forum?.dislikes }}</div>
+            </button>
+          </div>
+          <div class="single-row">
+            <button ion-button icon-start clear small>
+              <ion-icon class="text"></ion-icon>
+              <div class="dynamik-font">{{ forum?.comments }}</div>
+            </button>
+          </div>
+        </ion-row>
+      </ion-card>
+    </ion-row>
+
+    <!-- Comments section -->
+    <ion-row style="margin-top: 20px;" class="comment-textarea">
+      <ion-item>
+        <ion-textarea rows="8" [(ngModel)]="comment" class="text-area" placeholder="What do you think?">
+        </ion-textarea>
+      </ion-item>
+    </ion-row>
+    <ion-row class="align-things-center">
+      <ion-col col-12>
+        <button ion-button class="login-button" round (click)=submitComment()>Add a Comment</button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="forum?.comments > 0">
+      <div col-12 style="width: 100%;">
+        <div *ngFor="let comment of commentCollection" style="border-bottom: 1px solid #e0e0e0; width: 100%;">
+          <forum-comment style="margin-top: 10px;" [forumId]="forum?._id" [data]="comment"></forum-comment>
+        </div>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,10 @@
+<ion-item *ngIf="doc" (click)="openUser()">
+  <ion-avatar item-start>
+    <img *ngIf="doc.photo; else showDummyImage" [src]="doc.photo.thumb200Url">
+    <ng-template #showDummyImage>
+      <img [src]="'assets/imgs/defaultUser.png'">
+    </ng-template>
+  </ion-avatar>
+  <h2>{{ doc.name }}</h2>
+  <button ion-button round item-end class="following follow-color">Following</button>
+</ion-item>

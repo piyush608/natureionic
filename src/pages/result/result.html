@@ -1,0 +1,102 @@
+<ion-content padding>
+  <ion-grid>
+    <!-- Search Bar -->
+    <ion-row class="top-row" class="search-bar">
+      <ion-col col-11>
+        <searchbar [input]="searchQuery" (tap)="searchPage()"></searchbar>
+        <p class="example-text">
+          <current-location [text]="'Current Location'" [page]="'result'" [param]="searchQuery"></current-location>
+        </p>
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button icon-only class="add_btn" (click)="homePage()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <!-- Loading Spinner -->
+    <!-- <ion-row class="align-things-center" *ngIf="flag">
+      <ion-col col-12>
+        <div class="main-spinner"></div>
+      </ion-col>
+    </ion-row> -->
+
+    <!-- Business -->
+    <ion-row class="home-row" *ngIf="businesses && businesses.length > 0">
+      <ion-col col-12>
+        <section-header [text]="'Business'"></section-header>
+      </ion-col>
+    </ion-row>
+    <ion-scroll *ngIf="businesses && businesses.length > 0" scrollX="true" class="guide-scroll" style="height:270px">
+      <ion-row nowrap>
+        <ion-col *ngFor="let item of businesses" class="popular-business custom-col">
+          <business-card [item]="item"></business-card>
+        </ion-col>
+      </ion-row>
+    </ion-scroll>
+    <!-- <ion-row *ngIf="business.length>3 && !flag && businessesResultFlag">
+      <ion-col col-12 class="show-button">
+        <button col-12 (click)='showBusinesses()'>Show More</button>
+      </ion-col>
+    </ion-row> -->
+
+    <!-- Recipes -->
+    <ion-row class="home-row" *ngIf="recipes && recipes.length > 0">
+      <ion-col col-12>
+        <section-header [text]="'Recipes'"></section-header>
+      </ion-col>
+    </ion-row>
+
+    <ion-scroll scrollX="true" class="guide-scroll" style="height:170px" *ngIf="recipes && recipes.length > 0">
+      <div nowrap class="row">
+        <ion-col col-12 class="custom-col-res" nowrap *ngFor="let item of recipes">
+          <recipe-card [item]="item"></recipe-card>
+        </ion-col>
+      </div>
+    </ion-scroll>
+    <!-- <ion-row *ngIf="recipe.length>3 && !flag && recipesResultFlag">
+      <ion-col col-12 class="show-button">
+        <button col-12  (click)='showRecipes()'>Show More</button>    
+      </ion-col>
+    </ion-row> -->
+
+    <!-- Alternative Products -->
+    <ion-row class="home-row" *ngIf="products && products.length > 0">
+      <ion-col col-12>
+        <section-header [text]="'Alternative Products'"></section-header>
+      </ion-col>
+    </ion-row>
+
+    <ion-scroll scrollX="true" class="guide-scroll" style="height:290px" *ngIf="products && products.length > 0">
+      <div nowrap class="row">
+        <ion-col col-12 class="popular-business custom-col" nowrap *ngFor="let item of products">
+          <product-card [item]="item"></product-card>
+        </ion-col>
+      </div>
+    </ion-scroll>
+    <!-- <ion-row *ngIf="product.length>3 && !flag && huntedProductsResultFlag">
+      <ion-col col-12 class="show-button">
+        <button col-12  (click)='showProducts()'>Show More</button>
+      </ion-col>
+    </ion-row> -->
+
+    <ion-row class="home-row" *ngIf="users && users.length > 0">
+      <ion-col col-12>
+        <section-header [text]="'Users'"></section-header>
+      </ion-col>
+    </ion-row>
+    <ion-list *ngFor="let item of users">
+      <users-card [item]="item"></users-card>
+    </ion-list>
+  </ion-grid>
+
+  <!-- No result -->
+  <ion-content class="card-background-page" *ngIf="users && products && recipes && businesses && users.length==0 && products.length==0 && recipes.length==0 && businesses.length==0">
+    <ion-card class="align-things-center">
+      <img src="assets/imgs/no_result.svg" />
+      <div class="card-title"> Sorry, no result found :( </div>
+      <div class="card-subtitle"> Please check the spelling or try a different keyword. </div>
+    </ion-card>
+  </ion-content>
+</ion-content>

@@ -1,0 +1,11 @@
+<ion-row style="height: 115px; border-top: 1px solid #D0D0D0;" [class.dark-background]="!notification.status">
+  <ion-col col-3 (click)="openUser()">
+    <img [src]="sanitize(notification.senderImage)" class="img-1">
+  </ion-col>
+  <ion-col col-9 (click)="openNotification()">
+    <p class="timestamp">{{ timeDiff }}</p>
+    <p class="notification-body">{{ notification.body }}</p>
+    <p *ngIf="notification.comment" class="notification-comment">{{ notification.comment }}</p>
+    <p *ngIf="isLiked"><ion-icon class="notification-like"></ion-icon></p>
+  </ion-col>
+</ion-row>

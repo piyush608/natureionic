@@ -1,0 +1,173 @@
+page-user {
+  .my-card {
+    border-radius: 15px;
+    box-shadow: 0px 8px 21px 0px #dad2d2;
+    text-align: center;
+  }
+
+  .notification-icon {
+    float: right !important;
+    top: 15px;
+    right: 17px;
+  }
+
+  profile-image {
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+
+  .profile-name {
+    font-weight: bold;
+  }
+
+  .location {
+    color: $dark-gray;
+
+    @media screen and (min-width: 320px), screen and (min-width: 360px) {
+      font-size: 1.4rem !important;
+      margin-top: -10px;
+    }
+  }
+
+  .navi {
+    color: #b2b2b2;
+    margin-right: 5px;
+  }
+
+  .my-button {
+    font-size: 1.5rem;
+    box-shadow: 0px 8px 21px 0px #dad2d2;
+    color: #FFFFFF;
+    border: none;
+    width: 35%;
+    margin-top: 10px;
+    background: $main-color;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.0rem;
+    }
+
+    @media screen and (min-width: 360px) {
+      font-size: 1.2rem;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 1.3rem;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      font-size: 1.5rem;
+    }
+  }
+
+  .follow-section {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+
+  .sides-border {
+    border-right: 1px solid $gray;
+  }
+
+  .point-text {
+    font-size: 1.5em;
+    font-weight: bold;
+  }
+
+  .follow-text {
+    font-size: 1.5rem;
+  }
+
+  .points-section {
+    margin-top: 20px;
+  }
+
+  .property-card {
+    border-radius: 15px;
+    box-shadow: 0px 8px 21px 0px #dad2d2;
+    text-align: center;
+  }
+
+  .collection-icon {
+    width: 32%;
+    height: 60px;
+    margin: 0 auto;
+  }
+
+  .gift-icon {
+    width: 21%;
+    height: 60px;
+    margin: 0 auto;
+  }
+
+  .property-text {
+    margin: 0 auto;
+    margin-bottom: 10px;
+    font-size: 1.2rem !important;
+  }
+
+  .filter-button {
+    background: #FFFFFF !important;
+    color: $secondary-color !important;
+    box-shadow: none !important;
+    font-size: 1.5rem !important;
+  }
+
+  .filter-active {
+    background: $secondary-color !important;
+    color: #FFFFFF !important;
+  }
+
+  .custom-col-4 {
+    width: 30%;
+  }
+
+  .about-card {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 8px 21px 0px #dad2d2;
+    padding: 20px;
+
+    @media screen and (min-width: 320px), screen and (min-width: 360px) {
+      margin-left: 0px;
+    }
+  }
+
+  .about-card h1 {
+    font-size: 3.0rem !important;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.6rem !important;
+    }
+
+    @media screen and (min-width: 360px) {
+      font-size: 2.0rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 2.5rem !important;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      font-size: 3rem !important;
+    }
+  }
+
+  .about-card p {
+    color: $light-color;
+    font-size: 1.6rem !important;
+
+    @media screen and (min-width: 320px), screen and (min-width: 360px) {
+      font-size: 1.2rem !important;
+      margin-top: -7px;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 1.6rem !important;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      font-size: 1.6rem !important;
+    }
+  }
+}

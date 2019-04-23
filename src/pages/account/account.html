@@ -1,0 +1,44 @@
+<ion-content padding>
+  <form #editProfileForm="ngForm">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3 class="back-arrow above-map" (tap)="goBack()">
+          <img src="assets/icon/custom/back_arrow.png" alt="">
+        </ion-col>
+      </ion-row>
+      <!-- Step 1 -->
+      <div class="row">
+        <section-header [text]="'Account'"></section-header>
+      </div>
+      <div class="row"> 
+        <ion-item class="item">
+          <ion-label class="name" stacked>
+            Email
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="email" name="email" class="text-1" readonly>
+          </ion-input>
+        </ion-item>
+        <button ion-button round type="submit" class="save" id="next-button" (click)="resetEmail()">
+          Change Email
+        </button>
+  
+        <ion-item class="item">
+          <ion-label class="name" stacked>
+            Password
+          </ion-label>
+          <ion-input type="password" [(ngModel)]="password" name="password" class="text-1 " readonly>
+          </ion-input>
+        </ion-item>
+  
+        <button ion-button round type="submit" class="save" id="next-button" (click)="resetPassword()">
+          Reset Password
+        </button>
+      </div>
+    </ion-grid>
+  </form>
+  <!-- <span class="delete">
+    <a (click)="deleteAccount()">
+      Disable Account
+    </a>
+  </span> -->
+</ion-content>

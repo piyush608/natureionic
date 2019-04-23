@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "280615314631",
+    "firebase_url": "https://naturehu-bf51e.firebaseio.com",
+    "project_id": "naturehu-bf51e",
+    "storage_bucket": "naturehu-bf51e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:280615314631:android:af1fc0ab96996c4e",
+        "android_client_info": {
+          "package_name": "com.naturehub.beta"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "280615314631-qjljmjmo1t83lqd4c42tiqq8kue3jpb9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB7c2OZCC9LkXSMWzh5csPor1ttOSCbB-k"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

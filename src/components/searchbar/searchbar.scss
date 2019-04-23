@@ -1,0 +1,63 @@
+searchbar {
+  .searchbar-input {
+    width: 100% !important;
+    border-radius: 40px !important;
+    font-size: 1.6rem !important;
+    box-shadow: 0px 3px 13px 1px #b2b2b2 !important;
+
+    @media screen and (min-width: 320px) {
+      height: 40px !important;
+      font-size: 0.8em !important;
+    }
+
+    @media screen and (min-width: 360px) {
+      height: 50px !important;
+      font-size: 1.0em !important;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      margin-top: 50px;
+    }
+  }
+
+  .searchbar-ios {
+    background: none !important;
+    border-bottom: none !important;
+  }
+
+  .searchbar-ios .searchbar-search-icon {
+    left: 14px;
+    top: 12px;
+    position: absolute;
+    width: 14px;
+    height: 14px;
+    background-repeat: no-repeat;
+    background-size: 15px !important;
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      margin-top: 56px !important;
+    }
+  }
+
+  button.add_btn.disable-hover.button.button-ios.button-default.button-default-ios {
+    margin-top: 0 !important;
+  }
+
+  .searchbar-ios.searchbar-left-aligned .searchbar-input {
+    padding-left: 40px;
+  }
+
+  .searchbar-search-icon {
+    @media screen and (min-width: 320px) {
+        background-size: 18px !important;
+        margin-top: 2px;
+        margin-right: -10px;
+    }
+
+    @media screen and (min-width: 360px) {
+        background-size: 22px !important;
+        margin-top: 5px;
+        margin-right: 0px;
+    }
+  }
+}

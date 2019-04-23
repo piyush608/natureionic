@@ -1,0 +1,23 @@
+page-add-forum {
+    .txtarea .item-inner {
+        border-bottom: none !important;
+    }
+    .tag-warn {
+        color:red;
+        font-size: 12px;
+        margin-left:8px;
+    }
+
+    .inner-body {
+        margin-top: -30px !important;
+    }
+
+    .submit-button {
+        background: $main-color;
+        border-radius: 20px;
+        color: #FFFFFF;
+        height: 40px;
+        margin: 0 auto;
+        font-size: 1.5rem;
+    }
+}

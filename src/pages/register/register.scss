@@ -1,0 +1,36 @@
+page-register {    
+    .item-input .label-md, .item-input .label-ios{
+        padding-left:1% !important;
+    }
+    .show {
+        color: $dark-gray;
+        @media screen and (min-width: 360px) {
+            margin-top: 10px !important;
+            margin-bottom: 0px !important;
+        }
+    }
+    .login-link {
+        margin-top: 30px;
+    }
+    .sign-up-link {
+        color: $secondary-color;
+    }
+    .sign-up-message {
+        width: 100%;
+        @media screen and (min-width: 320px), screen and (min-width: 360px), screen and (min-width: 375px) {
+            font-size: 1.2rem;
+        }
+        @media screen and (min-width: 414px) {
+            font-size: 1.5rem;
+        }
+    }
+    .text-1 {
+        @media screen and (min-width: 360px), screen and (min-width: 375px) {
+            font-size: 1.2rem !important;
+            margin-top: 1px !important;
+        }
+        @media screen and (min-width: 414px) {
+            font-size: 1.5rem !important;
+        }
+    }
+}

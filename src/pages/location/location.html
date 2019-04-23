@@ -1,0 +1,28 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row class="top-row">
+      <ion-col col-3 class="back-arrow" (tap)="prevStep()">
+        <img src="assets/imgs/back-arrow-green.svg">
+      </ion-col>
+    </ion-row>
+    <ion-row class="main-body">
+      <ion-list class="full">
+        <ion-item class="searchbar">
+          <ion-icon name="search" item-start></ion-icon>
+          <ion-input type="text" id="myInput" (keyup)="getLocation()" placeholder="Where?"></ion-input>
+        </ion-item>
+        <ion-item class="current">
+          <current-location [text]="'Use my current location'" [page]="'home'"></current-location>
+        </ion-item>
+      </ion-list>
+    </ion-row>
+    <ion-row class="inner-body" *ngIf="recentSearch && recentSearch.length>0">
+      <ion-list class="full">
+        <ion-item class="header">Recently Searched</ion-item>
+        <button ion-item class="loc" *ngFor="let item of recentSearch" (click)="changeLocation(item)">
+          {{ item.city }}
+        </button>
+      </ion-list>
+    </ion-row>
+  </ion-grid>
+</ion-content>

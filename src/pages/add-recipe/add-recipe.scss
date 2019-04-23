@@ -1,0 +1,559 @@
+page-add-recipe {
+  .item-md {
+    margin-top: -10px !important;
+  }
+
+  .ingredient-inputs {
+    margin-top: 10px !important;
+  }
+
+  .input-cover {
+    width: 85% !important;
+  }
+
+  .list {
+    margin-left: 5%;
+  }
+
+  .delete-input {
+    font-size: 1em;
+    color: gray;
+    margin: 0px !important;
+    margin-top: 1.5em !important;
+  }
+
+  ion-select {
+    min-width: 100% !important;
+  }
+
+  .chip {
+    border: mediumorchid;
+    border-radius: 50%;
+  }
+
+  .select {
+    border-radius: 30px;
+    padding-right: 10%;
+    margin-left: 1px;
+    margin-bottom: 8%;
+    width: 98%;
+    height: 50px;
+    margin-top: 7%;
+    box-shadow: 0px 3px 5px #b2b2b2;
+  }
+
+  .tag-unselect {
+    width: 100%;
+    background: #fff;
+    border: 1px solid $other-color;
+    color: $other-color;
+    border-radius: 50px;
+    box-shadow: none !important;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.2rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 1.3rem !important;
+    }
+  }
+
+  .tag-display {
+    display: block;
+  }
+
+  .tag-hide {
+    display: none;
+  }
+
+  .tag-select {
+    width: 100%;
+    background: $other-color;
+    border: 1px solid $other-color;
+    color: white;
+    border-radius: 50px;
+    box-shadow: none !important;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.2rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 1.3rem !important;
+    }
+  }
+
+  .next-arrow {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    float: right;
+    color: #f17e31;
+    margin-top: 0;
+    box-shadow: 0px 3px 5px #b2b2b2;
+  }
+
+  .step-3-label {
+    font-size: 3.0rem;
+    font-weight: bold;
+    text-align: left;
+    margin-bottom: 8%;
+  }
+
+  .grid-3 {
+    height: 100%;
+    width: 30%;
+    float: left;
+  }
+
+  .row-padd {
+    margin-left: 10%;
+    margin-right: 10%;
+  }
+
+  .step-image-3 {
+    box-shadow: 0px 3px 5px #b2b2b2;
+    border-radius: 8px !important;
+    width: 100%;
+    height: 65px;
+  }
+
+  .media-button-3 {
+    color: #f17e31;
+    background: white;
+    -webkit-box-shadow: 0px 3px 5px #b2b2b2;
+    box-shadow: 0px 3px 5px #b2b2b2;
+    border-radius: 8px !important;
+    width: 100%;
+    height: 65px;
+  }
+
+  .finish-3 {
+    font-size: 13px;
+    position: absolute;
+    margin-left: 65%;
+    margin-top: 7%;
+  }
+
+  .select-md .select-icon {
+    margin-top: 5px;
+  }
+
+  .select .select-icon {
+    margin-top: 10px;
+  }
+
+  .select .select-placeholder {
+    color: #999 !important;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.3rem !important;
+    }
+
+    @media screen and (min-width: 414px) {
+      font-size: 1.6rem !important;
+    }
+  }
+
+  .swiper-slide img {
+    width: auto;
+    min-width: 100%;
+    height: 65px;
+    min-height: 100%;
+    border-radius: 8px;
+    margin-top: 4px;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: #f17e31;
+    opacity: 1;
+  }
+
+  .ingredients>.iti-input {
+    width: 100px !important;
+  }
+
+  .tag-active {
+    cursor: all-scroll;
+    background: none;
+  }
+
+  .tag-disabled {
+    cursor: not-allowed;
+    background: darkgray;
+  }
+
+  .add-button-1,
+  .add-button-1:visited,
+  .add-button-1:focus {
+    background-color: $secondary-color;
+
+    @media screen and (min-width: 320px) {
+      height: 25px !important;
+      width: 25px !important;
+      font-size: 0.5rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      height: 30px !important;
+      width: 30px !important;
+    }
+  }
+
+  .button-text {
+    color: $secondary-color;
+    padding-top: 8%;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.2rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 1.5rem !important;
+    }
+  }
+
+  .ingred {
+    border-bottom: 1px solid grey;
+  }
+
+  .product-here {
+    padding: 1em;
+    margin-top: -2em;
+  }
+
+  .selected-businesses {
+    margin-top: 10px;
+    text-transform: capitalize;
+  }
+
+  .product-heading {
+    color: $metal !important;
+    font-weight: bold;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.5rem !important;
+      margin-bottom: -10px;
+    }
+
+    @media screen and (min-width: 414px) {
+      font-size: 2.6rem !important;
+    }
+  }
+
+  .product-heading-1 {
+    padding-top: 7%;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.2rem !important;
+    }
+
+    @media screen and (min-width: 414px) {
+      font-size: 2rem !important;
+    }
+  }
+
+  .product-img {
+    border-radius: 13px;
+  }
+
+  .business-locn {
+    @media screen and (min-width: 320px) {
+      font-size: 1.2rem;
+    }
+
+    @media screen and (min-width: 414px) {
+      font-size: 1.6rem;
+    }
+  }
+
+  .business-text {
+    @media screen and (min-width: 320px) {
+      font-size: 0.9rem;
+      margin-top: 1px;
+    }
+
+    @media screen and (min-width: 360px) {
+      margin-top: 1px;
+    }
+
+    @media screen and (min-width: 414px) {
+      font-size: 1.2rem;
+      margin-top: 5px;
+    }
+  }
+
+  .correct-button,
+  .correct-button:visited,
+  .correct-button:focus {
+    color: $secondary-color;
+    border-color: $secondary-color;
+    background-color: transparent;
+    height: 40px;
+    width: 100% !important;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.2rem !important;
+    }
+
+    @media screen and (min-width: 360px) {
+      font-size: 1.3rem !important;
+    }
+
+    @media screen and (min-width: 414px) {
+      font-size: 1.6rem !important;
+    }
+  }
+
+  .business-slider-image {
+    width: 100%;
+    height: 100px;
+    padding-bottom: 60%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin-top: 1em;
+  }
+
+  .select-text {
+    margin-top: 9px;
+    margin-left: 25px;
+  }
+
+
+
+
+  // Recipe page style
+  .recipe-back-arrow {
+    color: $metal;
+    margin-left: -10px;
+  }
+
+  .category button {
+    padding: 0.5em 1.5em;
+    display: inline-block;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.0rem;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 0.8em;
+    }
+  }
+
+  .category {
+    padding: 3px !important;
+    text-transform: capitalize;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.0rem;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 1.7rem;
+    }
+  }
+
+  .avatar {
+    width: 100%;
+    border-radius: 95px;
+    padding-bottom: 100%;
+  }
+
+  .user-details p {
+    margin: 0 !important;
+  }
+
+  .user-details {
+    padding-top: 6%;
+  }
+
+  .business-like {
+    top: 1em;
+  }
+
+  .business-like span {
+    @media screen and (min-width: 320px) {
+      font-size: 1.3rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 1em;
+    }
+  }
+
+  .business-like ion-icon {
+    @media screen and (min-width: 320px) {
+      font-size: 1.5rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 1.4em;
+    }
+  }
+
+  .user-details h2 {
+    margin-bottom: 2px;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.3rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 1.8rem !important;
+    }
+  }
+
+  .recipe-name {
+    text-transform: capitalize;
+    color: $metal;
+  }
+
+  .tag-row {
+    margin-bottom: 1em;
+  }
+
+  .category p {
+    margin: 0 !important;
+    padding: 0.5em 0;
+    font-size: 1em;
+    color: $dark-gray;
+    display: inline-block;
+  }
+
+  .category span {
+    font-size: 3.5em;
+    line-height: 0;
+    margin: 0 1px;
+  }
+
+  .recipe-tag {
+    background: $main-color;
+    padding: 0 20px;
+  }
+
+  .recipe-name h2 {
+    font-weight: bold;
+
+    @media screen and (min-width: 320px) {
+      font-size: 3.0rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 4rem !important;
+    }
+  }
+
+  .recipe-heart-icon {
+    color: $light-color;
+  }
+
+  .like {
+    color: black;
+    float: right;
+    text-align: right;
+  }
+
+  .feature-button {
+    width: 100%;
+    background: #fff;
+    border: 1px solid $other-color;
+    color: $other-color;
+    box-shadow: none !important;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.2rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 1.3rem !important;
+    }
+  }
+
+  .ingrd-heading {
+    padding-top: 7%;
+    font-weight: bold;
+    color: $metal;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.6rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 2.0rem !important;
+    }
+  }
+
+  .ingredients {
+    margin-top: -3%;
+  }
+
+  .ingredients-list {
+    color: #7a7a7a;
+    padding-top: 5%;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.2rem !important;
+    }
+
+    @media screen and (min-width: 360px) {
+      font-size: 17px !important;
+    }
+  }
+
+  .second-slider-thumbnail {
+    width: 100%;
+    padding-bottom: 100%;
+    border-radius: 10px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .business-div {
+    text-align: center;
+  }
+
+  .bookmark-button {
+    background-color: #efefef !important;
+    float: right;
+    border-radius: 50%;
+
+    @media screen and (min-width: 320px) {
+      width: 30px;
+      height: 30px;
+    }
+
+    @media screen and (min-width: 375px) {
+      width: 40px;
+      height: 40px;
+    }
+  }
+
+  .bookmark-icon {
+    @media screen and (min-width: 320px) {
+      margin-top: 8px;
+      margin-right: 11px;
+      font-size: 1.3rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 1.6em !important;
+      margin-top: 9px;
+      margin-right: 14px;
+    }
+  }
+
+  ion-slide img {
+    height: 280px !important;
+  }
+
+  ion-scroll img {
+    border-radius: 5px;
+    height: 92px;
+    width: 100%;
+  }
+}

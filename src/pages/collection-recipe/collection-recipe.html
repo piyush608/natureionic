@@ -1,0 +1,37 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row class="top-row">
+      <ion-col col-3 class="back-arrow above-map" (tap)="prevStep()">
+        <img src="assets/icon/custom/back_arrow.png" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row class="first-row">
+      <mian-header [text]="'Bookmarked Recipes'"></mian-header>
+    </ion-row>
+    <ion-row *ngIf="!(recipes | async)" class="textMessage">
+      <h4> When you see something you like, tap on the bookmark button ( <ion-icon class="bookmark" ios="ios-bookmark"
+          md="md-bookmark"></ion-icon> ) to save it. </h4>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="recipes | async">
+    <ion-scroll scrollX="true" class="guide-scroll" style="height:70px">
+      <ion-row nowrap>
+        <ion-col col-4 class="custom-col-4">
+          <button ion-button round [class.filter-active]="filteredRecipes==='all'" class="filter-button align-things-center"
+            (click)="filter('all')">
+            All
+          </button>
+        </ion-col>
+        <ion-col col-4 *ngFor="let item of recipeCategory" class="custom-col-4">
+          <button ion-button round [class.filter-active]="filteredRecipes===item._id" class="filter-button align-things-center"
+            (click)="filter(item._id)">
+            {{ item.name }}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-scroll>
+    <ion-row class="custom-col-res" *ngFor="let item of recipes | async | recipeCategory:filteredRecipes">
+      <recipe-card [item]="item"></recipe-card>
+    </ion-row>
+  </ion-grid>
+</ion-content>

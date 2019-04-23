@@ -1,0 +1,42 @@
+<ion-card (click)="openForum()" class="forum-card">
+    <ion-row>
+      <ion-col col-12>
+        <div class="single-row forum-tag"># {{ item?.tag?.name }}</div>
+        <div class="single-row forum-time">
+          <ion-note>
+            Posted {{ publishedTime }}
+          </ion-note>
+        </div>
+      </ion-col>
+    </ion-row>
+    <div [class.together]="imageOption" [class.description-side]="imageOption">
+      <ion-item [class.user-avatar]="imageOption">
+        <ion-avatar item-start>
+          <img *ngIf="item?.addedBy?.photo; else showDummyImage" [src]="item?.addedBy?.photo?.thumb200Url" style="background: rgb(95, 60, 60);">
+          <ng-template #showDummyImage>
+            <img src="assets/imgs/defaultUser.png">
+          </ng-template>
+        </ion-avatar>
+        <h2 class="user-name">{{ item?.addedBy?.name }}</h2>
+      </ion-item>
+      <ion-card-content [class.forum-title]="imageOption">
+        <h2 class="forum-title">{{ forumName }}</h2>
+        <p class="forum-description">{{ item?.description }}</p>
+      </ion-card-content>
+      <ion-row [class.forum-likes]="imageOption">
+        <div class="single-row">
+          <button ion-button icon-start clear small>
+            <ion-icon [class.likeActive]="isLiked?.flag" class="thumbs-up"></ion-icon>
+            <div class="dynamik-font">{{ item?.likes }}</div>
+          </button>
+        </div>
+        <div class="single-row">
+          <button ion-button icon-start clear small>
+            <ion-icon class="text"></ion-icon>
+            <div class="dynamik-font">{{ item?.comments }}</div>
+          </button>
+        </div>
+      </ion-row>
+    </div>
+    <div *ngIf="item.photos.length>0" [class.image-side]="imageOption" [class.together]="imageOption" class="forum-slider" [ngStyle]="{'background-image':'url('+ item.photos[0].thumb400Url +')'}"></div>
+  </ion-card>

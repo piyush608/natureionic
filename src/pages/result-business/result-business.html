@@ -1,0 +1,102 @@
+<ion-content padding>
+  <ion-grid>
+    <!-- Search Bar -->
+    <ion-row class="top-row">
+      <ion-col col-11 class="search-bar">
+        <searchbar [input]="searchQuery" (tap)="searchPage()"></searchbar>
+        <p class="example-text">
+          <current-location [text]="'Current Location'" [page]="'result-business'" [param]="business"></current-location>
+        </p>
+      </ion-col>
+      <ion-col col-1>
+        <button ion-button icon-only class="add_btn" (click)="homePage()">
+          <ion-icon name="close"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="inner-body" *ngIf="healthCare.length>0">
+      <ion-col>
+        <h3 class="section-header">Health Care</h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-scroll *ngIf="healthCare.length>0" class="guide-scroll" scrollX="true" style="height:270px">
+      <ion-row nowrap>
+        <ion-col *ngFor="let item of healthCare" class="popular-business custom-col">
+          <business-card [item]="item"></business-card>          
+        </ion-col>
+      </ion-row>
+    </ion-scroll>
+
+    <ion-row class="inner-body" *ngIf="bathAndBeauty.length>0">
+      <ion-col>
+        <h3 class="section-header">Bath And Beauty</h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-scroll scrollX="true" style="height:270px" class="guide-scroll" *ngIf="bathAndBeauty.length>0">
+      <ion-row nowrap>
+        <ion-col col-6 *ngFor="let item of bathAndBeauty" class="popular-business">
+          <business-card [item]="item"></business-card>          
+        </ion-col>
+      </ion-row>
+    </ion-scroll>
+
+    <ion-row class="inner-body" *ngIf="restaurants.length>0">
+      <ion-col>
+        <h3 class="section-header">Restaurant</h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-scroll scrollX="true" style="height:270px" class="guide-scroll" *ngIf="restaurants.length>0">
+      <ion-row nowrap>
+        <ion-col col-6 *ngFor="let item of restaurants" class="popular-business">
+          <business-card [item]="item"></business-card>          
+        </ion-col>
+      </ion-row>
+    </ion-scroll>
+
+    <ion-row class="inner-body" *ngIf="cafe.length>0">
+      <ion-col>
+        <h3 class="section-header">Cafe</h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-scroll scrollX="true" style="height:270px" class="guide-scroll" *ngIf="cafe.length>0">
+      <ion-row nowrap>
+        <ion-col col-6 *ngFor="let item of cafe" class="popular-business">
+          <business-card [item]="item"></business-card>          
+        </ion-col>
+      </ion-row>
+    </ion-scroll>
+
+    <ion-row class="inner-body" *ngIf="grocery.length>0">
+      <ion-col>
+        <h3 class="section-header">Grocery</h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-scroll scrollX="true" style="height:270px" class="guide-scroll" *ngIf="grocery.length>0">
+      <ion-row nowrap>
+        <ion-col col-6 *ngFor="let item of grocery" class="popular-business">
+          <business-card [item]="item"></business-card>          
+        </ion-col>
+      </ion-row>
+    </ion-scroll>
+
+    <ion-row class="inner-body" *ngIf="farmer.length>0">
+      <ion-col>
+        <h3 class="section-header">Farmer</h3>
+      </ion-col>
+    </ion-row>
+
+    <ion-scroll scrollX="true" style="height:270px" class="guide-scroll" *ngIf="farmer.length>0">
+      <ion-row nowrap>
+        <ion-col col-6 *ngFor="let item of farmer" class="popular-business">
+          <business-card [item]="item"></business-card>          
+        </ion-col>
+      </ion-row>
+    </ion-scroll>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,199 @@
+page-my {
+  .navi {
+    color: #b2b2b2;
+    margin-right: 5px;
+  }
+
+  profile-image {
+    margin: 0 auto;
+  }
+
+  .profile-name {
+    @media screen and (min-width: 320px), screen and (min-width: 360px) {
+      margin-top: 15px !important;
+    }
+  }
+
+  .filter-button {
+    background: #FFFFFF !important;
+    color: $secondary-color !important;
+    box-shadow: none !important;
+    font-size: 1.5rem !important;
+    font-weight: 550;
+  }
+
+  .filter-active {
+    background: $secondary-color !important;
+    color: #FFFFFF !important;
+  }
+
+  .location {
+    @media screen and (min-width: 320px), screen and (min-width: 360px) {
+      font-size: 1.3rem;
+      margin-top: -20px;
+    }
+  }
+
+  .current-user-badge {
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  .user-options {
+    border: 1px solid $secondary-color;
+    border-radius: 30px;
+
+    @media screen and (min-width: 360px) {
+      font-size: 1.2rem !important;
+      margin-top: 15px;
+    }
+  }
+
+  .segment-md .segment-button.activated,
+  .segment-md .segment-button.segment-activated {
+    border: none !important;
+    color: #FFFFFF !important;
+    background: $secondary-color !important;
+    border-radius: 30px;
+  }
+
+  .segment .segment-button.activated,
+  .segment .segment-button.segment-activated {
+    border: none !important;
+    color: #FFFFFF !important;
+    background: $secondary-color !important;
+    border-radius: 30px;
+  }
+
+  .segment-md .segment-button {
+    color: $secondary-color;
+    border-bottom: none !important;
+  }
+
+  .segment .segment-button {
+    color: $secondary-color;
+    border: none !important;
+  }
+
+  .option-card {
+    width: 100%;
+    margin-top: 25px;
+  }
+
+  .about-card {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0px 3px 5px $light-color;
+    padding: 20px;
+
+    @media screen and (min-width: 320px), screen and (min-width: 360px) {
+      margin-top: -15px;
+      margin-left: 0px;
+    }
+  }
+
+  .about-card h1 {
+    font-size: 3.0rem !important;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.6rem !important;
+    }
+
+    @media screen and (min-width: 360px) {
+      font-size: 2.0rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 3rem !important;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      font-size: 3rem !important;
+    }
+  }
+
+  .about-card p {
+    color: $light-color;
+    font-size: 1.6rem !important;
+
+    @media screen and (min-width: 320px), screen and (min-width: 360px) {
+      font-size: 1.2rem !important;
+      margin-top: -7px;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 1.6rem !important;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      font-size: 1.6rem !important;
+    }
+  }
+
+  .card-md .item-md.item-block .item-inner {
+    margin-left: -16px;
+  }
+
+  .card .item.item-block .item-inner {
+    margin-left: -16px;
+  }
+
+  .cols {
+    padding: 0 !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+
+    @media screen and (min-width: 320px) {
+      flex: 0 0 100% !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+
+    @media screen and (min-width: 962px) {
+      flex: 0 0 88% !important;
+      width: 88% !important;
+      max-width: 88% !important;
+    }
+  }
+
+  .colp {
+    padding: 0 !important;
+    margin-top: 0 !important;
+    margin-left: 0 !important;
+
+    @media screen and (min-width: 320px) {
+      flex: 0 0 100% !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+  }
+
+  .p-list {
+    padding: 0 !important;
+  }
+
+  .recipes {
+    @media screen and (min-width: 320px), screen and (min-width: 360px) {
+      margin-top: -30px !important;
+      margin-bottom: 0px !important;
+    }
+
+    @media screen and (min-width: 962px) {
+      margin-left: 25% !important;
+    }
+  }
+
+  .products {
+    @media screen and (min-width: 320px), screen and (min-width: 360px) {
+      margin-top: -15px !important;
+      margin-left: 0px !important;
+      margin-bottom: 0px !important;
+    }
+  }
+
+  .has-refresher .scroll-content {
+    border-top: 0 !important;
+  }
+}

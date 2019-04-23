@@ -1,0 +1,25 @@
+forum-comment {
+    .arrow-down {
+        margin-top: 0px !important;
+    }
+
+    .commenter-name {
+        @media screen and (min-width: 360px) {
+            font-size: 1.5rem !important;
+        }
+        @media screen and (min-width: 414px) {
+            font-size: 1.8rem !important;
+        }
+    }
+
+    .comment-section {
+        @media screen and (min-width: 360px) {
+            margin-top: -25px;
+            font-size: 1.3rem;
+        }
+        @media screen and (min-width: 414px) {
+            margin-top: -17px; 
+            font-size: 1.6rem;
+        }
+    }
+}

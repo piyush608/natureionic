@@ -1,0 +1,39 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row class="top-row">
+      <ion-col col-3 class="back-arrow above-map" (tap)="prevStep()">
+        <img src="assets/icon/custom/back_arrow.png" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row class="first-row">
+      <mian-header [text]="'Bookmarked Businesses'"></mian-header>
+    </ion-row>
+    <ion-row *ngIf="!(businesses | async)" class="textMessage">
+      <h4> When you see something you like, tap on the bookmark button ( <ion-icon class="bookmark" ios="ios-bookmark"
+          md="md-bookmark"></ion-icon> ) to save it. </h4>
+    </ion-row>
+  </ion-grid>
+  <ion-grid *ngIf="businesses | async">
+    <ion-scroll scrollX="true" class="guide-scroll" style="height:70px">
+      <ion-row nowrap>
+        <ion-col col-4 class="custom-col-4">
+          <button ion-button round [class.filter-active]="filteredBusinesses==='all'" class="filter-button align-things-center"
+            (click)="filter('all')">
+            All
+          </button>
+        </ion-col>
+        <ion-col col-4 *ngFor="let item of businessCategory" class="custom-col-4">
+          <button ion-button round [class.filter-active]="filteredBusinesses===item._id" class="filter-button align-things-center"
+            (click)="filter(item._id)">
+            {{ item.name }}
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-scroll>
+    <ion-row>
+      <ion-col *ngFor="let item of businesses | async | businessCategory:filteredBusinesses" class="popular-business custom-col">
+        <business-card *ngIf="item" [item]="item"></business-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

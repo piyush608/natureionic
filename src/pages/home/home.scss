@@ -1,0 +1,485 @@
+page-home {
+  .scroll-content {
+    padding: 0 !important;
+  }
+
+  .location-button {
+    border: 1px solid #00B2AA;
+    border-radius: 50px;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    color: #00B2AA;
+
+    @media screen and (min-width: 320px) {
+      font-size: 0.8em !important;
+    }
+
+    @media screen and (min-width: 360px) {
+      font-size: 1.0em !important;
+    }
+
+    @media screen and (min-width: 615px) {
+      height: 40px !important;
+    }
+
+    @media screen and (min-width: 753px) {
+      height: 50px !important;
+      font-size: 1.2em !important;
+    }
+  }
+
+  .change-location {
+    text-align: right;
+    text-decoration: underline;
+
+    @media screen and (min-width: 962px) {
+      height: 5px;
+    }
+  }
+
+  .change-location p {
+    margin-right: 10%;
+  }
+
+  .location-button ion-col {
+    padding: 2px;
+
+    @media screen and (min-width: 615px) {
+      padding: 0px !important;
+    }
+  }
+
+  .location-button .inner-icon {
+    padding: 40%;
+    font-size: 1.3em;
+
+    @media screen and (min-width: 375px) {
+      margin-top: 3px;
+    }
+
+    @media screen and (min-width: 414px) {
+      margin-top: 0px;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      font-size: 1.5em;
+      margin-top: 1px;
+    }
+
+    @media screen and (min-width: 615px) {
+      margin-top: -10px;
+    }
+
+    @media screen and (min-width: 962px) {
+      margin-top: -15px;
+    }
+  }
+
+  .location-button .change-location a {
+    margin-right: 20px;
+    color: #00B2AA;
+    text-decoration: none;
+  }
+
+  .category-card {
+    @media screen and (min-width: 320px) {
+      height: 97px;
+    }
+
+    @media screen and (min-width: 360px) {
+      height: 105px;
+    }
+
+    @media screen and (min-width: 414px) {
+      height: 130px;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      height: 130px;
+    }
+
+    @media screen and (min-width: 962px) {
+      height: 150px;
+    }
+  }
+
+  .category-card img {
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      margin-top: 12px;
+    }
+
+    @media screen and (min-width: 962px) {
+      width: 90px;
+    }
+  }
+
+  .category-card p {
+    text-align: center;
+    color: $dark-gray;
+    padding: 0 2px;
+    font-size: 0.87em;
+
+    @media screen and (min-width: 320px) {
+      margin-top: -22px;
+      font-size: 0.6em !important;
+    }
+
+    @media screen and (min-width: 360px) {
+      margin-top: 5px;
+      font-size: 1rem !important;
+    }
+
+    @media screen and (min-width: 414px) {
+      margin-top: 5px;
+      font-size: 1.2rem !important;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      margin-top: 5px;
+      font-size: 1.3rem !important;
+    }
+
+    @media screen and (min-width: 962px) {
+      margin-top: 25px !important;
+    }
+  }
+
+  .start-button {
+    font-size: 0.2rem !important;
+    height: 1.6rem !important;
+    margin: 0px !important;
+    width: 100% !important;
+    padding: 0px 28px !important;
+    background: $main-color !important;
+  }
+
+  .button-small-md {
+    font-size: 0.2rem !important;
+  }
+
+  .personalized-button {
+    color: $secondary-color;
+    border-radius: 50px;
+    box-shadow: 0px 3px 5px #b2b2b2;
+    border: none;
+    font-size: 16px;
+  }
+
+  .personalized-button p,
+  .personalized-button ion-icon,
+  .normal-list p,
+  .normal-list ion-icon {
+    margin: 0px;
+    padding: 10px;
+  }
+
+  .scroll-padding .scroll-zoom-wrapper {
+    padding: 1em;
+  }
+
+  .normal-list p,
+  .personalized-button p {
+    float: left;
+  }
+
+  ion-grid {
+    padding: 1em !important;
+  }
+
+  //Business Card Css
+  .popular-business,
+  .popular-hunted-products {
+    padding: 0 !important;
+  }
+
+  .full {
+    width: 95%;
+    margin-bottom: 35px;
+  }
+
+  .full p {
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      font-size: 1.7rem;
+    }
+  }
+
+  .custom-col-6 {
+    @media screen and (min-width: 320px) {
+      flex: 0 0 37% !important;
+      width: 37% !important;
+      max-width: 37% !important;
+    }
+
+    @media screen and (min-width: 962px),
+    screen and (min-width: 753px),
+    screen and (min-width: 615px) {
+      flex: 0 0 22% !important;
+      width: 22% !important;
+      max-width: 22% !important;
+    }
+  }
+
+  .custom-col-12 {
+    @media screen and (min-width: 414px) {
+      flex: 0 0 90% !important;
+      width: 90% !important;
+      max-width: 90% !important;
+    }
+
+    @media screen and (min-width: 615px) {
+      flex: 0 0 55% !important;
+      width: 55% !important;
+      max-width: 55% !important;
+    }
+
+    @media screen and (min-width: 962px) {
+      flex: 0 0 45% !important;
+      width: 45% !important;
+      max-width: 45% !important;
+    }
+  }
+
+  .guide-card {
+    background: $main-color;
+    border-radius: 15px;
+    box-shadow: 0px 8px 21px 0px #dad2d2;
+
+    @media screen and (min-width: 320px) {
+      height: 200px;
+    }
+
+    @media screen and (min-width: 360px) {
+      height: 230px;
+    }
+
+    @media screen and (min-width: 375px) {
+      height: 250px;
+    }
+
+    @media screen and (min-width: 414px) {
+      height: 280px;
+    }
+
+    @media screen and (min-width: 615px) {
+      height: 230px;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      height: 310px;
+    }
+
+    @media screen and (min-width: 962px) {
+      height: 360px;
+    }
+  }
+
+  .card-header {
+    color: #ffffff;
+    font-size: 3rem;
+    margin-left: 5%;
+    font-weight: bold;
+
+    @media screen and (min-width: 320px), screen and (min-width: 360px) {
+      font-size: 1.9rem;
+    }
+
+    @media screen and (min-width: 375px) {
+      font-size: 2.2rem;
+    }
+
+    @media screen and (min-width: 414px) {
+      font-size: 2.8rem;
+    }
+
+    @media screen and (min-width: 615px) {
+      font-size: 1.9rem;
+    }
+
+    @media screen and (min-width: 962px) {
+      font-size: 3rem;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      font-size: 3rem;
+    }
+  }
+
+  .card-para {
+    color: #ffffff;
+    font-size: 1.8rem;
+    margin-left: 5%;
+
+    @media screen and (min-width: 320px) {
+      font-size: 1.2rem;
+    }
+
+    @media screen and (min-width: 360px) {
+      font-size: 1.5rem;
+    }
+
+    @media screen and (min-width: 414px) {
+      font-size: 1.7rem;
+    }
+
+    @media screen and (min-width: 615px) {
+      font-size: 1.2rem;
+    }
+
+    @media screen and (min-width: 962px) {
+      font-size: 2rem;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      font-size: 1.8rem;
+    }
+  }
+
+  .learn-button {
+    height: 50px;
+    bottom: 10%;
+    position: absolute;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+
+    @media screen and (min-width: 320px), screen and (min-width: 360px) {
+      width: 75%;
+      height: 30px !important;
+      font-size: 1rem !important;
+    }
+
+    @media screen and (min-width: 375px) {
+      width: 81%;
+      height: 40px;
+      font-size: 1.4rem !important;
+    }
+
+    @media screen and (min-width: 414px) {
+      height: 50px !important;
+      font-size: 1.5rem !important;
+    }
+
+    @media screen and (min-width: 615px) {
+      height: 35px !important;
+      font-size: 1.2rem !important;
+      left: 12%;
+    }
+
+    @media screen and (min-width: 962px) {
+      font-size: 1.5rem !important;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      height: 50px !important;
+      font-size: 1.5rem !important;
+    }
+  }
+
+  .article-topics {
+    border-radius: 8px;
+    box-shadow: 0px 8px 21px 0px #dad2d2;
+    position: relative;
+    height: 50px;
+  }
+
+  .article-header {
+    color: #00B2AA;
+    font-size: 18px;
+    text-align: center;
+    top: 10%;
+    text-transform: capitalize !important;
+
+    @media screen and (min-width: 320px), screen and (min-width: 360px) {
+      font-size: 15px !important;
+    }
+
+    @media screen and (min-width: 414px) {
+      font-size: 19px !important;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      font-size: 18px !important;
+    }
+  }
+
+  .search-bar {
+    @media screen and (min-width: 320px) {
+      margin-left: -7px;
+    }
+
+    @media screen and (min-width: 753px) {
+      margin-left: 0px;
+    }
+  }
+
+  .icon-row {
+    @media screen and (min-width: 360px) {
+      height: 51px;
+    }
+
+    @media screen and (min-width: 414px) {
+      height: 69px;
+    }
+  }
+
+  .fakeGuideCards h2 {
+    background-color: $dark-gray;
+    margin-left: 10px;
+    opacity: 0.5;
+    height: 1em;
+    width: 35%;
+  }
+
+  .fake-guide-card {
+    background: $main-color;
+    border-radius: 15px;
+    box-shadow: 0px 8px 21px 0px #dad2d2;
+
+    @media screen and (min-width: 320px) {
+      height: 200px;
+    }
+
+    @media screen and (min-width: 360px) {
+      height: 230px;
+    }
+
+    @media screen and (min-width: 375px) {
+      height: 250px;
+    }
+
+    @media screen and (min-width: 414px) {
+      height: 280px;
+    }
+
+    @media screen and (min-width: 615px) {
+      height: 230px;
+    }
+
+    @media screen and (min-width: 375px) and (min-height: 812px) {
+      height: 310px;
+    }
+
+    @media screen and (min-width: 962px) {
+      height: 360px;
+    }
+  }
+
+  .fake-guide-card h2 {
+    background-color: #FFFFFF;
+    height: 1em;
+    margin-top: 25px !important;
+    margin-left: 5%;
+    width: 50%;
+  }
+
+  .fake-guide-card p {
+    background-color: #FFFFFF;
+    height: 1em;
+    margin-top: 15px !important;
+    margin-left: 5%;
+    width: 35%;
+  }
+
+  .has-refresher .scroll-content {
+    border-top: 0 !important;
+  }
+}

@@ -1,0 +1,33 @@
+<ion-content padding>
+  <ion-grid>
+    <ion-row class="top-row">
+      <ion-col col-3 class="back-arrow above-map" (tap)="prevStep()">
+        <img src="assets/icon/custom/back_arrow.png" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row class="first-row">
+      <mian-header [text]="'Bookmarked Inspiration'"></mian-header>
+    </ion-row>
+    <ion-row *ngIf="factCards | async; let item">
+      <section-header *ngIf="item.length>0" [text]="'Facts'"></section-header>
+    </ion-row>
+    <ion-row *ngFor="let item of factCards | async">
+      <ion-col>
+        <fact-card [item]="item"></fact-card>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngIf="articles | async; let item">
+      <section-header *ngIf="item.length>0" [text]="'Articles'"></section-header>
+    </ion-row>
+    <ion-row *ngFor="let item of articles | async">
+      <ion-col>
+        <article-card [item]="item"></article-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row *ngIf="(!(articles | async)) && (!(factCards | async))" class="textMessage">
+      <h4> When you see something you like, tap on the bookmark button ( <ion-icon class="bookmark" ios="ios-bookmark"
+          md="md-bookmark"></ion-icon> ) to save it. </h4>
+    </ion-row>
+  </ion-grid>
+</ion-content>

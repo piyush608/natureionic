@@ -1,0 +1,199 @@
+<ion-content padding no-bounce>
+  <ion-grid *ngIf="!switchFlag">
+    <ion-row class="top-row">
+      <ion-col col-3 class="back-arrow above-map" (tap)="prevStep()" style="position: initial !important;">
+        <img src="assets/icon/custom/back_arrow.png" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-1 class="steps above-map" style="position: initial !important;">
+        <ion-row>
+          <h6>Step</h6>
+        </ion-row>
+        <ion-row>
+          <h1 class="first-dot active">.</h1>
+        </ion-row>
+        <ion-row>
+          <h1 [class.active]="firstButtonClicked">.</h1>
+        </ion-row>
+        <ion-row>
+          <h1 [class.active]="secondButtonClicked">.</h1>
+        </ion-row>
+        <!-- <ion-row>
+            <h1 [class.active]="thirdButtonClicked">.</h1>
+          </ion-row> -->
+      </ion-col>
+      <!-- Add different section to be hidden here -->
+      <ion-col col-11 style="position: initial !important;">
+        <ion-grid class="changing-div first-step" *ngIf="!firstButtonClicked && !secondButtonClicked">
+          <ion-row text-wrap>
+            <ion-item class="item-label">
+              <ion-label stacked class="label-1">What's the name of the business? *</ion-label>
+              <ion-input type="text" [(ngModel)]="business.name" (keyup)="checkName()" placeholder="Business name"
+                class="input"></ion-input>
+            </ion-item>
+            <p class="invalid-details" *ngIf="!nameFlag">* {{ nameText }}</p>
+          </ion-row>
+          <ion-row text-wrap>
+            <ion-item no-lines>
+              <ion-label stacked class="label-1">Which category does it fit into? *</ion-label>
+              <ion-select class="select" [(ngModel)]="business.category" placeholder="Category" (ionChange)="selectCategory()">
+                <ion-option *ngFor="let item of businessCategories" value="{{ item._id }}">{{ item.name }}</ion-option>
+              </ion-select>
+            </ion-item>
+            <p class="invalid-select-details" *ngIf="!categoryFlag">* {{ categoryText }}</p>
+          </ion-row>
+          <ion-row text-wrap>
+            <ion-item class="item-label">
+              <ion-label stacked class="label-1">Phone Number *</ion-label>
+              <ion-input type="text" [(ngModel)]="business.phone" (keyup)="checkNumber()" placeholder="(XXX) XXX-XXXX"></ion-input>
+            </ion-item>
+            <p class="invalid-details" *ngIf="!numberFlag">* {{ numberText }}</p>
+          </ion-row>
+          <ion-row text-wrap>
+            <ion-item class="item-label">
+              <ion-label stacked class="label-1">Email</ion-label>
+              <ion-input type="email" [(ngModel)]="business.email" (keyup)="checkEmail()" placeholder="Email"></ion-input>
+            </ion-item>
+            <p class="invalid-details" *ngIf="!emailFlag">* {{ emailText }}</p>
+          </ion-row>
+          <ion-row text-wrap>
+            <ion-item class="item-label">
+              <ion-label stacked class="label-1">Location *</ion-label>
+              <ion-input type="text" [(ngModel)]="business.address" (keyup)="checkLocation()" placeholder="Address"></ion-input>
+            </ion-item>
+            <p class="invalid-details" *ngIf="!locationFlag">* {{ locationText }}</p>
+          </ion-row>
+        </ion-grid>
+        <ion-grid class="second-step" *ngIf="firstButtonClicked && !secondButtonClicked">
+          <ion-row>
+            <ion-col class="current-location-button above-map">
+              <div #myElement>
+                <ion-item>
+                  <ion-input placeholder="Search places by keywords" type="text" [(ngModel)]="searchTxt" id="txtHome"></ion-input>
+                </ion-item>
+              </div>
+              <button ion-button round (click)="getCurrentPosition()" class="current-location above-map">
+                <img src="assets/icon/custom/gps.png" alt=""> Use Current Location
+              </button>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col id="map">
+              <div id="map_canvas"></div>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+        <ion-grid class="third-step" *ngIf="secondButtonClicked">
+          <ion-row text-wrap>
+            <ion-col col-12>
+              <h1 class="upload-title">Upload photos of business *</h1>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col col-4 *ngFor="let img of image; let i = index">
+              <img [src]="sanitize(img)" class="uploaded-image">
+              <ion-fab top right>
+                <img src="assets/imgs/delete_photo.png" alt="" (tap)="deleteImage(i)">
+              </ion-fab>
+            </ion-col>
+            <ion-col col-4 (click)="presentModal()">
+              <img src="assets/imgs/add_photo.png" class="add-image">
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- While uploading business -->
+  <ion-grid *ngIf="switchFlag">
+    <ion-row class="top-row">
+      <ion-col col-3 class="back-arrow above-map" (tap)="prevStep()">
+        <img src="assets/icon/custom/back_arrow.png" alt="">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-9>
+        <div class="same-line">
+          <button ion-button round small id="businessCategory" class="business-tag">
+            {{ businessCategory }}
+          </button>
+        </div>
+        <div class="same-line business-like like" (click)="like()">
+          <ion-icon *ngIf="!isLiked?.flag; else elseBlock" ios="ios-heart-outline" md="md-heart-outline" class="heart-icon"
+            [ngStyle]="{'color': '#d0d0d0'}"></ion-icon>
+          <ng-template #elseBlock>
+            <ion-icon ios="ios-heart" md="md-heart" class="heart-icon" [ngStyle]="{'color': '#FF6260'}"></ion-icon>
+          </ng-template>
+          <span id="count">0</span>
+        </div>
+      </ion-col>
+      <ion-col col-3 class="align-things-right">
+        <div class="bookmark-button" (click)="bookmark()">
+          <ion-icon *ngIf="!isBookmarked?.flag; else elseBlocked" ios="ios-bookmark" md="md-bookmark" [ngStyle]="{'color': '#9F9F9F'}"
+            class="bookmark-icon"></ion-icon>
+          <ng-template #elseBlocked>
+            <ion-icon ios="ios-bookmark" md="md-bookmark" class="bookmark-icon" [ngStyle]="{'color': '#FF6260'}"></ion-icon>
+          </ng-template>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-slides>
+        <ion-slide col-12 *ngFor="let img of image; let i = index">
+          <img [src]="sanitize(img)">
+        </ion-slide>
+      </ion-slides>
+    </ion-row>
+
+    <ion-scroll class="thumbnail-image-slider" scrollX="true" style="height:115px">
+      <ion-row nowrap>
+        <ion-col *ngFor="let img of image; let i = index" col-3>
+          <img [src]="sanitize(img)">
+        </ion-col>
+      </ion-row>
+    </ion-scroll>
+
+    <ion-row>
+      <ion-col class="business-name" col-12>
+        <h1>{{ business.name }}</h1>
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-5>
+        <h5>
+          <b>Number</b>
+        </h5>
+        <p id="phone" class="value-item">{{ business.phone }}</p>
+      </ion-col>
+      <ion-col offset-5 col-2>
+        <img class="call-button" src="assets/imgs/phone.png" (click)="call()">
+      </ion-col>
+    </ion-row>
+
+    <ion-row class="map">
+      <ion-col>
+        <h5>
+          <b>Location</b>
+        </h5>
+        <p class="value-item">{{ business.address }}</p>
+        <div class="map-image" [ngStyle]="{'background-image':'url('+ mapImage +')'}">
+          <ion-row class="direction-button" (click)="getDirection()">
+            <ion-col col-2>
+              <img src="assets/icon/custom/gps.png" alt="">
+            </ion-col>
+            <ion-col col-10>
+              <p>Get Direction</p>
+            </ion-col>
+          </ion-row>
+        </div>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-fab bottom right class="fab-image" (tap)="nextStep()" *ngIf="!switchFlag">
+  <button ion-fab style="display: none;"></button>
+  <img src="assets/icon/custom/green_arrow.png" alt="">
+</ion-fab>

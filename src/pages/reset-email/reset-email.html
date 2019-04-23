@@ -1,0 +1,27 @@
+<ion-content padding>
+  <form #editProfileForm="ngForm" (ngSubmit)="resetEmail()">
+    <ion-grid>
+      <ion-row>
+        <ion-col col-3 class="back-arrow above-map" (tap)="goBack()">
+          <img src="assets/icon/custom/back_arrow.png" alt="">
+        </ion-col>
+      </ion-row>
+      <ion-row>
+        <section-header [text]="'Account'"></section-header>
+      </ion-row>
+      <!-- Step 1 -->
+      <div class="row"> 
+        <ion-item class="item">
+          <ion-label class="name" stacked>
+            Email
+          </ion-label>
+          <ion-input type="text" [(ngModel)]="user.email" name="email" class="text-1">
+          </ion-input>
+        </ion-item>
+        <button ion-button round type="submit" class="save" id="next-button">
+          Save
+        </button>
+      </div>
+    </ion-grid>
+  </form>
+</ion-content>
