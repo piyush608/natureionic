@@ -1,9 +1,0 @@
-<ion-item *ngIf="user">
-  <ion-avatar item-start (click)="openUser(user._id)">
-    <img *ngIf="user.photo; else showDummyImage" [src]="user.photo.thumb400Url">
-    <ng-template #showDummyImage>
-      <img [src]="'assets/imgs/defaultUser.png'">
-    </ng-template>
-  </ion-avatar>
-  <h2 (click)="openUser(user._id)">{{ user.name }}</h2>
-</ion-item>

@@ -1,0 +1,429 @@
+.background-property {
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+.navbar-brand {
+  margin-right: 0.9rem;
+}
+.navbar-brand img {
+  width: 40px;
+  height: 40px;
+}
+.user-img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: url("https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?h=350&auto=compress&cs=tinysrgb");
+}
+.search {
+  padding: 0px;
+  margin-top: 2px;
+}
+.search input {
+  outline: none;
+}
+input[type="search"] {
+  border: 0px;
+  border-radius: 46px;
+  background: url("../../assets/images/search.svg") no-repeat;
+  background-size: 20px 20px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: textfield;
+  font-size: 0.8em;
+  font-weight: 200;
+  padding: 0px 55px;
+  background-position-y: 9px;
+  background-position-x: 25px;
+  height: calc(1.5em + 0.75rem + 9px);
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+}
+
+input[type="search"]::placeholder {
+  color: #b2b2b2;
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+  display: none;
+}
+input[type="search"]:focus {
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+}
+.more-col {
+  display: grid;
+  align-content: center;
+}
+.more-btn {
+  width: 45px;
+  height: 45px;
+}
+.nav-item {
+  margin-right: 45px;
+}
+.nav-item:last-child {
+  margin-right: 0px;
+}
+.nav-link {
+  font-size: 0.9em;
+}
+.menu-icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 5px;
+}
+.main-heading {
+  font-size: 1.2em;
+  font-weight: 700;
+}
+sup {
+  font-size: 0.5em;
+}
+.feel-likeimg {
+  width: 278px;
+  height: 80px;
+  display: grid;
+  align-items: center;
+  border-radius: 10px;
+  margin-right: 25px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+.feel-likeheading:last-child {
+  margin-right: 0px;
+}
+.likeimg1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.13)),
+    url("../../assets/images/exploreBtn@3x.png");
+}
+.likeimg2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.13)),
+    url("../../assets/images/AskSomethingBtn@3x.png");
+}
+.likeimg3 {
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.13)),
+    url("../../assets/images/GetInspirationBtn@3x.png");
+}
+.likeimg4 {
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.13)),
+    url("../../assets/images/addAListBtn@3x.png");
+}
+.feel-likeheading {
+  font-size: 1.5em;
+  color: #ffffff;
+  text-transform: capitalize;
+}
+.location-grid {
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+  color: #00b2aa;
+  font-size: 0.8em;
+  width: 270px;
+  border: 1px solid #00b2aa;
+  padding: 10px 20px;
+  border-radius: 22px;
+}
+.location-name img {
+  width: 15px;
+  height: 15px;
+  margin-right: 5px;
+}
+.change-location {
+  border-bottom: 1px solid #00b2aa;
+  float: right;
+}
+.find-cards {
+  width: 147px;
+  height: 140px;
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+  margin-right: 13px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.find-cards .card-body {
+  display: grid;
+  align-content: center;
+}
+.find-cards img {
+  width: 60px;
+  height: 60px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 5px;
+}
+.find-cards p {
+  font-size: 1em;
+}
+.show-more {
+  font-size: 0.7em;
+  color: #00b2aa;
+  margin-left: 15px;
+}
+.show-more img {
+  width: 13px;
+  margin-left: 5px;
+}
+.popular-placescard {
+  border-radius: 16px;
+  width: 270px;
+  margin-bottom: 20px;
+  margin-right: 30px;
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+}
+.popular-placescard .card-header {
+  border-radius: 16px;
+  height: 140px;
+}
+.popular-placescard .card-body h3 {
+  font-size: 1em;
+  height: 38px;
+}
+.popular-placescard .card-body p {
+  font-size: 0.8em;
+  color: #868686;
+}
+.popular-placescard .card-body p img {
+  width: 13px;
+  margin-right: 5px;
+  margin-top: -5px;
+}
+.popular-img1 {
+  background: url("https://images.unsplash.com/photo-1561662702-2f299776c2f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.popular-img2 {
+  background: url("https://images.unsplash.com/photo-1561617944-55f3e70bf7dc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.popular-img3 {
+  background: url("https://images.unsplash.com/photo-1561517146-dfbd99b0c14d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.local-img4 {
+  background: url("https://images.unsplash.com/photo-1561522819-df4db1be0fde?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.local-img5 {
+  background: url("https://images.unsplash.com/photo-1561593367-66c79c2294e6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.btn-primary {
+  padding: 3px 20px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
+  border: 0px;
+  margin-bottom: 10px;
+}
+.btn-primary:focus,
+.btn-outline-primary:focus,
+.btn-secondary:focus,
+.btn-success:focus {
+  box-shadow: none;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.btn-success:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}
+.bookmark-div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e3e3e3;
+  display: grid;
+  align-items: center;
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+.bookmark-div img {
+  width: 14px;
+  display: block;
+}
+.btn-outline-primary {
+  color: #00b2aa;
+  border-color: #00b2aa;
+  border-radius: 20px;
+  padding: 4px 17px;
+  margin-left: 17px;
+  font-size: 0.7em;
+  margin-top: -5px;
+}
+.btn-outline-primary:hover,
+.btn-outline-primary:not(:disabled):not(.disabled):active {
+  background-color: #00b2aa;
+  border-color: #00b2aa;
+}
+.local-mustcard {
+  margin-bottom: 20px;
+  margin-right: 15px;
+  width: 380px;
+}
+.local-mustcard .card-header {
+  height: 310px;
+  border-radius: 20px;
+}
+.local-mustcard .card-body h3 {
+  font-size: 1.3em;
+}
+.local-mustcard .card-body p {
+  font-size: 0.9em;
+  color: #b2b2b2;
+}
+.naturehub-cards {
+  height: 250px;
+  border-radius: 15px;
+  display: grid;
+  align-content: center;
+  margin-bottom: 20px;
+}
+.naturehub-card1 {
+  background: url("../../assets/images/learnMoreNH@3x.png");
+  padding-right: 90px;
+  justify-content: flex-end;
+}
+.naturehub-card1 h2,
+.naturehub-card2 h2 {
+  color: #ffffff;
+  font-size: 2em;
+}
+.naturehub-card2 {
+  background: url("../../assets/images/youMeCommunity@3x.png");
+  justify-content: center;
+}
+.btn-success,
+.btn-success:hover {
+  background: #ffffff;
+  color: #00b2aa;
+  border: 0px;
+  border-radius: 10px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 108px;
+  padding: 6px 27px;
+}
+.naturehub-card2 h2 {
+  margin-bottom: 30px;
+}
+.recipe-card {
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+  width: 487px;
+  border-radius: 20px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+.recipe-image {
+  width: 150px;
+  height: 160px;
+  border-radius: 15px;
+}
+.recipe-img1 {
+  background: url("https://images.unsplash.com/photo-1543339308-43e59d6b73a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.recipe-img2 {
+  background: url("https://images.unsplash.com/photo-1511609019130-f415a74b3e3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.recipe-img3 {
+  background: url("https://images.unsplash.com/photo-1530554764233-e79e16c91d08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.recipe-img4 {
+  background: url("https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.recipe-info {
+  width: calc(100% - 150px);
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+.recipe-info h3 {
+  font-size: 1em;
+}
+.recipe-uploaderimg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.recipe-uploaderimg1 {
+  background: url("https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb");
+}
+.recipe-uploaderimg2 {
+  background: url("https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3NjYzMzE1MV5BMl5BanBnXkFtZTgwNTA4NDY4OTE@._V1_UX172_CR0,0,172,256_AL_.jpg");
+}
+.recipe-uploaderimg3 {
+  background: url("https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?h=350&auto=compress&cs=tinysrgb");
+}
+.recipe-uploaderimg4 {
+  background: url("https://pbs.twimg.com/profile_images/1079706442763067392/wuaeGZnN.jpg");
+}
+.recipe-uploadergrid {
+  display: grid;
+  grid-template-columns: 0.85fr 4fr;
+  align-items: center;
+}
+.recipe-uploadername h2 {
+  font-size: 1em;
+  color: #b2b2b2;
+}
+.recipe-category {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1.5fr 4fr;
+  margin-bottom: 10px;
+}
+.recipe-category p {
+  text-align: right;
+  font-size: 0.9em;
+}
+.popularproduct-img1 {
+  background: url("https://images.unsplash.com/photo-1515543237350-b3eea1ec8082?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.popularproduct-img2 {
+  background: url("https://images.unsplash.com/photo-1464013935095-54911b01824e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.popularproduct-img3 {
+  background: url("https://images.unsplash.com/photo-1558522180-c617bd37b833?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.add-cards {
+  height: 280px;
+  border-radius: 15px;
+  padding: 50px;
+}
+.add-cardimg1 {
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.13)),
+    url("../../assets/images/ecoTips@3x.png");
+}
+.add-cards h2 {
+  color: #ffffff;
+  margin-bottom: 35px;
+  font-size: 1.7em;
+  height: 96px;
+}
+.add-cardimg2 {
+  background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.13)),
+    url("../../assets/images/inviteJoin@3x.png");
+}
+.btn-secondary,
+.btn-secondary:hover {
+  background-color: #00b2aa;
+  border: 0px;
+  border-radius: 7px;
+  letter-spacing: 1px;
+  padding: 7px 25px;
+}
+.horizontal-scroll {
+  overflow-x: auto;
+  -ms-overflow-style: none;
+  overflow: -moz-scrollbars-none;
+}
+.horizontal-scroll::-webkit-scrollbar {
+  display: none;
+}
+
+.card {
+  border-radius: 0.75rem;
+}
+
+.row {
+  margin-bottom: 10px;
+}
