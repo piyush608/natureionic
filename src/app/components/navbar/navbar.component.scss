@@ -27,6 +27,7 @@
 }
 .search input {
   outline: none;
+  width: 100%;
 }
 input[type="search"] {
   border: 0px;
@@ -39,12 +40,13 @@ input[type="search"] {
   -webkit-box-sizing: content-box;
   -webkit-appearance: textfield;
   font-size: 0.8em;
-  font-weight: 200;
+  font-weight: 300;
   padding: 0px 55px;
   background-position-y: 9px;
   background-position-x: 25px;
   height: calc(1.5em + 0.75rem + 9px);
   box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+  width: 138px !important;
 }
 
 input[type="search"]::placeholder {
