@@ -1,0 +1,260 @@
+.background-property {
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+.container-padding {
+  padding-top: 70px;
+}
+.profile-img {
+  width: 130px;
+  height: 130px;
+  margin-bottom: 55px;
+  border-radius: 100%;
+  position: relative;
+  border: 7px solid #ffffff;
+  background: url("https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3NjYzMzE1MV5BMl5BanBnXkFtZTgwNTA4NDY4OTE@._V1_UX172_CR0,0,172,256_AL_.jpg");
+}
+.profile-img:before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  top: -14px;
+  left: -14px;
+  bottom: 2px;
+  // border: 4px solid #ff6969;
+  border-radius: 100%;
+  background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
+  width: 144px;
+  height: 144px;
+}
+.profileimg-row {
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+  border-radius: 11px;
+}
+.vertical-center {
+  display: grid;
+  align-content: center;
+}
+.level-col h1 {
+  font-size: 1.1em;
+  color: #00b2aa;
+}
+.level-col p,
+.bean-col p {
+  font-size: 0.9em;
+  color: #868686;
+}
+.level-col div,
+.bean-col div {
+  padding: 10px 25px;
+}
+.bean-col img {
+  width: 40px;
+}
+.btn-primary:focus,
+.btn-secondary:focus {
+  box-shadow: none;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-secondary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}
+.btn-primary {
+  border-radius: 20px;
+  font-size: 0.8em;
+  background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
+  border: 0px;
+}
+.follow-button {
+  padding: 0px 70px;
+  height: 36px;
+  letter-spacing: 1px;
+  font-size: 0.9em;
+  font-family: "proxima-regular";
+  margin-left: 35px;
+}
+.profile-info {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+.profile-info .d-flex {
+  margin-bottom: 20px;
+}
+.profile-info h1 {
+  font-size: 1.8em;
+  text-transform: capitalize;
+  color: rgb(72, 72, 72);
+}
+.profile-info p {
+  font-size: 0.9em;
+  line-height: 20px;
+  color: rgb(72, 72, 72);
+}
+.follower-locationlist li {
+  margin-right: 40px;
+}
+.follower-locationlist li,
+.preference-list li {
+  display: inline-block;
+}
+.preference-list li {
+  margin-right: 20px;
+}
+.preference-list li h2 {
+  font-size: 0.7em;
+  color: #b2b2b2;
+  /* font-family: "proxima-regular"; */
+  text-align: center;
+}
+.follower-locationlist h2 {
+  font-size: 0.9em;
+  color: #868686;
+  font-family: "proxima-regular";
+}
+.follower-locationlist li img {
+  width: 13px;
+  margin-top: -5px;
+}
+.follower-locationlist li span {
+  margin-right: 10px;
+}
+.preferences-div h2 {
+  font-size: 1.2em;
+  color: rgb(72, 72, 72);
+}
+.profile-subnav {
+  margin-top: 70px;
+  padding: 22px;
+}
+.profile-subnav .nav-item .nav-link {
+  color: #00b2aa;
+  font-size: 1em;
+  font-family: "proxima-regular";
+}
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:not(:disabled):not(.disabled):active {
+  background-color: #00b2aa;
+  border: 0px;
+  border-radius: 20px;
+  letter-spacing: 1px;
+  padding: 7px 34px;
+}
+.preferences-imgdiv {
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.preferences-imgdiv img {
+  display: block;
+  width: 25px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* recipe card */
+.recipe-row {
+  margin-top: 60px;
+  padding-bottom: 70px;
+}
+.recipe-card {
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+  /* width:430px; */
+  border-radius: 20px;
+  margin-right: 15px;
+  margin-bottom: 40px;
+}
+.recipe-image {
+  width: 130px;
+  height: 140px;
+  border-radius: 15px;
+}
+.recipe-img1 {
+  background: url("https://images.unsplash.com/photo-1543339308-43e59d6b73a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.recipe-img2 {
+  background: url("https://images.unsplash.com/photo-1511609019130-f415a74b3e3b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.recipe-img3 {
+  background: url("https://images.unsplash.com/photo-1530554764233-e79e16c91d08?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.recipe-img4 {
+  background: url("https://images.unsplash.com/photo-1505576399279-565b52d4ac71?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.recipe-info {
+  width: calc(100% - 130px);
+  padding-left: 20px;
+  padding-right: 30px;
+  padding-top: 13px;
+}
+.recipe-info h3 {
+  font-size: 0.9em;
+  font-family: "proxima-regular";
+  line-height: 21px;
+  height: 47px;
+}
+.recipe-uploaderimg {
+  width: 23px;
+  height: 23px;
+  border-radius: 50%;
+}
+.recipe-uploaderimg1 {
+  background: url("https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb");
+}
+.recipe-uploaderimg2 {
+  background: url("https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3NjYzMzE1MV5BMl5BanBnXkFtZTgwNTA4NDY4OTE@._V1_UX172_CR0,0,172,256_AL_.jpg");
+}
+.recipe-uploaderimg3 {
+  background: url("https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?h=350&auto=compress&cs=tinysrgb");
+}
+.recipe-uploaderimg4 {
+  background: url("https://pbs.twimg.com/profile_images/1079706442763067392/wuaeGZnN.jpg");
+}
+.recipe-uploadergrid {
+  display: grid;
+  grid-template-columns: 0.85fr 4fr;
+  align-items: center;
+}
+.recipe-uploadername h2 {
+  font-size: 0.8em;
+  color: #b2b2b2;
+  font-family: "proxima-regular";
+}
+.recipe-category {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1.5fr 4fr;
+  margin-bottom: 10px;
+}
+.recipe-category .btn {
+  padding: 2px 10px;
+  letter-spacing: normal;
+  font-size: 0.6em;
+  font-family: "proxima-regular";
+}
+.recipe-category p {
+  text-align: right;
+  font-size: 0.8em;
+}
+.bookmark-div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e3e3e3;
+  display: grid;
+  align-items: center;
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+.bookmark-div img {
+  width: 14px;
+  display: block;
+}

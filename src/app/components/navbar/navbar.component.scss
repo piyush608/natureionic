@@ -68,3 +68,13 @@ input[type="search"]:focus {
 .nav-link {
   font-size: 0.9em;
 }
+
+.notification-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
