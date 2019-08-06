@@ -24,9 +24,34 @@
     <!-- add to homescreen for ios -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#1976d2" />
+    <style>
+      @font-face {
+        font-family: "proxima";
+        src: url("./assets/fonts/proxima-nova-bold.ttf");
+      }
+
+      @font-face {
+        font-family: "proxima-regular";
+        src: url("./assets/fonts/proxima-nova-regular.ttf");
+      }
+
+      * {
+        font-family: "proxima", sans-serif;
+        color: rgb(72, 72, 72);
+      }
+
+      p {
+        font-family: "proxima-regular";
+      }
+    </style>
   </head>
 
   <body>
     <app-root></app-root>
+    <noscript
+      >Please enable JavaScript to continue using this application.</noscript
+    >
   </body>
 </html>

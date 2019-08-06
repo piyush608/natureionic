@@ -3,55 +3,6 @@
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
-.navbar-brand {
-  margin-right: 0.9rem;
-}
-.navbar-brand img {
-  width: 40px;
-  height: 40px;
-}
-.user-img {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  background: url("https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?h=350&auto=compress&cs=tinysrgb");
-}
-.search {
-  padding: 0px;
-  margin-top: 2px;
-}
-.search input {
-  outline: none;
-}
-input[type="search"] {
-  border: 0px;
-  border-radius: 46px;
-  background: url("../../assets/images/search.svg") no-repeat;
-  background-size: 20px 20px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-box-sizing: content-box;
-  -webkit-appearance: textfield;
-  font-size: 0.8em;
-  font-weight: 200;
-  padding: 0px 55px;
-  background-position-y: 9px;
-  background-position-x: 25px;
-  height: calc(1.5em + 0.75rem + 9px);
-  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
-}
-
-input[type="search"]::placeholder {
-  color: #b2b2b2;
-}
-input::-webkit-search-decoration,
-input::-webkit-search-cancel-button {
-  display: none;
-}
-input[type="search"]:focus {
-  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
-}
 .more-col {
   display: grid;
   align-content: center;
@@ -59,20 +10,6 @@ input[type="search"]:focus {
 .more-btn {
   width: 45px;
   height: 45px;
-}
-.nav-item {
-  margin-right: 45px;
-}
-.nav-item:last-child {
-  margin-right: 0px;
-}
-.nav-link {
-  font-size: 0.9em;
-}
-.menu-icon {
-  width: 16px;
-  height: 16px;
-  margin-top: 5px;
 }
 .main-heading {
   font-size: 1.2em;
@@ -96,19 +33,19 @@ sup {
 }
 .likeimg1 {
   background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.13)),
-    url("../../assets/images/exploreBtn@3x.png");
+    url("../../../assets/images/exploreBtn@3x.png");
 }
 .likeimg2 {
   background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.13)),
-    url("../../assets/images/AskSomethingBtn@3x.png");
+    url("../../../assets/images/AskSomethingBtn@3x.png");
 }
 .likeimg3 {
   background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.13)),
-    url("../../assets/images/GetInspirationBtn@3x.png");
+    url("../../../assets/images/GetInspirationBtn@3x.png");
 }
 .likeimg4 {
   background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.13)),
-    url("../../assets/images/addAListBtn@3x.png");
+    url("../../../assets/images/addAListBtn@3x.png");
 }
 .feel-likeheading {
   font-size: 1.5em;
@@ -278,7 +215,7 @@ sup {
   margin-bottom: 20px;
 }
 .naturehub-card1 {
-  background: url("../../assets/images/learnMoreNH@3x.png");
+  background: url("../../../assets/images/learnMoreNH@3x.png");
   padding-right: 90px;
   justify-content: flex-end;
 }
@@ -288,7 +225,7 @@ sup {
   font-size: 2em;
 }
 .naturehub-card2 {
-  background: url("../../assets/images/youMeCommunity@3x.png");
+  background: url("../../../assets/images/youMeCommunity@3x.png");
   justify-content: center;
 }
 .btn-success,
@@ -391,7 +328,7 @@ sup {
 }
 .add-cardimg1 {
   background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.13)),
-    url("../../assets/images/ecoTips@3x.png");
+    url("../../../assets/images/ecoTips@3x.png");
 }
 .add-cards h2 {
   color: #ffffff;
@@ -401,7 +338,7 @@ sup {
 }
 .add-cardimg2 {
   background: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.13)),
-    url("../../assets/images/inviteJoin@3x.png");
+    url("../../../assets/images/inviteJoin@3x.png");
 }
 .btn-secondary,
 .btn-secondary:hover {
