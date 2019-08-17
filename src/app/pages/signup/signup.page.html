@@ -1,4 +1,4 @@
-<ion-content fullscreen>
+<ion-content>
   <nav class="navbar">
     <a class="navbar-brand" href="#">
       <img
@@ -8,30 +8,23 @@
       />
     </a>
     <button type="button" class="btn button-primary btn-sm">
-      <a class="account" href="/signup">Don't have an accoount? Sign up</a>
+      <a class="account" href="/login">Already have an accoount? Sign in</a>
     </button>
   </nav>
   <div class="container">
     <section class="main-content">
       <div class="col-12">
         <div class="sign-card">
-          <h4 class="heading">Sign in to NatureHub</h4>
+          <h4 class="heading">Welcome to NatureHub</h4>
           <div class="signup-form card">
             <form action="#" method="post">
-              <div class="row">
-                <div class="col-12">
-                  <p class="text-right">
-                    <a href="#" class="forget">Forgot passwords?</a>
-                  </p>
-                </div>
-              </div>
               <div class="form-group">
                 <label class="email">Email</label>
                 <input
                   type="email"
                   class="form-control"
                   name="email"
-                  placeholder="enter email"
+                  placeholder="Email Address"
                   required="required"
                 />
               </div>
@@ -52,14 +45,24 @@
               </div>
               <div class="form-group">
                 <button type="submit" class="btn btn-primary btn-block btn-sm">
-                  Sign in
+                  Sign up
                 </button>
               </div>
             </form>
           </div>
         </div>
+
+        <div class="row">
+          <div class="col-12 sign-up ">
+            <p class="social-login">
+              We don't use Facebook or Google login, because keeping your
+              private data secure is a top priority.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
+
     <section class="footer">
       <div class="row">
         <div class="col-12 text-center">
