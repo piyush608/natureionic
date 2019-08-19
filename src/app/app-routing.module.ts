@@ -1,15 +1,39 @@
 import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { AuthGuardService as AuthGuard } from "./services/auth-guard.service";
 
 const routes: Routes = [
-  { path: "", redirectTo: "home", pathMatch: "full" },
-  { path: "home", loadChildren: "./pages/home/home.module#HomePageModule" },
-  { path: 'community', loadChildren: './pages/community/community.module#CommunityPageModule' },
-  { path: 'inspiration', loadChildren: './pages/inspiration/inspiration.module#InspirationPageModule' },
-  { path: 'profile', loadChildren: './pages/profile/profile.module#ProfilePageModule' },
-  { path: 'login', loadChildren: './pages/login/login.module#LoginPageModule' },
-  { path: 'signup', loadChildren: './pages/signup/signup.module#SignupPageModule' },
-  { path: 'forgot', loadChildren: './pages/forgot/forgot.module#ForgotPageModule' }
+  { path: "", redirectTo: "/home", pathMatch: "full" },
+  {
+    path: "home",
+    loadChildren: "./pages/home/home.module#HomePageModule",
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "community",
+    loadChildren: "./pages/community/community.module#CommunityPageModule",
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "inspiration",
+    loadChildren:
+      "./pages/inspiration/inspiration.module#InspirationPageModule",
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "profile",
+    loadChildren: "./pages/profile/profile.module#ProfilePageModule",
+    canActivate: [AuthGuard]
+  },
+  { path: "login", loadChildren: "./pages/login/login.module#LoginPageModule" },
+  {
+    path: "signup",
+    loadChildren: "./pages/signup/signup.module#SignupPageModule"
+  },
+  {
+    path: "forgot",
+    loadChildren: "./pages/forgot/forgot.module#ForgotPageModule"
+  }
 ];
 
 @NgModule({
