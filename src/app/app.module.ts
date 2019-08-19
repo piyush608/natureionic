@@ -13,6 +13,7 @@ import { environment } from "../environments/environment";
 
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { TokenInterceptor } from "./interceptors/token.interceptor";
+import { NavbarComponentModule } from "./components/navbar/navbar.component.module";
 
 @NgModule({
   declarations: [AppComponent],
@@ -22,6 +23,7 @@ import { TokenInterceptor } from "./interceptors/token.interceptor";
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
+    NavbarComponentModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production
     })

@@ -1,8 +1,8 @@
 {
   "name": "naturehub-app",
   "version": "0.0.1",
-  "author": "Ionic Framework",
-  "homepage": "https://ionicframework.com/",
+  "author": "NatureHub LLC.",
+  "homepage": "https://naturehub.com/",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",

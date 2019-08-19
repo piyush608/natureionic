@@ -6,7 +6,6 @@ import { Routes, RouterModule } from "@angular/router";
 import { IonicModule } from "@ionic/angular";
 
 import { CommunityPage } from "./community.page";
-import { NavbarComponentModule } from "src/app/components/navbar/navbar.component.module";
 
 const routes: Routes = [
   {
@@ -20,7 +19,6 @@ const routes: Routes = [
     CommonModule,
     FormsModule,
     IonicModule,
-    NavbarComponentModule,
     RouterModule.forChild(routes)
   ],
   declarations: [CommunityPage]
