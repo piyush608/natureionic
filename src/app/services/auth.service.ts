@@ -47,6 +47,10 @@ export class AuthService {
     return this.http.post(environment.BASE_URL + "/login", user);
   }
 
+  signup(user) {
+    return this.http.post(environment.BASE_URL + "/register", user);
+  }
+
   logout() {
     this.deleteToken();
     return true;

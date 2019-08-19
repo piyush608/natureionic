@@ -12,7 +12,6 @@ import { PlatformService } from "src/app/services/platform.service";
 })
 export class LoginPage implements OnInit {
   public user = new User();
-  private isApp: boolean;
 
   constructor(
     private angAuth: AuthService,

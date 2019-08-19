@@ -1,4 +1,6 @@
 <ion-app>
   <app-navbar *ngIf="isLoggedIn === true"></app-navbar>
-  <ion-router-outlet style="margin-top: 70px;"></ion-router-outlet>
+  <ion-router-outlet
+    [style.margin-top]="isLoggedIn ? '70px' : '0px'"
+  ></ion-router-outlet>
 </ion-app>
