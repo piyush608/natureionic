@@ -12,6 +12,7 @@ import { AuthService } from "./services/auth.service";
 })
 export class AppComponent {
   public isLoggedIn: boolean = false;
+  public isApp: boolean;
 
   constructor(
     private platform: Platform,
