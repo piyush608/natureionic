@@ -34,7 +34,17 @@ const routes: Routes = [
     path: "forgot",
     loadChildren: "./pages/forgot/forgot.module#ForgotPageModule"
   },
-  { path: 'edit-profile', loadChildren: './pages/edit-profile/edit-profile.module#EditProfilePageModule' }
+  {
+    path: "edit-profile",
+    loadChildren:
+      "./pages/edit-profile/edit-profile.module#EditProfilePageModule",
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "connection",
+    loadChildren: "./pages/connection/connection.module#ConnectionPageModule",
+    canActivate: [AuthGuard]
+  }
 ];
 
 @NgModule({

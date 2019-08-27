@@ -1,0 +1,146 @@
+.container-padding {
+  padding-top: 70px;
+}
+.background-property {
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+.list-group li {
+  cursor: pointer;
+}
+.navbar-brand {
+  margin-right: 0.9rem;
+}
+.navbar-brand img {
+  width: 40px;
+  height: 40px;
+}
+.user-img {
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  background: url("https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?h=350&auto=compress&cs=tinysrgb");
+}
+.search {
+  padding: 0px;
+  margin-top: 2px;
+  width: 100%;
+}
+.search input {
+  outline: none;
+}
+input[type="search"] {
+  border: 0px;
+  border-radius: 46px;
+  background: url("../../../assets/images/search.svg") no-repeat;
+  background-size: 20px 20px;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: textfield;
+  font-size: 0.8em;
+  font-weight: 300;
+  padding: 0px 55px;
+  background-position-y: 9px;
+  background-position-x: 25px;
+  height: calc(1.5em + 0.75rem + 9px);
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+  width: 138px !important;
+}
+
+input[type="search"]::placeholder {
+  color: #b2b2b2;
+  font-family: "proxima-regular";
+}
+input::-webkit-search-decoration,
+input::-webkit-search-cancel-button {
+  display: none;
+}
+input[type="search"]:focus {
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+}
+.nav-item {
+  margin-right: 45px;
+  display: grid;
+  align-content: center;
+}
+.nav-item:last-child {
+  margin-right: 0px;
+}
+.nav-link {
+  font-size: 0.9em;
+  font-family: "proxima-regular";
+}
+.menu-icon {
+  width: 16px;
+  height: 16px;
+  margin-top: 5px;
+}
+/* notification-dot */
+.notification-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
+  position: absolute;
+  top: 20px;
+  right: 50px;
+}
+.btn-primary:focus {
+  box-shadow: none;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}
+.btn-primary {
+  border-radius: 20px;
+  font-size: 0.8em;
+  background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
+  border: 0px;
+}
+.follower-side-collist li {
+  font-size: 0.9em;
+  font-family: "proxima-regular";
+}
+.follower-side-collist .fa {
+  font-size: 12px;
+}
+.active-tab {
+  color: #00b2aa;
+}
+.follower-img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.follower-img1 {
+  background: url("https://randomuser.me/api/portraits/men/86.jpg");
+}
+.follower-grid {
+  display: grid;
+  grid-template-columns: 1fr 5fr 2fr;
+  align-items: center;
+}
+.follower-grid h2 {
+  font-size: 1.1em;
+  font-family: "proxima-regular";
+  letter-spacing: 1px;
+}
+.follower-search {
+  border-top: 0;
+  border-left: 0;
+  border-right: 0;
+  border-radius: 0;
+  font-size: 0.9em;
+  font-family: "proxima-regular";
+}
+.form-control:focus {
+  outline: none;
+  box-shadow: none;
+  border-color: #ced4da;
+}
+.following-list {
+  width: 90%;
+}

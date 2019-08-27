@@ -14,4 +14,8 @@ export class ProfilePage implements OnInit {
   openEditProfile() {
     this.router.navigateByUrl("/edit-profile");
   }
+
+  openFollowers() {
+    this.router.navigateByUrl("/connection");
+  }
 }
