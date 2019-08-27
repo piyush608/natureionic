@@ -44,6 +44,11 @@ const routes: Routes = [
     path: "connection",
     loadChildren: "./pages/connection/connection.module#ConnectionPageModule",
     canActivate: [AuthGuard]
+  },
+  {
+    path: "user/:_id",
+    loadChildren: "./pages/user/user.module#UserPageModule",
+    canActivate: [AuthGuard]
   }
 ];
 
