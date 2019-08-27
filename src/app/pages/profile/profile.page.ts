@@ -7,6 +7,8 @@ import { Router } from "@angular/router";
   styleUrls: ["./profile.page.scss"]
 })
 export class ProfilePage implements OnInit {
+  public tab: string = "collection";
+
   constructor(private router: Router) {}
 
   ngOnInit() {}
@@ -17,5 +19,9 @@ export class ProfilePage implements OnInit {
 
   openFollowers() {
     this.router.navigateByUrl("/connection");
+  }
+
+  changeTab(value) {
+    this.tab = value;
   }
 }
