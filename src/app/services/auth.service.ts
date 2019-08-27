@@ -34,7 +34,7 @@ export class AuthService {
   }
 
   isLoggedIn() {
-    if (!this.getToken()) {
+    if (!this.getToken() || this.getToken() === "undefined") {
       this.loggedIn.next(false);
       return this.loggedIn.asObservable();
     } else {

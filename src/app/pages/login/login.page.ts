@@ -33,7 +33,8 @@ export class LoginPage implements OnInit {
   login() {
     this.angAuth.login(this.user).subscribe(
       res => {
-        this.angAuth.setToken(res["token"].token);
+        console.log(res);
+        this.angAuth.setToken(res["token"]);
         this.angAuth.loggedIn.next(true);
         this.router.navigateByUrl("/home");
       },

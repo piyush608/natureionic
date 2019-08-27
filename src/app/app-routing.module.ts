@@ -33,7 +33,8 @@ const routes: Routes = [
   {
     path: "forgot",
     loadChildren: "./pages/forgot/forgot.module#ForgotPageModule"
-  }
+  },
+  { path: 'edit-profile', loadChildren: './pages/edit-profile/edit-profile.module#EditProfilePageModule' }
 ];
 
 @NgModule({

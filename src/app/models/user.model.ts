@@ -39,7 +39,6 @@ export class User {
     this.isSubscribed = true;
     this.onboarding = false;
     this.verified = false;
-    this.lastLoggedIn = [];
     this.likedBusinesses = [];
     this.likedRecipes = [];
     this.likedProducts = [];

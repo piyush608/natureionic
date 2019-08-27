@@ -33,7 +33,7 @@ export class SignupPage implements OnInit {
   signup() {
     this.angAuth.signup(this.user).subscribe(
       res => {
-        this.angAuth.setToken(res["token"].token);
+        this.angAuth.setToken(res["token"]);
         this.angAuth.loggedIn.next(true);
         this.router.navigateByUrl("/home");
       },
