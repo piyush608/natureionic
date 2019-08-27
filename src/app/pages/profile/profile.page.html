@@ -8,26 +8,44 @@
               <div class="col-4">
                 <div
                   class="profile-img background-property ml-auto mr-auto"
-                  (click)="openEditProfile()"
                 ></div>
                 <div class="mt-4 profileimg-row">
                   <div class="row">
-                    <div
-                      class="col-6 border-right vertical-center text-center bean-col"
-                    >
+                    <div class="col-3 vertical-center text-center bean-col">
                       <div>
                         <img
-                          src="./../../../assets/images/level01.png"
+                          src="./../../../assets/images/coffee-bean.svg"
                           alt=""
                         />
                         <p class="mb-0">Bean</p>
                       </div>
                     </div>
-                    <div class="col-6 vertical-center level-col text-center">
-                      <div>
-                        <h1>2,076,452</h1>
-                        <p class="mb-0">Level 20</p>
+                    <div
+                      class="col-6 level-col vertical-center text-center pl-0 pr-0"
+                    >
+                      <h1>
+                        <span class="points-obtained">2,076</span> /
+                        <span class="total-points">3,000</span>
+                      </h1>
+
+                      <div class="progress">
+                        <div
+                          class="progress-bar bg-success"
+                          role="progressbar"
+                          style="width: 25%"
+                          aria-valuenow="25"
+                          aria-valuemin="0"
+                          aria-valuemax="100"
+                        ></div>
                       </div>
+                      <p class="mb-0 mt-1">Level 20</p>
+                    </div>
+                    <div class="col-3 vertical-center">
+                      <img
+                        src="./../../../assets/images/question.svg"
+                        alt=""
+                        class="question-img"
+                      />
                     </div>
                   </div>
                 </div>
@@ -35,8 +53,11 @@
               <div class="col-8 profile-info">
                 <div class="d-flex">
                   <h1 class="mb-0">Clark lee</h1>
-                  <button type="button" class="btn btn-primary follow-button">
-                    Follow
+                  <button
+                    type="button"
+                    class="btn btn-outline-primary edit-button"
+                  >
+                    Edit My Page
                   </button>
                 </div>
                 <ul class="follower-locationlist pl-0">
@@ -48,10 +69,10 @@
                       >Tampa, FL
                     </h2>
                   </li>
-                  <li (click)="openFollowers()">
+                  <li>
                     <h2><span>354</span>Followers</h2>
                   </li>
-                  <li (click)="openFollowers()">
+                  <li>
                     <h2><span>200</span>Following</h2>
                   </li>
                 </ul>
@@ -66,25 +87,19 @@
                   <ul class="pl-0 preference-list">
                     <li>
                       <div class=" vertical-center preferences-imgdiv">
-                        <img
-                          src="./../../../assets/images/value_vegan_green.svg"
-                        />
+                        <img src="./../../../assets/images/grocery.svg" />
                       </div>
                       <h2>Vegetaria</h2>
                     </li>
                     <li>
                       <div class=" vertical-center preferences-imgdiv">
-                        <img
-                          src="./../../../assets/images/value_glutenFree_green.svg"
-                        />
+                        <img src="./../../../assets/images/grocery.svg" />
                       </div>
                       <h2>Gluten Free</h2>
                     </li>
                     <li>
                       <div class=" vertical-center preferences-imgdiv">
-                        <img
-                          src="./../../../assets/images/value_fairTrade_green.svg"
-                        />
+                        <img src="./../../../assets/images/grocery.svg" />
                       </div>
                       <h2>Fair Trade</h2>
                     </li>
@@ -103,9 +118,15 @@
             <li class="nav-item">
               <a class="nav-link" href="#"
                 ><button type="button" class="btn btn-secondary">
-                  Recipes
+                  My Collection
                 </button></a
               >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">My Groups</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Recipes</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#">Recommended Products</a>
@@ -120,232 +141,209 @@
         </div>
       </div>
     </div>
-    <div class="row recipe-row">
-      <div class="col-11 m-auto pl-0 pr-0">
-        <div class="row">
-          <div class="col-4">
-            <div class="card border-0 recipe-card">
-              <div class="d-flex">
-                <div class="recipe-image recipe-img1 background-property">
-                  <div class="bookmark-div">
-                    <img src="./../../../assets/images/bookmark.svg" />
+    <div class="row">
+      <div class="col-11 m-auto">
+        <div class="row collection-row">
+          <div class="col-3">
+            <ul class="list-group list-group-flush follower-side-collist">
+              <li class="list-group-item pl-0 active-tab">
+                Saved Businesses
+                <span class="float-right active-tab"
+                  ><i class="fa fa-chevron-right" aria-hidden="true"></i
+                ></span>
+              </li>
+              <li class="list-group-item pl-0">
+                Saved Recipes
+                <span class="float-right"
+                  ><i class="fa fa-chevron-right" aria-hidden="true"></i
+                ></span>
+              </li>
+              <li class="list-group-item pl-0">
+                Saved Alternative Products
+                <span class="float-right"
+                  ><i class="fa fa-chevron-right" aria-hidden="true"></i
+                ></span>
+              </li>
+              <li class="list-group-item pl-0">
+                Saved Articles & Stories
+                <span class="float-right"
+                  ><i class="fa fa-chevron-right" aria-hidden="true"></i
+                ></span>
+              </li>
+              <li class="list-group-item pl-0 border-bottom">
+                Saved Videos<span class="float-right "
+                  ><i class="fa fa-chevron-right" aria-hidden="true"></i
+                ></span>
+              </li>
+            </ul>
+          </div>
+          <div class="col-9">
+            <ul class="category-list horizontal-scroll w-100 p-1">
+              <li>
+                <button
+                  type="button"
+                  class="btn btn-primary selected-category-button"
+                >
+                  Grocery
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">Cafe</button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">Resturant</button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">Health</button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">
+                  Artisan Produce
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">
+                  Bath & Beauty
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">Resturant</button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">Health</button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">
+                  Bath & Beauty
+                </button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">Resturant</button>
+              </li>
+              <li>
+                <button type="button" class="btn btn-info">Health</button>
+              </li>
+            </ul>
+            <div class="row">
+              <div class="col-4">
+                <div class="card popular-placescard border-0">
+                  <div
+                    class="card-header border-0 p-0 popular-img1 background-property"
+                  >
+                    <div class="bookmark-div">
+                      <img src="./../../../assets/images/bookmark.svg" />
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <button type="button" class="btn btn-primary">Cafe</button>
+                    <h3>Bike & Bite Organic Bean</h3>
+                    <p class="mb-0">
+                      <img
+                        src="./../../../assets/images/maps-and-flags.svg"
+                      />Orlando, FL
+                    </p>
                   </div>
                 </div>
-                <div class="recipe-info">
-                  <div class="recipe-category">
-                    <button type="button" class="btn btn-primary mb-0">
-                      Salad
-                    </button>
-                    <p class="mb-0">245 Likes</p>
-                  </div>
-                  <h3>Easy Breakfast Organic Beets Veg Toss Salad M...</h3>
-                  <div class="recipe-uploadergrid">
-                    <div
-                      class="recipe-uploaderimg recipe-uploaderimg1 background-property"
-                    ></div>
-                    <div class="recipe-uploadername">
-                      <h2 class="mb-0">Dulcineia Dias</h2>
+              </div>
+              <div class="col-4">
+                <div class="card popular-placescard border-0">
+                  <div
+                    class="card-header border-0 p-0 popular-img1 background-property"
+                  >
+                    <div class="bookmark-div">
+                      <img src="./../../../assets/images/bookmark.svg" />
                     </div>
+                  </div>
+                  <div class="card-body">
+                    <button type="button" class="btn btn-primary">Cafe</button>
+                    <h3>Bike & Bite Organic Bean</h3>
+                    <p class="mb-0">
+                      <img
+                        src="./../../../assets/images/maps-and-flags.svg"
+                      />Orlando, FL
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="card popular-placescard border-0">
+                  <div
+                    class="card-header border-0 p-0 popular-img1 background-property"
+                  >
+                    <div class="bookmark-div">
+                      <img src="./../../../assets/images/bookmark.svg" />
+                    </div>
+                  </div>
+                  <div class="card-body">
+                    <button type="button" class="btn btn-primary">Cafe</button>
+                    <h3>Bike & Bite Organic Bean</h3>
+                    <p class="mb-0">
+                      <img
+                        src="./../../../assets/images/maps-and-flags.svg"
+                      />Orlando, FL
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
-          <div class="col-4">
-            <div class="card border-0 recipe-card">
-              <div class="d-flex">
-                <div class="recipe-image recipe-img2 background-property">
-                  <div class="bookmark-div">
-                    <img src="./../../../assets/images/bookmark.svg" />
-                  </div>
-                </div>
-                <div class="recipe-info">
-                  <div class="recipe-category">
-                    <button type="button" class="btn btn-primary mb-0">
-                      Salad
-                    </button>
-                    <p class="mb-0">245 Likes</p>
-                  </div>
-                  <h3>Easy Breakfast Organic Beets Veg Toss Salad M...</h3>
-                  <div class="recipe-uploadergrid">
-                    <div
-                      class="recipe-uploaderimg recipe-uploaderimg2 background-property"
-                    ></div>
-                    <div class="recipe-uploadername">
-                      <h2 class="mb-0">Dulcineia Dias</h2>
+            <div class="row">
+              <div class="col-4">
+                <div class="card popular-placescard border-0">
+                  <div
+                    class="card-header border-0 p-0 popular-img1 background-property"
+                  >
+                    <div class="bookmark-div">
+                      <img src="./../../../assets/images/bookmark.svg" />
                     </div>
+                  </div>
+                  <div class="card-body">
+                    <button type="button" class="btn btn-primary">Cafe</button>
+                    <h3>Bike & Bite Organic Bean</h3>
+                    <p class="mb-0">
+                      <img
+                        src="./../../../assets/images/maps-and-flags.svg"
+                      />Orlando, FL
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="card border-0 recipe-card">
-              <div class="d-flex">
-                <div class="recipe-image recipe-img3 background-property">
-                  <div class="bookmark-div">
-                    <img src="./../../../assets/images/bookmark.svg" />
-                  </div>
-                </div>
-                <div class="recipe-info">
-                  <div class="recipe-category">
-                    <button type="button" class="btn btn-primary mb-0">
-                      Salad
-                    </button>
-                    <p class="mb-0">245 Likes</p>
-                  </div>
-                  <h3>Easy Breakfast Organic Beets Veg Toss Salad M...</h3>
-                  <div class="recipe-uploadergrid">
-                    <div
-                      class="recipe-uploaderimg recipe-uploaderimg3 background-property"
-                    ></div>
-                    <div class="recipe-uploadername">
-                      <h2 class="mb-0">Dulcineia Dias</h2>
+              <div class="col-4">
+                <div class="card popular-placescard border-0">
+                  <div
+                    class="card-header border-0 p-0 popular-img1 background-property"
+                  >
+                    <div class="bookmark-div">
+                      <img src="./../../../assets/images/bookmark.svg" />
                     </div>
+                  </div>
+                  <div class="card-body">
+                    <button type="button" class="btn btn-primary">Cafe</button>
+                    <h3>Bike & Bite Organic Bean</h3>
+                    <p class="mb-0">
+                      <img
+                        src="./../../../assets/images/maps-and-flags.svg"
+                      />Orlando, FL
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-4">
-            <div class="card border-0 recipe-card">
-              <div class="d-flex">
-                <div class="recipe-image recipe-img1 background-property">
-                  <div class="bookmark-div">
-                    <img src="./../../../assets/images/bookmark.svg" />
-                  </div>
-                </div>
-                <div class="recipe-info">
-                  <div class="recipe-category">
-                    <button type="button" class="btn btn-primary mb-0">
-                      Salad
-                    </button>
-                    <p class="mb-0">245 Likes</p>
-                  </div>
-                  <h3>Coconut Mint Fresh</h3>
-                  <div class="recipe-uploadergrid">
-                    <div
-                      class="recipe-uploaderimg recipe-uploaderimg1 background-property"
-                    ></div>
-                    <div class="recipe-uploadername">
-                      <h2 class="mb-0">Dulcineia Dias</h2>
+              <div class="col-4">
+                <div class="card popular-placescard border-0">
+                  <div
+                    class="card-header border-0 p-0 popular-img1 background-property"
+                  >
+                    <div class="bookmark-div">
+                      <img src="./../../../assets/images/bookmark.svg" />
                     </div>
                   </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="card border-0 recipe-card">
-              <div class="d-flex">
-                <div class="recipe-image recipe-img2 background-property">
-                  <div class="bookmark-div">
-                    <img src="./../../../assets/images/bookmark.svg" />
-                  </div>
-                </div>
-                <div class="recipe-info">
-                  <div class="recipe-category">
-                    <button type="button" class="btn btn-primary mb-0">
-                      Salad
-                    </button>
-                    <p class="mb-0">245 Likes</p>
-                  </div>
-                  <h3>Coconut Mint Fresh</h3>
-                  <div class="recipe-uploadergrid">
-                    <div
-                      class="recipe-uploaderimg recipe-uploaderimg2 background-property"
-                    ></div>
-                    <div class="recipe-uploadername">
-                      <h2 class="mb-0">Dulcineia Dias</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="card border-0 recipe-card">
-              <div class="d-flex">
-                <div class="recipe-image recipe-img3 background-property">
-                  <div class="bookmark-div">
-                    <img src="./../../../assets/images/bookmark.svg" />
-                  </div>
-                </div>
-                <div class="recipe-info">
-                  <div class="recipe-category">
-                    <button type="button" class="btn btn-primary mb-0">
-                      Salad
-                    </button>
-                    <p class="mb-0">245 Likes</p>
-                  </div>
-                  <h3>Coconut Mint Fresh</h3>
-                  <div class="recipe-uploadergrid">
-                    <div
-                      class="recipe-uploaderimg recipe-uploaderimg3 background-property"
-                    ></div>
-                    <div class="recipe-uploadername">
-                      <h2 class="mb-0">Dulcineia Dias</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-4">
-            <div class="card border-0 recipe-card">
-              <div class="d-flex">
-                <div class="recipe-image recipe-img1 background-property">
-                  <div class="bookmark-div">
-                    <img src="./../../../assets/images/bookmark.svg" />
-                  </div>
-                </div>
-                <div class="recipe-info">
-                  <div class="recipe-category">
-                    <button type="button" class="btn btn-primary mb-0">
-                      Salad
-                    </button>
-                    <p class="mb-0">245 Likes</p>
-                  </div>
-                  <h3>Coconut Mint Fresh</h3>
-                  <div class="recipe-uploadergrid">
-                    <div
-                      class="recipe-uploaderimg recipe-uploaderimg1 background-property"
-                    ></div>
-                    <div class="recipe-uploadername">
-                      <h2 class="mb-0">Dulcineia Dias</h2>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-4">
-            <div class="card border-0 recipe-card">
-              <div class="d-flex">
-                <div class="recipe-image recipe-img2 background-property">
-                  <div class="bookmark-div">
-                    <img src="./../../../assets/images/bookmark.svg" />
-                  </div>
-                </div>
-                <div class="recipe-info">
-                  <div class="recipe-category">
-                    <button type="button" class="btn btn-primary mb-0">
-                      Salad
-                    </button>
-                    <p class="mb-0">245 Likes</p>
-                  </div>
-                  <h3>Coconut Mint Fresh</h3>
-                  <div class="recipe-uploadergrid">
-                    <div
-                      class="recipe-uploaderimg recipe-uploaderimg2 background-property"
-                    ></div>
-                    <div class="recipe-uploadername">
-                      <h2 class="mb-0">Dulcineia Dias</h2>
-                    </div>
+                  <div class="card-body">
+                    <button type="button" class="btn btn-primary">Cafe</button>
+                    <h3>Bike & Bite Organic Bean</h3>
+                    <p class="mb-0">
+                      <img
+                        src="./../../../assets/images/maps-and-flags.svg"
+                      />Orlando, FL
+                    </p>
                   </div>
                 </div>
               </div>
