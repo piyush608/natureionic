@@ -1,0 +1,74 @@
+<div class="container">
+  <h1>Add a recipe</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="head_color">Description</h3>
+      <div>
+        <form action="" class="add_recipe">
+          <div class="recipe_input">
+            <label for="recipe_name">Name your recipe?*</label>
+            <input
+              type="text"
+              placeholder="Recipe name (0/15 words)"
+              class="form-control pl-0 input_style"
+            />
+          </div>
+          <div class="recipe_input">
+            <label for="business_category">Categories?*</label>
+            <select class="form-control pl-0 shadow_btn catg_btn"
+              >Category</select
+            >
+            <select class="form-control pl-0 shadow_btn catg_btn"
+              >Subcategory</select
+            >
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3 class="head_color">Ingredients</h3>
+      <div>
+        <form action="" class="add_recipe">
+          <div class="recipe_input">
+            <label for="recipe_ing"
+              >Tell people what ingredients should prepared?*</label
+            >
+            <input
+              type="text"
+              placeholder="Add Ingredient e.x. 1.5 tbsp olive oil"
+              class="form-control pl-0 input_style"
+            />
+          </div>
+          <a href="">Add more Ingredient</a>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3 class="head_color">Buy Ingredients</h3>
+      <div>
+        <form action="" class="add_recipe">
+          <div class="add_ing_location">
+            <label for="recipe_ing">Where to find the ingredients?</label>
+            <input
+              type="text"
+              placeholder="Type the name of the store"
+              class="form-control pl-0 input_style"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 20px;text-align: center">
+    <button
+      type="button"
+      class="submit_business"
+      data-toggle="modal"
+      data-target="#showModal"
+      (click)="handleClick()"
+      id="submitButton"
+    >
+      Continue
+    </button>
+  </div>
+</div>

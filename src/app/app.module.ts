@@ -14,9 +14,21 @@ import { environment } from "../environments/environment";
 import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { TokenInterceptor } from "./interceptors/token.interceptor";
 import { NavbarComponentModule } from "./components/navbar/navbar.component.module";
+import { AddBusinessComponent } from "./components/add-business/add-business.component";
+import { ViewBusinessComponent } from "./components/view-business/view-business.component";
+import { AddRecipeComponent } from "./components/add-recipe/add-recipe.component";
+import { AddProductComponent } from "./components/add-product/add-product.component";
+import { SuccessModalComponent } from "./components/success-modal/success-modal.component";
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [
+    AppComponent,
+    AddBusinessComponent,
+    ViewBusinessComponent,
+    AddRecipeComponent,
+    AddProductComponent,
+    SuccessModalComponent
+  ],
   entryComponents: [],
   imports: [
     BrowserModule,

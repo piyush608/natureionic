@@ -1,0 +1,89 @@
+<div class="container">
+  <h1>Add a conscious business</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="head_color">Description</h3>
+      <div>
+        <form action="" class="add_product">
+          <div class="product_input">
+            <label for="business_name">What`s the name of the product?*</label>
+            <input
+              type="text"
+              placeholder="Product name (0/15 words)"
+              class="form-control pl-0 input_style"
+            />
+          </div>
+          <div class="product_input">
+            <label for="business_category">Category?*</label>
+            <select class="form-control pl-0 shadow_btn catg_btn"
+              >Categories</select
+            >
+          </div>
+          <div class="product_input">
+            <label for="business_phone">Price: USD (optional)</label>
+            <input
+              type="number"
+              placeholder="+01"
+              class="form-control pl-0 input_style"
+            />
+          </div>
+          <div class="product_input">
+            <label for="business_email">Product Description</label>
+            <textarea
+              type="text"
+              placeholder="ABout the product(0/100 words)"
+              class="form-control pl-0 input_style"
+            ></textarea>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3 class="head_color">Company / Founder</h3>
+      <div>
+        <form action="" class="add_product">
+          <div class="product_input">
+            <input
+              type="text"
+              placeholder="Type store name to pin location on the map"
+              class="form-control pl-0 input_style"
+            />
+          </div>
+          <div class="product_input">
+            <button class="form-control pl-0 shadow_btn location_btn">
+              Use Current Location
+            </button>
+          </div>
+          <div class="product_input" style="text-align:center">
+            <a href="" class="ques_link">Don`t know how to?</a>
+          </div>
+          <div class="product_input">
+            <img
+              src="../../../assets/images/addAListBtn@3x.png"
+              alt=""
+              class="map"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3 class="head_color">Photos</h3>
+      <div>
+        <form action="" class="add_product">
+          <div class="business_photos">
+            <div class="upload_photo_wrapper">
+              <button class="btn shadow_btn upload_photo">+</button>
+              <input type="file" multiple />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div style="padding: 20px;text-align: center">
+    <button class="submit_business" (click)="presentModal()" id="submitButton">
+      Continue
+    </button>
+  </div>
+</div>

@@ -1,5 +1,9 @@
 import { NgModule } from "@angular/core";
 import { PreloadAllModules, RouterModule, Routes } from "@angular/router";
+import { AddBusinessComponent } from "./components/add-business/add-business.component";
+import { ViewBusinessComponent } from "./components/view-business/view-business.component";
+import { AddRecipeComponent } from "./components/add-recipe/add-recipe.component";
+import { AddProductComponent } from "./components/add-product/add-product.component";
 import { AuthGuardService as AuthGuard } from "./services/auth-guard.service";
 
 const routes: Routes = [
@@ -7,6 +11,26 @@ const routes: Routes = [
   {
     path: "home",
     loadChildren: "./pages/home/home.module#HomePageModule",
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "addbusiness",
+    component: AddBusinessComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "addrecipe",
+    component: AddRecipeComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "addproduct",
+    component: AddProductComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "viewbusiness",
+    component: ViewBusinessComponent,
     canActivate: [AuthGuard]
   },
   {

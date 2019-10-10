@@ -1,0 +1,69 @@
+.add_recipe {
+  border: 1px solid #b9b1b1;
+  border-radius: 10px;
+  padding: 31px;
+  height: 520px;
+}
+
+.recipe_input {
+  padding-bottom: 20px;
+}
+.input_style {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-radius: 0px;
+  border-bottom: 2px solid #e4e0e0;
+}
+.form-control:focus {
+  box-shadow: none !important;
+}
+.form-control::-webkit-input-placeholder {
+  color: #d0d0d0;
+  font-weight: lighter;
+}
+.form-control:-moz-placeholder {
+  color: #e4e0e0;
+  font-weight: lighter;
+}
+.form-control::-ms-input-placeholder {
+  color: #e4e0e0;
+  font-weight: lighter;
+}
+.head_color {
+  color: #34c3b8;
+  padding-left: 30px;
+}
+.shadow_btn {
+  border: 0px;
+  border-radius: 46px;
+  // background: url(search.svg) no-repeat;
+  background-size: 20px 20px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-box-sizing: content-box;
+  -webkit-appearance: textfield;
+  font-size: 0.8em;
+  font-weight: 300;
+  background-position-y: 9px;
+  background-position-x: 25px;
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+}
+.catg_btn {
+  height: calc(1.5em + 0.75rem + 9px);
+  padding: 0px 0px;
+  margin-bottom: 20px;
+}
+.catg_btn:focus {
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22) !important;
+}
+
+.submit_business {
+  padding: 7px 20px;
+  border-radius: 20px;
+  font-size: 15px;
+  background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
+  border: 0px;
+  margin-bottom: 10px;
+  color: white;
+}

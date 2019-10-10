@@ -1,0 +1,90 @@
+@font-face {
+  font-family: proxima-regular;
+  src: url("../../../assets/fonts/proxima-nova-regular.ttf");
+}
+.business {
+  border-radius: 10px;
+}
+
+.business_info {
+  padding-top: 28px;
+}
+// .all_icons {
+//   display: flex;
+//   justify-content: space-between;
+// }
+.business_type {
+  border-radius: 20px;
+  font-size: 0.8em;
+  background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
+  border: 0px;
+  padding: 6px 15px;
+  margin-bottom: 10px;
+  color: white;
+  display: inline;
+}
+.business_type:focus {
+  outline: none;
+}
+.bookmark {
+  display: inline;
+  padding: 0px 10px;
+  height: 26px;
+}
+.heart {
+  display: inline;
+}
+.likes {
+  display: inline;
+  padding: 0px 6px;
+}
+.share_btn {
+  padding: 6px 15px;
+  font-family: proxima-regular;
+  margin-bottom: 10px;
+  display: inline;
+  float: right;
+}
+.shadow_btn {
+  border: 0px;
+  border-radius: 46px;
+  background-size: 20px 20px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-appearance: textfield;
+  font-size: 0.8em;
+  font-weight: 300;
+  background-position-y: 9px;
+  background-position-x: 25px;
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+}
+.shadow_btn:focus {
+  outline: none;
+}
+
+.all_thumbnails {
+  height: 80px;
+  width: 22%;
+  border-radius: 10px;
+  margin-right: 9px;
+  margin-top: 9px;
+}
+.name_map {
+  padding-top: 40px;
+}
+.user_name {
+  margin-left: 80px;
+  margin-bottom: 0px;
+}
+.user_loc {
+  margin-left: 80px;
+}
+.user_img {
+  width: 60px;
+  height: 60px;
+  border-radius: 30px;
+  float: left;
+}
+.add_by {
+  padding-top: 10px;
+}

@@ -1,0 +1,119 @@
+<div class="container">
+  <h1>Add a conscious business</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="head_color">Description</h3>
+      <div>
+        <form action="" class="add_business">
+          <div class="business_input">
+            <label for="business_name">What`s the name of the business?*</label>
+            <input
+              type="text"
+              placeholder="Business name (0/10 words)"
+              class="form-control pl-0 input_style"
+            />
+          </div>
+          <div class="business_input">
+            <label for="business_category"
+              >Which categories this business is?*</label
+            >
+            <select class="form-control pl-0 shadow_btn catg_btn">
+              <option class="catg_option">Categories</option>
+            </select>
+          </div>
+          <div class="business_input">
+            <label for="business_phone">Phone Number</label>
+            <div class="inline">
+              <input
+                type="number"
+                placeholder="+01"
+                class="form-control pl-0 input_style code"
+              />
+              <input
+                type="number"
+                placeholder="xxx-xxx-xxxxx"
+                class="form-control pl-0 input_style phn_number"
+              />
+            </div>
+          </div>
+          <div class="business_input">
+            <label for="business_email">Email</label>
+            <input
+              type="text"
+              placeholder="Email address"
+              class="form-control pl-0 input_style"
+            />
+          </div>
+          <div class="business_input">
+            <label for="business_address">Address*</label>
+            <input
+              type="address"
+              placeholder="Type full address"
+              class="form-control pl-0 input_style"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3 class="head_color">Location</h3>
+      <div>
+        <form action="" class="add_business">
+          <div class="business_input">
+            <input
+              type="text"
+              placeholder="Type store name to pin location on the map"
+              class="form-control pl-0 input_style"
+            />
+          </div>
+          <div class="business_input">
+            <button class="form-control pl-0 shadow_btn location_btn">
+              Use Current Location
+            </button>
+          </div>
+          <div class="business_input" style="text-align:center">
+            <a href="" class="ques_link">Don`t know how to?</a>
+          </div>
+          <div class="business_input">
+            <img
+              src="../../../assets/images/addAListBtn@3x.png"
+              alt=""
+              class="map"
+            />
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3 class="head_color">Photos</h3>
+      <div>
+        <form action="" class="add_business">
+          <div class="business_photos">
+            <div class="upload_photo_wrapper">
+              <button class="shadow_btn upload_photo">+</button>
+              <input type="file" multiple />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div style="padding:20px;text-align: center;">
+    <input type="checkbox" style="display:inline" />
+    <p style="display:inline">
+      Show who add this business? Let the business know somebody support them.
+    </p>
+  </div>
+  <div style="text-align: center;">
+    <button
+      type="button"
+      class="submit_business"
+      data-toggle="modal"
+      data-target="#showModal"
+      (click)="handleClick()"
+      id="submitButton"
+    >
+      Submit
+    </button>
+  </div>
+</div>
