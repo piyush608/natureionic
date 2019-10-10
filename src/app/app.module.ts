@@ -1,4 +1,4 @@
-import { NgModule } from "@angular/core";
+import { NgModule, NO_ERRORS_SCHEMA } from "@angular/core";
 import { BrowserModule } from "@angular/platform-browser";
 import { RouteReuseStrategy } from "@angular/router";
 
@@ -29,7 +29,7 @@ import { SuccessModalComponent } from "./components/success-modal/success-modal.
     AddProductComponent,
     SuccessModalComponent
   ],
-  entryComponents: [],
+  entryComponents: [SuccessModalComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
@@ -50,6 +50,7 @@ import { SuccessModalComponent } from "./components/success-modal/success-modal.
       multi: true
     }
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [NO_ERRORS_SCHEMA]
 })
 export class AppModule {}
