@@ -5,12 +5,14 @@ import { SuccessModalComponent } from "../success-modal/success-modal.component"
 @Component({
   selector: "app-add-product",
   templateUrl: "./add-product.component.html",
-  styleUrls: ["./add-product.component.scss"]
+  styleUrls: ["./add-product.component.scss"],
+  entryComponents: [SuccessModalComponent]
 })
 export class AddProductComponent implements OnInit {
   constructor(public modalController: ModalController) {}
 
   ngOnInit() {}
+
   async presentModal() {
     const modal = await this.modalController.create({
       component: SuccessModalComponent
