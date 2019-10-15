@@ -84,8 +84,7 @@ const routes: Routes = [
     path: "user/:_id",
     loadChildren: "./pages/user/user.module#UserPageModule",
     canActivate: [AuthGuard]
-  },
-  { path: 'success', loadChildren: './modal/success/success.module#SuccessPageModule' }
+  }
 ];
 
 @NgModule({

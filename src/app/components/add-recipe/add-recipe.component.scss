@@ -50,11 +50,9 @@ textarea {
 .shadow_btn {
   border: 0px;
   border-radius: 46px;
-  // background: url(search.svg) no-repeat;
   background-size: 20px 20px;
   -webkit-transition: all 0.5s;
   transition: all 0.5s;
-  -webkit-box-sizing: content-box;
   -webkit-appearance: textfield;
   font-size: 0.8em;
   font-weight: 300;
@@ -83,4 +81,50 @@ textarea {
 }
 button {
   outline: none;
+}
+.upload_photo_wrapper {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+}
+
+.upload_photo {
+  color: #ff6969;
+  background-color: white;
+  padding: 23px 33px;
+  border-radius: 8px;
+  font-size: 29px;
+  font-weight: bold;
+}
+
+.btn {
+  color: #ff6969;
+  background-color: white;
+  padding: 15px 30px;
+  border-radius: 8px;
+  font-size: 29px;
+  font-weight: bold;
+}
+.upload_photo_wrapper input[type="file"] {
+  font-size: 100px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+}
+.tag {
+  font-family: proxima-regular;
+  border: 1px solid #ff6969;
+  color: #ff6969;
+  border-radius: 27px;
+  padding: 1px 9px;
+  font-size: 11px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+}
+.all_tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
 }

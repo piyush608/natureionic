@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container first">
   <h1>Add a recipe</h1>
   <div class="row">
     <div class="col-md-4">
@@ -75,6 +75,125 @@
       id="submitButton"
     >
       Continue
+    </button>
+  </div>
+</div>
+<div class="container second" style="display:none;">
+  <h1>Add a recipe</h1>
+  <div class="row">
+    <div class="col-md-4">
+      <h3 class="head_color">Instructions</h3>
+      <div>
+        <form action="" class="add_recipe">
+          <div class="recipe_input">
+            <label for="recipe_make">How to make it?*</label>
+            <textarea
+              type="text"
+              placeholder="Second, lorem ipsum"
+              class="form-control pl-0 input_style"
+              rows="4"
+            ></textarea>
+            <div style="padding-top:20px;">
+              <img src="../../../assets/images/addStep.png" alt="" />
+              <a href="" class="more_ing">Add more steps</a>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3 class="head_color">Tags</h3>
+      <div>
+        <form action="" class="add_recipe">
+          <div class="recipe_input">
+            <label for="recipe_goals"
+              >Health Goals: Which of these describes your recipe? (Limit to
+              5)*</label
+            >
+            <div class="all_tags">
+              <span class="tag">Organic</span>
+              <span class="tag">Non-GMO</span>
+              <span class="tag">Vegan</span>
+              <span class="tag">Paleo</span>
+              <span class="tag">Herbal</span>
+              <span class="tag">Detox</span>
+              <span class="tag">Ayurveda</span>
+              <span class="tag">Kosher</span>
+              <span class="tag">Probiotic</span>
+              <span class="tag">Keto</span>
+              <span class="tag">Gluten Free</span>
+              <span class="tag">Dairy Free</span>
+              <span class="tag">Sugar Free</span>
+              <span class="tag">Salt Free</span>
+              <span class="tag">Alcohol Free</span>
+              <span class="tag">Caffeine Free</span>
+              <span class="tag">Yeast Free</span>
+              <span class="tag">Diabetic Friendly</span>
+              <span class="tag">Cholesterol Friendly</span>
+              <span class="tag">Cancer Fighting</span>
+              <span class="tag">Low Calorie</span>
+              <span class="tag">Low Sodium</span>
+              <span class="tag">Low Sugar</span>
+              <span class="tag">Low Fat</span>
+              <span class="tag">High Protein</span>
+              <span class="tag">High Fiber</span>
+              <span class="tag">Low Gl</span>
+            </div>
+          </div>
+          <div class="recipe_input">
+            <label for="recipe_allergy"
+              >Allergies: Which of these describes your recipe? (Limit to
+              5)*</label
+            >
+            <div class="all_tags">
+              <span class="tag">Peanut Free</span>
+              <span class="tag">Nuts Free</span>
+              <span class="tag">Milk Free</span>
+              <span class="tag">Egg Free</span>
+              <span class="tag">Wheat Free</span>
+              <span class="tag">Soy Free</span>
+              <span class="tag">Fish Free</span>
+              <span class="tag">Seafood Free</span>
+              <span class="tag">Shellfish Free</span>
+              <span class="tag">Pepper Free</span>
+              <span class="tag">Hypoallergenic</span>
+              <span class="tag">Fragrance Free</span>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <h3 class="head_color">Photos</h3>
+      <div>
+        <form action="" class="add_recipe">
+          <div class="recipe_photos">
+            <div class="upload_photo_wrapper">
+              <button class="btn shadow_btn upload_photo">+</button>
+              <input type="file" multiple />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <div style="padding:20px;text-align: center;">
+    <input type="checkbox" style="display:inline;font-size:20px;" />
+    <p style="display:inline">
+      Do you want to add Medical Disclaimer to your recipe? If you check this
+      box, a medical disclosure will be shown up on your recipe post.
+    </p>
+  </div>
+  <div style="text-align: center">
+    <button
+      (click)="handleClick()"
+      id="backButton"
+      style="font-family: proxima-regular;padding-right:50px;"
+    >
+      Back
+    </button>
+    <button class="submit_business" (click)="handleClick()" id="submitButton">
+      Finish
     </button>
   </div>
 </div>
