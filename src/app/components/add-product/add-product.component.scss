@@ -1,3 +1,7 @@
+@font-face {
+  font-family: proxima-regular;
+  src: url("../../../assets/fonts/proxima-nova-regular.ttf");
+}
 .add_product {
   border: 1px solid #b9b1b1;
   border-radius: 10px;
@@ -7,6 +11,11 @@
 
 .product_input {
   padding-bottom: 20px;
+}
+input,
+textarea {
+  font-size: 15px;
+  font-family: proxima-regular;
 }
 .input_style {
   border-top: none;
@@ -31,7 +40,7 @@
   font-weight: lighter;
 }
 .head_color {
-  color: #34c3b8;
+  color: #00b2aa;
   padding-left: 30px;
 }
 .shadow_btn {
@@ -50,18 +59,20 @@
 .catg_btn {
   height: calc(1.5em + 0.75rem + 9px);
   padding: 0px 0px;
+  font-family: proxima-regular;
+  padding-left: 20px !important;
 }
 .catg_btn:focus {
   box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22) !important;
 }
 .location_btn {
   padding: 0px 0px;
-  width: 149px !important;
+  width: 192px !important;
   margin-left: auto;
   margin-right: auto;
 }
 .ques_link {
-  color: #34c3b8;
+  color: #00b2aa;
   text-decoration: underline;
 }
 .map {
@@ -81,10 +92,19 @@
   position: relative;
   overflow: hidden;
   display: inline-block;
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+}
+
+.upload_photo {
+  color: #ff6969;
+  background-color: white;
+  padding: 23px 33px;
+  border-radius: 8px;
+  font-size: 29px;
+  font-weight: bold;
 }
 
 .btn {
-  border: 2px solid gray;
   color: #ff6969;
   background-color: white;
   padding: 15px 30px;
@@ -99,4 +119,10 @@
   left: 0;
   top: 0;
   opacity: 0;
+}
+.direction {
+  padding-right: 10px;
+}
+button {
+  outline: none;
 }

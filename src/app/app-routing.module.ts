@@ -4,8 +4,9 @@ import { AddBusinessComponent } from "./components/add-business/add-business.com
 import { ViewBusinessComponent } from "./components/view-business/view-business.component";
 import { AddRecipeComponent } from "./components/add-recipe/add-recipe.component";
 import { AddProductComponent } from "./components/add-product/add-product.component";
+import { ViewRecipeComponent } from "./components/view-recipe/view-recipe.component";
+import { ViewProductComponent } from "./components/view-product/view-product.component";
 import { AuthGuardService as AuthGuard } from "./services/auth-guard.service";
-
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   {
@@ -31,6 +32,16 @@ const routes: Routes = [
   {
     path: "viewbusiness",
     component: ViewBusinessComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "viewproduct",
+    component: ViewProductComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: "viewrecipe",
+    component: ViewRecipeComponent,
     canActivate: [AuthGuard]
   },
   {

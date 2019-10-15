@@ -68,7 +68,11 @@
           </div>
           <div class="business_input">
             <button class="form-control pl-0 shadow_btn location_btn">
-              Use Current Location
+              <img
+                src="../../../assets/images/currentLocation.png"
+                alt=""
+                class="direction"
+              />Use Current Location
             </button>
           </div>
           <div class="business_input" style="text-align:center">
@@ -85,7 +89,7 @@
       </div>
     </div>
     <div class="col-md-4">
-      <h3 class="head_color">Photos</h3>
+      <h3 class="head_color">Product photos</h3>
       <div>
         <form action="" class="add_business">
           <div class="business_photos">
@@ -99,20 +103,13 @@
     </div>
   </div>
   <div style="padding:20px;text-align: center;">
-    <input type="checkbox" style="display:inline" />
+    <input type="checkbox" style="display:inline;font-size:20px;" />
     <p style="display:inline">
       Show who add this business? Let the business know somebody support them.
     </p>
   </div>
   <div style="text-align: center;">
-    <button
-      type="button"
-      class="submit_business"
-      data-toggle="modal"
-      data-target="#showModal"
-      (click)="handleClick()"
-      id="submitButton"
-    >
+    <button class="submit_business" (click)="presentModal()" id="submitButton">
       Submit
     </button>
   </div>

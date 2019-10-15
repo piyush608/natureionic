@@ -39,7 +39,7 @@ input {
   font-size: 13px;
 }
 .head_color {
-  color: #34c3b8;
+  color: #00b2aa;
   padding-left: 30px;
 }
 .shadow_btn {
@@ -58,22 +58,22 @@ input {
 .catg_btn {
   height: calc(1.5em + 0.75rem + 9px);
   padding: 0px 0px;
+  font-family: proxima-regular;
+  padding-left: 20px !important;
 }
 .catg_btn:focus {
   box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22) !important;
 }
-.catg_option {
-  padding: 5px;
-  font-family: proxima-regular;
-}
+
 .location_btn {
   padding: 0px 0px;
-  width: 149px !important;
+  width: 186px !important;
   margin-left: auto;
   margin-right: auto;
+  font-family: proxima-regular;
 }
 .ques_link {
-  color: #34c3b8;
+  color: #00b2aa;
   text-decoration: underline;
 }
 .map {
@@ -93,10 +93,10 @@ input {
   position: relative;
   overflow: hidden;
   display: inline-block;
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
 }
 
 .upload_photo {
-  border: 2px solid gray;
   color: #ff6969;
   background-color: white;
   padding: 23px 33px;
@@ -122,4 +122,16 @@ input {
   left: 0;
   top: 0;
   opacity: 0;
+}
+.direction {
+  padding-right: 10px;
+}
+.all_thumbnails {
+  height: 80px;
+  width: 22%;
+  border-radius: 10px;
+  margin-top: 9px;
+}
+button {
+  outline: none;
 }

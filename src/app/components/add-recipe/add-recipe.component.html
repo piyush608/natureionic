@@ -14,13 +14,16 @@
             />
           </div>
           <div class="recipe_input">
-            <label for="business_category">Categories?*</label>
-            <select class="form-control pl-0 shadow_btn catg_btn"
-              >Category</select
+            <label for="recipe_category">Category?*</label>
+            <select class="form-control pl-0 shadow_btn catg_btn">
+              <option class="catg_option">Category</option>
+            </select>
+            <select
+              class="form-control pl-0 shadow_btn catg_btn"
+              style="margin-top:20px;"
             >
-            <select class="form-control pl-0 shadow_btn catg_btn"
-              >Subcategory</select
-            >
+              <option class="subcatg_option">Subcategory</option>
+            </select>
           </div>
         </form>
       </div>
@@ -39,12 +42,15 @@
               class="form-control pl-0 input_style"
             />
           </div>
-          <a href="">Add more Ingredient</a>
+          <div>
+            <img src="../../../assets/images/addStep.png" alt="" />
+            <a href="" class="more_ing">Add more Ingredient</a>
+          </div>
         </form>
       </div>
     </div>
     <div class="col-md-4">
-      <h3 class="head_color">Buy Ingredients</h3>
+      <h3 class="head_color">Buy Ingredients(Optional)</h3>
       <div>
         <form action="" class="add_recipe">
           <div class="add_ing_location">

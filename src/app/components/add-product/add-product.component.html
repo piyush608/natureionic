@@ -6,7 +6,7 @@
       <div>
         <form action="" class="add_product">
           <div class="product_input">
-            <label for="business_name">What`s the name of the product?*</label>
+            <label for="product_name">What`s the name of the product?*</label>
             <input
               type="text"
               placeholder="Product name (0/15 words)"
@@ -14,25 +14,32 @@
             />
           </div>
           <div class="product_input">
-            <label for="business_category">Category?*</label>
-            <select class="form-control pl-0 shadow_btn catg_btn"
-              >Categories</select
+            <label for="product_category">Category?*</label>
+            <select class="form-control pl-0 shadow_btn catg_btn">
+              <option class="catg_option">Category</option>
+            </select>
+            <select
+              class="form-control pl-0 shadow_btn catg_btn"
+              style="margin-top:20px;"
             >
+              <option class="subcatg_option">Subcategory</option>
+            </select>
           </div>
           <div class="product_input">
-            <label for="business_phone">Price: USD (optional)</label>
+            <label for="product_price">Price: USD (optional)</label>
             <input
               type="number"
-              placeholder="+01"
+              placeholder="ex. $20"
               class="form-control pl-0 input_style"
             />
           </div>
           <div class="product_input">
-            <label for="business_email">Product Description</label>
+            <label for="product_desc">Product Description*</label>
             <textarea
               type="text"
-              placeholder="ABout the product(0/100 words)"
+              placeholder="About the product(0/100 words)"
               class="form-control pl-0 input_style"
+              rows="4"
             ></textarea>
           </div>
         </form>
@@ -43,26 +50,37 @@
       <div>
         <form action="" class="add_product">
           <div class="product_input">
+            <label for="comp_name"
+              >What`s the company or who`s the founder created this
+              product?*</label
+            >
             <input
               type="text"
-              placeholder="Type store name to pin location on the map"
+              placeholder="Name of the company or founder"
               class="form-control pl-0 input_style"
             />
           </div>
           <div class="product_input">
-            <button class="form-control pl-0 shadow_btn location_btn">
-              Use Current Location
-            </button>
-          </div>
-          <div class="product_input" style="text-align:center">
-            <a href="" class="ques_link">Don`t know how to?</a>
+            <label for="comp_desc"
+              >Tell us something about the company/founder.*</label
+            >
+            <textarea
+              type="text"
+              placeholder="Somethinga bout the company or founder ex. mission, purpose, brand etc"
+              class="form-control pl-0 input_style"
+              rows="4"
+            ></textarea>
           </div>
           <div class="product_input">
-            <img
-              src="../../../assets/images/addAListBtn@3x.png"
-              alt=""
-              class="map"
-            />
+            <label for="comp_img"
+              >Upload an image of the company or teh founder.</label
+            >
+            <div class="comp_photos">
+              <div class="upload_photo_wrapper">
+                <button class="btn shadow_btn upload_photo">+</button>
+                <input type="file" multiple />
+              </div>
+            </div>
           </div>
         </form>
       </div>

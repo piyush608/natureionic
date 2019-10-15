@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { ModalController } from "@ionic/angular";
+import { SuccessModalComponent } from "../success-modal/success-modal.component";
 
 @Component({
   selector: "app-add-business",
@@ -6,7 +8,13 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./add-business.component.scss"]
 })
 export class AddBusinessComponent implements OnInit {
-  constructor() {}
+  constructor(public modalController: ModalController) {}
 
   ngOnInit() {}
+  async presentModal() {
+    const modal = await this.modalController.create({
+      component: SuccessModalComponent
+    });
+    return await modal.present();
+  }
 }

@@ -6,14 +6,14 @@
   border-radius: 10px;
 }
 
-.business_info {
+.product_info {
   padding-top: 28px;
 }
 // .all_icons {
 //   display: flex;
 //   justify-content: space-between;
 // }
-.business_type {
+.product_type {
   border-radius: 20px;
   font-size: 0.8em;
   background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
@@ -72,21 +72,37 @@
   margin-top: 9px;
 }
 .name_map {
-  padding-top: 40px;
+  padding-top: 43px;
 }
 .user_name {
   margin-left: 80px;
-  margin-bottom: 0px;
 }
 .user_loc {
   margin-left: 80px;
 }
-.user_img {
+.circle_img {
   width: 60px;
   height: 60px;
   border-radius: 30px;
   float: left;
 }
-.add_by {
+.recommended_by {
   padding-top: 10px;
+}
+.prod_desc {
+  padding-top: 30px;
+}
+.comp_name {
+  margin-left: 80px;
+  padding-top: 16px;
+}
+.comp {
+  padding-top: 20px;
+}
+.staff_pick {
+  padding-top: 30px;
+}
+.nh_pick {
+  margin-left: 80px;
+  padding-top: 16px;
 }

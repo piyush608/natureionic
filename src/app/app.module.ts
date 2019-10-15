@@ -19,6 +19,8 @@ import { ViewBusinessComponent } from "./components/view-business/view-business.
 import { AddRecipeComponent } from "./components/add-recipe/add-recipe.component";
 import { AddProductComponent } from "./components/add-product/add-product.component";
 import { SuccessModalComponent } from "./components/success-modal/success-modal.component";
+import { ViewProductComponent } from "./components/view-product/view-product.component";
+import { ViewRecipeComponent } from "./components/view-recipe/view-recipe.component";
 
 @NgModule({
   declarations: [
@@ -27,9 +29,11 @@ import { SuccessModalComponent } from "./components/success-modal/success-modal.
     ViewBusinessComponent,
     AddRecipeComponent,
     AddProductComponent,
-    SuccessModalComponent
+    SuccessModalComponent,
+    ViewProductComponent,
+    ViewRecipeComponent
   ],
-  entryComponents: [],
+  entryComponents: [SuccessModalComponent],
   imports: [
     BrowserModule,
     IonicModule.forRoot(),
