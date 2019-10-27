@@ -401,7 +401,6 @@ input[type="search"]:focus {
   border-radius: 16px;
   margin-bottom: 20px;
   box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
-  height: 280px;
 }
 .Inspiration-card .card-header {
   border-radius: 16px;
@@ -793,4 +792,8 @@ input[type="search"]:focus {
   display: grid;
   align-content: center;
   height: 225px;
+}
+.no_product {
+  width: 400px;
+  margin: auto;
 }
