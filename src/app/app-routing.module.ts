@@ -15,34 +15,40 @@ const routes: Routes = [
     canActivate: [AuthGuard]
   },
   {
-    path: "addbusiness",
-    component: AddBusinessComponent,
-    canActivate: [AuthGuard]
+    path: "add",
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: "business",
+        component: AddBusinessComponent
+      },
+      {
+        path: "recipe",
+        component: AddRecipeComponent
+      },
+      {
+        path: "product",
+        component: AddProductComponent
+      }
+    ]
   },
   {
-    path: "addrecipe",
-    component: AddRecipeComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "addproduct",
-    component: AddProductComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "viewbusiness",
-    component: ViewBusinessComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "viewproduct",
-    component: ViewProductComponent,
-    canActivate: [AuthGuard]
-  },
-  {
-    path: "viewrecipe",
-    component: ViewRecipeComponent,
-    canActivate: [AuthGuard]
+    path: "view",
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: "business",
+        component: ViewBusinessComponent
+      },
+      {
+        path: "product",
+        component: ViewProductComponent
+      },
+      {
+        path: "recipe",
+        component: ViewRecipeComponent
+      }
+    ]
   },
   {
     path: "community",
