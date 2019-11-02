@@ -21,6 +21,7 @@ import { AddProductComponent } from "./components/add-product/add-product.compon
 import { SuccessModalComponent } from "./components/success-modal/success-modal.component";
 import { ViewProductComponent } from "./components/view-product/view-product.component";
 import { ViewRecipeComponent } from "./components/view-recipe/view-recipe.component";
+import { FooterComponentModule } from "./components/footer/footer.component.module";
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { ViewRecipeComponent } from "./components/view-recipe/view-recipe.compon
     AppRoutingModule,
     HttpClientModule,
     NavbarComponentModule,
+    FooterComponentModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production
     })
