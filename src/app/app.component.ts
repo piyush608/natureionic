@@ -20,6 +20,7 @@ export class AppComponent {
     this.platform.ready().then(() => {
       this.angAuth.loggedIn.subscribe(
         res => {
+          console.log(res);
           this.isLoggedIn = res;
         },
         err => {

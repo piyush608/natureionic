@@ -7,6 +7,7 @@ import { AddProductComponent } from "./components/add-product/add-product.compon
 import { ViewRecipeComponent } from "./components/view-recipe/view-recipe.component";
 import { ViewProductComponent } from "./components/view-product/view-product.component";
 import { AuthGuardService as AuthGuard } from "./services/auth-guard.service";
+import { NotFoundComponent } from "./components/not-found/not-found.component";
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   {
@@ -90,7 +91,9 @@ const routes: Routes = [
     path: "user/:_id",
     loadChildren: "./pages/user/user.module#UserPageModule",
     canActivate: [AuthGuard]
-  }
+  },
+  { path: "404", component: NotFoundComponent },
+  { path: "**", redirectTo: "/404" }
 ];
 
 @NgModule({

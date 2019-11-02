@@ -22,6 +22,7 @@ import { SuccessModalComponent } from "./components/success-modal/success-modal.
 import { ViewProductComponent } from "./components/view-product/view-product.component";
 import { ViewRecipeComponent } from "./components/view-recipe/view-recipe.component";
 import { FooterComponentModule } from "./components/footer/footer.component.module";
+import { NotFoundComponent } from "./components/not-found/not-found.component";
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { FooterComponentModule } from "./components/footer/footer.component.modu
     AddProductComponent,
     SuccessModalComponent,
     ViewProductComponent,
-    ViewRecipeComponent
+    ViewRecipeComponent,
+    NotFoundComponent
   ],
   entryComponents: [SuccessModalComponent],
   imports: [

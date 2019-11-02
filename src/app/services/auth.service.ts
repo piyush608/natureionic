@@ -21,6 +21,7 @@ export class AuthService {
 
   deleteToken() {
     localStorage.clear();
+    this.loggedIn.next(false);
   }
 
   getUserPayload() {

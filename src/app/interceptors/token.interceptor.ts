@@ -10,10 +10,11 @@ import { Observable, throwError } from "rxjs";
 import { map, catchError } from "rxjs/operators";
 import { Router } from "@angular/router";
 import { Injectable } from "@angular/core";
+import { AuthService } from "../services/auth.service";
 
 @Injectable()
 export class TokenInterceptor implements HttpInterceptor {
-  constructor(private router: Router) {}
+  constructor(private router: Router, private angAuth: AuthService) {}
 
   intercept(
     request: HttpRequest<any>,
@@ -45,6 +46,7 @@ export class TokenInterceptor implements HttpInterceptor {
           if (error.error.success === false) {
             console.log("Login failed");
           } else {
+            this.angAuth.deleteToken();
             this.router.navigate(["login"]);
           }
         }
