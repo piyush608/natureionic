@@ -15,6 +15,7 @@ export const environment = {
   PREFERENCE_URL: URL + "/preference",
   SETTINGS_URL: URL + "/setting",
   CARDS_URL: URL + "/card",
+  FORUM_URL: URL + "/forum",
   apiKey: "AIzaSyDgsEC3C4fI6Otn-LJLs2SzySnYp91hHQU",
   host: "https://naturehub-bucket.sfo2.digitaloceanspaces.com",
   endPoint: "sfo2.digitaloceanspaces.com",
