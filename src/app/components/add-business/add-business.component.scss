@@ -1,7 +1,11 @@
-@font-face {
-  font-family: proxima-regular;
-  src: url("../../../assets/fonts/proxima-nova-regular.ttf");
+.container-fluid {
+  overflow: scroll;
 }
+
+.main-content {
+  margin-bottom: 50px;
+}
+
 .add_business {
   border: 1px solid #b9b1b1;
   border-radius: 10px;
@@ -21,7 +25,6 @@
 }
 input {
   font-size: 15px;
-  font-family: proxima-regular;
 }
 .form-control:focus {
   box-shadow: none !important;
@@ -58,7 +61,6 @@ input {
 .catg_btn {
   height: calc(1.5em + 0.75rem + 9px);
   padding: 0px 0px;
-  font-family: proxima-regular;
   padding-left: 20px !important;
 }
 .catg_btn:focus {
@@ -70,7 +72,6 @@ input {
   width: 186px !important;
   margin-left: auto;
   margin-right: auto;
-  font-family: proxima-regular;
 }
 .ques_link {
   color: #00b2aa;
@@ -90,10 +91,21 @@ input {
   color: white;
 }
 .upload_photo_wrapper {
+  float: left;
   position: relative;
   overflow: hidden;
   display: inline-block;
   box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+  height: 75px;
+  width: 80px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.upload_photo_wrapper img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .upload_photo {
@@ -132,6 +144,11 @@ input {
   border-radius: 10px;
   margin-top: 9px;
 }
+
 button {
   outline: none;
+}
+
+agm-map {
+  height: 300px;
 }

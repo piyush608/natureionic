@@ -103,8 +103,9 @@ sup {
   margin-left: 5px;
 }
 .popular-placescard {
+  cursor: pointer;
   border-radius: 16px;
-  width: 270px;
+  width: 250px;
   margin-bottom: 20px;
   margin-right: 30px;
   box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
@@ -372,4 +373,9 @@ sup {
 .add-button {
   text-decoration: none;
   color: #ffffff;
+}
+
+.add-icon {
+  width: 100px;
+  margin: auto;
 }

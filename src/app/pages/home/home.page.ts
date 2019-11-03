@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { RecipeService } from "src/app/services/recipe.service";
 import { ProductService } from "src/app/services/product.service";
 import { CategoryService } from "src/app/services/category.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-home",
@@ -12,7 +13,8 @@ export class HomePage implements OnInit {
   constructor(
     private angRecipe: RecipeService,
     private angProduct: ProductService,
-    private angCategory: CategoryService
+    private angCategory: CategoryService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -42,5 +44,9 @@ export class HomePage implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  addBusiness() {
+    this.router.navigateByUrl("/add/business");
   }
 }

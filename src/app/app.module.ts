@@ -21,8 +21,10 @@ import { AddProductComponent } from "./components/add-product/add-product.compon
 import { SuccessModalComponent } from "./components/success-modal/success-modal.component";
 import { ViewProductComponent } from "./components/view-product/view-product.component";
 import { ViewRecipeComponent } from "./components/view-recipe/view-recipe.component";
-import { FooterComponentModule } from "./components/footer/footer.component.module";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { FooterComponent } from "./components/footer/footer.component";
+import { AgmCoreModule } from "@agm/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -34,16 +36,22 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
     SuccessModalComponent,
     ViewProductComponent,
     ViewRecipeComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    FooterComponent
   ],
-  entryComponents: [SuccessModalComponent],
+  entryComponents: [SuccessModalComponent, FooterComponent],
   imports: [
     BrowserModule,
+    AgmCoreModule.forRoot({
+      apiKey: environment.apiKey,
+      libraries: ["places"]
+    }),
     IonicModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     NavbarComponentModule,
-    FooterComponentModule,
+    FormsModule,
+    ReactiveFormsModule,
     ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production
     })
