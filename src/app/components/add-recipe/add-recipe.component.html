@@ -1,199 +1,255 @@
-<div class="container first col-11 m-auto">
-  <h1>Add a recipe</h1>
-  <div class="row">
-    <div class="col-md-4">
-      <h3 class="head_color">Description</h3>
-      <div>
-        <form action="" class="add_recipe">
-          <div class="recipe_input">
-            <label for="recipe_name">Name your recipe?*</label>
-            <input
-              type="text"
-              placeholder="Recipe name (0/15 words)"
-              class="form-control pl-0 input_style"
-            />
-          </div>
-          <div class="recipe_input">
-            <label for="recipe_category">Category?*</label>
-            <select class="form-control pl-0 shadow_btn catg_btn">
-              <option class="catg_option">Category</option>
-            </select>
-            <select
-              class="form-control pl-0 shadow_btn catg_btn"
-              style="margin-top:20px;"
-            >
-              <option class="subcatg_option">Subcategory</option>
-            </select>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <h3 class="head_color">Ingredients</h3>
-      <div>
-        <form action="" class="add_recipe">
-          <div class="recipe_input">
-            <label for="recipe_ing"
-              >Tell people what ingredients should prepared?*</label
-            >
-            <input
-              type="text"
-              placeholder="Add Ingredient e.x. 1.5 tbsp olive oil"
-              class="form-control pl-0 input_style"
-            />
-          </div>
+<div class="container-fluid m-auto">
+  <div class="row justify-content-md-center main-content">
+    <div class="col-11 first" *ngIf="firstStep === true">
+      <h1>Add a recipe</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <h3 class="head_color">Description</h3>
           <div>
-            <img src="../../../assets/images/addStep.png" alt="" />
-            <a href="" class="more_ing">Add more Ingredient</a>
+            <form action="" class="add_recipe">
+              <div class="recipe_input">
+                <label for="recipe_name">Name your recipe? *</label>
+                <input
+                  type="text"
+                  placeholder="Recipe name (0/15 words)"
+                  class="form-control pl-0 input_style"
+                  [(ngModel)]="recipe.name"
+                  name="name"
+                />
+              </div>
+              <div class="recipe_input">
+                <label for="recipe_category">Category? *</label>
+                <select
+                  class="form-control pl-0 shadow_btn catg_btn"
+                  name="category"
+                  [(ngModel)]="recipe.category"
+                  (change)="getSubcategories($event.target.value)"
+                >
+                  <option value="" class="catg_option">Category</option>
+                  <option
+                    *ngFor="let category of categories"
+                    [value]="category._id"
+                    >{{ category.name }}</option
+                  >
+                </select>
+                <select
+                  class="form-control pl-0 shadow_btn catg_btn"
+                  style="margin-top:20px;"
+                  name="subcategory"
+                  [(ngModel)]="recipe.subcategory"
+                >
+                  <option value="" class="subcatg_option">Subcategory</option>
+                  <option
+                    *ngFor="let subcategory of subcategories"
+                    [value]="subcategory._id"
+                    >{{ subcategory.name }}</option
+                  >
+                </select>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
+        <div class="col-md-4">
+          <h3 class="head_color">Ingredients</h3>
+          <div>
+            <form action="" class="add_recipe ing-content">
+              <label for="recipe_ing"
+                >Tell people what ingredients should prepared?*</label
+              >
+              <div
+                class="recipe_input"
+                *ngFor="
+                  let ingredient of ingredients;
+                  let i = index;
+                  let last = last;
+                  let start = first
+                "
+              >
+                <input
+                  type="text"
+                  placeholder="Add Ingredient e.x. 1.5 tbsp olive oil"
+                  class="form-control pl-0 input_style"
+                  [(ngModel)]="recipe.ingredients[i]"
+                  name="ingredient_{{ i }}"
+                />
+              </div>
+              <div>
+                <img src="/assets/images/addStep.png" alt="" />
+                <a (click)="addIngredient()" class="more_ing">
+                  Add more Ingredient
+                </a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h3 class="head_color">Buy Ingredients(Optional)</h3>
+          <div>
+            <form action="" class="add_recipe">
+              <div class="add_ing_location">
+                <label for="recipe_ing">Where to find the ingredients?</label>
+                <input
+                  type="text"
+                  placeholder="Type the name of the store"
+                  class="form-control pl-0 input_style"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  autocomplete="off"
+                  name="keyword"
+                  [(ngModel)]="keyword"
+                  (keyup)="searchBusiness()"
+                />
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div style="padding: 20px;text-align: center">
+        <button
+          type="button"
+          class="submit_business"
+          (click)="toggleStep()"
+          id="submitButton"
+        >
+          Continue
+        </button>
       </div>
     </div>
-    <div class="col-md-4">
-      <h3 class="head_color">Buy Ingredients(Optional)</h3>
-      <div>
-        <form action="" class="add_recipe">
-          <div class="add_ing_location">
-            <label for="recipe_ing">Where to find the ingredients?</label>
-            <input
-              type="text"
-              placeholder="Type the name of the store"
-              class="form-control pl-0 input_style"
-            />
+    <div class="second col-11" *ngIf="firstStep === false">
+      <h1>Add a recipe</h1>
+      <div class="row">
+        <div class="col-md-4">
+          <h3 class="head_color">Instructions</h3>
+          <div>
+            <form action="" class="add_recipe ing-content">
+              <label for="recipe_make">How to make it?*</label>
+              <div
+                class="recipe_input"
+                *ngFor="
+                  let step of steps;
+                  let i = index;
+                  let last = last;
+                  let start = first
+                "
+              >
+                <textarea
+                  type="text"
+                  placeholder="Second, lorem ipsum"
+                  class="form-control pl-0 input_style"
+                  rows="4"
+                  [(ngModel)]="recipe.steps[i]"
+                  name="steps_{{ i }}"
+                ></textarea>
+              </div>
+              <div style="padding-top:20px;">
+                <img src="/assets/images/addStep.png" alt="" />
+                <a (click)="addStep()" class="more_ing">Add more steps</a>
+              </div>
+            </form>
           </div>
-        </form>
+        </div>
+        <div class="col-md-4">
+          <h3 class="head_color">Tags</h3>
+          <div>
+            <form action="" class="add_recipe">
+              <div class="recipe_input">
+                <label for="recipe_goals"
+                  >Health Goals: Which of these describes your recipe? (Limit to
+                  5)*</label
+                >
+                <div class="all_tags">
+                  <span class="tag">Organic</span>
+                  <span class="tag">Non-GMO</span>
+                  <span class="tag">Vegan</span>
+                  <span class="tag">Paleo</span>
+                  <span class="tag">Herbal</span>
+                  <span class="tag">Detox</span>
+                  <span class="tag">Ayurveda</span>
+                  <span class="tag">Kosher</span>
+                  <span class="tag">Probiotic</span>
+                  <span class="tag">Keto</span>
+                  <span class="tag">Gluten Free</span>
+                  <span class="tag">Dairy Free</span>
+                  <span class="tag">Sugar Free</span>
+                  <span class="tag">Salt Free</span>
+                  <span class="tag">Alcohol Free</span>
+                  <span class="tag">Caffeine Free</span>
+                  <span class="tag">Yeast Free</span>
+                  <span class="tag">Diabetic Friendly</span>
+                  <span class="tag">Cholesterol Friendly</span>
+                  <span class="tag">Cancer Fighting</span>
+                  <span class="tag">Low Calorie</span>
+                  <span class="tag">Low Sodium</span>
+                  <span class="tag">Low Sugar</span>
+                  <span class="tag">Low Fat</span>
+                  <span class="tag">High Protein</span>
+                  <span class="tag">High Fiber</span>
+                  <span class="tag">Low Gl</span>
+                </div>
+              </div>
+              <div class="recipe_input">
+                <label for="recipe_allergy"
+                  >Allergies: Which of these describes your recipe? (Limit to
+                  5)*</label
+                >
+                <div class="all_tags">
+                  <span class="tag">Peanut Free</span>
+                  <span class="tag">Nuts Free</span>
+                  <span class="tag">Milk Free</span>
+                  <span class="tag">Egg Free</span>
+                  <span class="tag">Wheat Free</span>
+                  <span class="tag">Soy Free</span>
+                  <span class="tag">Fish Free</span>
+                  <span class="tag">Seafood Free</span>
+                  <span class="tag">Shellfish Free</span>
+                  <span class="tag">Pepper Free</span>
+                  <span class="tag">Hypoallergenic</span>
+                  <span class="tag">Fragrance Free</span>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h3 class="head_color">Photos</h3>
+          <div>
+            <form action="" class="add_recipe">
+              <div class="recipe_photos">
+                <div
+                  class="upload_photo_wrapper"
+                  *ngFor="let localFile of localFiles"
+                >
+                  <img [src]="localFile" alt="}" class="imagecheck-image" />
+                </div>
+                <div class="upload_photo_wrapper">
+                  <button class="shadow_btn upload_photo">+</button>
+                  <input type="file" (change)="uploadImage($event)" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div style="padding:20px;text-align: center;">
+        <input type="checkbox" style="display:inline;font-size:20px;" />
+        <p style="display:inline">
+          Do you want to add Medical Disclaimer to your recipe? If you check
+          this box, a medical disclosure will be shown up on your recipe post.
+        </p>
+      </div>
+      <div style="text-align: center">
+        <button
+          (click)="toggleStep()"
+          id="backButton"
+          style="padding-right:50px;"
+        >
+          Back
+        </button>
+        <button class="submit_business" (click)="addRecipe()" id="submitButton">
+          Finish
+        </button>
       </div>
     </div>
   </div>
-  <div style="padding: 20px;text-align: center">
-    <button
-      type="button"
-      class="submit_business"
-      data-toggle="modal"
-      data-target="#showModal"
-      (click)="handleClick()"
-      id="submitButton"
-    >
-      Continue
-    </button>
-  </div>
-</div>
-<div class="container second col-11 m-auto" style="display:none;">
-  <h1>Add a recipe</h1>
-  <div class="row">
-    <div class="col-md-4">
-      <h3 class="head_color">Instructions</h3>
-      <div>
-        <form action="" class="add_recipe">
-          <div class="recipe_input">
-            <label for="recipe_make">How to make it?*</label>
-            <textarea
-              type="text"
-              placeholder="Second, lorem ipsum"
-              class="form-control pl-0 input_style"
-              rows="4"
-            ></textarea>
-            <div style="padding-top:20px;">
-              <img src="../../../assets/images/addStep.png" alt="" />
-              <a href="" class="more_ing">Add more steps</a>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <h3 class="head_color">Tags</h3>
-      <div>
-        <form action="" class="add_recipe">
-          <div class="recipe_input">
-            <label for="recipe_goals"
-              >Health Goals: Which of these describes your recipe? (Limit to
-              5)*</label
-            >
-            <div class="all_tags">
-              <span class="tag">Organic</span>
-              <span class="tag">Non-GMO</span>
-              <span class="tag">Vegan</span>
-              <span class="tag">Paleo</span>
-              <span class="tag">Herbal</span>
-              <span class="tag">Detox</span>
-              <span class="tag">Ayurveda</span>
-              <span class="tag">Kosher</span>
-              <span class="tag">Probiotic</span>
-              <span class="tag">Keto</span>
-              <span class="tag">Gluten Free</span>
-              <span class="tag">Dairy Free</span>
-              <span class="tag">Sugar Free</span>
-              <span class="tag">Salt Free</span>
-              <span class="tag">Alcohol Free</span>
-              <span class="tag">Caffeine Free</span>
-              <span class="tag">Yeast Free</span>
-              <span class="tag">Diabetic Friendly</span>
-              <span class="tag">Cholesterol Friendly</span>
-              <span class="tag">Cancer Fighting</span>
-              <span class="tag">Low Calorie</span>
-              <span class="tag">Low Sodium</span>
-              <span class="tag">Low Sugar</span>
-              <span class="tag">Low Fat</span>
-              <span class="tag">High Protein</span>
-              <span class="tag">High Fiber</span>
-              <span class="tag">Low Gl</span>
-            </div>
-          </div>
-          <div class="recipe_input">
-            <label for="recipe_allergy"
-              >Allergies: Which of these describes your recipe? (Limit to
-              5)*</label
-            >
-            <div class="all_tags">
-              <span class="tag">Peanut Free</span>
-              <span class="tag">Nuts Free</span>
-              <span class="tag">Milk Free</span>
-              <span class="tag">Egg Free</span>
-              <span class="tag">Wheat Free</span>
-              <span class="tag">Soy Free</span>
-              <span class="tag">Fish Free</span>
-              <span class="tag">Seafood Free</span>
-              <span class="tag">Shellfish Free</span>
-              <span class="tag">Pepper Free</span>
-              <span class="tag">Hypoallergenic</span>
-              <span class="tag">Fragrance Free</span>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-    <div class="col-md-4">
-      <h3 class="head_color">Photos</h3>
-      <div>
-        <form action="" class="add_recipe">
-          <div class="recipe_photos">
-            <div class="upload_photo_wrapper">
-              <button class="btn shadow_btn upload_photo">+</button>
-              <input type="file" multiple />
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  <div style="padding:20px;text-align: center;">
-    <input type="checkbox" style="display:inline;font-size:20px;" />
-    <p style="display:inline">
-      Do you want to add Medical Disclaimer to your recipe? If you check this
-      box, a medical disclosure will be shown up on your recipe post.
-    </p>
-  </div>
-  <div style="text-align: center">
-    <button
-      (click)="handleClick()"
-      id="backButton"
-      style="font-family: proxima-regular;padding-right:50px;"
-    >
-      Back
-    </button>
-    <button class="submit_business" (click)="handleClick()" id="submitButton">
-      Finish
-    </button>
-  </div>
+  <app-footer></app-footer>
 </div>

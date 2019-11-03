@@ -1,7 +1,11 @@
-@font-face {
-  font-family: proxima-regular;
-  src: url("../../../assets/fonts/proxima-nova-regular.ttf");
+.container-fluid {
+  overflow: scroll;
 }
+
+.main-content {
+  margin-bottom: 50px;
+}
+
 .add_recipe {
   border: 1px solid #b9b1b1;
   border-radius: 10px;
@@ -15,7 +19,6 @@
 input,
 textarea {
   font-size: 15px;
-  font-family: proxima-regular;
 }
 .input_style {
   border-top: none;
@@ -44,7 +47,8 @@ textarea {
   padding-left: 30px;
 }
 .more_ing {
-  color: #00b2aa;
+  cursor: pointer;
+  color: #00b2aa !important;
   padding-left: 5px;
 }
 .shadow_btn {
@@ -63,7 +67,6 @@ textarea {
 .catg_btn {
   height: calc(1.5em + 0.75rem + 9px);
   padding: 0px 0px;
-  font-family: proxima-regular;
   padding-left: 20px !important;
 }
 .catg_btn:focus {
@@ -83,10 +86,21 @@ button {
   outline: none;
 }
 .upload_photo_wrapper {
+  float: left;
   position: relative;
   overflow: hidden;
   display: inline-block;
   box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+  height: 75px;
+  width: 80px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.upload_photo_wrapper img {
+  flex-shrink: 0;
+  min-width: 100%;
+  min-height: 100%;
 }
 
 .upload_photo {
@@ -126,4 +140,7 @@ button {
   display: flex;
   flex-wrap: wrap;
   justify-content: end;
+}
+.ing-content {
+  overflow: scroll;
 }

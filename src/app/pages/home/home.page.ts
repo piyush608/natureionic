@@ -49,4 +49,8 @@ export class HomePage implements OnInit {
   addBusiness() {
     this.router.navigateByUrl("/add/business");
   }
+
+  addRecipe() {
+    this.router.navigateByUrl("/add/recipe");
+  }
 }

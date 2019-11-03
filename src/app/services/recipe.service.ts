@@ -11,4 +11,12 @@ export class RecipeService {
   getRandom() {
     return this.http.get(environment.RECIPE_URL + "/random");
   }
+
+  addRecipe(recipe) {
+    return this.http.post(environment.RECIPE_URL + "/create", recipe);
+  }
+
+  update(_id, recipe) {
+    return this.http.patch(environment.RECIPE_URL + "/update/" + _id, recipe);
+  }
 }

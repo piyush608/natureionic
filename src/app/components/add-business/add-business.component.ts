@@ -1,4 +1,3 @@
-declare const google: any;
 import {
   Component,
   OnInit,

@@ -251,6 +251,15 @@ sup {
   margin-right: 15px;
   margin-bottom: 20px;
 }
+.recipe-add-card {
+  height: 160px;
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+  width: 487px;
+  border-radius: 20px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
 .recipe-image {
   width: 150px;
   height: 160px;
@@ -376,6 +385,6 @@ sup {
 }
 
 .add-icon {
-  width: 100px;
+  width: 90px;
   margin: auto;
 }

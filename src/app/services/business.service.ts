@@ -18,4 +18,12 @@ export class BusinessService {
       business
     );
   }
+
+  search(keyword) {
+    return this.http.get(environment.BUSINESS_URL + "/search", {
+      params: {
+        keyword: keyword
+      }
+    });
+  }
 }
