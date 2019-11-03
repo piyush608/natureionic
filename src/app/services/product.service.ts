@@ -11,4 +11,15 @@ export class ProductService {
   getRandom() {
     return this.http.get(environment.HUNTEDPRODUCT_URL + "/random");
   }
+
+  addProduct(product) {
+    return this.http.post(environment.HUNTEDPRODUCT_URL + "/create", product);
+  }
+
+  update(_id, recipe) {
+    return this.http.patch(
+      environment.HUNTEDPRODUCT_URL + "/update/" + _id,
+      recipe
+    );
+  }
 }
