@@ -1,0 +1,354 @@
+<div class="row main-content">
+  <div class="col-md-12">
+    <form id="regForm" action="">
+      <!-----------------Start first -------------->
+      <div class="tab" *ngIf="firstTab === true">
+        <div class="row">
+          <div class="col-md-4"
+            style="background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: center;">
+            <img src="/assets/img/logo.png" class="logo">
+            <div style="margin-left: 50px;">
+              <h3 class="leftfont">Welcome to NatureHub <BR>Conscious Community</h3>
+              <p> Alright, let's set this up! Tell us a bit about yourself.</p>
+            </div>
+          </div>
+
+          <div class="col-md-8">
+            <div class="container" style="width: 50%;   margin-top: 74px;">
+              <center>
+                <div class="circle">
+                  <div class="circle__inner"><img src="/assets/img/profile.png" style="width: 117px; border: 1px solid #dedede; border-radius: 50%; position: relative;
+                    top: 4px;  left: 1px;"></div>
+                </div>
+              </center><BR><BR>
+              <form>
+                <div class="form-group">
+                  <label for="usr">Display Name</label>
+                  <input type="text" class="form-control" id="name" name="name" placeholder="your name">
+                  <span id="reqTxtName" class="reqError"></span><br>
+                </div>
+                <div class="form-group">
+                  <label for="pwd">Zipcode (Required)</label>
+                  <input type="text" class="form-control" id="zipcode" name="zipcode" required
+                    placeholder="your Zipcode">
+                  <span id="reqTxtAddress" class="reqError"></span><br>
+                </div>
+              </form>
+              <div class="dis-con">
+                <h6><b>Why we ask your zipcode and email confirmation?</b></h6>
+                <p>
+                  Your privacy is very important to us! Personal information will always be kept strictly confidential
+                  and
+                  will never be sold, shared with third parties, reused, or used by us to spam you. We ask for this
+                  information
+                  to prevent spam accounts from registering.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-----------------End first -------------->
+
+      <!-----------------Start second -------------->
+      <div class="tab" *ngIf="secondTab === true">
+        <div class="row">
+          <div class="col-md-4"
+            style="background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: right;">
+            <img src="/assets/img/logo.png" class="logo">
+            <div style="margin-left: 50px;">
+              <h3 class="leftfont">Let’s start the journey!</h3>
+              <p>Let us know a little bit more about you. This information <br>will help us bring you a best conscious
+                living journey. </p>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="container" style="width: 75%;   margin-top: 74px;">
+              <h1>What's better describe you?</h1><BR>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/a-curious-newbie.png" class='select_img change-img' id=1 onclick="conscious()"
+                      style="width:100%">
+                    <div class="caption">
+                      <p>conscious living journey</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/grayVersion/busy-city-explorer.png" class='select_img Busy' id=2
+                      onclick="Busy()" style="width:100%">
+                    <div class="caption">
+                      <p>Busy city explore</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/follow-a-diet.png" class='select_img follow' id=3 onclick="follow()"
+                      style="width:100%">
+                    <div class="caption">
+                      <p>Follow a diet</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/grayVersion/foodie.png" class='select_img foodie' id=4 onclick="foodie()"
+                      style="width:100%">
+                    <div class="caption">
+                      <p>Foodie</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/green-thumb.png" class='select_img green' id=5 onclick="green()"
+                      style="width:100%">
+                    <div class="caption">
+                      <p>Green thumb</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/activist.png" class='select_img activist' id=6 onclick="activist()"
+                      style="width:100%">
+                    <div class="caption">
+                      <p>Activist</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/grayVersion/parent.png" class='select_img parent' id=7 onclick="parent()"
+                      style="width:100%">
+                    <div class="caption">
+                      <p>Parent</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/grayVersion/health-enthusiast.png" class='select_img health' id=8
+                      onclick="health()" style="width:100%">
+                    <div class="caption">
+                      <p>Health Enthusiast</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/grayVersion/Yogi-and-workout-addict.png" class='select_img yogi' id=9
+                      onclick="yogi()" style="width:100%">
+                    <div class="caption">
+                      <p>Yogi and workout addict</p>
+                    </div>
+                  </div>
+                </div>
+              </div><BR><BR>
+              <h3>Nothing related above? Give a word, don't let me guess:)</h3>
+              <hr>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-----------------End second -------------->
+
+      <!-----------------Start Third -------------->
+      <div class="tab" *ngIf="thirdTab === true">
+        <div class="row">
+          <div class="col-md-4"
+            style="background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: right;">
+            <img src="/assets/img/logo.png" class="logo">
+            <div style="margin-left: 50px;">
+              <h3 class="leftfont">Tell us what you care <BR>about!</h3>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="container" style="width: 75%;   margin-top: 74px;">
+              <h3>What topic you care the most? you can select multiple topics.</h3><BR>
+              <div class="row">
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/grayVersion/nutrition food and recepies.png" class='select_img nutrition'
+                      id=01 onclick="nutrition()" style=" width: 200px;  height: 160px;">
+                    <div class="caption1">
+                      <p>Nutrition, food and recipes</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/local business stores and restaurants.png" class='select_img local' id=02
+                      onclick="local()" style="width: 200px;  height: 160px;">
+                    <div class="caption1">
+                      <p>Local businesses, stores <BR>and restaurants</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/grayVersion/sustainability and environment news.png"
+                      class='select_img sustainability' id=03 onclick="sustainability()"
+                      style="width: 200px;  height: 160px;">
+                    <div class="caption1">
+                      <p>Sustainability and <BR>environment news</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/grayVersion/health and wellbeing.png" class='select_img wellbeing' id=04
+                      onclick="wellbeing()" style="width: 200px;  height: 160px;">
+                    <div class="caption1">
+                      <p>Health and well-being</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/grayVersion/activity and exercise.png" class='select_img exercise' id=05
+                      onclick="exercise()" style="width: 200px;  height: 160px;">
+                    <div class="caption1">
+                      <p>Activity and exercise</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/grayVersion/gardening.png" id="Gardening" class='select_img gardening' id=06
+                      onclick="gardening()" style="width: 200px;  height: 160px;">
+                    <div class="caption1">
+                      <p>Gardening</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/grayVersion/sustainable living tips and diy.png" class='select_img tips' id=07
+                      onclick="tips()" style="width: 200px;  height: 160px;">
+                    <div class="caption1">
+                      <p>Sustainable living <BR>tips and DIYs</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/ethical fashion and beauty.png" class='select_img ethical' id=08
+                      onclick="ethical()" style="width: 200px;  height: 160px;">
+                    <div class="caption1">
+                      <p>Ethical fashion and beauty</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <div class="thumbnail">
+                    <img src="/assets/img/grayVersion/people and their stories.png" class='select_img people' id=09
+                      onclick="people()" style="width: 200px;  height: 160px;">
+                    <div class="caption1">
+                      <p>People and their stories</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-----------------End Third -------------->
+
+      <!-----------------Start Fourth -------------->
+      <div class="tab" *ngIf="fourthTab === true">
+        <div class="row">
+          <div class="col-md-4"
+            style="background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: right;">
+            <img src="/assets/img/logo.png" class="logo">
+            <div style="margin-left: 50px;">
+              <h3 class="leftfont">
+                Personalize your <br>Experiences!</h3>
+            </div>
+          </div>
+          <div class="col-md-8">
+            <div class="container" style="width: 75%;   margin-top: 74px;">
+              <h2>Do you have special diet preference?</h2><BR>
+              <div class="row">
+                <div class="col-sm-12 col-md-12">
+                  <button type="button" class="btn1 selected">Organic </button>
+                  <button type="button" class="btn1">Non-GMO</button>
+                  <button type="button" class="btn1">Vegon </button>
+                  <button type="button" class="btn1">Vegetarian </button>
+                  <button type="button" class="btn1">Detox </button>
+                  <button type="button" class="btn1">Paleo</button>
+                  <button type="button" class="btn1">Herbal </button>
+                  <button type="button" class="btn1">Ayurveda </button>
+                  <button type="button" class="btn1">Kosher </button>
+                  <button type="button" class="btn1">Probiotic </button>
+                  <button type="button" class="btn1">Gluten </button>
+                  <button type="button" class="btn1"> Free </button>
+                  <button type="button" class="btn1"> Dairy Free </button>
+                  <button type="button" class="btn1"> Sugar Free </button>
+                  <button type="button" class="btn1"> Salt Free </button>
+                  <button type="button" class="btn1"> Alcohol Free </button>
+                  <button type="button" class="btn1"> Caffeine Free </button>
+                  <button type="button" class="btn1"> Yeast Free </button>
+                  <button type="button" class="btn1"> Diabetes Friendly </button>
+                  <button type="button" class="btn1"> Cholesterol Friendly </button>
+                  <button type="button" class="btn1"> Cancer Fighting </button>
+                  <button type="button" class="btn1"> Low Calorie </button>
+                  <button type="button" class="btn1"> Low Sodium </button>
+                  <button type="button" class="btn1">Low GI</button>
+                  <button type="button" class="btn1">Low Sugar </button>
+                  <button type="button" class="btn1"> Low Fat </button>
+                  <button type="button" class="btn1"> High Protein </button>
+                  <button type="button" class="btn1"> High Fiber </button>
+                </div>
+              </div>
+              <h2 class="lasth2">Do your have food allergies?</h2>
+              <div class="row">
+                <div class="col-sm-12 col-md-12">
+                  <button type="button" class="btn1">Peanuts Free</button>
+                  <button type="button" class="btn1">Nuts Free</button>
+                  <button type="button" class="btn1">Web Conferencing </button>
+                  <button type="button" class="btn1">Milk Free</button>
+                  <button type="button" class="btn1">Egg Free</button>
+                  <button type="button" class="btn1">Whear Free</button>
+                  <button type="button" class="btn1">Soy Free</button>
+                  <button type="button" class="btn1">Fish Free</button>
+                  <button type="button" class="btn1">Seafood Free</button>
+                  <button type="button" class="btn1">Shelifish Free</button>
+                  <button type="button" class="btn1">Pepper Free </button>
+                  <button type="button" class="btn1"> Hypoallergenic</button>
+                  <button type="button" class="btn1"> Fragrance Free</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-----------------End Fourth -------------->
+
+      <!-----------------Tabs -------------->
+      <div style="position: absolute;  bottom: 254px; margin-left:50px;">
+        <div class="row">
+          <div class="col-md-5">
+            <button type="button" id="nextBtn" (click)="nextStep()" class="next">Next</button>
+          </div>
+          <div class="col-md-5">
+            <div class="nav-bullets">
+              <span class="step" [class.active]="tabIndex === 1" (click)="showFirstTab()"></span>
+              <span class="step" [class.active]="tabIndex === 2" (click)="showSecondTab()"></span>
+              <span class="step" [class.active]="tabIndex === 3" (click)="showThirdTab()"></span>
+              <span class="step" [class.active]="tabIndex === 4" (click)="showFourthTab()"></span>
+            </div>
+          </div>
+          <div class="col-md-2" *ngIf="tabIndex > 1">
+            <a (click)="submit()" id="prevBtn">Skip</a>
+          </div>
+        </div>
+      </div>
+      <!-----------------End Tabs -------------->
+    </form>
+  </div>
+</div>

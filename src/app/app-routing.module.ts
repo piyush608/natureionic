@@ -14,6 +14,7 @@ import { InspirationComponent } from "./components/inspiration/inspiration.compo
 import { ProfileComponent } from "./components/profile/profile.component";
 import { LoginComponent } from "./components/login/login.component";
 import { SignupComponent } from "./components/signup/signup.component";
+import { OnboardingComponent } from "./components/onboarding/onboarding.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -77,6 +78,11 @@ const routes: Routes = [
   {
     path: "signup",
     component: SignupComponent
+  },
+  {
+    path: "onboarding",
+    component: OnboardingComponent,
+    canActivate: [AuthGuard]
   },
   {
     path: "forgot",

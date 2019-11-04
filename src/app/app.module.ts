@@ -32,10 +32,14 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { PopoverMenuComponent } from "./components/popover-menu/popover-menu.component";
 import { LoginComponent } from "./components/login/login.component";
 import { SignupComponent } from "./components/signup/signup.component";
+import { OnboardingComponent } from "./components/onboarding/onboarding.component";
 
 @NgModule({
   declarations: [
     AppComponent,
+    LoginComponent,
+    SignupComponent,
+    OnboardingComponent,
     HomeComponent,
     CommunityComponent,
     InspirationComponent,
@@ -49,9 +53,7 @@ import { SignupComponent } from "./components/signup/signup.component";
     ViewRecipeComponent,
     NotFoundComponent,
     FooterComponent,
-    PopoverMenuComponent,
-    LoginComponent,
-    SignupComponent
+    PopoverMenuComponent
   ],
   entryComponents: [
     SuccessModalComponent,

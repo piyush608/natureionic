@@ -1,0 +1,321 @@
+.main-content {
+  overflow: scroll;
+}
+a {
+  color: #9f9f9f;
+}
+p {
+  margin-top: 0;
+  margin-bottom: 0rem;
+  color: #9f9f9f;
+}
+.h1,
+h1 {
+  font-size: 2rem;
+}
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+/* Style the form */
+#regForm {
+  background-color: #ffffff;
+  width: 100%;
+  min-width: 300px;
+}
+label {
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  font-size: 20px;
+}
+/* Style the input fields */
+input {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+
+.tab {
+  // display: none;
+  /* padding: 54px; */
+  width: 100%;
+  margin-left: 0px;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 12px;
+  width: 12px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+  background-color: #00b2aa;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #00b2aa;
+}
+
+.caption {
+  text-align: center;
+  font-weight: bold;
+}
+.caption1 {
+  text-align: center;
+  font-weight: bold;
+  width: 200px;
+}
+.caption1 p {
+  text-align: center;
+  font-weight: bold;
+  color: #313030;
+  padding: 10px;
+}
+.caption p {
+  text-align: center;
+  font-weight: bold;
+  color: #313030;
+  padding: 10px;
+}
+.thumbnail img {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.12) 0px 2px 10px 0px;
+  border-radius: 15px;
+}
+.logo {
+  margin-left: 50px;
+  margin-top: 30px;
+  width: 252px;
+}
+.next {
+  background-image: linear-gradient(
+    to right,
+    #ff6969 10%,
+    #ffcd5a 100%,
+    #ff6969 100%
+  );
+  border: 0px;
+  width: 143px;
+  padding: 7px;
+  border-radius: 31px;
+  color: white;
+}
+.dis-logo {
+  width: 161px;
+  border-radius: 68%;
+  background: linear-gradient(to right, #ff6969, #ffcd5a);
+  border: 1px solid transparent;
+  border-image-slice: 1;
+  padding: 2px;
+}
+.dis-con {
+  box-shadow: 0px 3px 1px #ddd, 0 10px 20px #ccc;
+  width: 100%;
+  padding: 30px;
+  border-radius: 15px;
+  text-align: center;
+  margin-top: 50px;
+  margin-left: 0%;
+}
+.slide1 {
+  position: relative;
+  top: 266px;
+  width: 85%;
+}
+.lasth2 {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+
+.btn1 {
+  display: inline-block;
+  font-weight: 400;
+  color: #ff6260;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 15px;
+  margin-top: 15px;
+  user-select: none;
+  background-color: transparent;
+  border: 1px solid #ff6260;
+  padding: 7px 20px 10px 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 3.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+.btn1:hover {
+  display: inline-block;
+  font-weight: 400;
+  color: white;
+  text-align: center;
+  vertical-align: middle;
+  margin-left: 15px;
+  margin-top: 15px;
+  user-select: none;
+  background-color: #ff6260;
+  border: 1px solid #ff6260;
+  padding: 7px 20px 10px 20px;
+  font-size: 1rem;
+  line-height: 1.5;
+  border-radius: 3.25rem;
+  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.btn1:active,
+.btn1:visited {
+  color: #fff;
+  background-color: #ff6260;
+  border-color: #ff6260;
+}
+.btn1.active {
+  color: #fff;
+  background-color: #ff6260;
+  border-color: #ff6260;
+}
+.form-control {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #343a40;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0px solid #ced4da;
+  border-bottom: 1px solid #e6e6e6;
+  border-radius: 0;
+  transition: border-color 0.15s ease-in-out;
+}
+.form-control::placeholder {
+  color: #e0e0e0;
+  opacity: 1; /* Firefox */
+}
+.thumbnail {
+  margin-top: 30px;
+}
+.modal-body {
+  position: relative;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  padding: 42px;
+}
+
+@media (min-width: 576px) {
+  .modal-dialog {
+    max-width: 600px;
+    margin: 3.75rem auto;
+  }
+}
+.modal-content {
+  position: relative;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  width: 100%;
+  pointer-events: auto;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 1.3rem;
+  outline: 0;
+}
+.leftfont {
+  line-height: 55px;
+  color: #4a4848;
+  text-align: left;
+  font-size: 40px;
+  margin-top: 35%;
+}
+hr {
+  margin-top: 4rem;
+  margin-bottom: 1rem;
+  border: 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.39);
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor: pointer;
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.circle {
+  position: relative;
+  width: 136px;
+  height: 136px;
+  border-radius: 50%;
+  background-image: linear-gradient(
+    to right,
+    #ff6969 10%,
+    #ffcd5a 100%,
+    #ff6969 100%
+  );
+}
+.circle__inner {
+  position: absolute;
+  width: 128px;
+  height: 128px;
+  top: 4px;
+  left: 4px;
+  border-radius: 50%;
+  background-color: white;
+}
+.reqError {
+  color: #ff0000; /*Red Color*/
+  font-weight: bold;
+}
+.nav-bullets {
+  margin-top: 7px;
+  margin-left: 25px;
+}
+#prevBtn {
+  display: inline;
+  position: relative;
+  top: 7px;
+  font-size: 14px;
+  color: #313030;
+  font-weight: 600;
+}
