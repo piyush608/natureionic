@@ -3,10 +3,10 @@ import { ForumService } from "src/app/services/forum.service";
 
 @Component({
   selector: "app-community",
-  templateUrl: "./community.page.html",
-  styleUrls: ["./community.page.scss"]
+  templateUrl: "./community.component.html",
+  styleUrls: ["./community.component.scss"]
 })
-export class CommunityPage implements OnInit {
+export class CommunityComponent implements OnInit {
   constructor(private angForum: ForumService) {}
 
   ngOnInit() {

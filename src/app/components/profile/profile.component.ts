@@ -3,10 +3,10 @@ import { Router } from "@angular/router";
 
 @Component({
   selector: "app-profile",
-  templateUrl: "./profile.page.html",
-  styleUrls: ["./profile.page.scss"]
+  templateUrl: "./profile.component.html",
+  styleUrls: ["./profile.component.scss"]
 })
-export class ProfilePage implements OnInit {
+export class ProfileComponent implements OnInit {
   public tab: string = "collection";
 
   constructor(private router: Router) {}

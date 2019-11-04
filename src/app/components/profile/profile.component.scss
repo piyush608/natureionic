@@ -1,3 +1,9 @@
+.container-fluid {
+  overflow: scroll;
+}
+.main-content {
+  margin-bottom: 60px !important;
+}
 .container-padding {
   padding-top: 70px;
 }
@@ -49,7 +55,6 @@ input[type="search"] {
 
 input[type="search"]::placeholder {
   color: #b2b2b2;
-  font-family: "proxima-regular";
 }
 input::-webkit-search-decoration,
 input::-webkit-search-cancel-button {
@@ -68,7 +73,6 @@ input[type="search"]:focus {
 }
 .nav-link {
   font-size: 0.9em;
-  font-family: "proxima-regular";
 }
 .menu-icon {
   width: 16px;
@@ -184,7 +188,6 @@ input[type="search"]:focus {
   height: 36px;
   letter-spacing: 1px;
   font-size: 0.9em;
-  font-family: "proxima-regular";
   margin-left: 35px;
 }
 .profile-info {
@@ -218,13 +221,11 @@ input[type="search"]:focus {
 .preference-list li h2 {
   font-size: 0.8em;
   color: #b2b2b2;
-  font-family: "proxima-regular";
   text-align: center;
 }
 .follower-locationlist h2 {
   font-size: 0.9em;
   color: #868686;
-  font-family: "proxima-regular";
 }
 .follower-locationlist li img {
   width: 13px;
@@ -244,7 +245,6 @@ input[type="search"]:focus {
 .profile-subnav .nav-item .nav-link {
   color: #00b2aa;
   font-size: 1em;
-  font-family: "proxima-regular";
 }
 .btn-secondary,
 .btn-secondary:hover,
@@ -281,7 +281,6 @@ input[type="search"]:focus {
 }
 .follower-side-collist li {
   font-size: 0.9em;
-  font-family: "proxima-regular";
 }
 .follower-side-collist .fa {
   font-size: 12px;
@@ -545,7 +544,6 @@ input[type="search"]:focus {
 .recipe-uploadername h2 {
   font-size: 1em;
   color: #b2b2b2;
-  font-family: "proxima-regular";
 }
 .popular-placescard .btn-primary {
   padding: 3px 20px;
@@ -609,7 +607,6 @@ input[type="search"]:focus {
 }
 .recipe-info h3 {
   font-size: 0.9em;
-  font-family: "proxima-regular";
   line-height: 21px;
   height: 47px;
 }
@@ -638,7 +635,6 @@ input[type="search"]:focus {
 .recipe-uploadername h2 {
   font-size: 0.8em;
   color: #b2b2b2;
-  font-family: "proxima-regular";
 }
 .recipe-category {
   display: grid;
@@ -650,7 +646,6 @@ input[type="search"]:focus {
   padding: 3px 17px;
   letter-spacing: 1px;
   font-size: 0.8em;
-  font-family: "proxima-regular";
 }
 .recipe-category p {
   text-align: right;
@@ -732,14 +727,12 @@ input[type="search"]:focus {
 .alternative-name h2 {
   font-size: 0.7em;
   color: #868686;
-  font-family: "proxima-regular";
 }
 .alternative-list li {
   display: inline-block;
   margin-right: 20px;
   font-size: 0.7em;
   color: #868686;
-  font-family: "proxima-regular";
 }
 .alternative-list img {
   margin-top: -3px;

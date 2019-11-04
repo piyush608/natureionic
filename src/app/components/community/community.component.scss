@@ -1,20 +1,21 @@
+.container-fluid {
+  overflow: scroll;
+  padding: 0 !important;
+}
+.main-content {
+  margin-bottom: 60px !important;
+}
 .background-property {
+  width: 100%;
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
-}
-.card-body span {
-  font-family: "proxima-regular";
-}
-.grid-section h2 {
-  font-family: "proxima-regular";
 }
 .main-heading {
   font-size: 1.2em;
   font-weight: 700;
   color: rgb(72, 72, 72);
 }
-
 .location-grid {
   display: grid;
   grid-template-columns: 2fr 3fr;
@@ -33,13 +34,11 @@
 .change-location {
   border-bottom: 1px solid #00b2aa;
   float: right;
-  font-family: "proxima-regular";
 }
 .show-more {
   font-size: 0.7em;
   color: #00b2aa;
   margin-left: 15px;
-  font-family: "proxima-regular";
 }
 .show-more img {
   width: 13px;

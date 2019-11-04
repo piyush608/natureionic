@@ -8,11 +8,16 @@ import { ViewRecipeComponent } from "./components/view-recipe/view-recipe.compon
 import { ViewProductComponent } from "./components/view-product/view-product.component";
 import { AuthGuardService as AuthGuard } from "./services/auth-guard.service";
 import { NotFoundComponent } from "./components/not-found/not-found.component";
+import { HomeComponent } from "./components/home/home.component";
+import { CommunityComponent } from "./components/community/community.component";
+import { InspirationComponent } from "./components/inspiration/inspiration.component";
+import { ProfileComponent } from "./components/profile/profile.component";
+
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   {
     path: "home",
-    loadChildren: "./pages/home/home.module#HomePageModule",
+    component: HomeComponent,
     canActivate: [AuthGuard]
   },
   {
@@ -53,18 +58,17 @@ const routes: Routes = [
   },
   {
     path: "community",
-    loadChildren: "./pages/community/community.module#CommunityPageModule",
+    component: CommunityComponent,
     canActivate: [AuthGuard]
   },
   {
     path: "inspiration",
-    loadChildren:
-      "./pages/inspiration/inspiration.module#InspirationPageModule",
+    component: InspirationComponent,
     canActivate: [AuthGuard]
   },
   {
     path: "profile",
-    loadChildren: "./pages/profile/profile.module#ProfilePageModule",
+    component: ProfileComponent,
     canActivate: [AuthGuard]
   },
   { path: "login", loadChildren: "./pages/login/login.module#LoginPageModule" },

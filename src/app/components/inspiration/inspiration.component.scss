@@ -1,3 +1,9 @@
+.container-fluid {
+  overflow: scroll;
+}
+.main-content {
+  margin-bottom: 60px !important;
+}
 .background-property {
   background-position: center !important;
   background-repeat: no-repeat !important;
@@ -13,7 +19,6 @@
   font-size: 0.7em;
   color: #00b2aa;
   margin-left: 15px;
-  font-family: "proxima-regular";
 }
 .show-more img {
   width: 13px;
@@ -281,14 +286,12 @@ p {
 .alternative-name h2 {
   font-size: 0.7em;
   color: #868686;
-  font-family: "proxima-regular";
 }
 .alternative-list li {
   display: inline-block;
   margin-right: 20px;
   font-size: 0.7em;
   color: #868686;
-  font-family: "proxima-regular";
 }
 .alternative-list img {
   margin-top: -3px;

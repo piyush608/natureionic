@@ -13,6 +13,8 @@ import { LocationService } from "src/app/services/location.service";
 import { CategoryService } from "src/app/services/category.service";
 import { BusinessService } from "src/app/services/business.service";
 import { ImageService } from "src/app/services/image.service";
+/// <reference types=”@types/googlemaps” />
+declare var google: any;
 
 @Component({
   selector: "app-add-business",

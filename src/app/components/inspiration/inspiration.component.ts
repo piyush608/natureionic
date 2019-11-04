@@ -5,10 +5,10 @@ import { VlogService } from "src/app/services/vlog.service";
 
 @Component({
   selector: "app-inspiration",
-  templateUrl: "./inspiration.page.html",
-  styleUrls: ["./inspiration.page.scss"]
+  templateUrl: "./inspiration.component.html",
+  styleUrls: ["./inspiration.component.scss"]
 })
-export class InspirationPage implements OnInit {
+export class InspirationComponent implements OnInit {
   constructor(
     private angBlog: BlogService,
     private angCategory: CategoryService,

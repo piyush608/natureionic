@@ -25,6 +25,10 @@ import { NotFoundComponent } from "./components/not-found/not-found.component";
 import { FooterComponent } from "./components/footer/footer.component";
 import { AgmCoreModule } from "@agm/core";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HomeComponent } from "./components/home/home.component";
+import { CommunityComponent } from "./components/community/community.component";
+import { InspirationComponent } from "./components/inspiration/inspiration.component";
+import { ProfileComponent } from "./components/profile/profile.component";
 
 @NgModule({
   declarations: [
@@ -37,7 +41,11 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
     ViewProductComponent,
     ViewRecipeComponent,
     NotFoundComponent,
-    FooterComponent
+    FooterComponent,
+    HomeComponent,
+    CommunityComponent,
+    InspirationComponent,
+    ProfileComponent
   ],
   entryComponents: [SuccessModalComponent, FooterComponent],
   imports: [
