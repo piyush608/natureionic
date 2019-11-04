@@ -1,16 +1,16 @@
 import { Component, OnInit } from "@angular/core";
-import { User } from "src/app/models/user.model";
-import { AuthService } from "src/app/services/auth.service";
-import { Router } from "@angular/router";
-import { Platform } from "@ionic/angular";
 import { PlatformService } from "src/app/services/platform.service";
+import { Platform } from "@ionic/angular";
+import { Router } from "@angular/router";
+import { AuthService } from "src/app/services/auth.service";
+import { User } from "src/app/models/user.model";
 
 @Component({
   selector: "app-login",
-  templateUrl: "./login.page.html",
-  styleUrls: ["./login.page.scss"]
+  templateUrl: "./login.component.html",
+  styleUrls: ["./login.component.scss"]
 })
-export class LoginPage implements OnInit {
+export class LoginComponent implements OnInit {
   public user = new User();
 
   constructor(

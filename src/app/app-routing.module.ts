@@ -12,6 +12,8 @@ import { HomeComponent } from "./components/home/home.component";
 import { CommunityComponent } from "./components/community/community.component";
 import { InspirationComponent } from "./components/inspiration/inspiration.component";
 import { ProfileComponent } from "./components/profile/profile.component";
+import { LoginComponent } from "./components/login/login.component";
+import { SignupComponent } from "./components/signup/signup.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -71,10 +73,10 @@ const routes: Routes = [
     component: ProfileComponent,
     canActivate: [AuthGuard]
   },
-  { path: "login", loadChildren: "./pages/login/login.module#LoginPageModule" },
+  { path: "login", component: LoginComponent },
   {
     path: "signup",
-    loadChildren: "./pages/signup/signup.module#SignupPageModule"
+    component: SignupComponent
   },
   {
     path: "forgot",

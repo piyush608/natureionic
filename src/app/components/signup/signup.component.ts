@@ -7,10 +7,10 @@ import { Router } from "@angular/router";
 
 @Component({
   selector: "app-signup",
-  templateUrl: "./signup.page.html",
-  styleUrls: ["./signup.page.scss"]
+  templateUrl: "./signup.component.html",
+  styleUrls: ["./signup.component.scss"]
 })
-export class SignupPage implements OnInit {
+export class SignupComponent implements OnInit {
   public user = new User();
 
   constructor(
