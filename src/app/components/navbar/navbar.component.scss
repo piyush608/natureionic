@@ -11,12 +11,14 @@
   height: 40px;
 }
 .user-img {
+  cursor: pointer;
   border-radius: 50%;
   width: 30px;
   height: 30px;
   background: url("https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?h=350&auto=compress&cs=tinysrgb");
 }
 .menu-icon {
+  cursor: pointer;
   width: 16px;
   height: 16px;
   margin-top: 5px;

@@ -29,10 +29,15 @@ import { HomeComponent } from "./components/home/home.component";
 import { CommunityComponent } from "./components/community/community.component";
 import { InspirationComponent } from "./components/inspiration/inspiration.component";
 import { ProfileComponent } from "./components/profile/profile.component";
+import { PopoverMenuComponent } from "./components/popover-menu/popover-menu.component";
 
 @NgModule({
   declarations: [
     AppComponent,
+    HomeComponent,
+    CommunityComponent,
+    InspirationComponent,
+    ProfileComponent,
     AddBusinessComponent,
     ViewBusinessComponent,
     AddRecipeComponent,
@@ -42,12 +47,13 @@ import { ProfileComponent } from "./components/profile/profile.component";
     ViewRecipeComponent,
     NotFoundComponent,
     FooterComponent,
-    HomeComponent,
-    CommunityComponent,
-    InspirationComponent,
-    ProfileComponent
+    PopoverMenuComponent
   ],
-  entryComponents: [SuccessModalComponent, FooterComponent],
+  entryComponents: [
+    SuccessModalComponent,
+    FooterComponent,
+    PopoverMenuComponent
+  ],
   imports: [
     BrowserModule,
     AgmCoreModule.forRoot({
