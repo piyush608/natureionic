@@ -30,6 +30,10 @@ export class User {
   verified: boolean;
   referCode: string;
   joinedReferCode: string;
+  types: any;
+  topics: any;
+  dietPreference: any;
+  foodAlergies: any;
 
   constructor() {
     this.points = 0;

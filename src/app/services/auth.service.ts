@@ -15,8 +15,16 @@ export class AuthService {
     localStorage.setItem("token", token);
   }
 
+  setPendingToken(token: string) {
+    localStorage.setItem("pending", token);
+  }
+
   getToken() {
     return localStorage.getItem("token");
+  }
+
+  getPendingToken() {
+    return localStorage.getItem("pending");
   }
 
   deleteToken() {

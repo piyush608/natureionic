@@ -24,13 +24,14 @@
               <form>
                 <div class="form-group">
                   <label for="usr">Display Name</label>
-                  <input type="text" class="form-control" id="name" name="name" placeholder="your name">
+                  <input type="text" class="form-control" id="name" name="name" [(ngModel)]="user.name"
+                    placeholder="your name">
                   <span id="reqTxtName" class="reqError"></span><br>
                 </div>
                 <div class="form-group">
                   <label for="pwd">Zipcode (Required)</label>
-                  <input type="text" class="form-control" id="zipcode" name="zipcode" required
-                    placeholder="your Zipcode">
+                  <input type="text" class="form-control" id="zipcode" name="zipcode" [(ngModel)]="user.zipcode"
+                    required placeholder="your Zipcode">
                   <span id="reqTxtAddress" class="reqError"></span><br>
                 </div>
               </form>
@@ -68,8 +69,15 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/a-curious-newbie.png" class='select_img change-img' id=1 onclick="conscious()"
+                    <img src="/assets/icons/grey/a-curious-newbie.png" class='select_img change-img' id=1
+                      (click)="selectTypes('conscious')" *ngIf="types.conscious === false; else showConscious"
                       style="width:100%">
+
+                    <ng-template #showConscious>
+                      <img src="/assets/icons/green/a-curious-newbie.png" class='select_img change-img'
+                        (click)="selectTypes('conscious')" style="width:100%">
+                    </ng-template>
+
                     <div class="caption">
                       <p>conscious living journey</p>
                     </div>
@@ -77,8 +85,15 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/grayVersion/busy-city-explorer.png" class='select_img Busy' id=2
-                      onclick="Busy()" style="width:100%">
+                    <img src="/assets/icons/grey/busy-city-explorer.png" class='select_img Busy' id=2
+                      (click)="selectTypes('cityExplore')" *ngIf="types.cityExplore === false; else showCityExplore"
+                      style="width:100%">
+
+                    <ng-template #showCityExplore>
+                      <img src="/assets/icons/green/busy-city-explorer.png" class='select_img change-img'
+                        (click)="selectTypes('cityExplore')" style="width:100%">
+                    </ng-template>
+
                     <div class="caption">
                       <p>Busy city explore</p>
                     </div>
@@ -86,8 +101,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/follow-a-diet.png" class='select_img follow' id=3 onclick="follow()"
-                      style="width:100%">
+                    <img src="/assets/icons/grey/follow-a-diet.png" class='select_img follow' id=3
+                      (click)="selectTypes('diet')" *ngIf="types.diet === false; else showDiet" style="width:100%">
+
+                    <ng-template #showDiet>
+                      <img src="/assets/icons/green/follow-a-diet.png" class='select_img follow'
+                        (click)="selectTypes('diet')" style="width:100%">
+                    </ng-template>
                     <div class="caption">
                       <p>Follow a diet</p>
                     </div>
@@ -95,8 +115,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/grayVersion/foodie.png" class='select_img foodie' id=4 onclick="foodie()"
+                    <img src="/assets/icons/grey/foodie.png" class='select_img foodie' id=4
+                      (click)="selectTypes('foodie')" *ngIf="types.foodie === false; else showFoodie"
                       style="width:100%">
+                    <ng-template #showFoodie>
+                      <img src="/assets/icons/green/foodie.png" class='select_img foodie'
+                        (click)="selectTypes('foodie')" style="width:100%">
+                    </ng-template>
                     <div class="caption">
                       <p>Foodie</p>
                     </div>
@@ -104,8 +129,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/green-thumb.png" class='select_img green' id=5 onclick="green()"
+                    <img src="/assets/icons/grey/green-thumb.png" class='select_img green' id=5
+                      (click)="selectTypes('greenThumb')" *ngIf="types.greenThumb === false; else showGreenThumb"
                       style="width:100%">
+                    <ng-template #showGreenThumb>
+                      <img src="/assets/icons/green/green-thumb.png" class='select_img green'
+                        (click)="selectTypes('greenThumb')" style="width:100%">
+                    </ng-template>
                     <div class="caption">
                       <p>Green thumb</p>
                     </div>
@@ -113,8 +143,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/activist.png" class='select_img activist' id=6 onclick="activist()"
+                    <img src="/assets/icons/grey/activist.png" class='select_img activist' id=6
+                      (click)="selectTypes('activist')" *ngIf="types.activist === false; else showActivist"
                       style="width:100%">
+                    <ng-template #showActivist>
+                      <img src="/assets/icons/green/activist.png" class='select_img activist'
+                        (click)="selectTypes('activist')" style="width:100%">
+                    </ng-template>
                     <div class="caption">
                       <p>Activist</p>
                     </div>
@@ -122,8 +157,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/grayVersion/parent.png" class='select_img parent' id=7 onclick="parent()"
+                    <img src="/assets/icons/grey/parent.png" class='select_img parent' id=7
+                      (click)="selectTypes('parent')" *ngIf="types.parent === false; else showParent"
                       style="width:100%">
+                    <ng-template #showParent>
+                      <img src="/assets/icons/green/parent.png" class='select_img parent'
+                        (click)="selectTypes('parent')" style="width:100%">
+                    </ng-template>
                     <div class="caption">
                       <p>Parent</p>
                     </div>
@@ -131,8 +171,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/grayVersion/health-enthusiast.png" class='select_img health' id=8
-                      onclick="health()" style="width:100%">
+                    <img src="/assets/icons/grey/health-enthusiast.png" class='select_img health' id=8
+                      (click)="selectTypes('healthEnthusiast')"
+                      *ngIf="types.healthEnthusiast === false; else showHealthEnthusiast" style="width:100%">
+                    <ng-template #showHealthEnthusiast>
+                      <img src="/assets/icons/green/health-enthusiast.png" class='select_img health'
+                        (click)="selectTypes('healthEnthusiast')" style="width:100%">
+                    </ng-template>
                     <div class="caption">
                       <p>Health Enthusiast</p>
                     </div>
@@ -140,16 +185,24 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/grayVersion/Yogi-and-workout-addict.png" class='select_img yogi' id=9
-                      onclick="yogi()" style="width:100%">
+                    <img src="/assets/icons/grey/Yogi-and-workout-addict.png" class='select_img yogi' id=9
+                      (click)="selectTypes('yogi')" *ngIf="types.yogi === false; else showYogi" style="width:100%">
+                    <ng-template #showYogi>
+                      <img src="/assets/icons/green/Yogi-and-workout-addict.png" class='select_img yogi'
+                        (click)="selectTypes('yogi')" style="width:100%">
+                    </ng-template>
                     <div class="caption">
                       <p>Yogi and workout addict</p>
                     </div>
                   </div>
                 </div>
               </div><BR><BR>
-              <h3>Nothing related above? Give a word, don't let me guess:)</h3>
-              <hr>
+              <form>
+                <div class="form-group">
+                  <label for="usr">Nothing related above? Give a word, don't let me guess:)</label>
+                  <input type="text" class="form-control" id="name" name="type">
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -172,8 +225,13 @@
               <div class="row">
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/grayVersion/nutrition food and recepies.png" class='select_img nutrition'
-                      id=01 onclick="nutrition()" style=" width: 200px;  height: 160px;">
+                    <img src="/assets/icons/grey/nutrition food and recepies.png" class='select_img nutrition' id=01
+                      (click)="selectTopics('nutrition')" *ngIf="topics.nutrition === false; else showNutrition"
+                      style=" width: 200px;  height: 160px;">
+                    <ng-template #showNutrition>
+                      <img src="/assets/icons/green/nutrition food and recepies.png" class='select_img nutrition'
+                        (click)="selectTopics('nutrition')" style=" width: 200px;  height: 160px;">
+                    </ng-template>
                     <div class="caption1">
                       <p>Nutrition, food and recipes</p>
                     </div>
@@ -181,8 +239,14 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/local business stores and restaurants.png" class='select_img local' id=02
-                      onclick="local()" style="width: 200px;  height: 160px;">
+                    <img src="/assets/icons/grey/local business stores and restaurants.png" class='select_img local'
+                      id=02 (click)="selectTopics('localBusiness')"
+                      *ngIf="topics.localBusiness === false; else showLocalBusiness"
+                      style="width: 200px;  height: 160px;">
+                    <ng-template #showLocalBusiness>
+                      <img src="/assets/icons/green/local business stores and restaurants.png" class='select_img local'
+                        (click)="selectTopics('localBusiness')" style="width: 200px;  height: 160px;">
+                    </ng-template>
                     <div class="caption1">
                       <p>Local businesses, stores <BR>and restaurants</p>
                     </div>
@@ -190,9 +254,15 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/grayVersion/sustainability and environment news.png"
-                      class='select_img sustainability' id=03 onclick="sustainability()"
-                      style="width: 200px;  height: 160px;">
+                    <img src="/assets/icons/grey/sustainability and environment news.png"
+                      class='select_img sustainability' id=03
+                      *ngIf="topics.sustainability === false; else showsuSustainability"
+                      (click)="selectTopics('sustainability')" style="width: 200px;  height: 160px;">
+                    <ng-template #showsuSustainability>
+                      <img src="/assets/icons/green/sustainability and environment news.png"
+                        class='select_img sustainability' (click)="selectTopics('sustainability')"
+                        style="width: 200px;  height: 160px;">
+                    </ng-template>
                     <div class="caption1">
                       <p>Sustainability and <BR>environment news</p>
                     </div>
@@ -200,8 +270,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/grayVersion/health and wellbeing.png" class='select_img wellbeing' id=04
-                      onclick="wellbeing()" style="width: 200px;  height: 160px;">
+                    <img src="/assets/icons/grey/health and wellbeing.png" class='select_img wellbeing' id=04
+                      (click)="selectTopics('health')" *ngIf="topics.health === false; else showHealth"
+                      style=" width: 200px; height: 160px;">
+                    <ng-template #showHealth>
+                      <img src="/assets/icons/green/health and wellbeing.png" class='select_img wellbeing'
+                        (click)="selectTopics('health')" style=" width: 200px; height: 160px;">
+                    </ng-template>
                     <div class="caption1">
                       <p>Health and well-being</p>
                     </div>
@@ -209,8 +284,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/grayVersion/activity and exercise.png" class='select_img exercise' id=05
-                      onclick="exercise()" style="width: 200px;  height: 160px;">
+                    <img src="/assets/icons/grey/activity and exercise.png" class='select_img exercise' id=05
+                      (click)="selectTopics('activity')" *ngIf="topics.activity === false; else showActivity"
+                      style="width: 200px;  height: 160px;">
+                    <ng-template #showActivity>
+                      <img src="/assets/icons/green/activity and exercise.png" class='select_img exercise'
+                        (click)="selectTopics('activity')" style="width: 200px;  height: 160px;">
+                    </ng-template>
                     <div class="caption1">
                       <p>Activity and exercise</p>
                     </div>
@@ -218,8 +298,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/grayVersion/gardening.png" id="Gardening" class='select_img gardening' id=06
-                      onclick="gardening()" style="width: 200px;  height: 160px;">
+                    <img src="/assets/icons/grey/gardening.png" id="Gardening" class='select_img gardening' id=06
+                      (click)="selectTopics('gardening')" *ngIf="topics.gardening === false; else showGardening"
+                      style="width: 200px;  height: 160px;">
+                    <ng-template #showGardening>
+                      <img src="/assets/icons/green/gardening.png" id="Gardening" class='select_img gardening'
+                        (click)="selectTopics('gardening')" style="width: 200px;  height: 160px;">
+                    </ng-template>
                     <div class="caption1">
                       <p>Gardening</p>
                     </div>
@@ -227,8 +312,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/grayVersion/sustainable living tips and diy.png" class='select_img tips' id=07
-                      onclick="tips()" style="width: 200px;  height: 160px;">
+                    <img src="/assets/icons/grey/sustainable living tips and diy.png" class='select_img tips' id=07
+                      (click)="selectTopics('diy')" *ngIf="topics.diy === false; else showDIY"
+                      style="width: 200px;  height: 160px;">
+                    <ng-template #showDIY>
+                      <img src="/assets/icons/green/sustainable living tips and diy.png" class='select_img tips'
+                        (click)="selectTopics('diy')" style="width: 200px;  height: 160px;">
+                    </ng-template>
                     <div class="caption1">
                       <p>Sustainable living <BR>tips and DIYs</p>
                     </div>
@@ -236,8 +326,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/ethical fashion and beauty.png" class='select_img ethical' id=08
-                      onclick="ethical()" style="width: 200px;  height: 160px;">
+                    <img src="/assets/icons/grey/ethical fashion and beauty.png" class='select_img ethical' id=08
+                      (click)="selectTopics('fashion')" *ngIf="topics.fashion === false; else showFashion"
+                      style="width: 200px;  height: 160px;">
+                    <ng-template #showFashion>
+                      <img src="/assets/icons/green/ethical fashion and beauty.png" class='select_img ethical'
+                        (click)="selectTopics('fashion')" style="width: 200px;  height: 160px;">
+                    </ng-template>
                     <div class="caption1">
                       <p>Ethical fashion and beauty</p>
                     </div>
@@ -245,8 +340,13 @@
                 </div>
                 <div class="col-md-4">
                   <div class="thumbnail">
-                    <img src="/assets/img/grayVersion/people and their stories.png" class='select_img people' id=09
-                      onclick="people()" style="width: 200px;  height: 160px;">
+                    <img src="/assets/icons/grey/people and their stories.png" class='select_img people' id=09
+                      (click)="selectTopics('people')" *ngIf="topics.people === false; else showPeople"
+                      style="width: 200px;  height: 160px;">
+                    <ng-template #showPeople>
+                      <img src="/assets/icons/green/people and their stories.png" class='select_img people'
+                        (click)="selectTopics('people')" style="width: 200px;  height: 160px;">
+                    </ng-template>
                     <div class="caption1">
                       <p>People and their stories</p>
                     </div>
@@ -275,52 +375,119 @@
               <h2>Do you have special diet preference?</h2><BR>
               <div class="row">
                 <div class="col-sm-12 col-md-12">
-                  <button type="button" class="btn1 selected">Organic </button>
-                  <button type="button" class="btn1">Non-GMO</button>
-                  <button type="button" class="btn1">Vegon </button>
-                  <button type="button" class="btn1">Vegetarian </button>
-                  <button type="button" class="btn1">Detox </button>
-                  <button type="button" class="btn1">Paleo</button>
-                  <button type="button" class="btn1">Herbal </button>
-                  <button type="button" class="btn1">Ayurveda </button>
-                  <button type="button" class="btn1">Kosher </button>
-                  <button type="button" class="btn1">Probiotic </button>
-                  <button type="button" class="btn1">Gluten </button>
-                  <button type="button" class="btn1"> Free </button>
-                  <button type="button" class="btn1"> Dairy Free </button>
-                  <button type="button" class="btn1"> Sugar Free </button>
-                  <button type="button" class="btn1"> Salt Free </button>
-                  <button type="button" class="btn1"> Alcohol Free </button>
-                  <button type="button" class="btn1"> Caffeine Free </button>
-                  <button type="button" class="btn1"> Yeast Free </button>
-                  <button type="button" class="btn1"> Diabetes Friendly </button>
-                  <button type="button" class="btn1"> Cholesterol Friendly </button>
-                  <button type="button" class="btn1"> Cancer Fighting </button>
-                  <button type="button" class="btn1"> Low Calorie </button>
-                  <button type="button" class="btn1"> Low Sodium </button>
-                  <button type="button" class="btn1">Low GI</button>
-                  <button type="button" class="btn1">Low Sugar </button>
-                  <button type="button" class="btn1"> Low Fat </button>
-                  <button type="button" class="btn1"> High Protein </button>
-                  <button type="button" class="btn1"> High Fiber </button>
+                  <button type="button" (click)="selectDiet('organic')"
+                    [class.selected]="dietPreferences.organic === true" class="btn1">Organic
+                  </button>
+                  <button type="button" (click)="selectDiet('nonGMO')"
+                    [class.selected]="dietPreferences.nonGMO === true" class="btn1">Non-GMO</button>
+                  <button type="button" (click)="selectDiet('vegeterian')"
+                    [class.selected]="dietPreferences.vegeterian === true" class="btn1">Vegetarian
+                  </button>
+                  <button type="button" (click)="selectDiet('vegan')" [class.selected]="dietPreferences.vegan === true"
+                    class="btn1">Vegon </button>
+                  <button type="button" (click)="selectDiet('detox')" [class.selected]="dietPreferences.detox === true"
+                    class="btn1">Detox </button>
+                  <button type="button" (click)="selectDiet('paleo')" [class.selected]="dietPreferences.paleo === true"
+                    class="btn1">Paleo</button>
+                  <button type="button" (click)="selectDiet('herbal')"
+                    [class.selected]="dietPreferences.herbal === true" class="btn1">Herbal
+                  </button>
+                  <button type="button" (click)="selectDiet('ayurveda')"
+                    [class.selected]="dietPreferences.ayurveda === true" class="btn1">Ayurveda
+                  </button>
+                  <button type="button" (click)="selectDiet('kosher')"
+                    [class.selected]="dietPreferences.kosher === true" class="btn1">Kosher
+                  </button>
+                  <button type="button" (click)="selectDiet('probiotic')"
+                    [class.selected]="dietPreferences.probiotic === true" class="btn1">Probiotic
+                  </button>
+                  <button type="button" (click)="selectDiet('gluten')"
+                    [class.selected]="dietPreferences.gluten === true" class="btn1">Gluten </button>
+                  <button type="button" (click)="selectDiet('free')" [class.selected]="dietPreferences.free === true"
+                    class="btn1"> Free </button>
+                  <button type="button" (click)="selectDiet('dairyFree')"
+                    [class.selected]="dietPreferences.dairyFree === true" class="btn1"> Dairy Free
+                  </button>
+                  <button type="button" (click)="selectDiet('sugarFree')"
+                    [class.selected]="dietPreferences.sugarFree === true" class="btn1"> Sugar Free
+                  </button>
+                  <button type="button" (click)="selectDiet('saltFree')"
+                    [class.selected]="dietPreferences.saltFree === true" class="btn1"> Salt Free
+                  </button>
+                  <button type="button" (click)="selectDiet('alcoholFree')"
+                    [class.selected]="dietPreferences.alcoholFree === true" class="btn1"> Alcohol
+                    Free
+                  </button>
+                  <button type="button" (click)="selectDiet('caffeineFree')"
+                    [class.selected]="dietPreferences.caffeineFree === true" class="btn1"> Caffeine
+                    Free
+                  </button>
+                  <button type="button" (click)="selectDiet('yeastFree')"
+                    [class.selected]="dietPreferences.yeastFree === true" class="btn1"> Yeast Free
+                  </button>
+                  <button type="button" (click)="selectDiet('diabetesFriendly')"
+                    [class.selected]="dietPreferences.diabetesFriendly === true" class="btn1">
+                    Diabetes
+                    Friendly </button>
+                  <button type="button" (click)="selectDiet('cholesterolFriendly')"
+                    [class.selected]="dietPreferences.cholesterolFriendly === true" class="btn1">
+                    Cholesterol
+                    Friendly </button>
+                  <button type="button" (click)="selectDiet('cancerFighting')"
+                    [class.selected]="dietPreferences.cancerFighting === true" class="btn1"> Cancer
+                    Fighting </button>
+                  <button type="button" (click)="selectDiet('lowCalorie')"
+                    [class.selected]="dietPreferences.lowCalorie === true" class="btn1"> Low Calorie
+                  </button>
+                  <button type="button" (click)="selectDiet('lowSodium')"
+                    [class.selected]="dietPreferences.lowSodium === true" class="btn1"> Low Sodium
+                  </button>
+                  <button type="button" (click)="selectDiet('lowGI')" [class.selected]="dietPreferences.lowGI === true"
+                    class="btn1">Low GI</button>
+                  <button type="button" (click)="selectDiet('lowSugar')"
+                    [class.selected]="dietPreferences.lowSugar === true" class="btn1">Low Sugar
+                  </button>
+                  <button type="button" (click)="selectDiet('lowFat')"
+                    [class.selected]="dietPreferences.lowFat === true" class="btn1"> Low Fat
+                  </button>
+                  <button type="button" (click)="selectDiet('highProtein')"
+                    [class.selected]="dietPreferences.highProtein === true" class="btn1"> High
+                    Protein
+                  </button>
+                  <button type="button" (click)="selectDiet('highFiber')"
+                    [class.selected]="dietPreferences.highFiber === true" class="btn1"> High Fiber
+                  </button>
                 </div>
               </div>
-              <h2 class="lasth2">Do your have food allergies?</h2>
+              <h2 class="lasth2">Do you have food allergies?</h2>
               <div class="row">
                 <div class="col-sm-12 col-md-12">
-                  <button type="button" class="btn1">Peanuts Free</button>
-                  <button type="button" class="btn1">Nuts Free</button>
-                  <button type="button" class="btn1">Web Conferencing </button>
-                  <button type="button" class="btn1">Milk Free</button>
-                  <button type="button" class="btn1">Egg Free</button>
-                  <button type="button" class="btn1">Whear Free</button>
-                  <button type="button" class="btn1">Soy Free</button>
-                  <button type="button" class="btn1">Fish Free</button>
-                  <button type="button" class="btn1">Seafood Free</button>
-                  <button type="button" class="btn1">Shelifish Free</button>
-                  <button type="button" class="btn1">Pepper Free </button>
-                  <button type="button" class="btn1"> Hypoallergenic</button>
-                  <button type="button" class="btn1"> Fragrance Free</button>
+                  <button type="button" (click)="selectAlergies('peanutsFree')"
+                    [class.selected]="foodAlergies.peanutsFree === true" class="btn1">Peanuts Free</button>
+                  <button type="button" (click)="selectAlergies('nutsFree')"
+                    [class.selected]="foodAlergies.nutsFree === true" class="btn1">Nuts Free</button>
+                  <button type="button" (click)="selectAlergies('webConferencing')"
+                    [class.selected]="foodAlergies.webConferencing === true" class="btn1">Web Conferencing </button>
+                  <button type="button" (click)="selectAlergies('milkFree')"
+                    [class.selected]="foodAlergies.milkFree === true" class="btn1">Milk Free</button>
+                  <button type="button" (click)="selectAlergies('eggFree')"
+                    [class.selected]="foodAlergies.eggFree === true" class="btn1">Egg Free</button>
+                  <button type="button" (click)="selectAlergies('whearFree')"
+                    [class.selected]="foodAlergies.whearFree === true" class="btn1">Whear Free</button>
+                  <button type="button" (click)="selectAlergies('soyFree')"
+                    [class.selected]="foodAlergies.soyFree === true" class="btn1">Soy Free</button>
+                  <button type="button" (click)="selectAlergies('fishFree')"
+                    [class.selected]="foodAlergies.fishFree === true" class="btn1">Fish Free</button>
+                  <button type="button" (click)="selectAlergies('seafoodFree')"
+                    [class.selected]="foodAlergies.seafoodFree === true" class="btn1">Seafood Free</button>
+                  <button type="button" (click)="selectAlergies('shelifishFree')"
+                    [class.selected]="foodAlergies.shelifishFree === true" class="btn1">Shelifish Free</button>
+                  <button type="button" (click)="selectAlergies('pepperFree')"
+                    [class.selected]="foodAlergies.pepperFree === true" class="btn1">Pepper Free </button>
+                  <button type="button" (click)="selectAlergies('hypoallergenic')"
+                    [class.selected]="foodAlergies.hypoallergenic === true" class="btn1"> Hypoallergenic</button>
+                  <button type="button" (click)="selectAlergies('fragranceFree')"
+                    [class.selected]="foodAlergies.fragranceFree === true" class="btn1"> Fragrance Free</button>
                 </div>
               </div>
             </div>

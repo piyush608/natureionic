@@ -33,9 +33,8 @@ export class SignupComponent implements OnInit {
   signup() {
     this.angAuth.signup(this.user).subscribe(
       res => {
-        this.angAuth.setToken(res["token"]);
-        this.angAuth.loggedIn.next(true);
-        this.router.navigateByUrl("/home");
+        this.angAuth.setPendingToken(res["token"]);
+        this.router.navigateByUrl("/onboarding");
       },
       err => {
         console.log(err);

@@ -177,22 +177,8 @@ input.invalid {
     border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 .btn1:hover {
-  display: inline-block;
-  font-weight: 400;
   color: white;
-  text-align: center;
-  vertical-align: middle;
-  margin-left: 15px;
-  margin-top: 15px;
-  user-select: none;
   background-color: #ff6260;
-  border: 1px solid #ff6260;
-  padding: 7px 20px 10px 20px;
-  font-size: 1rem;
-  line-height: 1.5;
-  border-radius: 3.25rem;
-  transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
-    border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
 
 .btn1:active,
@@ -270,6 +256,10 @@ hr {
   border-top: 1px solid rgba(0, 0, 0, 0.39);
 }
 
+.select_img {
+  cursor: pointer;
+}
+
 /* The dots/bullets/indicators */
 .dot {
   cursor: pointer;
@@ -318,4 +308,9 @@ hr {
   font-size: 14px;
   color: #313030;
   font-weight: 600;
+}
+
+.selected {
+  color: white;
+  background-color: #ff6260;
 }

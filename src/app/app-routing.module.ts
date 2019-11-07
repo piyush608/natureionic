@@ -81,8 +81,7 @@ const routes: Routes = [
   },
   {
     path: "onboarding",
-    component: OnboardingComponent,
-    canActivate: [AuthGuard]
+    component: OnboardingComponent
   },
   {
     path: "forgot",
