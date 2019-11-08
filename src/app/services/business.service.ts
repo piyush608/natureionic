@@ -19,6 +19,10 @@ export class BusinessService {
     );
   }
 
+  getDetails(_id) {
+    return this.http.get(environment.BUSINESS_URL + "/getDetails/" + _id);
+  }
+
   search(keyword) {
     return this.http.get(environment.BUSINESS_URL + "/search", {
       params: {

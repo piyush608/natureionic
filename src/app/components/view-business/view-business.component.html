@@ -1,78 +1,53 @@
-<div class="container col-11 m-auto">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="business_info">
-        <div class="all_icons">
-          <button class="business_type">Cafe</button>
-          <img
-            class="bookmark"
-            src="../../../assets/images/bookmarked.png"
-            alt=""
-          />
-          <img class="heart" src="../../../assets/images/like.png" alt="" />
-          <p class="likes">like</p>
-          <button class="shadow_btn share_btn">
-            <img src="../../../assets/images/share.png" /> Share
-          </button>
+<div class="container-fluid m-auto">
+  <div class="row main-content justify-content-md-center">
+    <div class="col-11">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="business_info">
+            <div class="all_icons">
+              <button class="business_type"> {{ business.category.name }} </button>
+              <img class="bookmark" src="/assets/images/bookmarked.png" alt="" />
+              <img class="heart" src="/assets/images/like.png" alt="" />
+              <p class="likes"> {{ business.likes }} like</p>
+              <button class="shadow_btn share_btn">
+                <img src="/assets/images/share.png" /> Share
+              </button>
+            </div>
+            <img [src]="viewedPhoto" alt="" class="business" />
+            <div class="thumbnails">
+              <img *ngFor="let photo of business.photos" (click)="changePhoto(photo.thumb400Url)"
+                [src]="photo.thumb200Url" alt="" class="all_thumbnails" />
+            </div>
+          </div>
         </div>
-        <img
-          src="../../../assets/images/youMeCommunity@3x.png"
-          alt=""
-          class="business"
-        />
-        <div class="thumbnails">
-          <img
-            src="../../../assets/images/youMeCommunity@3x.png"
-            alt=""
-            class="all_thumbnails"
-          />
-
-          <img
-            src="../../../assets/images/youMeCommunity@3x.png"
-            alt=""
-            class="all_thumbnails"
-          />
-          <img
-            src="../../../assets/images/youMeCommunity@3x.png"
-            alt=""
-            class="all_thumbnails"
-          />
-          <img
-            src="../../../assets/images/youMeCommunity@3x.png"
-            alt=""
-            class="all_thumbnails"
-          />
+        <div class="col-md-4 name_map">
+          <h1>{{ business.name }}</h1>
+          <div class="icons">
+            <p>Icon goes here</p>
+          </div>
+          <div class="phone">
+            <div>Number</div>
+            <p>+01(415)358-4883</p>
+          </div>
+          <div class="address">
+            <div>Address</div>
+            <p> {{ business.address }} </p>
+          </div>
+          <div class="add_by">
+            <div>Added by</div>
+            <div *ngIf="business.addedBy">
+              <img src="/assets/images/inviteJoin@3x.png" alt="" class="user_img" />
+              <p class="user_name"> {{ business.addedBy.name }} </p>
+              <p class="user_loc">Tampa, Fl</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-4 name_map">
-      <h1>Sunshine Organic Community Cafe & Mr. Sam`s Bakery with Deli</h1>
-      <div class="icons">
-        <p>Icon goes here</p>
-      </div>
-      <div class="phone">
-        <div>Number</div>
-        <p>+01(415)358-4883</p>
-      </div>
-      <div class="address">
-        <div>Address</div>
-        <p>248 GeorgeJenkins Blvd,Lakeland,Fl 33815,USA</p>
-      </div>
-      <div class="add_by">
-        <div>Add by</div>
-        <div>
-          <img
-            src="../../../assets/images/inviteJoin@3x.png"
-            alt=""
-            class="user_img"
-          />
-          <p class="user_name">James</p>
-          <p class="user_loc">Tampa,Fl</p>
+        <div class="col-md-4 name_map">
+          Map goes here
+          <img [src]="mapImage" class="mapImage" alt="" srcset="">
         </div>
       </div>
-    </div>
-    <div class="col-md-4 name_map">
-      Map goes here
     </div>
   </div>
+  <app-footer></app-footer>
 </div>
