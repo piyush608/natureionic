@@ -16,6 +16,10 @@ export class ProductService {
     return this.http.post(environment.HUNTEDPRODUCT_URL + "/create", product);
   }
 
+  getDetails(_id) {
+    return this.http.get(environment.HUNTEDPRODUCT_URL + "/getDetails/" + _id);
+  }
+
   update(_id, recipe) {
     return this.http.patch(
       environment.HUNTEDPRODUCT_URL + "/update/" + _id,

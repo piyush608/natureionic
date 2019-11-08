@@ -1,9 +1,15 @@
-@font-face {
-  font-family: proxima-regular;
-  src: url("../../../assets/fonts/proxima-nova-regular.ttf");
+.container-fluid {
+  overflow: scroll;
 }
+
+.main-content {
+  margin-bottom: 50px;
+}
+
 .business {
   border-radius: 10px;
+  height: 310px;
+  width: 100%;
 }
 
 .product_info {
@@ -66,6 +72,7 @@
   justify-content: space-between;
 }
 .all_thumbnails {
+  cursor: pointer;
   height: 80px;
   width: 22%;
   border-radius: 10px;

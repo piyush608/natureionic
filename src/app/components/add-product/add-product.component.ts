@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ModalController } from "@ionic/angular";
+import { ModalController, LoadingController } from "@ionic/angular";
 import { SuccessModalComponent } from "../success-modal/success-modal.component";
 import { Product } from "src/app/models/product.model";
 import { ProductService } from "src/app/services/product.service";
@@ -20,19 +20,27 @@ export class AddProductComponent implements OnInit {
   public localUserImage: any;
   public files = [];
   public localFiles = [];
+  public loader: any;
 
   constructor(
     public modalController: ModalController,
     private angProduct: ProductService,
     private angImage: ImageService,
-    private angCategory: CategoryService
+    private angCategory: CategoryService,
+    public loadingController: LoadingController
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.getCategories();
+  }
 
   async presentModal() {
     const modal = await this.modalController.create({
-      component: SuccessModalComponent
+      component: SuccessModalComponent,
+      componentProps: {
+        _id: this.product._id,
+        type: "product"
+      }
     });
     return await modal.present();
   }
@@ -40,6 +48,7 @@ export class AddProductComponent implements OnInit {
   getCategories() {
     this.angCategory.getCategories("product").subscribe(
       res => {
+        console.log(res);
         this.categories = res["categories"];
       },
       err => {
@@ -83,6 +92,7 @@ export class AddProductComponent implements OnInit {
   }
 
   addProduct() {
+    this.presentLoading();
     this.angProduct.addProduct(this.product).subscribe(
       res => {
         this.product = res["newProduct"];
@@ -132,6 +142,7 @@ export class AddProductComponent implements OnInit {
         if (this.product.photos.length === this.files.length) {
           this.angProduct.update(this.product._id, this.product).subscribe(
             () => {
+              this.dismissLoading();
               this.presentModal();
             },
             err => {
@@ -167,12 +178,23 @@ export class AddProductComponent implements OnInit {
 
       this.angProduct.update(this.product._id, this.product).subscribe(
         () => {
-          console.log("Recipe updated.");
+          console.log("Product updated.");
         },
         err => {
           console.log(err);
         }
       );
     });
+  }
+
+  async presentLoading() {
+    this.loader = await this.loadingController.create({
+      message: "Please wait"
+    });
+    await this.loader.present();
+  }
+
+  async dismissLoading() {
+    await this.loader.dismiss();
   }
 }

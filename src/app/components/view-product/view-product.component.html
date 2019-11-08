@@ -1,97 +1,62 @@
-<div class="container col-11 m-auto">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="product_info">
-        <div class="all_icons">
-          <button class="product_type">Cafe</button>
-          <img
-            class="bookmark"
-            src="../../../assets/images/bookmarked.png"
-            alt=""
-          />
-          <img class="heart" src="../../../assets/images/like.png" alt="" />
-          <p class="likes">like</p>
-          <button class="shadow_btn share_btn">
-            <img src="../../../assets/images/share.png" /> Share
-          </button>
+<div class="container-fluid m-auto">
+  <div class="row main-content justify-content-md-center">
+    <div class="col-11">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="product_info">
+            <div class="all_icons">
+              <button class="product_type"> {{ product.category.name }} </button>
+              <img class="bookmark" src="/assets/images/bookmarked.png" alt="" />
+              <img class="heart" src="/assets/images/like.png" alt="" />
+              <p class="likes"> {{ product.likes }} like</p>
+              <button class="shadow_btn share_btn">
+                <img src="/assets/images/share.png" /> Share
+              </button>
+            </div>
+            <img [src]="viewedPhoto" alt="" class="business" />
+            <div class="thumbnails">
+              <img *ngFor="let photo of product.photos" (click)="changePhoto(photo.thumb400Url)"
+                [src]="photo.thumb200Url" alt="" class="all_thumbnails" />
+            </div>
+            <div class="staff_pick">
+              <img src="/assets/images/NHstaffPick@2x.png" alt="" class="circle_img" />
+              <p class="nh_pick">Naturehub Staff pick</p>
+            </div>
+          </div>
         </div>
-        <img
-          src="../../../assets/images/youMeCommunity@3x.png"
-          alt=""
-          class="business"
-        />
-        <div class="thumbnails">
-          <img
-            src="../../../assets/images/youMeCommunity@3x.png"
-            alt=""
-            class="all_thumbnails"
-          />
+        <div class="col-md-4 name_map">
+          <h1>
+            {{ product.name }}
+          </h1>
 
-          <img
-            src="../../../assets/images/youMeCommunity@3x.png"
-            alt=""
-            class="all_thumbnails"
-          />
-          <img
-            src="../../../assets/images/youMeCommunity@3x.png"
-            alt=""
-            class="all_thumbnails"
-          />
-          <img
-            src="../../../assets/images/youMeCommunity@3x.png"
-            alt=""
-            class="all_thumbnails"
-          />
-        </div>
-        <div class="staff_pick">
-          <img
-            src="../../../assets/images/NHstaffPick@2x.png"
-            alt=""
-            class="circle_img"
-          />
-          <p class="nh_pick">Naturehub Staff pick</p>
-        </div>
-      </div>
-    </div>
-    <div class="col-md-4 name_map">
-      <h1>
-        All Vegan - Spicy Sesame Flavoured Kelp Jerky Plant Based Superfood
-      </h1>
+          <div class="prod_desc">
+            <div>Product Description</div>
+            <p>
+              {{ product.description }}
+            </p>
+          </div>
 
-      <div class="prod_desc">
-        <div>Product Description</div>
-        <p>
-          A delicious, nutrient dense, high protein snack made with locally
-          harvested kelp, top quality..
-        </p>
-      </div>
-
-      <div class="recommended_by">
-        <div>Recommended by</div>
-        <div>
-          <img
-            src="../../../assets/images/inviteJoin@3x.png"
-            alt=""
-            class="circle_img"
-          />
-          <p class="user_name">HerbalMaster</p>
-          <p class="user_loc">Tampa,Fl</p>
+          <div class="recommended_by">
+            <div>Recommended by</div>
+            <div *ngIf="product.addedBy">
+              <img src="/assets/images/inviteJoin@3x.png" alt="" class="circle_img" />
+              <p class="user_name"> {{ product.addedBy.name }} </p>
+              <p class="user_loc">Tampa,Fl</p>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-    <div class="col-md-4 name_map">
-      <div style="padding-top:18px;">Company / Founder</div>
-      <div class="comp">
-        <img
-          src="../../../assets/images/inviteJoin@3x.png"
-          alt=""
-          class="circle_img"
-        />
-        <p class="comp_name"><b>AKUA CO.</b></p>
-      </div>
-      <div>
-        <p style="padding-top:30px;">Comp desc</p>
+        <div class="col-md-4 name_map" *ngIf="product.ownerImage">
+          <div style="padding-top:18px;">Company / Founder</div>
+          <div class="comp">
+            <img [src]="product.ownerImage.thumb200Url" alt="" class="circle_img" />
+            <p class="comp_name"><b> {{ product.ownerName }} </b></p>
+          </div>
+          <div>
+            <p style="padding-top:30px;"> {{ product.ownerDescription }} </p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
+  <app-footer></app-footer>
 </div>

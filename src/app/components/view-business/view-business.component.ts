@@ -21,7 +21,6 @@ export class ViewBusinessComponent implements OnInit {
   ngOnInit() {
     this.angBusiness.getDetails(this.route.snapshot.params._id).subscribe(
       res => {
-        console.log(res);
         this.business = res["business"];
         this.viewedPhoto = this.business.photos[0].thumb400Url;
         this.mapImage =
