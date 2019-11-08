@@ -11,4 +11,12 @@ export class UserService {
   update(_id, user) {
     return this.http.patch(environment.BASE_URL + "/update/" + _id, user);
   }
+
+  getProfile() {
+    return this.http.get(environment.BASE_URL + "/getProfile");
+  }
+
+  getProfileImage() {
+    return this.http.get(environment.BASE_URL + "/getProfileImage");
+  }
 }

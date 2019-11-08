@@ -25,7 +25,8 @@
       <li class="nav-item">
         <a class="nav-link" tabindex="-1" aria-disabled="true">
           <div class="d-flex">
-            <div class="background-property user-img" (click)="openProfile()"></div>
+            <div class="background-property user-img" [ngStyle]="{ 'background-image': 'url(' + profileImage + ')'}"
+              (click)="openProfile()"></div>
             <div class="notification-dot"></div>
             <img src="/assets/images/menu-button-of-three-horizontal-lines.svg" class="menu-icon ml-3"
               (click)="presentPopover($event)" />

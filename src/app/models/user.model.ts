@@ -43,6 +43,7 @@ export class User {
     this.isSubscribed = true;
     this.onboarding = false;
     this.verified = false;
+    this.location = [];
     this.likedBusinesses = [];
     this.likedRecipes = [];
     this.likedProducts = [];

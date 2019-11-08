@@ -33,6 +33,7 @@ import { PopoverMenuComponent } from "./components/popover-menu/popover-menu.com
 import { LoginComponent } from "./components/login/login.component";
 import { SignupComponent } from "./components/signup/signup.component";
 import { OnboardingComponent } from "./components/onboarding/onboarding.component";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { OnboardingComponent } from "./components/onboarding/onboarding.componen
   ],
   imports: [
     BrowserModule,
+    CommonModule,
     AgmCoreModule.forRoot({
       apiKey: environment.apiKey,
       libraries: ["places"]
