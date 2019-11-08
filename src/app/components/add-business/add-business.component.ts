@@ -5,7 +5,7 @@ import {
   ElementRef,
   NgZone
 } from "@angular/core";
-import { ModalController } from "@ionic/angular";
+import { ModalController, LoadingController } from "@ionic/angular";
 import { SuccessModalComponent } from "../success-modal/success-modal.component";
 import { Business } from "src/app/models/business.model";
 import { MapsAPILoader } from "@agm/core";
@@ -28,6 +28,7 @@ export class AddBusinessComponent implements OnInit {
   public categories = [];
   public localFiles = [];
   public files = [];
+  public loader: any;
 
   constructor(
     public modalController: ModalController,
@@ -36,7 +37,8 @@ export class AddBusinessComponent implements OnInit {
     private angLocation: LocationService,
     private angCategory: CategoryService,
     private angBusiness: BusinessService,
-    private angImage: ImageService
+    private angImage: ImageService,
+    public loadingController: LoadingController
   ) {}
 
   ngOnInit() {
@@ -89,7 +91,11 @@ export class AddBusinessComponent implements OnInit {
 
   async presentModal() {
     const modal = await this.modalController.create({
-      component: SuccessModalComponent
+      component: SuccessModalComponent,
+      componentProps: {
+        _id: this.business._id,
+        type: "business"
+      }
     });
     return await modal.present();
   }
@@ -133,6 +139,7 @@ export class AddBusinessComponent implements OnInit {
   }
 
   addBusiness() {
+    this.presentLoading();
     this.angBusiness.addBusiness(this.business).subscribe(res => {
       this.business = res["newBusiness"];
       this.files.forEach(file => {
@@ -170,6 +177,7 @@ export class AddBusinessComponent implements OnInit {
         if (this.business.photos.length === this.files.length) {
           this.angBusiness.update(this.business._id, this.business).subscribe(
             () => {
+              this.dismissLoading();
               this.presentModal();
             },
             err => {
@@ -182,5 +190,16 @@ export class AddBusinessComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  async presentLoading() {
+    this.loader = await this.loadingController.create({
+      message: "Please wait"
+    });
+    await this.loader.present();
+  }
+
+  async dismissLoading() {
+    await this.loader.dismiss();
   }
 }

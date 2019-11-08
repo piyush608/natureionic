@@ -1,14 +1,22 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: 'app-success-modal',
-  templateUrl: './success-modal.component.html',
-  styleUrls: ['./success-modal.component.scss'],
+  selector: "app-success-modal",
+  templateUrl: "./success-modal.component.html",
+  styleUrls: ["./success-modal.component.scss"]
 })
 export class SuccessModalComponent implements OnInit {
+  @Input() _id: string;
+  @Input() type: string;
 
-  constructor() { }
+  constructor(public router: Router) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    console.log(this._id);
+  }
 
+  goto() {
+    this.router.navigateByUrl("/view/" + this.type + "/" + this._id);
+  }
 }

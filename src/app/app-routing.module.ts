@@ -46,15 +46,15 @@ const routes: Routes = [
     canActivate: [AuthGuard],
     children: [
       {
-        path: "business",
+        path: "business/:_id",
         component: ViewBusinessComponent
       },
       {
-        path: "product",
+        path: "product/:_id",
         component: ViewProductComponent
       },
       {
-        path: "recipe",
+        path: "recipe/:_id",
         component: ViewRecipeComponent
       }
     ]
