@@ -4,6 +4,7 @@ import { AuthService } from "src/app/services/auth.service";
 import { UserService } from "src/app/services/user.service";
 import { Router } from "@angular/router";
 import { ImageService } from "src/app/services/image.service";
+import { LoadingController } from "@ionic/angular";
 
 @Component({
   selector: "app-onboarding",
@@ -19,6 +20,7 @@ export class OnboardingComponent implements OnInit {
   public tabIndex: number = 1;
   public file: any;
   public localFile: any = "/assets/img/profile.png";
+  public loader: any;
   public types = {
     conscious: false,
     cityExplore: false,
@@ -93,7 +95,8 @@ export class OnboardingComponent implements OnInit {
     private angAuth: AuthService,
     private angUser: UserService,
     public router: Router,
-    private angImage: ImageService
+    private angImage: ImageService,
+    public loadingController: LoadingController
   ) {}
 
   ngOnInit() {}
@@ -129,6 +132,7 @@ export class OnboardingComponent implements OnInit {
   }
 
   submit() {
+    this.presentLoading();
     this.user.types = this.types;
     this.user.topics = this.topics;
     this.user.dietPreference = this.dietPreferences;
@@ -180,6 +184,7 @@ export class OnboardingComponent implements OnInit {
 
       this.angUser.update(this.user._id, this.user).subscribe(
         () => {
+          this.dismissLoading();
           this.router.navigateByUrl("/");
         },
         err => {
@@ -226,5 +231,16 @@ export class OnboardingComponent implements OnInit {
     this.thirdTab = false;
     this.fourthTab = true;
     this.tabIndex = 4;
+  }
+
+  async presentLoading() {
+    this.loader = await this.loadingController.create({
+      message: "Please wait"
+    });
+    await this.loader.present();
+  }
+
+  async dismissLoading() {
+    await this.loader.dismiss();
   }
 }
