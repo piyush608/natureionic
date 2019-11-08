@@ -314,3 +314,9 @@ hr {
   color: white;
   background-color: #ff6260;
 }
+.circle__inner > input {
+  display: none;
+}
+.circle__inner img {
+  cursor: pointer;
+}

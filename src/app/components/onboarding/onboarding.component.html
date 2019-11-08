@@ -17,8 +17,13 @@
             <div class="container" style="width: 50%;   margin-top: 74px;">
               <center>
                 <div class="circle">
-                  <div class="circle__inner"><img src="/assets/img/profile.png" style="width: 117px; border: 1px solid #dedede; border-radius: 50%; position: relative;
-                    top: 4px;  left: 1px;"></div>
+                  <div class="circle__inner">
+                    <label for="file-input">
+                      <img [src]="localFile" style="width: 117px; height: 119px; border: 1px solid #dedede; border-radius: 50%; position: relative;
+                      top: 4px;">
+                    </label>
+                    <input id="file-input" type="file" (change)="uploadImage($event)" />
+                  </div>
                 </div>
               </center><BR><BR>
               <form>

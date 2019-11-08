@@ -3,6 +3,7 @@ import { User } from "src/app/models/user.model";
 import { AuthService } from "src/app/services/auth.service";
 import { UserService } from "src/app/services/user.service";
 import { Router } from "@angular/router";
+import { ImageService } from "src/app/services/image.service";
 
 @Component({
   selector: "app-onboarding",
@@ -16,6 +17,8 @@ export class OnboardingComponent implements OnInit {
   public thirdTab: boolean = false;
   public fourthTab: boolean = false;
   public tabIndex: number = 1;
+  public file: any;
+  public localFile: any = "/assets/img/profile.png";
   public types = {
     conscious: false,
     cityExplore: false,
@@ -89,7 +92,8 @@ export class OnboardingComponent implements OnInit {
   constructor(
     private angAuth: AuthService,
     private angUser: UserService,
-    public router: Router
+    public router: Router,
+    private angImage: ImageService
   ) {}
 
   ngOnInit() {}
@@ -110,6 +114,20 @@ export class OnboardingComponent implements OnInit {
     this.foodAlergies[alergy] = !this.foodAlergies[alergy];
   }
 
+  uploadImage(event) {
+    const file = event.target.files[0];
+    if (file) {
+      this.file = file;
+
+      // code for file preview
+      const reader = new FileReader();
+      reader.onload = (e: any) => {
+        this.localFile = e.target.result;
+      };
+      reader.readAsDataURL(file);
+    }
+  }
+
   submit() {
     this.user.types = this.types;
     this.user.topics = this.topics;
@@ -120,12 +138,55 @@ export class OnboardingComponent implements OnInit {
 
     this.angUser.update(this.angAuth.getUserPayload().id, this.user).subscribe(
       res => {
-        this.router.navigateByUrl("/");
+        this.user = res["newUser"];
+
+        this.angImage
+          .uploadImage("users", res["newUser"]._id, this.file)
+          .then(url => {
+            this.uploadImageURL(url);
+          })
+          .catch(err => {
+            console.log(err);
+          });
       },
       err => {
         console.log(err);
       }
     );
+  }
+
+  uploadImageURL(URL) {
+    this.angImage.uploadImageURL(URL).subscribe(res => {
+      const photo = {
+        image: res["photo"]._id,
+        isCurrent: true
+      };
+      this.user.photo.push(photo);
+
+      const filename = res["photo"].originalUrl.split("/");
+      const params = {
+        path: res["photo"].originalUrl,
+        key: "users/" + this.user._id + "/",
+        filename: filename[filename.length - 1]
+      };
+      this.angImage.resizeImage(params).subscribe(
+        resp => {
+          console.log(resp);
+        },
+        err => {
+          console.log(err);
+        }
+      );
+
+      this.angUser.update(this.user._id, this.user).subscribe(
+        () => {
+          this.router.navigateByUrl("/");
+        },
+        err => {
+          console.log(err);
+        }
+      );
+    });
   }
 
   nextStep() {
