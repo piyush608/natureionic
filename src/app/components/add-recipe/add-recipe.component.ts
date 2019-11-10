@@ -5,7 +5,7 @@ import { CategoryService } from "src/app/services/category.service";
 import { BusinessService } from "src/app/services/business.service";
 import { ImageService } from "src/app/services/image.service";
 import { SuccessModalComponent } from "../success-modal/success-modal.component";
-import { ModalController } from "@ionic/angular";
+import { ModalController, LoadingController } from "@ionic/angular";
 
 @Component({
   selector: "app-add-recipe",
@@ -24,13 +24,15 @@ export class AddRecipeComponent implements OnInit {
   public result = [];
   public files = [];
   public localFiles = [];
+  public loader: any;
 
   constructor(
     private angRecipe: RecipeService,
     private angCategory: CategoryService,
     private angBusiness: BusinessService,
     private angImage: ImageService,
-    public modalController: ModalController
+    public modalController: ModalController,
+    public loadingController: LoadingController
   ) {}
 
   ngOnInit() {
@@ -100,6 +102,7 @@ export class AddRecipeComponent implements OnInit {
   }
 
   addRecipe() {
+    this.presentLoading();
     this.angRecipe.addRecipe(this.recipe).subscribe(
       res => {
         this.recipe = res["newRecipe"];
@@ -143,6 +146,7 @@ export class AddRecipeComponent implements OnInit {
         if (this.recipe.photos.length === this.files.length) {
           this.angRecipe.update(this.recipe._id, this.recipe).subscribe(
             () => {
+              this.dismissLoading();
               this.presentModal();
             },
             err => {
@@ -159,8 +163,23 @@ export class AddRecipeComponent implements OnInit {
 
   async presentModal() {
     const modal = await this.modalController.create({
-      component: SuccessModalComponent
+      component: SuccessModalComponent,
+      componentProps: {
+        _id: this.recipe._id,
+        type: "recipe"
+      }
     });
     return await modal.present();
+  }
+
+  async presentLoading() {
+    this.loader = await this.loadingController.create({
+      message: "Please wait"
+    });
+    await this.loader.present();
+  }
+
+  async dismissLoading() {
+    await this.loader.dismiss();
   }
 }
