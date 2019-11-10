@@ -3,6 +3,7 @@ import { RecipeService } from "src/app/services/recipe.service";
 import { ProductService } from "src/app/services/product.service";
 import { CategoryService } from "src/app/services/category.service";
 import { Router } from "@angular/router";
+import { LocationService } from "src/app/services/location.service";
 
 @Component({
   selector: "app-home",
@@ -10,14 +11,21 @@ import { Router } from "@angular/router";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
+  public city: string;
+  public state: string;
+  public country: string;
+
   constructor(
     private angRecipe: RecipeService,
     private angProduct: ProductService,
     private angCategory: CategoryService,
-    private router: Router
+    private router: Router,
+    private angLocation: LocationService
   ) {}
 
   ngOnInit() {
+    this.getCurrentPosition();
+
     this.angCategory.getCategories("business").subscribe(
       res => {
         console.log(res);
@@ -44,6 +52,25 @@ export class HomeComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  getCurrentPosition() {
+    this.angLocation.getPosition().then(res => {
+      this.getLatLngCode(res._lat, res._long);
+    });
+  }
+
+  getLatLngCode(lat, lng) {
+    this.angLocation
+      .codeLatLng(lat, lng)
+      .then(location => {
+        this.city = location.city;
+        this.state = location.stateSN;
+        this.country = location.country;
+      })
+      .catch(err => {
+        console.log(err);
+      });
   }
 
   addBusiness() {

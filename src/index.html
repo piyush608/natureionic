@@ -1,71 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>NatureHub</title>
 
-    <base href="/" />
+<head>
+  <meta charset="utf-8" />
+  <title>NatureHub</title>
 
-    <meta
-      name="viewport"
-      content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no"
-    />
-    <meta name="format-detection" content="telephone=no" />
-    <meta name="msapplication-tap-highlight" content="no" />
+  <base href="/" />
 
-    <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
-      crossorigin="anonymous"
-    />
-    <link
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-      rel="stylesheet"
-      integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN"
-      crossorigin="anonymous"
-    />
+  <meta name="viewport"
+    content="viewport-fit=cover, width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="msapplication-tap-highlight" content="no" />
 
-    <!-- add to homescreen for ios -->
-    <meta name="apple-mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
-    <link rel="manifest" href="manifest.webmanifest" />
-    <meta name="theme-color" content="#1976d2" />
-    <style>
-      @font-face {
-        font-family: "proxima";
-        src: url("./assets/fonts/proxima-nova-bold.ttf");
-      }
+  <link rel="icon" type="image/png" href="assets/icon/favicon.png" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous" />
+  <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+    integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous" />
 
-      @font-face {
-        font-family: "proxima-regular";
-        src: url("./assets/fonts/proxima-nova-regular.ttf");
-      }
+  <!-- add to homescreen for ios -->
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <meta name="theme-color" content="#1976d2" />
+  <style>
+    @font-face {
+      font-family: "proxima";
+      src: url("./assets/fonts/proxima-nova-bold.ttf");
+    }
 
-      * {
-        font-family: "proxima", sans-serif;
-        color: rgb(72, 72, 72);
-      }
+    @font-face {
+      font-family: "proxima-regular";
+      src: url("./assets/fonts/proxima-nova-regular.ttf");
+    }
 
-      p {
-        font-family: "proxima-regular";
-      }
-    </style>
-    <script>
-      var global = global || window;
-      var Buffer = Buffer || [];
-      var process = process || {
-        env: { DEBUG: undefined },
-        version: []
-      };
-    </script>
-  </head>
+    * {
+      font-family: "proxima", sans-serif;
+      color: rgb(72, 72, 72);
+    }
 
-  <body>
-    <app-root></app-root>
-    <noscript
-      >Please enable JavaScript to continue using this application.</noscript
-    >
-  </body>
+    p {
+      font-family: "proxima-regular";
+    }
+  </style>
+  <script>
+    var global = global || window;
+    var Buffer = Buffer || [];
+    var process = process || {
+      env: { DEBUG: undefined },
+      version: []
+    };
+  </script>
+</head>
+
+<body>
+  <app-root></app-root>
+  <noscript>Please enable JavaScript to continue using this application.</noscript>
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgsEC3C4fI6Otn-LJLs2SzySnYp91hHQU&libraries=places"
+    type="text/javascript"></script>
+</body>
+
 </html>

@@ -1,5 +1,6 @@
-declare const google: any;
 import { Injectable } from "@angular/core";
+/// <reference types=”@types/googlemaps” />
+declare var google: any;
 
 @Injectable({
   providedIn: "root"
@@ -60,6 +61,7 @@ export class LocationService {
             const location = {
               city: city.long_name,
               state: region.long_name,
+              stateSN: region.short_name,
               country: country.short_name
             };
 
