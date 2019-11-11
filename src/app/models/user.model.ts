@@ -34,6 +34,8 @@ export class User {
   topics: any;
   dietPreference: any;
   foodAlergies: any;
+  followings: Array<any>;
+  followers: Array<any>;
 
   constructor() {
     this.points = 0;
@@ -51,5 +53,7 @@ export class User {
     this.bookmarkedRecipes = [];
     this.bookmarkedProducts = [];
     this.photo = [];
+    this.followers = [];
+    this.followings = [];
   }
 }

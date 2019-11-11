@@ -87,7 +87,6 @@ input[type="search"]:focus {
   border-radius: 100%;
   position: relative;
   border: 7px solid #ffffff;
-  background: url("https://images-na.ssl-images-amazon.com/images/M/MV5BMjA3NjYzMzE1MV5BMl5BanBnXkFtZTgwNTA4NDY4OTE@._V1_UX172_CR0,0,172,256_AL_.jpg");
 }
 .profile-img:before {
   content: "";
@@ -97,7 +96,6 @@ input[type="search"]:focus {
   top: -14px;
   left: -14px;
   bottom: 2px;
-  /* border: 4px solid #ff6969; */
   border-radius: 100%;
   background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
   width: 144px;
@@ -142,6 +140,10 @@ input[type="search"]:focus {
 .bean-col img,
 .question-img {
   width: 30px;
+  margin-top: 15px;
+}
+.level-card {
+  padding-bottom: 12px;
 }
 .btn-primary:focus,
 .btn-secondary:focus,
@@ -182,6 +184,7 @@ input[type="search"]:focus {
 .btn-outline-primary:not(:disabled):not(.disabled):active {
   background: #ff6969;
   border-color: #ff6969;
+  color: #ffffff;
 }
 .edit-button {
   padding: 0px 25px;
@@ -189,6 +192,7 @@ input[type="search"]:focus {
   letter-spacing: 1px;
   font-size: 0.9em;
   margin-left: 35px;
+  margin-top: 17px;
 }
 .profile-info {
   padding-left: 70px;
