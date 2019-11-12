@@ -6,6 +6,7 @@ import { LocationService } from "src/app/services/location.service";
 import { LevelService } from "src/app/services/level.service";
 import { Level } from "src/app/models/level.model";
 import { RecipeService } from "src/app/services/recipe.service";
+import { ProductService } from "src/app/services/product.service";
 
 @Component({
   selector: "app-profile",
@@ -25,13 +26,15 @@ export class ProfileComponent implements OnInit {
   public bookmarkedBlogs = [];
   public bookmarkedVlogs = [];
   public addedRecipes = [];
+  public addedProducts = [];
 
   constructor(
     private router: Router,
     private angUser: UserService,
     private angLocation: LocationService,
     private angLevel: LevelService,
-    private angRecipe: RecipeService
+    private angRecipe: RecipeService,
+    private angProduct: ProductService
   ) {}
 
   ngOnInit() {
@@ -77,8 +80,17 @@ export class ProfileComponent implements OnInit {
 
         this.angRecipe.getUserRecipes(this.user._id).subscribe(
           res => {
-            console.log(res);
             this.addedRecipes = res["recipes"];
+          },
+          err => {
+            console.log(err);
+          }
+        );
+
+        this.angProduct.getUserProducts(this.user._id).subscribe(
+          res => {
+            console.log(res);
+            this.addedProducts = res["products"];
           },
           err => {
             console.log(err);

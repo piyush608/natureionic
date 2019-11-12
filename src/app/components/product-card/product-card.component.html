@@ -1,0 +1,18 @@
+<div class="card popular-placescard border-0">
+  <div class="card-header border-0 p-0 background-property" [ngStyle]="{ 'background-image': 'url(' + thumbnail + ')'}">
+    <div class="bookmark-div">
+      <img src="/assets/images/bookmark.svg">
+    </div>
+  </div>
+  <div class="card-body">
+    <button type="button" class="btn btn-primary">{{ product.category.name }}</button>
+    <h3>{{ product.name }}</h3>
+    <div class="recipe-uploadergrid">
+      <div class="recipe-uploaderimg background-property" [ngStyle]="{ 'background-image': 'url(' + userImage + ')'}">
+      </div>
+      <div class="recipe-uploadername">
+        <h2 class="mb-0">{{ product.addedBy.name }}</h2>
+      </div>
+    </div>
+  </div>
+</div>

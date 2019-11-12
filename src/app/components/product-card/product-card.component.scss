@@ -1,0 +1,84 @@
+.popular-placescard {
+  cursor: pointer;
+  width: 80%;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+}
+.popular-placescard .card-header {
+  border-radius: 16px;
+  height: 140px;
+}
+.popular-placescard .card-body h3 {
+  font-size: 1em;
+  height: 38px;
+  margin-top: 0 !important;
+}
+.popular-placescard .card-body p {
+  font-size: 0.8em;
+  color: #868686;
+}
+.popular-placescard .card-body p img {
+  width: 13px;
+  margin-right: 5px;
+  margin-top: -5px;
+}
+.popular-img1 {
+  background: url("https://images.unsplash.com/photo-1561662702-2f299776c2f4?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.btn-primary {
+  padding: 3px 20px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
+  border: 0px;
+  margin-bottom: 10px;
+}
+.btn-primary:focus,
+.btn-outline-primary:focus,
+.btn-secondary:focus,
+.btn-success:focus {
+  box-shadow: none;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.btn-success:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}
+.bookmark-div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e3e3e3;
+  display: grid;
+  align-items: center;
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+.bookmark-div img {
+  width: 14px;
+  display: block;
+}
+.recipe-uploadergrid {
+  display: grid;
+  grid-template-columns: 0.85fr 4fr;
+  align-items: center;
+}
+.recipe-uploaderimg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.recipe-uploadername h2 {
+  font-size: 0.9em;
+  color: #b2b2b2;
+  margin-top: 0 !important;
+}
+.background-property {
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}

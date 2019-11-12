@@ -13,7 +13,18 @@ export class RecipeCardComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    console.log(this.recipe);
     this.thumbnail = this.recipe.photos[0].thumb400Url;
+
+    if (this.recipe.addedBy.photo.length > 0) {
+      this.recipe.addedBy.photo.forEach(photo => {
+        if (photo.isCurrent === "true") {
+          this.userImage = photo.image.thumb200Url;
+        }
+      });
+    } else {
+      this.userImage =
+        "https://ui-avatars.com/api/?name=" +
+        this.recipe.addedBy.name.split(" ").join("+");
+    }
   }
 }

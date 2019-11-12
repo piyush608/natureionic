@@ -35,6 +35,7 @@ import { SignupComponent } from "./components/signup/signup.component";
 import { OnboardingComponent } from "./components/onboarding/onboarding.component";
 import { CommonModule } from "@angular/common";
 import { RecipeCardComponent } from "./components/recipe-card/recipe-card.component";
+import { ProductCardComponent } from "./components/product-card/product-card.component";
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import { RecipeCardComponent } from "./components/recipe-card/recipe-card.compon
     NotFoundComponent,
     FooterComponent,
     PopoverMenuComponent,
-    RecipeCardComponent
+    RecipeCardComponent,
+    ProductCardComponent
   ],
   entryComponents: [
     SuccessModalComponent,

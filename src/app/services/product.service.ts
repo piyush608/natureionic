@@ -26,4 +26,10 @@ export class ProductService {
       recipe
     );
   }
+
+  getUserProducts(_id) {
+    return this.http.get(
+      environment.HUNTEDPRODUCT_URL + "/getUserProducts/" + _id
+    );
+  }
 }

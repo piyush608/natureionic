@@ -12,7 +12,7 @@
       </div>
       <h3> {{ recipe.name }} </h3>
       <div class="recipe-uploadergrid">
-        <div class="recipe-uploaderimg recipe-uploaderimg1 background-property">
+        <div class="recipe-uploaderimg background-property" [ngStyle]="{ 'background-image': 'url(' + userImage + ')'}">
         </div>
         <div class="recipe-uploadername">
           <h2 class="mb-0"> {{ recipe.addedBy.name }} </h2>
