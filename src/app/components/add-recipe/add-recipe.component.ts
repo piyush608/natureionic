@@ -25,6 +25,51 @@ export class AddRecipeComponent implements OnInit {
   public files = [];
   public localFiles = [];
   public loader: any;
+  public dietPreferences = {
+    organic: false,
+    nonGMO: false,
+    vegan: false,
+    vegeterian: false,
+    detox: false,
+    paleo: false,
+    herbal: false,
+    ayurveda: false,
+    kosher: false,
+    probiotic: false,
+    gluten: false,
+    free: false,
+    dairyFree: false,
+    sugarFree: false,
+    saltFree: false,
+    alcoholFree: false,
+    yeastFree: false,
+    diabetesFriendly: false,
+    cholesterolFriendly: false,
+    cancerFighting: false,
+    lowCalorie: false,
+    lowSodium: false,
+    lowGI: false,
+    lowSugar: false,
+    lowFat: false,
+    highProtein: false,
+    highFiber: false
+  };
+
+  public foodAlergies = {
+    peanutsFree: false,
+    nutsFree: false,
+    webConferencing: false,
+    milkFree: false,
+    eggFree: false,
+    whearFree: false,
+    soyFree: false,
+    fishFree: false,
+    seafoodFree: false,
+    shelifishFree: false,
+    pepperFree: false,
+    hypoallergenic: false,
+    fragranceFree: false
+  };
 
   constructor(
     private angRecipe: RecipeService,
@@ -71,6 +116,14 @@ export class AddRecipeComponent implements OnInit {
     this.steps.push("");
   }
 
+  selectDiet(diet) {
+    this.dietPreferences[diet] = !this.dietPreferences[diet];
+  }
+
+  selectAlergies(alergy) {
+    this.foodAlergies[alergy] = !this.foodAlergies[alergy];
+  }
+
   searchBusiness() {
     if (this.keyword.length >= 2) {
       this.isVisible = true;
@@ -103,6 +156,8 @@ export class AddRecipeComponent implements OnInit {
 
   addRecipe() {
     this.presentLoading();
+    this.recipe.dietPreference = this.dietPreferences;
+    this.recipe.foodAlergies = this.foodAlergies;
     this.angRecipe.addRecipe(this.recipe).subscribe(
       res => {
         this.recipe = res["newRecipe"];

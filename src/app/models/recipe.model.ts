@@ -19,6 +19,8 @@ export class Recipe {
   sourceURL: string;
   ownerName: string;
   ownerImage: any;
+  dietPreference: any;
+  foodAlergies: any;
 
   constructor() {
     this.timestamp = new Date();

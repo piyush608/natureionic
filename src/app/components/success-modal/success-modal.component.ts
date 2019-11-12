@@ -17,11 +17,11 @@ export class SuccessModalComponent implements OnInit {
     console.log(this._id);
   }
 
-  dismiss() {
-    this.modalCtrl.dismiss({
-      dismissed: true
-    });
-  }
+  // dismiss() {
+  //   this.modalCtrl.dismiss({
+  //     dismissed: true
+  //   });
+  // }
 
   goto() {
     this.router.navigateByUrl("/view/" + this.type + "/" + this._id);

@@ -23,4 +23,8 @@ export class RecipeService {
   getUserRecipes(_id) {
     return this.http.get(environment.RECIPE_URL + "/getUserRecipes/" + _id);
   }
+
+  getDetails(_id) {
+    return this.http.get(environment.RECIPE_URL + "/getDetails/" + _id);
+  }
 }

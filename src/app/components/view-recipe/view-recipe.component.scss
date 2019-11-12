@@ -1,11 +1,12 @@
-@font-face {
-  font-family: proxima-regular;
-  src: url("../../../assets/fonts/proxima-nova-regular.ttf");
+.container-fluid {
+  overflow: scroll;
+}
+.main-content {
+  margin-bottom: 50px;
 }
 .business {
   border-radius: 10px;
 }
-
 .product_info {
   padding-top: 28px;
 }
@@ -19,7 +20,6 @@
   background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
   border: 0px;
   padding: 6px 15px;
-  margin-bottom: 10px;
   color: white;
   display: inline;
 }
@@ -27,9 +27,9 @@
   outline: none;
 }
 .bookmark {
+  height: 26px;
   display: inline;
   padding: 0px 10px;
-  height: 26px;
 }
 .heart {
   display: inline;
@@ -40,7 +40,6 @@
 }
 .share_btn {
   padding: 6px 15px;
-  font-family: proxima-regular;
   margin-bottom: 10px;
   display: inline;
   float: right;
@@ -76,6 +75,7 @@
 }
 .user_name {
   margin-left: 80px;
+  padding-top: 15px;
 }
 .user_loc {
   margin-left: 80px;
@@ -105,4 +105,38 @@
 .nh_pick {
   margin-left: 80px;
   padding-top: 16px;
+}
+.business {
+  border-radius: 10px;
+  height: 310px;
+  width: 100%;
+}
+li {
+  color: gray;
+  font-weight: 100;
+}
+.all_tags {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: end;
+}
+.tag {
+  cursor: pointer;
+  border: 1px solid #ff6969;
+  color: #ff6969;
+  border-radius: 27px;
+  padding: 1px 9px;
+  font-size: 14px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  display: none;
+}
+.selected {
+  display: inline;
+}
+.user-info {
+  padding-top: 15px;
+}
+.who_made {
+  margin-top: 20px;
 }

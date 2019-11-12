@@ -1,94 +1,109 @@
-<div class="container col-11 m-auto">
-  <div class="row">
-    <div class="col-md-4">
-      <div class="product_info">
-        <div class="all_icons">
-          <button class="product_type">Cafe</button>
-          <img
-            class="bookmark"
-            src="../../../assets/images/bookmarked.png"
-            alt=""
-          />
-          <img class="heart" src="../../../assets/images/like.png" alt="" />
-          <p class="likes">like</p>
-          <button class="shadow_btn share_btn">
-            <img src="../../../assets/images/share.png" /> Share
-          </button>
+<div class="container-fluid m-auto">
+  <div class="row main-content justify-content-md-center">
+    <div class="col-11">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="product_info">
+            <div class="all_icons">
+              <button class="product_type"> {{ recipe.category.name }} </button>
+              <img class="bookmark" src="/assets/images/bookmarked.png" alt="" />
+              <img class="heart" src="/assets/images/like.png" alt="" />
+              <p class="likes"> {{ recipe.likes }} like</p>
+              <button class="shadow_btn share_btn">
+                <img src="/assets/images/share.png" /> Share
+              </button>
+            </div>
+            <img [src]="viewedPhoto" alt="" class="business" />
+            <div class="thumbnails">
+              <img *ngFor="let photo of recipe.photos" (click)="changePhoto(photo.thumb400Url)"
+                [src]="photo.thumb200Url" alt="" class="all_thumbnails" />
+            </div>
+            <div class="staff_pick">
+              <img src="/assets/images/NHstaffPick@2x.png" alt="" class="circle_img" />
+              <p class="nh_pick">Naturehub Staff pick</p>
+            </div>
+          </div>
         </div>
-        <img
-          src="../../../assets/images/youMeCommunity@3x.png"
-          alt=""
-          class="business"
-        />
-        <div class="thumbnails">
-          <img
-            src="../../../assets/images/youMeCommunity@3x.png"
-            alt=""
-            class="all_thumbnails"
-          />
+        <div class="col-md-4 name_map">
+          <h1>
+            {{ recipe.name }}
+          </h1>
+          <div class="all_tags" *ngIf="recipe.dietPreference">
+            <span class="tag" [class.selected]="recipe.dietPreference.organic === true">Organic</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.nonGMO === true">Non-GMO</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.vegeterian === true">Vegeterian</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.vegan === true">Vegan</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.paleo === true">Paleo</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.herbal === true">Herbal</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.detox === true">Detox</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.ayurveda === true">Ayurveda</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.kosher === true">Kosher</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.probiotic === true">Probiotic</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.gluten === true">Gluten Free</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.dairyFree === true">Dairy Free</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.sugarFree === true">Sugar Free</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.saltFree === true">Salt Free</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.alcoholFree === true">Alcohol Free</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.caffeineFree === true">Caffeine Free</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.yeastFree === true">Yeast Free</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.diabetesFriendly === true">Diabetic
+              Friendly</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.cholesterolFriendly === true">Cholesterol
+              Friendly</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.cancerFighting === true">Cancer Fighting</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.lowCalorie === true">Low Calorie</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.lowSodium === true">Low Sodium</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.lowSugar === true">Low Sugar</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.lowFat === true">Low Fat</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.highProtein === true">High Protein</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.highFiber === true">High Fiber</span>
+            <span class="tag" [class.selected]="recipe.dietPreference.lowGI === true">Low Gl</span>
 
-          <img
-            src="../../../assets/images/youMeCommunity@3x.png"
-            alt=""
-            class="all_thumbnails"
-          />
-          <img
-            src="../../../assets/images/youMeCommunity@3x.png"
-            alt=""
-            class="all_thumbnails"
-          />
-          <img
-            src="../../../assets/images/youMeCommunity@3x.png"
-            alt=""
-            class="all_thumbnails"
-          />
+            <span class="tag" [class.selected]="recipe.foodAlergies.peanutsFree === true">Peanut Free</span>
+            <span class="tag" [class.selected]="recipe.foodAlergies.nutsFree === true">Nuts Free</span>
+            <span class="tag" [class.selected]="recipe.foodAlergies.milkFree === true">Milk Free</span>
+            <span class="tag" [class.selected]="recipe.foodAlergies.eggFree === true">Egg Free</span>
+            <span class="tag" [class.selected]="recipe.foodAlergies.whearFree === true">Wheat Free</span>
+            <span class="tag" [class.selected]="recipe.foodAlergies.soyFree === true">Soy Free</span>
+            <span class="tag" [class.selected]="recipe.foodAlergies.fishFree === true">Fish Free</span>
+            <span class="tag" [class.selected]="recipe.foodAlergies.seafoodFree === true">Seafood Free</span>
+            <span class="tag" [class.selected]="recipe.foodAlergies.shelifishFree === true">Shellfish Free</span>
+            <span class="tag" [class.selected]="recipe.foodAlergies.pepperFree === true">Pepper Free</span>
+            <span class="tag" [class.selected]="recipe.foodAlergies.hypoallergenic === true">Hypoallergenic</span>
+            <span class="tag" [class.selected]="recipe.foodAlergies.fragranceFree === true">Fragrance Free</span>
+          </div>
+          <div class="who_made">
+            <div>Who made this?</div>
+            <div class="user-info" *ngIf="recipe.addedBy">
+              <img [src]="addedUserImage" alt="" class="circle_img" />
+              <p class="user_name">{{ recipe.addedBy.name }}</p>
+            </div>
+          </div>
+          <div class="prod_desc" *ngIf="recipe.businesses.length > 0">
+            <div>Where to buy Ingredients?</div>
+            <p>
+              A delicious, nutrient dense, high protein snack made with locally
+              harvested kelp, top quality..
+            </p>
+          </div>
         </div>
-        <div class="staff_pick">
-          <img
-            src="../../../assets/images/NHstaffPick@2x.png"
-            alt=""
-            class="circle_img"
-          />
-          <p class="nh_pick">Naturehub Staff pick</p>
+        <div class="col-md-4 name_map">
+          <div style="padding-top:18px;">Ingredients</div>
+          <ul>
+            <li *ngFor="let ingredient of recipe.ingredients">
+              {{ ingredient }}
+            </li>
+          </ul>
+
+          <div style="padding-top:18px;">Steps</div>
+          <ul>
+            <li *ngFor="let step of recipe.steps">
+              {{ step }}
+            </li>
+          </ul>
         </div>
-      </div>
-    </div>
-    <div class="col-md-4 name_map">
-      <h1>
-        Easy Breakfast Organic Beets Veg Toss Salad Mix WIth Parsley
-      </h1>
-      <div class="who_made">
-        <div>Who made this?</div>
-        <div>
-          <img
-            src="../../../assets/images/inviteJoin@3x.png"
-            alt=""
-            class="circle_img"
-          />
-          <p class="user_name">Eli`s Health Coach at NY</p>
-        </div>
-      </div>
-      <div class="prod_desc">
-        <div>Where to buy Ingredients?</div>
-        <p>
-          A delicious, nutrient dense, high protein snack made with locally
-          harvested kelp, top quality..
-        </p>
-      </div>
-    </div>
-    <div class="col-md-4 name_map">
-      <div style="padding-top:18px;">Company / Founder</div>
-      <div class="comp">
-        <img
-          src="../../../assets/images/inviteJoin@3x.png"
-          alt=""
-          class="circle_img"
-        />
-        <p class="comp_name"><b>AKUA CO.</b></p>
-      </div>
-      <div>
-        <p style="padding-top:30px;">Comp desc</p>
       </div>
     </div>
   </div>
+  <app-footer></app-footer>
 </div>
