@@ -20,6 +20,8 @@ export class User {
   bookmarkedBusinesses: Array<any>;
   bookmarkedRecipes: Array<any>;
   bookmarkedProducts: Array<any>;
+  bookmarkedBlogs: Array<any>;
+  bookmarkedVlogs: Array<any>;
   name: string;
   about: string;
   onboarding: boolean;
@@ -52,6 +54,8 @@ export class User {
     this.bookmarkedBusinesses = [];
     this.bookmarkedRecipes = [];
     this.bookmarkedProducts = [];
+    this.bookmarkedBlogs = [];
+    this.bookmarkedVlogs = [];
     this.photo = [];
     this.followers = [];
     this.followings = [];

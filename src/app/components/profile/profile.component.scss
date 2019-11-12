@@ -12,73 +12,6 @@
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
-.navbar-brand {
-  margin-right: 0.9rem;
-}
-.navbar-brand img {
-  width: 40px;
-  height: 40px;
-}
-.user-img {
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-  background: url("https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?h=350&auto=compress&cs=tinysrgb");
-}
-.search {
-  padding: 0px;
-  margin-top: 2px;
-  width: 100%;
-}
-.search input {
-  outline: none;
-}
-input[type="search"] {
-  border: 0px;
-  border-radius: 46px;
-  background: url("../../../assets/images/search.svg") no-repeat;
-  background-size: 20px 20px;
-  -webkit-transition: all 0.5s;
-  -moz-transition: all 0.5s;
-  transition: all 0.5s;
-  -webkit-box-sizing: content-box;
-  -webkit-appearance: textfield;
-  font-size: 0.8em;
-  font-weight: 300;
-  padding: 0px 55px;
-  background-position-y: 9px;
-  background-position-x: 25px;
-  height: calc(1.5em + 0.75rem + 9px);
-  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
-  width: 138px !important;
-}
-
-input[type="search"]::placeholder {
-  color: #b2b2b2;
-}
-input::-webkit-search-decoration,
-input::-webkit-search-cancel-button {
-  display: none;
-}
-input[type="search"]:focus {
-  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
-}
-.nav-item {
-  margin-right: 45px;
-  display: grid;
-  align-content: center;
-}
-.nav-item:last-child {
-  margin-right: 0px;
-}
-.nav-link {
-  font-size: 0.9em;
-}
-.menu-icon {
-  width: 16px;
-  height: 16px;
-  margin-top: 5px;
-}
 .profile-img {
   cursor: pointer;
   width: 130px;
@@ -101,16 +34,6 @@ input[type="search"]:focus {
   width: 144px;
   height: 144px;
 }
-/* notification-dot */
-.notification-dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-  background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
-  position: absolute;
-  top: 20px;
-  right: 50px;
-}
 .profileimg-row {
   box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
   border-radius: 11px;
@@ -132,7 +55,6 @@ input[type="search"]:focus {
 .bean-col p {
   font-size: 0.7em;
   color: #868686;
-  font-family: "proxima", sans-serif;
 }
 .bean-col div {
   padding: 10px 25px;
@@ -686,6 +608,8 @@ input[type="search"]:focus {
   display: grid;
   align-content: center;
   height: 140px;
+  margin-right: 15px;
+  margin-bottom: 20px;
 }
 
 // Vlog CSS
@@ -793,4 +717,14 @@ input[type="search"]:focus {
 .no_product {
   width: 400px;
   margin: auto;
+}
+.list-group-item {
+  cursor: pointer;
+}
+.saved-message {
+  padding-left: 12px;
+}
+.saved-message h3 {
+  display: block;
+  width: 100%;
 }

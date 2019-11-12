@@ -5,48 +5,30 @@
         <div class="col-10 m-auto">
           <div class="row">
             <div class="col-4">
-              <div
-                class="profile-img background-property ml-auto mr-auto"
-                (click)="openEditProfile()"
-                [ngStyle]="{ 'background-image': 'url(' + profileImage + ')'}"
-              ></div>
+              <div class="profile-img background-property ml-auto mr-auto" (click)="openEditProfile()"
+                [ngStyle]="{ 'background-image': 'url(' + profileImage + ')'}"></div>
               <div class="mt-4 profileimg-row">
                 <div class="row level-card">
                   <div class="col-3 vertical-center text-center bean-col">
                     <div>
-                      <img
-                        src="/assets/images/coffee-bean.svg"
-                        alt=""
-                      />
+                      <img src="/assets/images/coffee-bean.svg" alt="" />
                       <p class="mb-0"> {{ level.name }} </p>
                     </div>
                   </div>
-                  <div
-                    class="col-6 level-col vertical-center text-center pl-0 pr-0"
-                  >
+                  <div class="col-6 level-col vertical-center text-center pl-0 pr-0">
                     <h1>
                       <span class="points-obtained">{{ level.startPoint }}</span> /
                       <span class="total-points"> {{ level.endPoint }} </span>
                     </h1>
 
                     <div class="progress">
-                      <div
-                        class="progress-bar bg-success"
-                        role="progressbar"
-                        style="width: 25%"
-                        aria-valuenow="25"
-                        aria-valuemin="0"
-                        aria-valuemax="100"
-                      ></div>
+                      <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25"
+                        aria-valuemin="0" aria-valuemax="100"></div>
                     </div>
                     <p class="mb-0 mt-1">Level {{ level.level }}</p>
                   </div>
                   <div class="col-3 vertical-center">
-                    <img
-                      src="/assets/images/question.svg"
-                      alt=""
-                      class="question-img"
-                    />
+                    <img src="/assets/images/question.svg" alt="" class="question-img" />
                   </div>
                 </div>
               </div>
@@ -54,21 +36,15 @@
             <div class="col-8 profile-info">
               <div class="d-flex">
                 <h1 class="mb-0"> {{ user.name }} </h1>
-                <button
-                  type="button"
-                  class="btn btn-outline-primary edit-button"
-                  (click)="openEditProfile()"
-                >
+                <button type="button" class="btn btn-outline-primary edit-button" (click)="openEditProfile()">
                   Edit My Page
                 </button>
               </div>
               <ul class="follower-locationlist pl-0">
                 <li *ngIf="location">
                   <h2>
-                    <span
-                      ><img
-                        src="/assets/images/maps-and-flags.svg"/></span
-                    >{{ location.city }}, {{ location.state }}
+                    <span><img src="/assets/images/maps-and-flags.svg" /></span>{{ location.city }},
+                    {{ location.state }}
                   </h2>
                 </li>
                 <li (click)="openFollowers()">
@@ -110,352 +86,273 @@
       </div>
     </div>
   </div>
-  <div class="border-top profile-subnav bg-light">
-    <div class="row">
-      <div class="col-10 m-auto">
-        <ul class="nav">
-          <li class="nav-item">
-            <a class="nav-link" (click)="changeTab('collection')">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                [class.active]="tab === 'collection'"
-              >
-                My Collection
-              </button>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="changeTab('groupm')">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                [class.active]="tab === 'groupm'"
-              >
-                My Groups
-              </button>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="changeTab('recipe')">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                [class.active]="tab === 'recipe'"
-              >
-                Recipes
-              </button>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="changeTab('product')">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                [class.active]="tab === 'product'"
-              >
-                Recommended Products
-              </button>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="changeTab('blog')">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                [class.active]="tab === 'blog'"
-              >
-                Blog
-              </button>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="changeTab('vlog')">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                [class.active]="tab === 'vlog'"
-              >
-                Vlog
-              </button>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  <div class="row" *ngIf="tab === 'collection'">
-    <div class="col-11 m-auto">
-      <div class="row collection-row">
-        <div class="col-3">
-          <ul class="list-group list-group-flush follower-side-collist">
-            <li class="list-group-item pl-0 active-tab">
-              Saved Businesses
-              <span class="float-right active-tab"
-                ><i class="fa fa-chevron-right" aria-hidden="true"></i
-              ></span>
+  <div class="main-content">
+    <div class="border-top profile-subnav bg-light">
+      <div class="row">
+        <div class="col-10 m-auto">
+          <ul class="nav">
+            <li class="nav-item">
+              <a class="nav-link" (click)="changeTab('collection')">
+                <button type="button" class="btn btn-secondary" [class.active]="tab === 'collection'">
+                  My Collection
+                </button>
+              </a>
             </li>
-            <li class="list-group-item pl-0">
-              Saved Recipes
-              <span class="float-right"
-                ><i class="fa fa-chevron-right" aria-hidden="true"></i
-              ></span>
+            <li class="nav-item">
+              <a class="nav-link" (click)="changeTab('groupm')">
+                <button type="button" class="btn btn-secondary" [class.active]="tab === 'groupm'">
+                  My Groups
+                </button>
+              </a>
             </li>
-            <li class="list-group-item pl-0">
-              Saved Alternative Products
-              <span class="float-right"
-                ><i class="fa fa-chevron-right" aria-hidden="true"></i
-              ></span>
+            <li class="nav-item">
+              <a class="nav-link" (click)="changeTab('recipe')">
+                <button type="button" class="btn btn-secondary" [class.active]="tab === 'recipe'">
+                  Recipes
+                </button>
+              </a>
             </li>
-            <li class="list-group-item pl-0">
-              Saved Articles & Stories
-              <span class="float-right"
-                ><i class="fa fa-chevron-right" aria-hidden="true"></i
-              ></span>
+            <li class="nav-item">
+              <a class="nav-link" (click)="changeTab('product')">
+                <button type="button" class="btn btn-secondary" [class.active]="tab === 'product'">
+                  Recommended Products
+                </button>
+              </a>
             </li>
-            <li class="list-group-item pl-0 border-bottom">
-              Saved Videos<span class="float-right "
-                ><i class="fa fa-chevron-right" aria-hidden="true"></i
-              ></span>
+            <li class="nav-item">
+              <a class="nav-link" (click)="changeTab('blog')">
+                <button type="button" class="btn btn-secondary" [class.active]="tab === 'blog'">
+                  Blog
+                </button>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" (click)="changeTab('vlog')">
+                <button type="button" class="btn btn-secondary" [class.active]="tab === 'vlog'">
+                  Vlog
+                </button>
+              </a>
             </li>
           </ul>
         </div>
-        <div class="col-9">
-          <ul class="category-list horizontal-scroll w-100 p-1">
-            <li>
-              <button
-                type="button"
-                class="btn btn-primary selected-category-button"
-              >
-                Grocery
-              </button>
-            </li>
-            <li>
-              <button type="button" class="btn btn-info">Cafe</button>
-            </li>
-            <li>
-              <button type="button" class="btn btn-info">Resturant</button>
-            </li>
-            <li>
-              <button type="button" class="btn btn-info">Health</button>
-            </li>
-            <li>
-              <button type="button" class="btn btn-info">
-                Artisan Produce
-              </button>
-            </li>
-            <li>
-              <button type="button" class="btn btn-info">
-                Bath & Beauty
-              </button>
-            </li>
-            <li>
-              <button type="button" class="btn btn-info">Resturant</button>
-            </li>
-            <li>
-              <button type="button" class="btn btn-info">Health</button>
-            </li>
-            <li>
-              <button type="button" class="btn btn-info">
-                Bath & Beauty
-              </button>
-            </li>
-            <li>
-              <button type="button" class="btn btn-info">Resturant</button>
-            </li>
-            <li>
-              <button type="button" class="btn btn-info">Health</button>
-            </li>
-          </ul>
-          <div class="row">
-            <div class="col-4">
-              <div class="card popular-placescard border-0">
-                <div
-                  class="card-header border-0 p-0 popular-img1 background-property"
-                >
-                  <div class="bookmark-div">
-                    <img src="/assets/images/bookmark.svg" />
-                  </div>
-                </div>
-                <div class="card-body">
-                  <button type="button" class="btn btn-primary">Cafe</button>
-                  <h3>Bike & Bite Organic Bean</h3>
-                  <p class="mb-0">
-                    <img
-                      src="/assets/images/maps-and-flags.svg"
-                    />Orlando, FL
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card popular-placescard border-0">
-                <div
-                  class="card-header border-0 p-0 popular-img1 background-property"
-                >
-                  <div class="bookmark-div">
-                    <img src="/assets/images/bookmark.svg" />
-                  </div>
-                </div>
-                <div class="card-body">
-                  <button type="button" class="btn btn-primary">Cafe</button>
-                  <h3>Bike & Bite Organic Bean</h3>
-                  <p class="mb-0">
-                    <img
-                      src="/assets/images/maps-and-flags.svg"
-                    />Orlando, FL
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card popular-placescard border-0">
-                <div
-                  class="card-header border-0 p-0 popular-img1 background-property"
-                >
-                  <div class="bookmark-div">
-                    <img src="/assets/images/bookmark.svg" />
-                  </div>
-                </div>
-                <div class="card-body">
-                  <button type="button" class="btn btn-primary">Cafe</button>
-                  <h3>Bike & Bite Organic Bean</h3>
-                  <p class="mb-0">
-                    <img
-                      src="/assets/images/maps-and-flags.svg"
-                    />Orlando, FL
-                  </p>
-                </div>
-              </div>
-            </div>
+      </div>
+    </div>
+    <div class="row" *ngIf="tab === 'collection'">
+      <div class="col-11 m-auto">
+        <div class="row collection-row">
+          <div class="col-3">
+            <ul class="list-group list-group-flush follower-side-collist">
+              <li class="list-group-item pl-0" [class.active-tab]="collectionTab === 'business'"
+                (click)="changeCollectionTab('business')">
+                Saved Businesses
+                <span class="float-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+              </li>
+              <li class="list-group-item pl-0" [class.active-tab]="collectionTab === 'recipe'"
+                (click)="changeCollectionTab('recipe')">
+                Saved Recipes
+                <span class="float-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+              </li>
+              <li class="list-group-item pl-0" [class.active-tab]="collectionTab === 'product'"
+                (click)="changeCollectionTab('product')">
+                Saved Recommended Products
+                <span class="float-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+              </li>
+              <li class="list-group-item pl-0" [class.active-tab]="collectionTab === 'blog'"
+                (click)="changeCollectionTab('blog')">
+                Saved Articles & Stories
+                <span class="float-right"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+              </li>
+              <li class="list-group-item pl-0 border-bottom" [class.active-tab]="collectionTab === 'vlog'"
+                (click)="changeCollectionTab('vlog')">
+                Saved Videos<span class="float-right "><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
+              </li>
+            </ul>
           </div>
-          <div class="row">
-            <div class="col-4">
-              <div class="card popular-placescard border-0">
-                <div
-                  class="card-header border-0 p-0 popular-img1 background-property"
-                >
-                  <div class="bookmark-div">
-                    <img src="/assets/images/bookmark.svg" />
+          <div class="col-9" *ngIf="collectionTab === 'business'">
+            <div class="row saved-message" *ngIf="bookmarkedBusinesses.length === 0; else showBookmarkedBusinesses">
+              <h3>Saved Businesses</h3>
+              <p class="h6">When you see something you like, tap the bookmark button to save it.</p>
+            </div>
+            <ng-template #showBookmarkedBusinesses>
+              <ul class="category-list horizontal-scroll w-100 p-1">
+                <li>
+                  <button type="button" class="btn btn-info selected-category-button">
+                    All
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-info">
+                    Grocery
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-info">Cafe</button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-info">Resturant</button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-info">Health</button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-info">
+                    Artisan Produce
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-info">
+                    Bath & Beauty
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-info">Resturant</button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-info">Health</button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-info">
+                    Bath & Beauty
+                  </button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-info">Resturant</button>
+                </li>
+                <li>
+                  <button type="button" class="btn btn-info">Health</button>
+                </li>
+              </ul>
+              <div class="row">
+                <div class="col-4">
+                  <div class="card popular-placescard border-0">
+                    <div class="card-header border-0 p-0 popular-img1 background-property">
+                      <div class="bookmark-div">
+                        <img src="/assets/images/bookmark.svg" />
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <button type="button" class="btn btn-primary">Cafe</button>
+                      <h3>Bike & Bite Organic Bean</h3>
+                      <p class="mb-0">
+                        <img src="/assets/images/maps-and-flags.svg" />Orlando, FL
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div class="card-body">
-                  <button type="button" class="btn btn-primary">Cafe</button>
-                  <h3>Bike & Bite Organic Bean</h3>
-                  <p class="mb-0">
-                    <img
-                      src="/assets/images/maps-and-flags.svg"
-                    />Orlando, FL
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card popular-placescard border-0">
-                <div
-                  class="card-header border-0 p-0 popular-img1 background-property"
-                >
-                  <div class="bookmark-div">
-                    <img src="/assets/images/bookmark.svg" />
+                <div class="col-4">
+                  <div class="card popular-placescard border-0">
+                    <div class="card-header border-0 p-0 popular-img1 background-property">
+                      <div class="bookmark-div">
+                        <img src="/assets/images/bookmark.svg" />
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <button type="button" class="btn btn-primary">Cafe</button>
+                      <h3>Bike & Bite Organic Bean</h3>
+                      <p class="mb-0">
+                        <img src="/assets/images/maps-and-flags.svg" />Orlando, FL
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div class="card-body">
-                  <button type="button" class="btn btn-primary">Cafe</button>
-                  <h3>Bike & Bite Organic Bean</h3>
-                  <p class="mb-0">
-                    <img
-                      src="/assets/images/maps-and-flags.svg"
-                    />Orlando, FL
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <div class="card popular-placescard border-0">
-                <div
-                  class="card-header border-0 p-0 popular-img1 background-property"
-                >
-                  <div class="bookmark-div">
-                    <img src="/assets/images/bookmark.svg" />
+                <div class="col-4">
+                  <div class="card popular-placescard border-0">
+                    <div class="card-header border-0 p-0 popular-img1 background-property">
+                      <div class="bookmark-div">
+                        <img src="/assets/images/bookmark.svg" />
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <button type="button" class="btn btn-primary">Cafe</button>
+                      <h3>Bike & Bite Organic Bean</h3>
+                      <p class="mb-0">
+                        <img src="/assets/images/maps-and-flags.svg" />Orlando, FL
+                      </p>
+                    </div>
                   </div>
                 </div>
-                <div class="card-body">
-                  <button type="button" class="btn btn-primary">Cafe</button>
-                  <h3>Bike & Bite Organic Bean</h3>
-                  <p class="mb-0">
-                    <img
-                      src="/assets/images/maps-and-flags.svg"
-                    />Orlando, FL
-                  </p>
-                </div>
               </div>
+            </ng-template>
+          </div>
+          <div class="col-9" *ngIf="collectionTab === 'recipe'">
+            <div class="row saved-message" *ngIf="bookmarkedRecipes.length === 0; else showBookmarkedRecipes">
+              <h3>Saved Recipes</h3>
+              <p class="h6">When you see something you like, tap the bookmark button to save it.</p>
             </div>
+            <ng-template #showBookmarkedRecipes></ng-template>
+          </div>
+
+          <div class="col-9" *ngIf="collectionTab === 'product'">
+            <div class="row saved-message" *ngIf="bookmarkedProducts.length === 0; else showBookmarkedProducts">
+              <h3>Saved Recommended Products</h3>
+              <p class="h6">When you see something you like, tap the bookmark button to save it.</p>
+            </div>
+            <ng-template #showBookmarkedProducts></ng-template>
+          </div>
+
+          <div class="col-9" *ngIf="collectionTab === 'blog'">
+            <div class="row saved-message" *ngIf="bookmarkedBlogs.length === 0; else showBookmarkedBlogs">
+              <h3>Saved Articles</h3>
+              <p class="h6">When you see something you like, tap the bookmark button to save it.</p>
+            </div>
+            <ng-template #showBookmarkedBlogs></ng-template>
+          </div>
+
+          <div class="col-9" *ngIf="collectionTab === 'vlog'">
+            <div class="row saved-message" *ngIf="bookmarkedVlogs.length === 0; else showBookmarkedVlogs">
+              <h3>Saved Videos</h3>
+              <p class="h6">When you see something you like, tap the bookmark button to save it.</p>
+            </div>
+            <ng-template #showBookmarkedVlogs></ng-template>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row filter-row" *ngIf="tab === 'group'">
-    <div class="col-11 m-auto">
-      <div class="row pt-4">
-        <div class="col-3">
-          <div
-            class="background-property explore-groupimg explore-groupimg1"
-          ></div>
-          <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
+    <div class="row filter-row" *ngIf="tab === 'group'">
+      <div class="col-11 m-auto">
+        <div class="row pt-4">
+          <div class="col-3">
+            <div class="background-property explore-groupimg explore-groupimg1"></div>
+            <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
+          </div>
+          <div class="col-3">
+            <div class="background-property explore-groupimg explore-groupimg2"></div>
+            <h2 class="mt-3 sub-heading">Orlando Yoga Gathering</h2>
+          </div>
+          <div class="col-3">
+            <div class="background-property explore-groupimg explore-groupimg3"></div>
+            <h2 class="mt-3 sub-heading">
+              Biking for Good Cause/ Central Florida
+            </h2>
+          </div>
+          <div class="col-3">
+            <div class="background-property explore-groupimg explore-groupimg4"></div>
+            <h2 class="mt-3 sub-heading">Healthy Diet Weekend Workshop</h2>
+          </div>
         </div>
-        <div class="col-3">
-          <div
-            class="background-property explore-groupimg explore-groupimg2"
-          ></div>
-          <h2 class="mt-3 sub-heading">Orlando Yoga Gathering</h2>
-        </div>
-        <div class="col-3">
-          <div
-            class="background-property explore-groupimg explore-groupimg3"
-          ></div>
-          <h2 class="mt-3 sub-heading">
-            Biking for Good Cause/ Central Florida
-          </h2>
-        </div>
-        <div class="col-3">
-          <div
-            class="background-property explore-groupimg explore-groupimg4"
-          ></div>
-          <h2 class="mt-3 sub-heading">Healthy Diet Weekend Workshop</h2>
-        </div>
-      </div>
-      <div class="row pt-4">
-        <div class="col-3">
-          <div
-            class="background-property explore-groupimg explore-groupimg1"
-          ></div>
-          <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
-        </div>
-        <div class="col-3">
-          <div
-            class="background-property explore-groupimg explore-groupimg2"
-          ></div>
-          <h2 class="mt-3 sub-heading">Orlando Yoga Gathering</h2>
-        </div>
-        <div class="col-3">
-          <div
-            class="background-property explore-groupimg explore-groupimg3"
-          ></div>
-          <h2 class="mt-3 sub-heading">
-            Biking for Good Cause/ Central Florida
-          </h2>
-        </div>
-        <div class="col-3">
-          <div
-            class="background-property explore-groupimg explore-groupimg4"
-          ></div>
-          <h2 class="mt-3 sub-heading">Healthy Diet Weekend Workshop</h2>
+        <div class="row pt-4">
+          <div class="col-3">
+            <div class="background-property explore-groupimg explore-groupimg1"></div>
+            <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
+          </div>
+          <div class="col-3">
+            <div class="background-property explore-groupimg explore-groupimg2"></div>
+            <h2 class="mt-3 sub-heading">Orlando Yoga Gathering</h2>
+          </div>
+          <div class="col-3">
+            <div class="background-property explore-groupimg explore-groupimg3"></div>
+            <h2 class="mt-3 sub-heading">
+              Biking for Good Cause/ Central Florida
+            </h2>
+          </div>
+          <div class="col-3">
+            <div class="background-property explore-groupimg explore-groupimg4"></div>
+            <h2 class="mt-3 sub-heading">Healthy Diet Weekend Workshop</h2>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row filter-row" *ngIf="tab === 'groupm'">
+    <div class="row filter-row" *ngIf="tab === 'groupm'">
       <div class="col-11 m-auto">
         <div class="row pt-3">
           <div class="col-6">
@@ -469,519 +366,309 @@
                   </p>
                   <p>Join group conversation today.</p>
                   <div>
-                  <img src="../../../assets/images/Mask Group 199.png" alt="" />
-                </div>
-                <div>
-                  <img src="../../../assets/images/addIcon.png" alt="" />
-                </div>
+                    <img src="../../../assets/images/Mask Group 199.png" alt="" />
+                  </div>
+                  <div>
+                    <img src="../../../assets/images/addIcon.png" alt="" />
+                  </div>
                 </div>
               </div>
             </div>
           </div>
           <div class="row col-6">
+            <div class="col-6">
+              <div class="background-property explore-groupimg explore-groupimg1"></div>
+              <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
+            </div>
+            <div class="col-6">
+              <div class="background-property explore-groupimg explore-groupimg3"></div>
+              <h2 class="mt-3 sub-heading">
+                Biking for Good Cause/ Central Florida
+              </h2>
+            </div>
+            <div class="col-6">
+              <div class="background-property explore-groupimg explore-groupimg1"></div>
+              <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
+            </div>
+            <div class="col-6">
+              <div class="background-property explore-groupimg explore-groupimg1"></div>
+              <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="row filter-row" *ngIf="tab === 'recipe'">
+      <div class="col-11 m-auto">
+        <div class="row" *ngIf="addedRecipes.length > 0; else showNoRecipes">
+          <div class="col-4" *ngFor="let recipe of addedRecipes">
+            <app-recipe-card [recipe]="recipe"></app-recipe-card>
+          </div>
+          <div class="col-4">
+            <div class="recipe-add-card">
+              <div class="background-property add-img mx-auto"></div>
+            </div>
+          </div>
+        </div>
+        <!-- <div class="row">
+          <div class="col-4">
+            <div class="card border-0 recipe-card">
+              <div class="d-flex">
+                <div class="recipe-image recipe-img1 background-property"></div>
+                <div class="recipe-info">
+                  <div class="recipe-category">
+                    <button type="button" class="btn btn-primary mb-0">
+                      Salad
+                    </button>
+                    <p class="mb-0 active-tab">Draft</p>
+                  </div>
+                  <h3>Coconut Mint Fresh</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-4">
+            <div class="card border-0 recipe-card">
+              <div class="d-flex">
+                <div class="recipe-image recipe-img2 background-property"></div>
+                <div class="recipe-info">
+                  <div class="recipe-category">
+                    <button type="button" class="btn btn-primary mb-0">
+                      Salad
+                    </button>
+                    <p class="mb-0 active-tab">Draft</p>
+                  </div>
+                  <h3>Coconut Mint Fresh</h3>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div> -->
+        <ng-template #showNoRecipes>
+          <div class="row pt-3">
+            <div class="col-5">
+              <div class="card Inspiration-card border-0">
+                <div class="border-0 p-0  background-property"></div>
+                <div class="card-body">
+                  <div style="text-align: center;padding-top:20px;">
+                    <h4>You haven`t posted any recipe.</h4>
+                    <p>
+                      Oops! You haven`t posted nay recipes yet. Click to add one!
+                    </p>
+
+                    <img src="../../../assets/images/nothingtoshow_rcipes-01.png" alt="" />
+                    <img src="../../../assets/images/addIcon.png" alt="" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row col-7">
               <div class="col-6">
-                  <div
-                    class="background-property explore-groupimg explore-groupimg1"
-                  ></div>
-                  <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
-                </div>
-                <div class="col-6">
-                    <div
-            class="background-property explore-groupimg explore-groupimg3"
-          ></div>
-          <h2 class="mt-3 sub-heading">
-            Biking for Good Cause/ Central Florida
-          </h2>
-                  </div>
-                  <div class="col-6">
-                      <div
-                        class="background-property explore-groupimg explore-groupimg1"
-                      ></div>
-                      <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
-                    </div>
-                    <div class="col-6">
-                        <div
-                          class="background-property explore-groupimg explore-groupimg1"
-                        ></div>
-                        <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
+                <div class="card border-0 recipe-card">
+                  <div class="d-flex">
+                    <div class="recipe-image recipe-img3 background-property">
+                      <div class="bookmark-div">
+                        <img src="/assets/images/bookmark.svg" />
                       </div>
+                    </div>
+                    <div class="recipe-info">
+                      <div class="recipe-category">
+                        <button type="button" class="btn btn-primary mb-0">
+                          Salad
+                        </button>
+                        <p class="mb-0">245 Likes</p>
+                      </div>
+                      <h3>Coconut Mint Fresh</h3>
+                      <div class="recipe-uploadergrid">
+                        <div class="recipe-uploaderimg recipe-uploaderimg3 background-property"></div>
+                        <div class="recipe-uploadername">
+                          <h2 class="mb-0">Dulcineia Dias</h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </div>
-              
-        </div>
+              <div class="col-6">
+                <div class="card border-0 recipe-card">
+                  <div class="d-flex">
+                    <div class="recipe-image recipe-img3 background-property">
+                      <div class="bookmark-div">
+                        <img src="/assets/images/bookmark.svg" />
+                      </div>
+                    </div>
+                    <div class="recipe-info">
+                      <div class="recipe-category">
+                        <button type="button" class="btn btn-primary mb-0">
+                          Salad
+                        </button>
+                        <p class="mb-0">245 Likes</p>
+                      </div>
+                      <h3>Coconut Mint Fresh</h3>
+                      <div class="recipe-uploadergrid">
+                        <div class="recipe-uploaderimg recipe-uploaderimg3 background-property"></div>
+                        <div class="recipe-uploadername">
+                          <h2 class="mb-0">Dulcineia Dias</h2>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-template>
       </div>
     </div>
-  <div class="row filter-row" *ngIf="tab === 'recipe'">
-    <div class="col-11 m-auto">
-      <div class="row">
-        <div class="col-4">
-          <div class="card border-0 recipe-card">
-            <div class="d-flex">
-              <div class="recipe-image recipe-img1 background-property">
-                <div class="bookmark-div">
-                  <img src="/assets/images/bookmark.svg" />
-                </div>
-              </div>
-              <div class="recipe-info">
-                <div class="recipe-category">
-                  <button type="button" class="btn btn-primary mb-0">
-                    Salad
-                  </button>
-                  <p class="mb-0">245 Likes</p>
-                </div>
-                <h3>Easy Breakfast Organic Beets Veg Toss Salad M...</h3>
-                <div class="recipe-uploadergrid">
-                  <div
-                    class="recipe-uploaderimg recipe-uploaderimg1 background-property"
-                  ></div>
-                  <div class="recipe-uploadername">
-                    <h2 class="mb-0">Dulcineia Dias</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="card border-0 recipe-card">
-            <div class="d-flex">
-              <div class="recipe-image recipe-img2 background-property">
-                <div class="bookmark-div">
-                  <img src="/assets/images/bookmark.svg" />
-                </div>
-              </div>
-              <div class="recipe-info">
-                <div class="recipe-category">
-                  <button type="button" class="btn btn-primary mb-0">
-                    Salad
-                  </button>
-                  <p class="mb-0">245 Likes</p>
-                </div>
-                <h3>Easy Breakfast Organic Beets Veg Toss Salad M...</h3>
-                <div class="recipe-uploadergrid">
-                  <div
-                    class="recipe-uploaderimg recipe-uploaderimg2 background-property"
-                  ></div>
-                  <div class="recipe-uploadername">
-                    <h2 class="mb-0">Dulcineia Dias</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="card border-0 recipe-card">
-            <div class="d-flex">
-              <div class="recipe-image recipe-img3 background-property">
-                <div class="bookmark-div">
-                  <img src="/assets/images/bookmark.svg" />
-                </div>
-              </div>
-              <div class="recipe-info">
-                <div class="recipe-category">
-                  <button type="button" class="btn btn-primary mb-0">
-                    Salad
-                  </button>
-                  <p class="mb-0">245 Likes</p>
-                </div>
-                <h3>Easy Breakfast Organic Beets Veg Toss Salad M...</h3>
-                <div class="recipe-uploadergrid">
-                  <div
-                    class="recipe-uploaderimg recipe-uploaderimg3 background-property"
-                  ></div>
-                  <div class="recipe-uploadername">
-                    <h2 class="mb-0">Dulcineia Dias</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <div class="card border-0 recipe-card">
-            <div class="d-flex">
-              <div class="recipe-image recipe-img1 background-property">
-                <div class="bookmark-div">
-                  <img src="/assets/images/bookmark.svg" />
-                </div>
-              </div>
-              <div class="recipe-info">
-                <div class="recipe-category">
-                  <button type="button" class="btn btn-primary mb-0">
-                    Salad
-                  </button>
-                  <p class="mb-0">245 Likes</p>
-                </div>
-                <h3>Coconut Mint Fresh</h3>
-                <div class="recipe-uploadergrid">
-                  <div
-                    class="recipe-uploaderimg recipe-uploaderimg1 background-property"
-                  ></div>
-                  <div class="recipe-uploadername">
-                    <h2 class="mb-0">Dulcineia Dias</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="card border-0 recipe-card">
-            <div class="d-flex">
-              <div class="recipe-image recipe-img2 background-property">
-                <div class="bookmark-div">
-                  <img src="/assets/images/bookmark.svg" />
-                </div>
-              </div>
-              <div class="recipe-info">
-                <div class="recipe-category">
-                  <button type="button" class="btn btn-primary mb-0">
-                    Salad
-                  </button>
-                  <p class="mb-0">245 Likes</p>
-                </div>
-                <h3>Coconut Mint Fresh</h3>
-                <div class="recipe-uploadergrid">
-                  <div
-                    class="recipe-uploaderimg recipe-uploaderimg2 background-property"
-                  ></div>
-                  <div class="recipe-uploadername">
-                    <h2 class="mb-0">Dulcineia Dias</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="card border-0 recipe-card">
-            <div class="d-flex">
-              <div class="recipe-image recipe-img3 background-property">
-                <div class="bookmark-div">
-                  <img src="/assets/images/bookmark.svg" />
-                </div>
-              </div>
-              <div class="recipe-info">
-                <div class="recipe-category">
-                  <button type="button" class="btn btn-primary mb-0">
-                    Salad
-                  </button>
-                  <p class="mb-0">245 Likes</p>
-                </div>
-                <h3>Coconut Mint Fresh</h3>
-                <div class="recipe-uploadergrid">
-                  <div
-                    class="recipe-uploaderimg recipe-uploaderimg3 background-property"
-                  ></div>
-                  <div class="recipe-uploadername">
-                    <h2 class="mb-0">Dulcineia Dias</h2>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-4">
-          <div class="card border-0 recipe-card">
-            <div class="d-flex">
-              <div class="recipe-image recipe-img1 background-property"></div>
-              <div class="recipe-info">
-                <div class="recipe-category">
-                  <button type="button" class="btn btn-primary mb-0">
-                    Salad
-                  </button>
-                  <p class="mb-0 active-tab">Draft</p>
-                </div>
-                <h3>Coconut Mint Fresh</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="card border-0 recipe-card">
-            <div class="d-flex">
-              <div class="recipe-image recipe-img2 background-property"></div>
-              <div class="recipe-info">
-                <div class="recipe-category">
-                  <button type="button" class="btn btn-primary mb-0">
-                    Salad
-                  </button>
-                  <p class="mb-0 active-tab">Draft</p>
-                </div>
-                <h3>Coconut Mint Fresh</h3>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-4">
-          <div class="recipe-add-card">
-            <div class="background-property add-img mx-auto"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row filter-row" *ngIf="tab === 'recipem'">
+
+    <div class="row filter-row" *ngIf="tab === 'product'">
       <div class="col-11 m-auto">
         <div class="row pt-3">
-          <div class="col-5">
-            <div class="card Inspiration-card border-0">
-              <div class="border-0 p-0  background-property"></div>
+          <div class="col-3">
+            <div class="card popular-placescard border-0">
+              <div class="card-header border-0 p-0 popularproduct-img1 background-property">
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark (1).svg" />
+                </div>
+              </div>
               <div class="card-body">
-                <div style="text-align: center;padding-top:20px;">
-                  <h4>You haven`t posted any recipe.</h4>
-                  <p>
-                    Oops! You haven`t posted nay recipes yet. Click to add one!
-                  </p>
-                  
-                  <img src="../../../assets/images/nothingtoshow_rcipes-01.png" alt="" />
-                  <img src="../../../assets/images/addIcon.png" alt="" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row col-7">
-            
-              <div class="col-6">
-                  <div class="card border-0 recipe-card">
-                    <div class="d-flex">
-                      <div class="recipe-image recipe-img3 background-property">
-                        <div class="bookmark-div">
-                          <img src="/assets/images/bookmark.svg" />
-                        </div>
-                      </div>
-                      <div class="recipe-info">
-                        <div class="recipe-category">
-                          <button type="button" class="btn btn-primary mb-0">
-                            Salad
-                          </button>
-                          <p class="mb-0">245 Likes</p>
-                        </div>
-                        <h3>Coconut Mint Fresh</h3>
-                        <div class="recipe-uploadergrid">
-                          <div
-                            class="recipe-uploaderimg recipe-uploaderimg3 background-property"
-                          ></div>
-                          <div class="recipe-uploadername">
-                            <h2 class="mb-0">Dulcineia Dias</h2>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                <button type="button" class="btn btn-primary">Food</button>
+                <h3>Bike & Bite Organic Bean</h3>
+                <div class="recipe-uploadergrid">
+                  <div class="recipe-uploaderimg recipe-uploaderimg1 background-property"></div>
+                  <div class="recipe-uploadername">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
                   </div>
                 </div>
-                <div class="col-6">
-                    <div class="card border-0 recipe-card">
-                      <div class="d-flex">
-                        <div class="recipe-image recipe-img3 background-property">
-                          <div class="bookmark-div">
-                            <img src="/assets/images/bookmark.svg" />
-                          </div>
-                        </div>
-                        <div class="recipe-info">
-                          <div class="recipe-category">
-                            <button type="button" class="btn btn-primary mb-0">
-                              Salad
-                            </button>
-                            <p class="mb-0">245 Likes</p>
-                          </div>
-                          <h3>Coconut Mint Fresh</h3>
-                          <div class="recipe-uploadergrid">
-                            <div
-                              class="recipe-uploaderimg recipe-uploaderimg3 background-property"
-                            ></div>
-                            <div class="recipe-uploadername">
-                              <h2 class="mb-0">Dulcineia Dias</h2>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card popular-placescard border-0">
+              <div class="card-header border-0 p-0 popularproduct-img2 background-property">
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark (1).svg" />
+                </div>
+              </div>
+              <div class="card-body">
+                <button type="button" class="btn btn-primary">Food</button>
+                <h3>James Bob's Organic Cafe & Bakery</h3>
+                <div class="recipe-uploadergrid">
+                  <div class="recipe-uploaderimg recipe-uploaderimg2 background-property"></div>
+                  <div class="recipe-uploadername">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
                   </div>
-              </div>
-        </div>
-      </div>
-  </div>
-
-  <div class="row filter-row" *ngIf="tab === 'product'">
-    <div class="col-11 m-auto">
-      <div class="row pt-3">
-        <div class="col-3">
-          <div class="card popular-placescard border-0">
-            <div
-              class="card-header border-0 p-0 popularproduct-img1 background-property"
-            >
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark (1).svg" />
+                </div>
               </div>
             </div>
-            <div class="card-body">
-              <button type="button" class="btn btn-primary">Food</button>
-              <h3>Bike & Bite Organic Bean</h3>
-              <div class="recipe-uploadergrid">
-                <div
-                  class="recipe-uploaderimg recipe-uploaderimg1 background-property"
-                ></div>
-                <div class="recipe-uploadername">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
+          </div>
+          <div class="col-3">
+            <div class="card popular-placescard border-0">
+              <div class="card-header border-0 p-0 popularproduct-img3 background-property">
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark (1).svg" />
+                </div>
+              </div>
+              <div class="card-body">
+                <button type="button" class="btn btn-primary">Food</button>
+                <h3>Bike & Bite Organic Bean</h3>
+                <div class="recipe-uploadergrid">
+                  <div class="recipe-uploaderimg recipe-uploaderimg3 background-property"></div>
+                  <div class="recipe-uploadername">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card popular-placescard border-0">
+              <div class="card-header border-0 p-0 popularproduct-img1 background-property">
+                <div class="bookmark-div">
+                  <img src="/assets/images//bookmark (1).svg" />
+                </div>
+              </div>
+              <div class="card-body">
+                <button type="button" class="btn btn-primary">Food</button>
+                <h3>Bike & Bite Organic Bean</h3>
+                <div class="recipe-uploadergrid">
+                  <div class="recipe-uploaderimg recipe-uploaderimg1 background-property"></div>
+                  <div class="recipe-uploadername">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-3">
-          <div class="card popular-placescard border-0">
-            <div
-              class="card-header border-0 p-0 popularproduct-img2 background-property"
-            >
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark (1).svg" />
+        <div class="row pt-3">
+          <div class="col-3">
+            <div class="card popular-placescard border-0">
+              <div class="card-header border-0 p-0 popularproduct-img1 background-property">
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark (1).svg" />
+                </div>
               </div>
-            </div>
-            <div class="card-body">
-              <button type="button" class="btn btn-primary">Food</button>
-              <h3>James Bob's Organic Cafe & Bakery</h3>
-              <div class="recipe-uploadergrid">
-                <div
-                  class="recipe-uploaderimg recipe-uploaderimg2 background-property"
-                ></div>
-                <div class="recipe-uploadername">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
+              <div class="card-body">
+                <button type="button" class="btn btn-primary">Food</button>
+                <h3>Bike & Bite Organic Bean</h3>
+                <div class="recipe-uploadergrid">
+                  <div class="recipe-uploaderimg recipe-uploaderimg1 background-property"></div>
+                  <div class="recipe-uploadername">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-3">
-          <div class="card popular-placescard border-0">
-            <div
-              class="card-header border-0 p-0 popularproduct-img3 background-property"
-            >
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark (1).svg" />
+          <div class="col-3">
+            <div class="card popular-placescard border-0">
+              <div class="card-header border-0 p-0 popularproduct-img2 background-property">
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark (1).svg" />
+                </div>
               </div>
-            </div>
-            <div class="card-body">
-              <button type="button" class="btn btn-primary">Food</button>
-              <h3>Bike & Bite Organic Bean</h3>
-              <div class="recipe-uploadergrid">
-                <div
-                  class="recipe-uploaderimg recipe-uploaderimg3 background-property"
-                ></div>
-                <div class="recipe-uploadername">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
+              <div class="card-body">
+                <button type="button" class="btn btn-primary">Food</button>
+                <h3>James Bob's Organic Cafe & Bakery</h3>
+                <div class="recipe-uploadergrid">
+                  <div class="recipe-uploaderimg recipe-uploaderimg2 background-property"></div>
+                  <div class="recipe-uploadername">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-3">
-          <div class="card popular-placescard border-0">
-            <div
-              class="card-header border-0 p-0 popularproduct-img1 background-property"
-            >
-              <div class="bookmark-div">
-                <img src="/assets/images//bookmark (1).svg" />
+          <div class="col-3">
+            <div class="card popular-placescard border-0">
+              <div class="card-header border-0 p-0 popularproduct-img3 background-property">
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark (1).svg" />
+                </div>
               </div>
-            </div>
-            <div class="card-body">
-              <button type="button" class="btn btn-primary">Food</button>
-              <h3>Bike & Bite Organic Bean</h3>
-              <div class="recipe-uploadergrid">
-                <div
-                  class="recipe-uploaderimg recipe-uploaderimg1 background-property"
-                ></div>
-                <div class="recipe-uploadername">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
+              <div class="card-body">
+                <button type="button" class="btn btn-primary">Food</button>
+                <h3>Bike & Bite Organic Bean</h3>
+                <div class="recipe-uploadergrid">
+                  <div class="recipe-uploaderimg recipe-uploaderimg3 background-property"></div>
+                  <div class="recipe-uploadername">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row pt-3">
-        <div class="col-3">
-          <div class="card popular-placescard border-0">
-            <div
-              class="card-header border-0 p-0 popularproduct-img1 background-property"
-            >
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark (1).svg" />
-              </div>
+          <div class="col-3">
+            <div class="add-card">
+              <div class="background-property add-img mx-auto"></div>
             </div>
-            <div class="card-body">
-              <button type="button" class="btn btn-primary">Food</button>
-              <h3>Bike & Bite Organic Bean</h3>
-              <div class="recipe-uploadergrid">
-                <div
-                  class="recipe-uploaderimg recipe-uploaderimg1 background-property"
-                ></div>
-                <div class="recipe-uploadername">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card popular-placescard border-0">
-            <div
-              class="card-header border-0 p-0 popularproduct-img2 background-property"
-            >
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark (1).svg" />
-              </div>
-            </div>
-            <div class="card-body">
-              <button type="button" class="btn btn-primary">Food</button>
-              <h3>James Bob's Organic Cafe & Bakery</h3>
-              <div class="recipe-uploadergrid">
-                <div
-                  class="recipe-uploaderimg recipe-uploaderimg2 background-property"
-                ></div>
-                <div class="recipe-uploadername">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card popular-placescard border-0">
-            <div
-              class="card-header border-0 p-0 popularproduct-img3 background-property"
-            >
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark (1).svg" />
-              </div>
-            </div>
-            <div class="card-body">
-              <button type="button" class="btn btn-primary">Food</button>
-              <h3>Bike & Bite Organic Bean</h3>
-              <div class="recipe-uploadergrid">
-                <div
-                  class="recipe-uploaderimg recipe-uploaderimg3 background-property"
-                ></div>
-                <div class="recipe-uploadername">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="add-card">
-            <div class="background-property add-img mx-auto"></div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row filter-row" *ngIf="tab === 'productm'">
+    <div class="row filter-row" *ngIf="tab === 'productm'">
       <div class="col-11 m-auto">
         <div class="row pt-3">
           <div class="col-6">
@@ -993,7 +680,7 @@
                   <p class="no_product">
                     Oops! You haven`t added any product yet. Any alternative product you want to recommend people?
                   </p>
-                  
+
                   <img src="../../../assets/images/nothingtoshow-01.png" alt="" />
                   <img src="../../../assets/images/addIcon.png" alt="" />
                 </div>
@@ -1001,46 +688,10 @@
             </div>
           </div>
           <div class="row col-6">
-            
-          <div class="col-6">
-            <div class="card Inspiration-card border-0">
-              <div
-                class="card-header border-0 p-0 popular-img1 background-property"
-              ></div>
-              <div class="card-body">
-                <h3>Bike & Bite Organic Bean</h3>
-                <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-                <button type="button" class="btn btn-primary mb-0 mt-2">
-                  Cafe
-                </button>
-                <div class="bookmark-div">
-                  <img src="/assets/images/bookmark.svg" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
-            <div class="card Inspiration-card border-0">
-              <div
-                class="card-header border-0 p-0 popular-img1 background-property"
-              ></div>
-              <div class="card-body">
-                <h3>Bike & Bite Organic Bean</h3>
-                <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-                <button type="button" class="btn btn-primary mb-0 mt-2">
-                  Cafe
-                </button>
-                <div class="bookmark-div">
-                  <img src="/assets/images/bookmark.svg" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
+
+            <div class="col-6">
               <div class="card Inspiration-card border-0">
-                <div
-                  class="card-header border-0 p-0 popular-img1 background-property"
-                ></div>
+                <div class="card-header border-0 p-0 popular-img1 background-property"></div>
                 <div class="card-body">
                   <h3>Bike & Bite Organic Bean</h3>
                   <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
@@ -1054,288 +705,8 @@
               </div>
             </div>
             <div class="col-6">
-                <div class="card Inspiration-card border-0">
-                  <div
-                    class="card-header border-0 p-0 popular-img1 background-property"
-                  ></div>
-                  <div class="card-body">
-                    <h3>Bike & Bite Organic Bean</h3>
-                    <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-                    <button type="button" class="btn btn-primary mb-0 mt-2">
-                      Cafe
-                    </button>
-                    <div class="bookmark-div">
-                      <img src="/assets/images/bookmark.svg" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-              </div>
-        </div>
-      </div>
-  </div>
-  <div class="row filter-row" *ngIf="tab === 'blog'">
-    <div class="col-11 m-auto">
-      <div class="row pt-3">
-        <div class="col-3">
-          <div class="card Inspiration-card border-0">
-            <div
-              class="card-header border-0 p-0 popular-img1 background-property"
-            ></div>
-            <div class="card-body">
-              <h3>Bike & Bite Organic Bean</h3>
-              <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-              <button type="button" class="btn btn-primary mb-0 mt-2">
-                Cafe
-              </button>
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card Inspiration-card border-0">
-            <div
-              class="card-header border-0 p-0 popular-img2 background-property"
-            ></div>
-            <div class="card-body">
-              <h3>James Bob's Organic Cafe & Bakery</h3>
-              <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-              <button type="button" class="btn btn-primary mb-0 mt-2">
-                Restaurant
-              </button>
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card Inspiration-card border-0">
-            <div
-              class="card-header border-0 p-0 popular-img3 background-property"
-            ></div>
-            <div class="card-body">
-              <h3>Bike & Bite Organic Bean</h3>
-              <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-              <button type="button" class="btn btn-primary mb-0 mt-2">
-                Grocery
-              </button>
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark (1).svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card Inspiration-card border-0">
-            <div
-              class="card-header border-0 p-0 popular-img1 background-property"
-            ></div>
-            <div class="card-body">
-              <h3>Bike & Bite Organic Bean</h3>
-              <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-              <button type="button" class="btn btn-primary mb-0 mt-2">
-                Cafe
-              </button>
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark (1).svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row pt-3">
-        <div class="col-3">
-          <div class="card Inspiration-card border-0">
-            <div
-              class="card-header border-0 p-0 popular-img1 background-property"
-            ></div>
-            <div class="card-body">
-              <h3>Bike & Bite Organic Bean</h3>
-              <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-              <button type="button" class="btn btn-primary mb-0 mt-2">
-                Cafe
-              </button>
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card Inspiration-card border-0">
-            <div
-              class="card-header border-0 p-0 popular-img2 background-property"
-            ></div>
-            <div class="card-body">
-              <h3>James Bob's Organic Cafe & Bakery</h3>
-              <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-              <button type="button" class="btn btn-primary mb-0 mt-2">
-                Restaurant
-              </button>
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card Inspiration-card border-0">
-            <div
-              class="card-header border-0 p-0 popular-img3 background-property"
-            ></div>
-            <div class="card-body">
-              <h3>Bike & Bite Organic Bean</h3>
-              <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-              <button type="button" class="btn btn-primary mb-0 mt-2">
-                Grocery
-              </button>
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark (1).svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card Inspiration-card border-0">
-            <div
-              class="card-header border-0 p-0 popular-img1 background-property"
-            ></div>
-            <div class="card-body">
-              <h3>Bike & Bite Organic Bean</h3>
-              <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-              <button type="button" class="btn btn-primary mb-0 mt-2">
-                Cafe
-              </button>
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark (1).svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row pt-3">
-        <div class="col-3">
-          <div class="card Inspiration-card border-0">
-            <div
-              class="card-header border-0 p-0 popular-img1 background-property"
-            ></div>
-            <div class="card-body">
-              <h3>Bike & Bite Organic Bean</h3>
-              <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-              <button type="button" class="btn btn-primary mb-0 mt-2">
-                Cafe
-              </button>
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card Inspiration-card border-0">
-            <div
-              class="card-header border-0 p-0 popular-img2 background-property"
-            ></div>
-            <div class="card-body">
-              <h3>James Bob's Organic Cafe & Bakery</h3>
-              <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-              <button type="button" class="btn btn-primary mb-0 mt-2">
-                Restaurant
-              </button>
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark (1).svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="add-card">
-            <div class="background-property add-img mx-auto"></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="row filter-row" *ngIf="tab === 'blogm'">
-    <div class="col-11 m-auto">
-      <div class="row pt-3">
-        <div class="col-6">
-          <div class="card Inspiration-card border-0">
-            <div class="border-0 p-0  background-property"></div>
-            <div class="card-body">
-              <div style="text-align: center;padding-top:20px;">
-                <h4>You haven`t posted any article.</h4>
-                <p style="margin-bottom:0px">
-                  Do you have blog to share ideas to consicious community?
-                </p>
-                <p>This is place you can share your ideas and stories!</p>
-                <img src="../../../assets/images/blog_oops-01.png" alt="" />
-                <img src="../../../assets/images/addIcon.png" alt="" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row col-6">
-          
-        <div class="col-6">
-          <div class="card Inspiration-card border-0">
-            <div
-              class="card-header border-0 p-0 popular-img1 background-property"
-            ></div>
-            <div class="card-body">
-              <h3>Bike & Bite Organic Bean</h3>
-              <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-              <button type="button" class="btn btn-primary mb-0 mt-2">
-                Cafe
-              </button>
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-          <div class="card Inspiration-card border-0">
-            <div
-              class="card-header border-0 p-0 popular-img1 background-property"
-            ></div>
-            <div class="card-body">
-              <h3>Bike & Bite Organic Bean</h3>
-              <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-              <button type="button" class="btn btn-primary mb-0 mt-2">
-                Cafe
-              </button>
-              <div class="bookmark-div">
-                <img src="/assets/images/bookmark.svg" />
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-6">
-            <div class="card Inspiration-card border-0">
-              <div
-                class="card-header border-0 p-0 popular-img1 background-property"
-              ></div>
-              <div class="card-body">
-                <h3>Bike & Bite Organic Bean</h3>
-                <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
-                <button type="button" class="btn btn-primary mb-0 mt-2">
-                  Cafe
-                </button>
-                <div class="bookmark-div">
-                  <img src="/assets/images/bookmark.svg" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-6">
               <div class="card Inspiration-card border-0">
-                <div
-                  class="card-header border-0 p-0 popular-img1 background-property"
-                ></div>
+                <div class="card-header border-0 p-0 popular-img1 background-property"></div>
                 <div class="card-body">
                   <h3>Bike & Bite Organic Bean</h3>
                   <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
@@ -1348,368 +719,564 @@
                 </div>
               </div>
             </div>
+            <div class="col-6">
+              <div class="card Inspiration-card border-0">
+                <div class="card-header border-0 p-0 popular-img1 background-property"></div>
+                <div class="card-body">
+                  <h3>Bike & Bite Organic Bean</h3>
+                  <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                  <button type="button" class="btn btn-primary mb-0 mt-2">
+                    Cafe
+                  </button>
+                  <div class="bookmark-div">
+                    <img src="/assets/images/bookmark.svg" />
+                  </div>
+                </div>
+              </div>
             </div>
+            <div class="col-6">
+              <div class="card Inspiration-card border-0">
+                <div class="card-header border-0 p-0 popular-img1 background-property"></div>
+                <div class="card-body">
+                  <h3>Bike & Bite Organic Bean</h3>
+                  <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                  <button type="button" class="btn btn-primary mb-0 mt-2">
+                    Cafe
+                  </button>
+                  <div class="bookmark-div">
+                    <img src="/assets/images/bookmark.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-  <div class="row filter-row" *ngIf="tab === 'vlog'">
-    <div class="col-11 m-auto">
-      <div class="row pt-3">
-        <div class="col-3">
-          <div class="card alternative-card border-0">
-            <div
-              class="card-header border-0 p-0 local-img4 background-property"
-            >
-              <div class="row">
-                <div class="col-12">
-                  <div class="bookmark-div">
-                    <img src="/assets/images/bookmark.svg" />
-                  </div>
+    <div class="row filter-row" *ngIf="tab === 'blog'">
+      <div class="col-11 m-auto">
+        <div class="row pt-3">
+          <div class="col-3">
+            <div class="card Inspiration-card border-0">
+              <div class="card-header border-0 p-0 popular-img1 background-property"></div>
+              <div class="card-body">
+                <h3>Bike & Bite Organic Bean</h3>
+                <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                <button type="button" class="btn btn-primary mb-0 mt-2">
+                  Cafe
+                </button>
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark.svg" />
                 </div>
               </div>
-              <div class="share-div">
-                <img src="/assets/images/share.svg" />
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card Inspiration-card border-0">
+              <div class="card-header border-0 p-0 popular-img2 background-property"></div>
+              <div class="card-body">
+                <h3>James Bob's Organic Cafe & Bakery</h3>
+                <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                <button type="button" class="btn btn-primary mb-0 mt-2">
+                  Restaurant
+                </button>
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark.svg" />
+                </div>
               </div>
             </div>
-            <div class="card-body">
-              <ul class="alternative-list pl-0 mb-2">
-                <li>
-                  <span>07:50</span>
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/eye.svg"
-                    alt=""
-                    class="mr-2 img-1"
-                  />10.1K
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/like.svg"
-                    alt=""
-                    class="mr-2 img-2"
-                  />28
-                </li>
-              </ul>
-              <h3>
-                inhabit: a permoculture perspective / tropical permoculture
-              </h3>
-              <div class="alternative-grid">
-                <div
-                  class="alternative-img alternative-img1 background-property"
-                ></div>
-                <div class="alternative-name">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
+          </div>
+          <div class="col-3">
+            <div class="card Inspiration-card border-0">
+              <div class="card-header border-0 p-0 popular-img3 background-property"></div>
+              <div class="card-body">
+                <h3>Bike & Bite Organic Bean</h3>
+                <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                <button type="button" class="btn btn-primary mb-0 mt-2">
+                  Grocery
+                </button>
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark (1).svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card Inspiration-card border-0">
+              <div class="card-header border-0 p-0 popular-img1 background-property"></div>
+              <div class="card-body">
+                <h3>Bike & Bite Organic Bean</h3>
+                <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                <button type="button" class="btn btn-primary mb-0 mt-2">
+                  Cafe
+                </button>
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark (1).svg" />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-3">
-          <div class="card alternative-card border-0">
-            <div
-              class="card-header border-0 p-0 local-img5 background-property"
-            >
-              <div class="row">
-                <div class="col-12">
-                  <div class="bookmark-div">
-                    <img src="/assets/images/bookmark.svg" />
-                  </div>
+        <div class="row pt-3">
+          <div class="col-3">
+            <div class="card Inspiration-card border-0">
+              <div class="card-header border-0 p-0 popular-img1 background-property"></div>
+              <div class="card-body">
+                <h3>Bike & Bite Organic Bean</h3>
+                <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                <button type="button" class="btn btn-primary mb-0 mt-2">
+                  Cafe
+                </button>
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark.svg" />
                 </div>
               </div>
-              <div class="share-div">
-                <img src="/assets/images/share.svg" />
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card Inspiration-card border-0">
+              <div class="card-header border-0 p-0 popular-img2 background-property"></div>
+              <div class="card-body">
+                <h3>James Bob's Organic Cafe & Bakery</h3>
+                <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                <button type="button" class="btn btn-primary mb-0 mt-2">
+                  Restaurant
+                </button>
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark.svg" />
+                </div>
               </div>
             </div>
-            <div class="card-body">
-              <ul class="alternative-list pl-0 mb-2">
-                <li>
-                  <span>07:50</span>
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/eye.svg"
-                    alt=""
-                    class="mr-2 img-1"
-                  />10.1K
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/like.svg"
-                    alt=""
-                    class="mr-2 img-2"
-                  />28
-                </li>
-              </ul>
-              <h3>Alternative vegan meal. fresh kitchen live</h3>
-              <div class="alternative-grid">
-                <div
-                  class="alternative-img alternative-img2 background-property"
-                ></div>
-                <div class="alternative-name">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
+          </div>
+          <div class="col-3">
+            <div class="card Inspiration-card border-0">
+              <div class="card-header border-0 p-0 popular-img3 background-property"></div>
+              <div class="card-body">
+                <h3>Bike & Bite Organic Bean</h3>
+                <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                <button type="button" class="btn btn-primary mb-0 mt-2">
+                  Grocery
+                </button>
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark (1).svg" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card Inspiration-card border-0">
+              <div class="card-header border-0 p-0 popular-img1 background-property"></div>
+              <div class="card-body">
+                <h3>Bike & Bite Organic Bean</h3>
+                <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                <button type="button" class="btn btn-primary mb-0 mt-2">
+                  Cafe
+                </button>
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark (1).svg" />
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div class="col-3">
-          <div class="card alternative-card border-0">
-            <div
-              class="card-header border-0 p-0 local-img4 background-property"
-            >
-              <div class="row">
-                <div class="col-12">
-                  <div class="bookmark-div">
-                    <img src="/assets/images/bookmark.svg" />
-                  </div>
-                </div>
-              </div>
-              <div class="share-div">
-                <img src="/assets/images/share.svg" />
-              </div>
-            </div>
-            <div class="card-body">
-              <ul class="alternative-list pl-0 mb-2">
-                <li>
-                  <span>07:50</span>
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/eye.svg"
-                    alt=""
-                    class="mr-2 img-1"
-                  />10.1K
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/like.svg"
-                    alt=""
-                    class="mr-2 img-2"
-                  />28
-                </li>
-              </ul>
-              <h3>Alternative vegan meal. fresh kitchen live</h3>
-              <div class="alternative-grid">
-                <div
-                  class="alternative-img alternative-img3 background-property"
-                ></div>
-                <div class="alternative-name">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
+        <div class="row pt-3">
+          <div class="col-3">
+            <div class="card Inspiration-card border-0">
+              <div class="card-header border-0 p-0 popular-img1 background-property"></div>
+              <div class="card-body">
+                <h3>Bike & Bite Organic Bean</h3>
+                <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                <button type="button" class="btn btn-primary mb-0 mt-2">
+                  Cafe
+                </button>
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark.svg" />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-3">
-          <div class="card alternative-card border-0">
-            <div
-              class="card-header border-0 p-0 local-img5 background-property"
-            >
-              <div class="row">
-                <div class="col-12">
-                  <div class="bookmark-div">
-                    <img src="/assets/images/bookmark.svg" />
-                  </div>
-                </div>
-              </div>
-              <div class="share-div">
-                <img src="/assets/images/share.svg" />
-              </div>
-            </div>
-            <div class="card-body">
-              <ul class="alternative-list pl-0 mb-2">
-                <li>
-                  <span>07:50</span>
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/eye.svg"
-                    alt=""
-                    class="mr-2 img-1"
-                  />10.1K
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/like.svg"
-                    alt=""
-                    class="mr-2 img-2"
-                  />28
-                </li>
-              </ul>
-              <h3>
-                inhabit: a permoculture perspective / tropical permoculture
-              </h3>
-              <div class="alternative-grid">
-                <div
-                  class="alternative-img alternative-img2 background-property"
-                ></div>
-                <div class="alternative-name">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
+          <div class="col-3">
+            <div class="card Inspiration-card border-0">
+              <div class="card-header border-0 p-0 popular-img2 background-property"></div>
+              <div class="card-body">
+                <h3>James Bob's Organic Cafe & Bakery</h3>
+                <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                <button type="button" class="btn btn-primary mb-0 mt-2">
+                  Restaurant
+                </button>
+                <div class="bookmark-div">
+                  <img src="/assets/images/bookmark (1).svg" />
                 </div>
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="row pt-3">
-        <div class="col-3">
-          <div class="card alternative-card border-0">
-            <div
-              class="card-header border-0 p-0 local-img4 background-property"
-            >
-              <div class="row">
-                <div class="col-12">
-                  <div class="bookmark-div">
-                    <img src="/assets/images/bookmark.svg" />
-                  </div>
-                </div>
-              </div>
-              <div class="share-div">
-                <img src="/assets/images/share.svg" />
-              </div>
-            </div>
-            <div class="card-body">
-              <ul class="alternative-list pl-0 mb-2">
-                <li>
-                  <span>07:50</span>
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/eye.svg"
-                    alt=""
-                    class="mr-2 img-1"
-                  />10.1K
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/like.svg"
-                    alt=""
-                    class="mr-2 img-2"
-                  />28
-                </li>
-              </ul>
-              <h3>
-                inhabit: a permoculture perspective / tropical permoculture
-              </h3>
-              <div class="alternative-grid">
-                <div
-                  class="alternative-img alternative-img1 background-property"
-                ></div>
-                <div class="alternative-name">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card alternative-card border-0">
-            <div
-              class="card-header border-0 p-0 local-img5 background-property"
-            >
-              <div class="row">
-                <div class="col-12">
-                  <div class="bookmark-div">
-                    <img src="/assets/images/bookmark.svg" />
-                  </div>
-                </div>
-              </div>
-              <div class="share-div">
-                <img src="/assets/images/share.svg" />
-              </div>
-            </div>
-            <div class="card-body">
-              <ul class="alternative-list pl-0 mb-2">
-                <li>
-                  <span>07:50</span>
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/eye.svg"
-                    alt=""
-                    class="mr-2 img-1"
-                  />10.1K
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/like.svg"
-                    alt=""
-                    class="mr-2 img-2"
-                  />28
-                </li>
-              </ul>
-              <h3>Alternative vegan meal. fresh kitchen live</h3>
-              <div class="alternative-grid">
-                <div
-                  class="alternative-img alternative-img2 background-property"
-                ></div>
-                <div class="alternative-name">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card alternative-card border-0">
-            <div
-              class="card-header border-0 p-0 local-img4 background-property"
-            >
-              <div class="row">
-                <div class="col-12">
-                  <div class="bookmark-div">
-                    <img src="/assets/images/bookmark.svg" />
-                  </div>
-                </div>
-              </div>
-              <div class="share-div">
-                <img src="/assets/images/share.svg" />
-              </div>
-            </div>
-            <div class="card-body">
-              <ul class="alternative-list pl-0 mb-2">
-                <li>
-                  <span>07:50</span>
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/eye.svg"
-                    alt=""
-                    class="mr-2 img-1"
-                  />10.1K
-                </li>
-                <li>
-                  <img
-                    src="/assets/images/like.svg"
-                    alt=""
-                    class="mr-2 img-2"
-                  />28
-                </li>
-              </ul>
-              <h3>Alternative vegan meal. fresh kitchen live</h3>
-              <div class="alternative-grid">
-                <div
-                  class="alternative-img alternative-img3 background-property"
-                ></div>
-                <div class="alternative-name">
-                  <h2 class="mb-0">Dulcineia Dias</h2>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-3">
-          <div class="card alternative-card border-0">
-            <div class="vlog-add-card">
+          <div class="col-3">
+            <div class="add-card">
               <div class="background-property add-img mx-auto"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-  <div class="row filter-row" *ngIf="tab === 'vlogm'">
+    <div class="row filter-row" *ngIf="tab === 'blogm'">
+      <div class="col-11 m-auto">
+        <div class="row pt-3">
+          <div class="col-6">
+            <div class="card Inspiration-card border-0">
+              <div class="border-0 p-0  background-property"></div>
+              <div class="card-body">
+                <div style="text-align: center;padding-top:20px;">
+                  <h4>You haven`t posted any article.</h4>
+                  <p style="margin-bottom:0px">
+                    Do you have blog to share ideas to consicious community?
+                  </p>
+                  <p>This is place you can share your ideas and stories!</p>
+                  <img src="../../../assets/images/blog_oops-01.png" alt="" />
+                  <img src="../../../assets/images/addIcon.png" alt="" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row col-6">
+
+            <div class="col-6">
+              <div class="card Inspiration-card border-0">
+                <div class="card-header border-0 p-0 popular-img1 background-property"></div>
+                <div class="card-body">
+                  <h3>Bike & Bite Organic Bean</h3>
+                  <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                  <button type="button" class="btn btn-primary mb-0 mt-2">
+                    Cafe
+                  </button>
+                  <div class="bookmark-div">
+                    <img src="/assets/images/bookmark.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card Inspiration-card border-0">
+                <div class="card-header border-0 p-0 popular-img1 background-property"></div>
+                <div class="card-body">
+                  <h3>Bike & Bite Organic Bean</h3>
+                  <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                  <button type="button" class="btn btn-primary mb-0 mt-2">
+                    Cafe
+                  </button>
+                  <div class="bookmark-div">
+                    <img src="/assets/images/bookmark.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card Inspiration-card border-0">
+                <div class="card-header border-0 p-0 popular-img1 background-property"></div>
+                <div class="card-body">
+                  <h3>Bike & Bite Organic Bean</h3>
+                  <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                  <button type="button" class="btn btn-primary mb-0 mt-2">
+                    Cafe
+                  </button>
+                  <div class="bookmark-div">
+                    <img src="/assets/images/bookmark.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card Inspiration-card border-0">
+                <div class="card-header border-0 p-0 popular-img1 background-property"></div>
+                <div class="card-body">
+                  <h3>Bike & Bite Organic Bean</h3>
+                  <p class="mb-0">Sarah R.Rosen<span>/</span> March 13</p>
+                  <button type="button" class="btn btn-primary mb-0 mt-2">
+                    Cafe
+                  </button>
+                  <div class="bookmark-div">
+                    <img src="/assets/images/bookmark.svg" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row filter-row" *ngIf="tab === 'vlog'">
+      <div class="col-11 m-auto">
+        <div class="row pt-3">
+          <div class="col-3">
+            <div class="card alternative-card border-0">
+              <div class="card-header border-0 p-0 local-img4 background-property">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="bookmark-div">
+                      <img src="/assets/images/bookmark.svg" />
+                    </div>
+                  </div>
+                </div>
+                <div class="share-div">
+                  <img src="/assets/images/share.svg" />
+                </div>
+              </div>
+              <div class="card-body">
+                <ul class="alternative-list pl-0 mb-2">
+                  <li>
+                    <span>07:50</span>
+                  </li>
+                  <li>
+                    <img src="/assets/images/eye.svg" alt="" class="mr-2 img-1" />10.1K
+                  </li>
+                  <li>
+                    <img src="/assets/images/like.svg" alt="" class="mr-2 img-2" />28
+                  </li>
+                </ul>
+                <h3>
+                  inhabit: a permoculture perspective / tropical permoculture
+                </h3>
+                <div class="alternative-grid">
+                  <div class="alternative-img alternative-img1 background-property"></div>
+                  <div class="alternative-name">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card alternative-card border-0">
+              <div class="card-header border-0 p-0 local-img5 background-property">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="bookmark-div">
+                      <img src="/assets/images/bookmark.svg" />
+                    </div>
+                  </div>
+                </div>
+                <div class="share-div">
+                  <img src="/assets/images/share.svg" />
+                </div>
+              </div>
+              <div class="card-body">
+                <ul class="alternative-list pl-0 mb-2">
+                  <li>
+                    <span>07:50</span>
+                  </li>
+                  <li>
+                    <img src="/assets/images/eye.svg" alt="" class="mr-2 img-1" />10.1K
+                  </li>
+                  <li>
+                    <img src="/assets/images/like.svg" alt="" class="mr-2 img-2" />28
+                  </li>
+                </ul>
+                <h3>Alternative vegan meal. fresh kitchen live</h3>
+                <div class="alternative-grid">
+                  <div class="alternative-img alternative-img2 background-property"></div>
+                  <div class="alternative-name">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card alternative-card border-0">
+              <div class="card-header border-0 p-0 local-img4 background-property">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="bookmark-div">
+                      <img src="/assets/images/bookmark.svg" />
+                    </div>
+                  </div>
+                </div>
+                <div class="share-div">
+                  <img src="/assets/images/share.svg" />
+                </div>
+              </div>
+              <div class="card-body">
+                <ul class="alternative-list pl-0 mb-2">
+                  <li>
+                    <span>07:50</span>
+                  </li>
+                  <li>
+                    <img src="/assets/images/eye.svg" alt="" class="mr-2 img-1" />10.1K
+                  </li>
+                  <li>
+                    <img src="/assets/images/like.svg" alt="" class="mr-2 img-2" />28
+                  </li>
+                </ul>
+                <h3>Alternative vegan meal. fresh kitchen live</h3>
+                <div class="alternative-grid">
+                  <div class="alternative-img alternative-img3 background-property"></div>
+                  <div class="alternative-name">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card alternative-card border-0">
+              <div class="card-header border-0 p-0 local-img5 background-property">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="bookmark-div">
+                      <img src="/assets/images/bookmark.svg" />
+                    </div>
+                  </div>
+                </div>
+                <div class="share-div">
+                  <img src="/assets/images/share.svg" />
+                </div>
+              </div>
+              <div class="card-body">
+                <ul class="alternative-list pl-0 mb-2">
+                  <li>
+                    <span>07:50</span>
+                  </li>
+                  <li>
+                    <img src="/assets/images/eye.svg" alt="" class="mr-2 img-1" />10.1K
+                  </li>
+                  <li>
+                    <img src="/assets/images/like.svg" alt="" class="mr-2 img-2" />28
+                  </li>
+                </ul>
+                <h3>
+                  inhabit: a permoculture perspective / tropical permoculture
+                </h3>
+                <div class="alternative-grid">
+                  <div class="alternative-img alternative-img2 background-property"></div>
+                  <div class="alternative-name">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row pt-3">
+          <div class="col-3">
+            <div class="card alternative-card border-0">
+              <div class="card-header border-0 p-0 local-img4 background-property">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="bookmark-div">
+                      <img src="/assets/images/bookmark.svg" />
+                    </div>
+                  </div>
+                </div>
+                <div class="share-div">
+                  <img src="/assets/images/share.svg" />
+                </div>
+              </div>
+              <div class="card-body">
+                <ul class="alternative-list pl-0 mb-2">
+                  <li>
+                    <span>07:50</span>
+                  </li>
+                  <li>
+                    <img src="/assets/images/eye.svg" alt="" class="mr-2 img-1" />10.1K
+                  </li>
+                  <li>
+                    <img src="/assets/images/like.svg" alt="" class="mr-2 img-2" />28
+                  </li>
+                </ul>
+                <h3>
+                  inhabit: a permoculture perspective / tropical permoculture
+                </h3>
+                <div class="alternative-grid">
+                  <div class="alternative-img alternative-img1 background-property"></div>
+                  <div class="alternative-name">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card alternative-card border-0">
+              <div class="card-header border-0 p-0 local-img5 background-property">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="bookmark-div">
+                      <img src="/assets/images/bookmark.svg" />
+                    </div>
+                  </div>
+                </div>
+                <div class="share-div">
+                  <img src="/assets/images/share.svg" />
+                </div>
+              </div>
+              <div class="card-body">
+                <ul class="alternative-list pl-0 mb-2">
+                  <li>
+                    <span>07:50</span>
+                  </li>
+                  <li>
+                    <img src="/assets/images/eye.svg" alt="" class="mr-2 img-1" />10.1K
+                  </li>
+                  <li>
+                    <img src="/assets/images/like.svg" alt="" class="mr-2 img-2" />28
+                  </li>
+                </ul>
+                <h3>Alternative vegan meal. fresh kitchen live</h3>
+                <div class="alternative-grid">
+                  <div class="alternative-img alternative-img2 background-property"></div>
+                  <div class="alternative-name">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card alternative-card border-0">
+              <div class="card-header border-0 p-0 local-img4 background-property">
+                <div class="row">
+                  <div class="col-12">
+                    <div class="bookmark-div">
+                      <img src="/assets/images/bookmark.svg" />
+                    </div>
+                  </div>
+                </div>
+                <div class="share-div">
+                  <img src="/assets/images/share.svg" />
+                </div>
+              </div>
+              <div class="card-body">
+                <ul class="alternative-list pl-0 mb-2">
+                  <li>
+                    <span>07:50</span>
+                  </li>
+                  <li>
+                    <img src="/assets/images/eye.svg" alt="" class="mr-2 img-1" />10.1K
+                  </li>
+                  <li>
+                    <img src="/assets/images/like.svg" alt="" class="mr-2 img-2" />28
+                  </li>
+                </ul>
+                <h3>Alternative vegan meal. fresh kitchen live</h3>
+                <div class="alternative-grid">
+                  <div class="alternative-img alternative-img3 background-property"></div>
+                  <div class="alternative-name">
+                    <h2 class="mb-0">Dulcineia Dias</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-3">
+            <div class="card alternative-card border-0">
+              <div class="vlog-add-card">
+                <div class="background-property add-img mx-auto"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row filter-row" *ngIf="tab === 'vlogm'">
       <div class="col-11 m-auto">
         <div class="row pt-3">
           <div class="col-6">
@@ -1719,9 +1286,11 @@
                 <div style="text-align: center;padding-top:20px;">
                   <h4>You haven`t posted any video.</h4>
                   <p class="no_product">
-                    Do you have some idea to share to conscious community? This is the place you can share your ideas and stories!
+                    Do you have some idea to share to conscious community? This is the place you can share your ideas
+                    and
+                    stories!
                   </p>
-                  
+
                   <img src="../../../assets/images/vlog-02.png" alt="" />
                   <img src="../../../assets/images/addIcon.png" alt="" />
                 </div>
@@ -1729,184 +1298,145 @@
             </div>
           </div>
           <div class="row col-6">
-            
-              
-                <div class="col-6">
-                    <div class="card alternative-card border-0">
-                      <div
-                        class="card-header border-0 p-0 local-img4 background-property"
-                      >
-                        <div class="row">
-                          <div class="col-12">
-                            <div class="bookmark-div">
-                              <img src="/assets/images/bookmark.svg" />
-                            </div>
-                          </div>
-                        </div>
-                        <div class="share-div">
-                          <img src="/assets/images/share.svg" />
-                        </div>
-                      </div>
-                      <div class="card-body">
-                        <ul class="alternative-list pl-0 mb-2">
-                          <li>
-                            <span>07:50</span>
-                          </li>
-                          <li>
-                            <img
-                              src="/assets/images/eye.svg"
-                              alt=""
-                              class="mr-2 img-1"
-                            />10.1K
-                          </li>
-                          <li>
-                            <img
-                              src="/assets/images/like.svg"
-                              alt=""
-                              class="mr-2 img-2"
-                            />28
-                          </li>
-                        </ul>
-                        <h3>
-                          inhabit: a permoculture perspective / tropical permoculture
-                        </h3>
-                        
+
+
+            <div class="col-6">
+              <div class="card alternative-card border-0">
+                <div class="card-header border-0 p-0 local-img4 background-property">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="bookmark-div">
+                        <img src="/assets/images/bookmark.svg" />
                       </div>
                     </div>
                   </div>
-                  <div class="col-6">
-                      <div class="card alternative-card border-0">
-                        <div
-                          class="card-header border-0 p-0 local-img4 background-property"
-                        >
-                          <div class="row">
-                            <div class="col-12">
-                              <div class="bookmark-div">
-                                <img src="/assets/images/bookmark.svg" />
-                              </div>
-                            </div>
-                          </div>
-                          <div class="share-div">
-                            <img src="/assets/images/share.svg" />
-                          </div>
-                        </div>
-                        <div class="card-body">
-                          <ul class="alternative-list pl-0 mb-2">
-                            <li>
-                              <span>07:50</span>
-                            </li>
-                            <li>
-                              <img
-                                src="/assets/images/eye.svg"
-                                alt=""
-                                class="mr-2 img-1"
-                              />10.1K
-                            </li>
-                            <li>
-                              <img
-                                src="/assets/images/like.svg"
-                                alt=""
-                                class="mr-2 img-2"
-                              />28
-                            </li>
-                          </ul>
-                          <h3>
-                            inhabit: a permoculture perspective / tropical permoculture
-                          </h3>
-                          
-                        </div>
+                  <div class="share-div">
+                    <img src="/assets/images/share.svg" />
+                  </div>
+                </div>
+                <div class="card-body">
+                  <ul class="alternative-list pl-0 mb-2">
+                    <li>
+                      <span>07:50</span>
+                    </li>
+                    <li>
+                      <img src="/assets/images/eye.svg" alt="" class="mr-2 img-1" />10.1K
+                    </li>
+                    <li>
+                      <img src="/assets/images/like.svg" alt="" class="mr-2 img-2" />28
+                    </li>
+                  </ul>
+                  <h3>
+                    inhabit: a permoculture perspective / tropical permoculture
+                  </h3>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card alternative-card border-0">
+                <div class="card-header border-0 p-0 local-img4 background-property">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="bookmark-div">
+                        <img src="/assets/images/bookmark.svg" />
                       </div>
                     </div>
-                    <div class="col-6">
-                        <div class="card alternative-card border-0">
-                          <div
-                            class="card-header border-0 p-0 local-img4 background-property"
-                          >
-                            <div class="row">
-                              <div class="col-12">
-                                <div class="bookmark-div">
-                                  <img src="/assets/images/bookmark.svg" />
-                                </div>
-                              </div>
-                            </div>
-                            <div class="share-div">
-                              <img src="/assets/images/share.svg" />
-                            </div>
-                          </div>
-                          <div class="card-body">
-                            <ul class="alternative-list pl-0 mb-2">
-                              <li>
-                                <span>07:50</span>
-                              </li>
-                              <li>
-                                <img
-                                  src="/assets/images/eye.svg"
-                                  alt=""
-                                  class="mr-2 img-1"
-                                />10.1K
-                              </li>
-                              <li>
-                                <img
-                                  src="/assets/images/like.svg"
-                                  alt=""
-                                  class="mr-2 img-2"
-                                />28
-                              </li>
-                            </ul>
-                            <h3>
-                              inhabit: a permoculture perspective / tropical permoculture
-                            </h3>
-                            
-                          </div>
-                        </div>
-                      </div>
-                      <div class="col-6">
-                          <div class="card alternative-card border-0">
-                            <div
-                              class="card-header border-0 p-0 local-img4 background-property"
-                            >
-                              <div class="row">
-                                <div class="col-12">
-                                  <div class="bookmark-div">
-                                    <img src="/assets/images/bookmark.svg" />
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="share-div">
-                                <img src="/assets/images/share.svg" />
-                              </div>
-                            </div>
-                            <div class="card-body">
-                              <ul class="alternative-list pl-0 mb-2">
-                                <li>
-                                  <span>07:50</span>
-                                </li>
-                                <li>
-                                  <img
-                                    src="/assets/images/eye.svg"
-                                    alt=""
-                                    class="mr-2 img-1"
-                                  />10.1K
-                                </li>
-                                <li>
-                                  <img
-                                    src="/assets/images/like.svg"
-                                    alt=""
-                                    class="mr-2 img-2"
-                                  />28
-                                </li>
-                              </ul>
-                              <h3>
-                                inhabit: a permoculture perspective / tropical permoculture
-                              </h3>
-                              
-                            </div>
-                          </div>
-                        </div>
-                  
+                  </div>
+                  <div class="share-div">
+                    <img src="/assets/images/share.svg" />
+                  </div>
+                </div>
+                <div class="card-body">
+                  <ul class="alternative-list pl-0 mb-2">
+                    <li>
+                      <span>07:50</span>
+                    </li>
+                    <li>
+                      <img src="/assets/images/eye.svg" alt="" class="mr-2 img-1" />10.1K
+                    </li>
+                    <li>
+                      <img src="/assets/images/like.svg" alt="" class="mr-2 img-2" />28
+                    </li>
+                  </ul>
+                  <h3>
+                    inhabit: a permoculture perspective / tropical permoculture
+                  </h3>
+
+                </div>
               </div>
+            </div>
+            <div class="col-6">
+              <div class="card alternative-card border-0">
+                <div class="card-header border-0 p-0 local-img4 background-property">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="bookmark-div">
+                        <img src="/assets/images/bookmark.svg" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="share-div">
+                    <img src="/assets/images/share.svg" />
+                  </div>
+                </div>
+                <div class="card-body">
+                  <ul class="alternative-list pl-0 mb-2">
+                    <li>
+                      <span>07:50</span>
+                    </li>
+                    <li>
+                      <img src="/assets/images/eye.svg" alt="" class="mr-2 img-1" />10.1K
+                    </li>
+                    <li>
+                      <img src="/assets/images/like.svg" alt="" class="mr-2 img-2" />28
+                    </li>
+                  </ul>
+                  <h3>
+                    inhabit: a permoculture perspective / tropical permoculture
+                  </h3>
+
+                </div>
+              </div>
+            </div>
+            <div class="col-6">
+              <div class="card alternative-card border-0">
+                <div class="card-header border-0 p-0 local-img4 background-property">
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="bookmark-div">
+                        <img src="/assets/images/bookmark.svg" />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="share-div">
+                    <img src="/assets/images/share.svg" />
+                  </div>
+                </div>
+                <div class="card-body">
+                  <ul class="alternative-list pl-0 mb-2">
+                    <li>
+                      <span>07:50</span>
+                    </li>
+                    <li>
+                      <img src="/assets/images/eye.svg" alt="" class="mr-2 img-1" />10.1K
+                    </li>
+                    <li>
+                      <img src="/assets/images/like.svg" alt="" class="mr-2 img-2" />28
+                    </li>
+                  </ul>
+                  <h3>
+                    inhabit: a permoculture perspective / tropical permoculture
+                  </h3>
+
+                </div>
+              </div>
+            </div>
+
+          </div>
         </div>
       </div>
+    </div>
   </div>
   <app-footer></app-footer>
 </div>

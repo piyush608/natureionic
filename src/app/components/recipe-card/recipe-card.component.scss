@@ -1,0 +1,102 @@
+.card {
+  border-radius: 0.75rem;
+}
+.recipe-card {
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+  border-radius: 20px;
+  margin-right: 15px;
+  margin-bottom: 20px;
+}
+.recipe-image {
+  width: 55%;
+  border-radius: 15px;
+}
+.recipe-img1 {
+  background: url("https://images.unsplash.com/photo-1543339308-43e59d6b73a6?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60");
+}
+.background-property {
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+.bookmark-div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e3e3e3;
+  display: grid;
+  align-items: center;
+  float: right;
+  margin-right: 10px;
+  margin-top: 10px;
+  justify-content: center;
+}
+.bookmark-div img {
+  width: 14px;
+  display: block;
+}
+.recipe-info {
+  padding: 17px;
+}
+.recipe-info h3 {
+  font-size: 1em;
+  height: 33px;
+}
+.recipe-category {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1.5fr 4fr;
+  margin-bottom: 10px;
+}
+.recipe-category p {
+  text-align: right;
+  font-size: 0.9em;
+}
+.recipe-uploadergrid {
+  display: grid;
+  grid-template-columns: 0.85fr 4fr;
+  align-items: center;
+}
+.recipe-uploaderimg {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+}
+.recipe-uploaderimg1 {
+  background: url("https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?h=350&auto=compress&cs=tinysrgb");
+}
+.recipe-uploadername h2 {
+  font-size: 0.9em;
+  color: #b2b2b2;
+  margin-top: 0 !important;
+}
+.recipe-category {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1.5fr 4fr;
+  margin-bottom: 10px;
+}
+.recipe-category p {
+  text-align: right;
+  font-size: 0.9em;
+}
+.btn-primary {
+  padding: 3px 20px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
+  border: 0px;
+  margin-bottom: 10px;
+}
+.btn-primary:focus,
+.btn-outline-primary:focus,
+.btn-secondary:focus,
+.btn-success:focus {
+  box-shadow: none;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus,
+.btn-secondary:not(:disabled):not(.disabled):active:focus,
+.btn-success:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}

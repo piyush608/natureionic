@@ -19,4 +19,8 @@ export class RecipeService {
   update(_id, recipe) {
     return this.http.patch(environment.RECIPE_URL + "/update/" + _id, recipe);
   }
+
+  getUserRecipes(_id) {
+    return this.http.get(environment.RECIPE_URL + "/getUserRecipes/" + _id);
+  }
 }

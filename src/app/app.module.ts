@@ -34,6 +34,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { SignupComponent } from "./components/signup/signup.component";
 import { OnboardingComponent } from "./components/onboarding/onboarding.component";
 import { CommonModule } from "@angular/common";
+import { RecipeCardComponent } from "./components/recipe-card/recipe-card.component";
 
 @NgModule({
   declarations: [
@@ -54,7 +55,8 @@ import { CommonModule } from "@angular/common";
     ViewRecipeComponent,
     NotFoundComponent,
     FooterComponent,
-    PopoverMenuComponent
+    PopoverMenuComponent,
+    RecipeCardComponent
   ],
   entryComponents: [
     SuccessModalComponent,

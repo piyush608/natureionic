@@ -1,0 +1,23 @@
+<div class="card border-0 recipe-card" *ngIf="recipe">
+  <div class="d-flex">
+    <div class="recipe-image background-property" [ngStyle]="{ 'background-image': 'url(' + thumbnail + ')'}">
+      <div class="bookmark-div">
+        <img src="/assets/images/bookmark.svg">
+      </div>
+    </div>
+    <div class="recipe-info">
+      <div class="recipe-category">
+        <button type="button" class="btn btn-primary mb-0"> {{ recipe.category.name }} </button>
+        <p class="mb-0">{{ recipe.likes }} Likes</p>
+      </div>
+      <h3> {{ recipe.name }} </h3>
+      <div class="recipe-uploadergrid">
+        <div class="recipe-uploaderimg recipe-uploaderimg1 background-property">
+        </div>
+        <div class="recipe-uploadername">
+          <h2 class="mb-0"> {{ recipe.addedBy.name }} </h2>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

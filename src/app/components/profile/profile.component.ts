@@ -5,6 +5,7 @@ import { User } from "src/app/models/user.model";
 import { LocationService } from "src/app/services/location.service";
 import { LevelService } from "src/app/services/level.service";
 import { Level } from "src/app/models/level.model";
+import { RecipeService } from "src/app/services/recipe.service";
 
 @Component({
   selector: "app-profile",
@@ -17,12 +18,20 @@ export class ProfileComponent implements OnInit {
   public tab: string = "collection";
   public location: any;
   public level = new Level();
+  public collectionTab: string = "business";
+  public bookmarkedBusinesses = [];
+  public bookmarkedRecipes = [];
+  public bookmarkedProducts = [];
+  public bookmarkedBlogs = [];
+  public bookmarkedVlogs = [];
+  public addedRecipes = [];
 
   constructor(
     private router: Router,
     private angUser: UserService,
     private angLocation: LocationService,
-    private angLevel: LevelService
+    private angLevel: LevelService,
+    private angRecipe: RecipeService
   ) {}
 
   ngOnInit() {
@@ -30,6 +39,11 @@ export class ProfileComponent implements OnInit {
       res => {
         console.log(res);
         this.user = res["user"];
+        this.bookmarkedBusinesses = this.user.bookmarkedBusinesses;
+        this.bookmarkedRecipes = this.user.bookmarkedRecipes;
+        this.bookmarkedProducts = this.user.bookmarkedProducts;
+        this.bookmarkedBlogs = this.user.bookmarkedBlogs;
+        this.bookmarkedVlogs = this.user.bookmarkedVlogs;
 
         if (res["user"].photo.length > 0) {
           res["user"].photo.forEach(photo => {
@@ -60,6 +74,16 @@ export class ProfileComponent implements OnInit {
             console.log(err);
           }
         );
+
+        this.angRecipe.getUserRecipes(this.user._id).subscribe(
+          res => {
+            console.log(res);
+            this.addedRecipes = res["recipes"];
+          },
+          err => {
+            console.log(err);
+          }
+        );
       },
       err => {
         console.log(err);
@@ -77,5 +101,9 @@ export class ProfileComponent implements OnInit {
 
   changeTab(value) {
     this.tab = value;
+  }
+
+  changeCollectionTab(value) {
+    this.collectionTab = value;
   }
 }
