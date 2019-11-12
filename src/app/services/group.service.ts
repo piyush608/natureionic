@@ -5,14 +5,10 @@ import { environment } from "src/environments/environment";
 @Injectable({
   providedIn: "root"
 })
-export class BlogService {
+export class GroupService {
   constructor(private http: HttpClient) {}
 
-  getRandom() {
-    return this.http.get(environment.BLOG_URL + "/random");
-  }
-
-  getUserBlogs(_id) {
-    return this.http.get(environment.BLOG_URL + "/getUserBlogs/" + _id);
+  getUserGroups(_id) {
+    return this.http.get(environment.GROUP_URL + "/getUserGroups/" + _id);
   }
 }

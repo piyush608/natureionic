@@ -11,4 +11,8 @@ export class VlogService {
   getRandom() {
     return this.http.get(environment.VLOG_URL + "/random");
   }
+
+  getUserVlogs(_id) {
+    return this.http.get(environment.VLOG_URL + "/getUserVlogs/" + _id);
+  }
 }

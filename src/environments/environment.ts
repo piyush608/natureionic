@@ -14,6 +14,7 @@ export const environment = {
   BLOG_URL: URL + "/blog",
   VLOG_URL: URL + "/vlog",
   GUIDE_URL: URL + "/guide",
+  GROUP_URL: URL + "/group",
   LEVEL_URL: URL + "/level",
   POINTS_URL: URL + "/point",
   PHOTO_URL: URL + "/photo",
