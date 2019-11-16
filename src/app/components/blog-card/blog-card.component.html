@@ -1,0 +1,14 @@
+<div class="card Inspiration-card border-0">
+  <div class="card-header border-0 p-0 background-property" [ngStyle]="{ 'background-image': 'url(' + thumbnail + ')'}">
+  </div>
+  <div class="card-body">
+    <h3>{{ blog.title }}</h3>
+    <p class="mb-0"> {{ blog.addedBy.name }} <span>/</span> {{ blog.timestamp | date:'mediumDate' }}</p>
+    <button type="button" class="btn btn-primary mb-0 mt-2">
+      {{ blog.category.name }}
+    </button>
+    <div class="bookmark-div">
+      <img src="/assets/images/bookmark.svg" />
+    </div>
+  </div>
+</div>

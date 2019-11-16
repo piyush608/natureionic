@@ -1,0 +1,37 @@
+<div class="card alternative-card border-0">
+  <div class="card-header border-0 p-0 background-property" [ngStyle]="{ 'background-image': 'url(' + thumbnail + ')'}">
+    <div class="row">
+      <div class="col-12">
+        <div class="bookmark-div">
+          <img src="/assets/images/bookmark.svg" />
+        </div>
+      </div>
+    </div>
+    <div class="share-div">
+      <img src="/assets/images/share.svg" />
+    </div>
+  </div>
+  <div class="card-body">
+    <ul class="alternative-list pl-0 mb-2">
+      <li>
+        <span>07:50</span>
+      </li>
+      <li>
+        <img src="/assets/images/eye.svg" alt="" class="mr-2 img-1" />10.1K
+      </li>
+      <li>
+        <img src="/assets/images/like.svg" alt="" class="mr-2 img-2" /> {{ vlog.likes }}
+      </li>
+    </ul>
+    <h3>
+      {{ vlog.title }}
+    </h3>
+    <div class="alternative-grid">
+      <div class="alternative-img background-property" [ngStyle]="{ 'background-image': 'url(' + userImage + ')'}">
+      </div>
+      <div class="alternative-name">
+        <h2 class="mb-0">{{ vlog.addedBy.name }}</h2>
+      </div>
+    </div>
+  </div>
+</div>

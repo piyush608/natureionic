@@ -1,0 +1,58 @@
+.Inspiration-card {
+  border-radius: 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+}
+.Inspiration-card .card-header {
+  border-radius: 16px;
+  height: 140px;
+}
+.Inspiration-card .card-body h3 {
+  font-size: 1em;
+  color: rgb(72, 72, 72);
+  height: 38px;
+}
+.Inspiration-card .card-body p {
+  font-size: 0.8em;
+  color: #868686;
+}
+.Inspiration-card .card-body p span {
+  margin-right: 5px;
+  margin-left: 5px;
+}
+.btn-primary {
+  padding: 3px 20px;
+  border-radius: 20px;
+  font-size: 0.8em;
+  background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
+  border: 0px;
+  margin-bottom: 10px;
+}
+.btn-primary:focus,
+.btn-outline-primary:focus {
+  box-shadow: none;
+}
+.btn-primary:not(:disabled):not(.disabled):active:focus,
+.btn-outline-primary:not(:disabled):not(.disabled):active:focus {
+  box-shadow: none;
+}
+.bookmark-div {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background: #e3e3e3;
+  display: grid;
+  align-items: center;
+  float: right;
+  justify-content: center;
+}
+.bookmark-div img {
+  width: 14px;
+  display: block;
+}
+.add-img {
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background: url("../../../assets/images/addIcon@3x.png");
+}
