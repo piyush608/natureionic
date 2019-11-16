@@ -8,6 +8,10 @@ import { environment } from "src/environments/environment";
 export class VlogService {
   constructor(private http: HttpClient) {}
 
+  create(vlog) {
+    return this.http.post(environment.VLOG_URL + "/create", vlog);
+  }
+
   getRandom() {
     return this.http.get(environment.VLOG_URL + "/random");
   }

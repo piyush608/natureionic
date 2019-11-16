@@ -16,7 +16,7 @@ export class SuccessModalComponent implements OnInit {
   ngOnInit() {}
 
   goto() {
-    if (this.type === "blog") {
+    if (this.type === "blog" || this.type === "vlog") {
       this.router.navigateByUrl("/profile");
     } else {
       this.router.navigateByUrl("/view/" + this.type + "/" + this._id);

@@ -38,6 +38,7 @@ import { RecipeCardComponent } from "./components/recipe-card/recipe-card.compon
 import { ProductCardComponent } from "./components/product-card/product-card.component";
 import { EditProfileComponent } from "./components/edit-profile/edit-profile.component";
 import { AddBlogComponent } from "./components/add-blog/add-blog.component";
+import { AddVlogComponent } from "./components/add-vlog/add-vlog.component";
 
 @NgModule({
   declarations: [
@@ -54,6 +55,7 @@ import { AddBlogComponent } from "./components/add-blog/add-blog.component";
     AddRecipeComponent,
     AddProductComponent,
     AddBlogComponent,
+    AddVlogComponent,
     SuccessModalComponent,
     ViewProductComponent,
     ViewRecipeComponent,

@@ -17,6 +17,7 @@ import { SignupComponent } from "./components/signup/signup.component";
 import { OnboardingComponent } from "./components/onboarding/onboarding.component";
 import { EditProfileComponent } from "./components/edit-profile/edit-profile.component";
 import { AddBlogComponent } from "./components/add-blog/add-blog.component";
+import { AddVlogComponent } from "./components/add-vlog/add-vlog.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -44,6 +45,10 @@ const routes: Routes = [
       {
         path: "article",
         component: AddBlogComponent
+      },
+      {
+        path: "vlog",
+        component: AddVlogComponent
       }
     ]
   },
