@@ -48,7 +48,6 @@ export class AddProductComponent implements OnInit {
   getCategories() {
     this.angCategory.getCategories("product").subscribe(
       res => {
-        console.log(res);
         this.categories = res["categories"];
       },
       err => {

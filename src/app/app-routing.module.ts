@@ -16,6 +16,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { SignupComponent } from "./components/signup/signup.component";
 import { OnboardingComponent } from "./components/onboarding/onboarding.component";
 import { EditProfileComponent } from "./components/edit-profile/edit-profile.component";
+import { AddBlogComponent } from "./components/add-blog/add-blog.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -39,6 +40,10 @@ const routes: Routes = [
       {
         path: "product",
         component: AddProductComponent
+      },
+      {
+        path: "article",
+        component: AddBlogComponent
       }
     ]
   },
@@ -97,12 +102,6 @@ const routes: Routes = [
   {
     path: "forgot",
     loadChildren: "./pages/forgot/forgot.module#ForgotPageModule"
-  },
-  {
-    path: "edit-profile",
-    loadChildren:
-      "./pages/edit-profile/edit-profile.module#EditProfilePageModule",
-    canActivate: [AuthGuard]
   },
   {
     path: "connection",

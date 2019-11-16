@@ -37,6 +37,7 @@ import { CommonModule } from "@angular/common";
 import { RecipeCardComponent } from "./components/recipe-card/recipe-card.component";
 import { ProductCardComponent } from "./components/product-card/product-card.component";
 import { EditProfileComponent } from "./components/edit-profile/edit-profile.component";
+import { AddBlogComponent } from "./components/add-blog/add-blog.component";
 
 @NgModule({
   declarations: [
@@ -52,6 +53,7 @@ import { EditProfileComponent } from "./components/edit-profile/edit-profile.com
     ViewBusinessComponent,
     AddRecipeComponent,
     AddProductComponent,
+    AddBlogComponent,
     SuccessModalComponent,
     ViewProductComponent,
     ViewRecipeComponent,

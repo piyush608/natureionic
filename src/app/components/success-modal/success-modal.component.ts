@@ -13,17 +13,13 @@ export class SuccessModalComponent implements OnInit {
 
   constructor(public router: Router, public modalCtrl: ModalController) {}
 
-  ngOnInit() {
-    console.log(this._id);
-  }
-
-  // dismiss() {
-  //   this.modalCtrl.dismiss({
-  //     dismissed: true
-  //   });
-  // }
+  ngOnInit() {}
 
   goto() {
-    this.router.navigateByUrl("/view/" + this.type + "/" + this._id);
+    if (this.type === "blog") {
+      this.router.navigateByUrl("/profile");
+    } else {
+      this.router.navigateByUrl("/view/" + this.type + "/" + this._id);
+    }
   }
 }

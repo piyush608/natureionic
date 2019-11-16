@@ -161,4 +161,8 @@ export class ProfileComponent implements OnInit {
   addProduct() {
     this.router.navigateByUrl("/add/product");
   }
+
+  addBlog() {
+    this.router.navigateByUrl("/add/article");
+  }
 }
