@@ -139,7 +139,7 @@ export class ProfileComponent implements OnInit {
   }
 
   openEditProfile() {
-    this.router.navigateByUrl("/edit-profile");
+    this.router.navigateByUrl("/edit/profile");
   }
 
   openFollowers() {
@@ -152,5 +152,13 @@ export class ProfileComponent implements OnInit {
 
   changeCollectionTab(value) {
     this.collectionTab = value;
+  }
+
+  addRecipe() {
+    this.router.navigateByUrl("/add/recipe");
+  }
+
+  addProduct() {
+    this.router.navigateByUrl("/add/product");
   }
 }

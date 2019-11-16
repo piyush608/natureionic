@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-product-card",
@@ -10,7 +11,7 @@ export class ProductCardComponent implements OnInit {
   public thumbnail: any;
   public userImage: any;
 
-  constructor() {}
+  constructor(public router: Router) {}
 
   ngOnInit() {
     this.thumbnail = this.product.photos[0].thumb400Url;
@@ -26,5 +27,9 @@ export class ProductCardComponent implements OnInit {
         "https://ui-avatars.com/api/?name=" +
         this.product.addedBy.name.split(" ").join("+");
     }
+  }
+
+  openProduct() {
+    this.router.navigateByUrl("/view/product/" + this.product._id);
   }
 }

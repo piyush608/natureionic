@@ -82,9 +82,11 @@
 }
 .user_name {
   margin-left: 80px;
+  margin-top: 5px;
 }
 .user_loc {
   margin-left: 80px;
+  margin-top: 0 !important;
 }
 .circle_img {
   width: 60px;
@@ -111,4 +113,10 @@
 .nh_pick {
   margin-left: 80px;
   padding-top: 16px;
+}
+.user-info {
+  padding-top: 15px;
+}
+.user-info p {
+  margin-bottom: 0 !important;
 }

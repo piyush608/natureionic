@@ -35,10 +35,10 @@
           </div>
           <div class="add_by">
             <div>Added by</div>
-            <div *ngIf="business.addedBy">
-              <img src="/assets/images/inviteJoin@3x.png" alt="" class="user_img" />
+            <div *ngIf="business.addedBy" class="user-info">
+              <img [src]="addedUserImage" alt="" class="user_img" />
               <p class="user_name"> {{ business.addedBy.name }} </p>
-              <p class="user_loc">Tampa, Fl</p>
+              <p class="user_loc">{{ userLocation.city }}, {{ userLocation.state }}</p>
             </div>
           </div>
         </div>

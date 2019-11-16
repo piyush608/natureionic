@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-recipe-card",
@@ -10,7 +11,7 @@ export class RecipeCardComponent implements OnInit {
   public thumbnail: any;
   public userImage: any;
 
-  constructor() {}
+  constructor(public router: Router) {}
 
   ngOnInit() {
     this.thumbnail = this.recipe.photos[0].thumb400Url;
@@ -26,5 +27,9 @@ export class RecipeCardComponent implements OnInit {
         "https://ui-avatars.com/api/?name=" +
         this.recipe.addedBy.name.split(" ").join("+");
     }
+  }
+
+  openRecipe() {
+    this.router.navigateByUrl("/view/recipe/" + this.recipe._id);
   }
 }

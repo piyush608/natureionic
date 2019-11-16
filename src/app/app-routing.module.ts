@@ -15,6 +15,7 @@ import { ProfileComponent } from "./components/profile/profile.component";
 import { LoginComponent } from "./components/login/login.component";
 import { SignupComponent } from "./components/signup/signup.component";
 import { OnboardingComponent } from "./components/onboarding/onboarding.component";
+import { EditProfileComponent } from "./components/edit-profile/edit-profile.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -38,6 +39,16 @@ const routes: Routes = [
       {
         path: "product",
         component: AddProductComponent
+      }
+    ]
+  },
+  {
+    path: "edit",
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: "profile",
+        component: EditProfileComponent
       }
     ]
   },

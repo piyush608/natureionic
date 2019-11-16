@@ -385,7 +385,7 @@
           </div>
           <div class="col-4">
             <div class="recipe-add-card">
-              <div class="background-property add-img mx-auto"></div>
+              <div class="background-property add-img mx-auto" (click)="addRecipe()"></div>
             </div>
           </div>
         </div>
@@ -436,13 +436,12 @@
                     </p>
 
                     <img src="/assets/images/nothingtoshow_rcipes-01.png" alt="" />
-                    <img src="/assets/images/addIcon.png" alt="" />
+                    <img class="add-icon" (click)="addRecipe()" src="/assets/images/addIcon.png" alt="" />
                   </div>
                 </div>
               </div>
             </div>
             <div class="row col-7">
-              <h3>Trending Recipes</h3>
               <div class="col-6">
                 <div class="card border-0 recipe-card">
                   <div class="d-flex">
@@ -508,7 +507,7 @@
           </div>
           <div class="col-3">
             <div class="add-product-card">
-              <div class="background-property add-img mx-auto"></div>
+              <img class="add-icon-svg" src="/assets/images/addIcon.svg" (click)="addProduct()">
             </div>
           </div>
         </div>
@@ -525,7 +524,7 @@
                     </p>
 
                     <img src="/assets/images/nothingtoshow-01.png" alt="" />
-                    <img src="/assets/images/addIcon.png" alt="" />
+                    <img class="add-icon" (click)="addProduct()" src="/assets/images/addIcon.png" alt="" />
                   </div>
                 </div>
               </div>

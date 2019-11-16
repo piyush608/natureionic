@@ -390,6 +390,7 @@
   display: block;
 }
 .add-img {
+  cursor: pointer;
   width: 30px;
   height: 30px;
   background: url("../../../assets/images/addIcon@3x.png");
@@ -605,8 +606,7 @@
   margin-bottom: 20px;
 }
 .add-product-card {
-  cursor: pointer;
-  width: 80%;
+  display: flex;
   border-radius: 16px;
   margin-bottom: 20px;
   box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
@@ -728,4 +728,12 @@
 .saved-message h3 {
   display: block;
   width: 100%;
+}
+.add-icon {
+  cursor: pointer;
+}
+.add-icon-svg {
+  cursor: pointer;
+  width: 90px;
+  margin: auto;
 }

@@ -144,14 +144,19 @@ export class OnboardingComponent implements OnInit {
       res => {
         this.user = res["newUser"];
 
-        this.angImage
-          .uploadImage("users", res["newUser"]._id, this.file)
-          .then(url => {
-            this.uploadImageURL(url);
-          })
-          .catch(err => {
-            console.log(err);
-          });
+        if (this.file) {
+          this.angImage
+            .uploadImage("users", res["newUser"]._id, this.file)
+            .then(url => {
+              this.uploadImageURL(url);
+            })
+            .catch(err => {
+              console.log(err);
+            });
+        } else {
+          this.dismissLoading();
+          this.router.navigateByUrl("/");
+        }
       },
       err => {
         console.log(err);

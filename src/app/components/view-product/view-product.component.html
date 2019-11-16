@@ -38,10 +38,10 @@
 
           <div class="recommended_by">
             <div>Recommended by</div>
-            <div *ngIf="product.addedBy">
-              <img src="/assets/images/inviteJoin@3x.png" alt="" class="circle_img" />
+            <div *ngIf="product.addedBy" class="user-info">
+              <img [src]="addedUserImage" alt="" class="circle_img" />
               <p class="user_name"> {{ product.addedBy.name }} </p>
-              <p class="user_loc">Tampa,Fl</p>
+              <p class="user_loc">{{ userLocation.city }}, {{ userLocation.state }}</p>
             </div>
           </div>
         </div>

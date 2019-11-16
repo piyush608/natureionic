@@ -1,4 +1,4 @@
-<div class="card border-0 recipe-card" *ngIf="recipe">
+<div class="card border-0 recipe-card" *ngIf="recipe" (click)="openRecipe()">
   <div class="d-flex">
     <div class="recipe-image background-property" [ngStyle]="{ 'background-image': 'url(' + thumbnail + ')'}">
       <div class="bookmark-div">
