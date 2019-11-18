@@ -19,10 +19,8 @@ export class ViewRecipeComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    console.log(this.route.snapshot.params._id);
     this.angRecipe.getDetails(this.route.snapshot.params._id).subscribe(
       res => {
-        console.log(res);
         this.recipe = res["recipe"];
         this.viewedPhoto = this.recipe.photos[0].thumb400Url;
 

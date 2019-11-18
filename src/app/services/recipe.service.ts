@@ -12,6 +12,10 @@ export class RecipeService {
     return this.http.get(environment.RECIPE_URL + "/random");
   }
 
+  getPopular() {
+    return this.http.get(environment.RECIPE_URL + "/getPopular");
+  }
+
   addRecipe(recipe) {
     return this.http.post(environment.RECIPE_URL + "/create", recipe);
   }

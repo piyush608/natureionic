@@ -4,6 +4,7 @@ import { ProductService } from "src/app/services/product.service";
 import { CategoryService } from "src/app/services/category.service";
 import { Router } from "@angular/router";
 import { LocationService } from "src/app/services/location.service";
+import { UserService } from "src/app/services/user.service";
 
 @Component({
   selector: "app-home",
@@ -14,17 +15,21 @@ export class HomeComponent implements OnInit {
   public city: string;
   public state: string;
   public country: string;
+  public username: string;
+  public recipes = [];
 
   constructor(
     private angRecipe: RecipeService,
     private angProduct: ProductService,
     private angCategory: CategoryService,
     private router: Router,
-    private angLocation: LocationService
+    private angLocation: LocationService,
+    private angUser: UserService
   ) {}
 
   ngOnInit() {
     this.getCurrentPosition();
+    this.getUserName();
 
     this.angCategory.getCategories("business").subscribe(
       res => {
@@ -35,9 +40,10 @@ export class HomeComponent implements OnInit {
       }
     );
 
-    this.angRecipe.getRandom().subscribe(
+    this.angRecipe.getPopular().subscribe(
       res => {
         console.log(res);
+        this.recipes = res["recipes"];
       },
       err => {
         console.log(err);
@@ -58,6 +64,17 @@ export class HomeComponent implements OnInit {
     this.angLocation.getPosition().then(res => {
       this.getLatLngCode(res._lat, res._long);
     });
+  }
+
+  getUserName() {
+    this.angUser.getProfileImage().subscribe(
+      res => {
+        this.username = res["user"].name.split(" ")[0];
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   getLatLngCode(lat, lng) {
