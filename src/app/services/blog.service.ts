@@ -20,6 +20,10 @@ export class BlogService {
     return this.http.get(environment.BLOG_URL + "/random");
   }
 
+  getPopular() {
+    return this.http.get(environment.BLOG_URL + "/getPopular");
+  }
+
   getUserBlogs(_id) {
     return this.http.get(environment.BLOG_URL + "/getUserBlogs/" + _id);
   }

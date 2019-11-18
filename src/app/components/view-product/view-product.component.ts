@@ -24,7 +24,6 @@ export class ViewProductComponent implements OnInit {
   ngOnInit() {
     this.angProduct.getDetails(this.route.snapshot.params._id).subscribe(
       res => {
-        console.log(res);
         this.product = res["product"];
         this.viewedPhoto = this.product.photos[0].thumb400Url;
 

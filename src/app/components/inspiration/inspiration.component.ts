@@ -9,6 +9,8 @@ import { VlogService } from "src/app/services/vlog.service";
   styleUrls: ["./inspiration.component.scss"]
 })
 export class InspirationComponent implements OnInit {
+  public blogs = [];
+
   constructor(
     private angBlog: BlogService,
     private angCategory: CategoryService,
@@ -25,9 +27,10 @@ export class InspirationComponent implements OnInit {
       }
     );
 
-    this.angBlog.getRandom().subscribe(
+    this.angBlog.getPopular().subscribe(
       res => {
         console.log(res);
+        this.blogs = res["blogs"];
       },
       err => {
         console.log(err);
