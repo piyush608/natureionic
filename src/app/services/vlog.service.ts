@@ -16,6 +16,10 @@ export class VlogService {
     return this.http.get(environment.VLOG_URL + "/random");
   }
 
+  getPopular() {
+    return this.http.get(environment.VLOG_URL + "/getPopular");
+  }
+
   getUserVlogs(_id) {
     return this.http.get(environment.VLOG_URL + "/getUserVlogs/" + _id);
   }

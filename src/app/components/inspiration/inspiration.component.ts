@@ -10,6 +10,7 @@ import { VlogService } from "src/app/services/vlog.service";
 })
 export class InspirationComponent implements OnInit {
   public blogs = [];
+  public vlogs = [];
 
   constructor(
     private angBlog: BlogService,
@@ -29,7 +30,6 @@ export class InspirationComponent implements OnInit {
 
     this.angBlog.getPopular().subscribe(
       res => {
-        console.log(res);
         this.blogs = res["blogs"];
       },
       err => {
@@ -39,7 +39,7 @@ export class InspirationComponent implements OnInit {
 
     this.angVlog.getRandom().subscribe(
       res => {
-        console.log(res);
+        this.vlogs = res["vlogs"];
       },
       err => {
         console.log(err);
