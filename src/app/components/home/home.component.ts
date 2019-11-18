@@ -17,6 +17,7 @@ export class HomeComponent implements OnInit {
   public country: string;
   public username: string;
   public recipes = [];
+  public products = [];
 
   constructor(
     private angRecipe: RecipeService,
@@ -42,7 +43,6 @@ export class HomeComponent implements OnInit {
 
     this.angRecipe.getPopular().subscribe(
       res => {
-        console.log(res);
         this.recipes = res["recipes"];
       },
       err => {
@@ -50,9 +50,10 @@ export class HomeComponent implements OnInit {
       }
     );
 
-    this.angProduct.getRandom().subscribe(
+    this.angProduct.getPopular().subscribe(
       res => {
         console.log(res);
+        this.products = res["products"];
       },
       err => {
         console.log(err);

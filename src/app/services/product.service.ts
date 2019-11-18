@@ -12,6 +12,10 @@ export class ProductService {
     return this.http.get(environment.HUNTEDPRODUCT_URL + "/random");
   }
 
+  getPopular() {
+    return this.http.get(environment.HUNTEDPRODUCT_URL + "/getPopular");
+  }
+
   addProduct(product) {
     return this.http.post(environment.HUNTEDPRODUCT_URL + "/create", product);
   }

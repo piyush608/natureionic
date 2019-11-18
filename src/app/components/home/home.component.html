@@ -264,79 +264,10 @@
             <div class="col-11 pr-0">
               <div class="horizontal-scroll w-100 p-1 mt-4">
                 <div class="d-inline-flex">
-                  <div class="card popular-placescard border-0">
-                    <div class="card-header border-0 p-0 popularproduct-img1 background-property">
-                      <div class="bookmark-div">
-                        <img src="/assets/images/bookmark.svg">
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <button type="button" class="btn btn-primary">Food</button>
-                      <h3>Bike & Bite Organic Bean</h3>
-                      <div class="recipe-uploadergrid">
-                        <div class="recipe-uploaderimg recipe-uploaderimg1 background-property">
-                        </div>
-                        <div class="recipe-uploadername">
-                          <h2 class="mb-0">Dulcineia Dias</h2>
-                        </div>
-                      </div>
-                    </div>
+                  <div class="card popular-placescard border-0" *ngFor="let product of products">
+                    <app-product-card [product]="product"></app-product-card>
                   </div>
-                  <div class="card popular-placescard border-0">
-                    <div class="card-header border-0 p-0 popularproduct-img2 background-property">
-                      <div class="bookmark-div">
-                        <img src="/assets/images/bookmark (1).svg">
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <button type="button" class="btn btn-primary">Food</button>
-                      <h3>James Bob's Organic Cafe & Bakery</h3>
-                      <div class="recipe-uploadergrid">
-                        <div class="recipe-uploaderimg recipe-uploaderimg2 background-property">
-                        </div>
-                        <div class="recipe-uploadername">
-                          <h2 class="mb-0">Dulcineia Dias</h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card popular-placescard border-0">
-                    <div class="card-header border-0 p-0 popularproduct-img3 background-property">
-                      <div class="bookmark-div">
-                        <img src="/assets/images/bookmark.svg">
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <button type="button" class="btn btn-primary">Food</button>
-                      <h3>Bike & Bite Organic Bean</h3>
-                      <div class="recipe-uploadergrid">
-                        <div class="recipe-uploaderimg recipe-uploaderimg3 background-property">
-                        </div>
-                        <div class="recipe-uploadername">
-                          <h2 class="mb-0">Dulcineia Dias</h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card popular-placescard border-0">
-                    <div class="card-header border-0 p-0 popularproduct-img1 background-property">
-                      <div class="bookmark-div">
-                        <img src="/assets/images/bookmark.svg">
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <button type="button" class="btn btn-primary">Food</button>
-                      <h3>Bike & Bite Organic Bean</h3>
-                      <div class="recipe-uploadergrid">
-                        <div class="recipe-uploaderimg recipe-uploaderimg1 background-property">
-                        </div>
-                        <div class="recipe-uploadername">
-                          <h2 class="mb-0">Dulcineia Dias</h2>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="card popular-placescard border-0" (click)="addProduct()">
+                  <div class="card add-popular-placescard border-0" (click)="addProduct()">
                     <img class="add-icon" src="/assets/images/addIcon.svg">
                   </div>
                 </div>
