@@ -47,6 +47,7 @@ import { NewslettersComponent } from "./components/newsletters/newsletters.compo
 import { NotificationsComponent } from "./components/notifications/notifications.component";
 import { ReportComponent } from "./components/report/report.component";
 import { DeactivateAccountComponent } from "./components/deactivate-account/deactivate-account.component";
+import { TextModalComponent } from "./modals/text-modal/text-modal.component";
 
 @NgModule({
   declarations: [
@@ -80,12 +81,14 @@ import { DeactivateAccountComponent } from "./components/deactivate-account/deac
     NewslettersComponent,
     NotificationsComponent,
     ReportComponent,
-    DeactivateAccountComponent
+    DeactivateAccountComponent,
+    TextModalComponent
   ],
   entryComponents: [
     SuccessModalComponent,
     FooterComponent,
-    PopoverMenuComponent
+    PopoverMenuComponent,
+    TextModalComponent
   ],
   imports: [
     BrowserModule,

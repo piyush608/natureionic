@@ -19,4 +19,12 @@ export class UserService {
   getProfileImage() {
     return this.http.get(environment.BASE_URL + "/getProfileImage");
   }
+
+  getEmail() {
+    return this.http.get(environment.BASE_URL + "/getEmail");
+  }
+
+  changeEmail(user) {
+    return this.http.post(environment.BASE_URL + "/changeEmail", user);
+  }
 }

@@ -18,22 +18,22 @@
     <div class="col-9">
       <section id="main-content">
         <section class="wrapper main-wrapper row">
-          <div class="col-md-6">
+          <div class="col-md-9">
             <section class="box">
               <h3 class="heading">Account</h3><BR>
               <form action="#">
                 <div class="form-group">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="youremail@xxxx.com"
-                    style="width: 50%; background-color: #f1f1f1;">
+                  <input type="email" name="email" [(ngModel)]="user.newEmail" class="form-control" id="email"
+                    placeholder="youremail@xxxx.com" style="width: 50%; background-color: #f1f1f1;">
                 </div>
-                <div class="form-group">
+                <div class="form-group" *ngIf="confirmed">
                   <label for="email">Password</label>
                   <p class="pass-vali">For Security, please confirm you password</p>
-                  <input type="email" class="form-control" id="email" placeholder="xxxxxxxxxxxxx"
-                    style="width: 50%; background-color: white;">
+                  <input type="password" name="password" [(ngModel)]="user.password" class="form-control" id="password"
+                    placeholder="xxxxxxxxxxxxx" style="width: 50%; background-color: white;">
                 </div>
-                <button type="submit" class="category">Confirm</button>
+                <button type="submit" class="category" (click)="confirm()">{{ buttonText }}</button>
               </form>
             </section>
           </div>
