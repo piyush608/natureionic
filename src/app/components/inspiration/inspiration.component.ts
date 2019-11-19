@@ -37,7 +37,7 @@ export class InspirationComponent implements OnInit {
       }
     );
 
-    this.angVlog.getRandom().subscribe(
+    this.angVlog.getPopular().subscribe(
       res => {
         this.vlogs = res["vlogs"];
       },

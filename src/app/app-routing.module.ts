@@ -18,6 +18,7 @@ import { OnboardingComponent } from "./components/onboarding/onboarding.componen
 import { EditProfileComponent } from "./components/edit-profile/edit-profile.component";
 import { AddBlogComponent } from "./components/add-blog/add-blog.component";
 import { AddVlogComponent } from "./components/add-vlog/add-vlog.component";
+import { AccountComponent } from "./components/account/account.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -77,6 +78,21 @@ const routes: Routes = [
       {
         path: "recipe/:_id",
         component: ViewRecipeComponent
+      }
+    ]
+  },
+  {
+    path: "settings",
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: "",
+        redirectTo: "/settings/account",
+        pathMatch: "full"
+      },
+      {
+        path: "account",
+        component: AccountComponent
       }
     ]
   },

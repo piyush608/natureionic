@@ -16,4 +16,8 @@ export class PopoverMenuComponent implements OnInit {
     this.angAuth.logout();
     this.router.navigateByUrl("/login");
   }
+
+  openSettings() {
+    this.router.navigateByUrl("/settings");
+  }
 }
