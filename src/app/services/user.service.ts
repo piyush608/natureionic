@@ -27,4 +27,8 @@ export class UserService {
   changeEmail(user) {
     return this.http.post(environment.BASE_URL + "/changeEmail", user);
   }
+
+  deactivateAccount() {
+    return this.http.get(environment.BASE_URL + "/deactivateAccount");
+  }
 }
