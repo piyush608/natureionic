@@ -44,6 +44,7 @@ import { VlogCardComponent } from "./components/vlog-card/vlog-card.component";
 import { AccountComponent } from "./components/account/account.component";
 import { SecurityComponent } from "./components/security/security.component";
 import { NewslettersComponent } from "./components/newsletters/newsletters.component";
+import { NotificationsComponent } from "./components/notifications/notifications.component";
 
 @NgModule({
   declarations: [
@@ -74,7 +75,8 @@ import { NewslettersComponent } from "./components/newsletters/newsletters.compo
     VlogCardComponent,
     AccountComponent,
     SecurityComponent,
-    NewslettersComponent
+    NewslettersComponent,
+    NotificationsComponent
   ],
   entryComponents: [
     SuccessModalComponent,

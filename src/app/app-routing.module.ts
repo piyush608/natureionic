@@ -21,6 +21,7 @@ import { AddVlogComponent } from "./components/add-vlog/add-vlog.component";
 import { AccountComponent } from "./components/account/account.component";
 import { SecurityComponent } from "./components/security/security.component";
 import { NewslettersComponent } from "./components/newsletters/newsletters.component";
+import { NotificationsComponent } from "./components/notifications/notifications.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -103,6 +104,10 @@ const routes: Routes = [
       {
         path: "newsletter",
         component: NewslettersComponent
+      },
+      {
+        path: "notifications",
+        component: NotificationsComponent
       }
     ]
   },
