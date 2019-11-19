@@ -23,6 +23,7 @@ import { SecurityComponent } from "./components/security/security.component";
 import { NewslettersComponent } from "./components/newsletters/newsletters.component";
 import { NotificationsComponent } from "./components/notifications/notifications.component";
 import { ReportComponent } from "./components/report/report.component";
+import { DeactivateAccountComponent } from "./components/deactivate-account/deactivate-account.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -113,6 +114,10 @@ const routes: Routes = [
       {
         path: "report",
         component: ReportComponent
+      },
+      {
+        path: "deactive-account",
+        component: DeactivateAccountComponent
       }
     ]
   },

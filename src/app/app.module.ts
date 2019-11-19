@@ -46,6 +46,7 @@ import { SecurityComponent } from "./components/security/security.component";
 import { NewslettersComponent } from "./components/newsletters/newsletters.component";
 import { NotificationsComponent } from "./components/notifications/notifications.component";
 import { ReportComponent } from "./components/report/report.component";
+import { DeactivateAccountComponent } from "./components/deactivate-account/deactivate-account.component";
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import { ReportComponent } from "./components/report/report.component";
     SecurityComponent,
     NewslettersComponent,
     NotificationsComponent,
-    ReportComponent
+    ReportComponent,
+    DeactivateAccountComponent
   ],
   entryComponents: [
     SuccessModalComponent,
