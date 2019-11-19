@@ -19,6 +19,7 @@ import { EditProfileComponent } from "./components/edit-profile/edit-profile.com
 import { AddBlogComponent } from "./components/add-blog/add-blog.component";
 import { AddVlogComponent } from "./components/add-vlog/add-vlog.component";
 import { AccountComponent } from "./components/account/account.component";
+import { SecurityComponent } from "./components/security/security.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -93,6 +94,10 @@ const routes: Routes = [
       {
         path: "account",
         component: AccountComponent
+      },
+      {
+        path: "security",
+        component: SecurityComponent
       }
     ]
   },

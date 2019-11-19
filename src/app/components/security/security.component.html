@@ -4,8 +4,8 @@
       <div class="page-sidebar expandit">
         <div class="sidebar-inner" id="main-menu-wrapper">
           <ul class="wraplist" style="height: auto;">
-            <li><a href="/settings/account"> <span class="menu-title active">Account</span></a></li>
-            <li><a href="/settings/security"> <span class="menu-title">Security</span></a></li>
+            <li><a href="/settings/account"> <span class="menu-title">Account</span></a></li>
+            <li><a href="/settings/security"> <span class="menu-title active">Security</span></a></li>
             <li><a href="/settings/newsletter"> <span class="menu-title">Newsletter</span></a></li>
             <li><a href="/settings/notifications"> <span class="menu-title">Notification</span></a></li>
             <li><a href="/settings/report"> <span class="menu-title">Report</span></a></li>
@@ -18,22 +18,19 @@
     <div class="col-9">
       <section id="main-content">
         <section class="wrapper main-wrapper row">
-          <div class="col-md-6">
+          <div class="col-md-8">
             <section class="box">
-              <h3 class="heading">Account</h3><BR>
+              <h3 class="heading">Security</h3><BR>
               <form action="#">
                 <div class="form-group">
-                  <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" placeholder="youremail@xxxx.com"
-                    style="width: 50%; background-color: #f1f1f1;">
+                  <label for="email">Reset you password</label>
+                  <p>Enter your email address and we will send you a link to reset your password</p>
+                  <input type="email" class="form-control" id="email" placeholder="Your email" style="width: 50%;">
                 </div>
-                <div class="form-group">
-                  <label for="email">Password</label>
-                  <p class="pass-vali">For Security, please confirm you password</p>
-                  <input type="email" class="form-control" id="email" placeholder="xxxxxxxxxxxxx"
-                    style="width: 50%; background-color: white;">
-                </div>
-                <button type="submit" class="category">Confirm</button>
+
+                <button type="submit" class="category" data-toggle="modal" data-target=".bs-example-modal-sm">
+                  Send password reset email
+                </button>
               </form>
             </section>
           </div>

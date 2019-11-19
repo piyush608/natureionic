@@ -42,6 +42,7 @@ import { AddVlogComponent } from "./components/add-vlog/add-vlog.component";
 import { BlogCardComponent } from "./components/blog-card/blog-card.component";
 import { VlogCardComponent } from "./components/vlog-card/vlog-card.component";
 import { AccountComponent } from "./components/account/account.component";
+import { SecurityComponent } from "./components/security/security.component";
 
 @NgModule({
   declarations: [
@@ -70,7 +71,8 @@ import { AccountComponent } from "./components/account/account.component";
     EditProfileComponent,
     BlogCardComponent,
     VlogCardComponent,
-    AccountComponent
+    AccountComponent,
+    SecurityComponent
   ],
   entryComponents: [
     SuccessModalComponent,
