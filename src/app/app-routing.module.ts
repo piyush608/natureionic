@@ -20,6 +20,7 @@ import { AddBlogComponent } from "./components/add-blog/add-blog.component";
 import { AddVlogComponent } from "./components/add-vlog/add-vlog.component";
 import { AccountComponent } from "./components/account/account.component";
 import { SecurityComponent } from "./components/security/security.component";
+import { NewslettersComponent } from "./components/newsletters/newsletters.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -98,6 +99,10 @@ const routes: Routes = [
       {
         path: "security",
         component: SecurityComponent
+      },
+      {
+        path: "newsletter",
+        component: NewslettersComponent
       }
     ]
   },
