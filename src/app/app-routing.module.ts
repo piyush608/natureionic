@@ -22,6 +22,7 @@ import { AccountComponent } from "./components/account/account.component";
 import { SecurityComponent } from "./components/security/security.component";
 import { NewslettersComponent } from "./components/newsletters/newsletters.component";
 import { NotificationsComponent } from "./components/notifications/notifications.component";
+import { ReportComponent } from "./components/report/report.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -108,6 +109,10 @@ const routes: Routes = [
       {
         path: "notifications",
         component: NotificationsComponent
+      },
+      {
+        path: "report",
+        component: ReportComponent
       }
     ]
   },

@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row" style="height: 100vh;">
+    <div class="col-3">
+      <div class="page-sidebar expandit">
+        <div class="sidebar-inner" id="main-menu-wrapper">
+          <ul class="wraplist" style="height: auto;">
+            <li><a href="/settings/account"> <span class="menu-title">Account</span></a></li>
+            <li><a href="/settings/security"> <span class="menu-title">Security</span></a></li>
+            <li><a href="/settings/newsletter"> <span class="menu-title">Newsletter</span></a></li>
+            <li><a href="/settings/notifications"> <span class="menu-title">Notification</span></a></li>
+            <li><a href="/settings/report"> <span class="menu-title active">Report</span></a></li>
+            <li><a href="/settings/data-expert"><span class="menu-title">Data Export</span></a></li>
+            <li><a href="/settings/deactive-account"> <span class="menu-title">Deactivate Account</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="col-9">
+      <section id="main-content">
+        <section class="wrapper main-wrapper row">
+          <div class="col-md-7">
+            <section class="box">
+              <h3 class="heading">Report a Problem</h3><BR>
+              <form action="#">
+                <div class="form-group">
+                  <select class=" select-report">
+                    <option>Report a Problem</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="email">Please describe the issue. We will get back to you soon.</label>
+                  <textarea class="form-control" rows="8" id="comment"
+                    placeholder="Please describe the issue"></textarea>
+                </div>
+                <button type="submit" class="category" data-toggle="modal"
+                  data-target=".bs-example-modal-sm">Send</button>
+              </form>
+            </section>
+          </div>
+        </section>
+      </section>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
