@@ -1,10 +1,17 @@
-import { Component, OnInit } from "@angular/core";
+import {
+  Component,
+  OnInit,
+  ViewChild,
+  ElementRef,
+  NgZone
+} from "@angular/core";
 import { RecipeService } from "src/app/services/recipe.service";
 import { ProductService } from "src/app/services/product.service";
 import { CategoryService } from "src/app/services/category.service";
 import { Router } from "@angular/router";
 import { LocationService } from "src/app/services/location.service";
 import { UserService } from "src/app/services/user.service";
+import { MapsAPILoader } from "@agm/core";
 
 @Component({
   selector: "app-home",
@@ -12,12 +19,16 @@ import { UserService } from "src/app/services/user.service";
   styleUrls: ["./home.component.scss"]
 })
 export class HomeComponent implements OnInit {
+  @ViewChild("search", { static: false }) public searchElementRef: ElementRef;
   public city: string;
   public state: string;
   public country: string;
+  public place: string;
   public username: string;
+  public categories = [];
   public recipes = [];
   public products = [];
+  public locationInput: boolean = false;
 
   constructor(
     private angRecipe: RecipeService,
@@ -25,7 +36,9 @@ export class HomeComponent implements OnInit {
     private angCategory: CategoryService,
     private router: Router,
     private angLocation: LocationService,
-    private angUser: UserService
+    private angUser: UserService,
+    private mapsAPILoader: MapsAPILoader,
+    private ngZone: NgZone
   ) {}
 
   ngOnInit() {
@@ -34,7 +47,7 @@ export class HomeComponent implements OnInit {
 
     this.angCategory.getCategories("business").subscribe(
       res => {
-        console.log(res);
+        this.categories = res["categories"];
       },
       err => {
         console.log(err);
@@ -52,13 +65,38 @@ export class HomeComponent implements OnInit {
 
     this.angProduct.getPopular().subscribe(
       res => {
-        console.log(res);
         this.products = res["products"];
       },
       err => {
         console.log(err);
       }
     );
+
+    this.mapsAPILoader.load().then(() => {
+      let autocomplete = new google.maps.places.Autocomplete(
+        this.searchElementRef.nativeElement,
+        {
+          types: ["(cities)"]
+        }
+      );
+      autocomplete.addListener("place_changed", () => {
+        this.ngZone.run(() => {
+          //get the place result
+          let place: google.maps.places.PlaceResult = autocomplete.getPlace();
+
+          //verify result
+          if (place.geometry === undefined || place.geometry === null) {
+            return;
+          }
+
+          // Set latitude, longitude
+          this.getLatLngCode(
+            place.geometry.location.lat(),
+            place.geometry.location.lng()
+          );
+        });
+      });
+    });
   }
 
   getCurrentPosition() {
@@ -85,10 +123,15 @@ export class HomeComponent implements OnInit {
         this.city = location.city;
         this.state = location.stateSN;
         this.country = location.country;
+        this.place = this.city + ", " + this.state;
       })
       .catch(err => {
         console.log(err);
       });
+  }
+
+  changeLocation() {
+    this.locationInput = !this.locationInput;
   }
 
   addBusiness() {

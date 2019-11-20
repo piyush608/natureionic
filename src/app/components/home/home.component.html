@@ -23,15 +23,21 @@
       <div class="row">
         <div class="col-4">
           <h2 class="mt-4 main-heading">Find Good, Find Green, Find Local<sup>TM</sup></h2>
-          <div class="location-grid mt-3 mb-2">
-            <div>
-              <p class="location-name mb-0">
-                <span><img src="/assets/images/location.svg" alt=""></span>
-                {{ city }}, {{ state }}
-              </p>
+          <div class="row location-grid">
+            <div class="col-8">
+              <div class="row">
+                <div class="col-2">
+                  <img src="/assets/images/location.svg" alt="">
+                </div>
+                <div class="col-10" style="padding-left: 0;">
+                  <input type="text" [(ngModel)]="place" placeholder="Type city name"
+                    class="form-control pl-0 input_style" autocorrect="off" autocapitalize="off" spellcheck="off"
+                    #search>
+                </div>
+              </div>
             </div>
-            <div>
-              <span class="change-location">Change Location</span>
+            <div class="col-4">
+              <span class="change-location" (click)="changeLocation()">Change Location</span>
             </div>
           </div>
         </div>

@@ -59,18 +59,20 @@ sup {
   text-transform: capitalize;
 }
 .location-grid {
-  display: grid;
-  grid-template-columns: 2fr 3fr;
   color: #00b2aa;
   font-size: 0.8em;
-  width: 80%;
   border: 1px solid #00b2aa;
-  padding: 10px 20px;
   border-radius: 22px;
+  padding-top: 7px;
 }
 .location-name img {
   width: 15px;
   height: 15px;
+  margin-right: 5px;
+}
+.location-pin {
+  width: 100%;
+  height: 100%;
   margin-right: 5px;
 }
 .change-location {
@@ -398,4 +400,24 @@ sup {
 .add-icon {
   width: 90px;
   margin: auto;
+}
+
+.form-control {
+  display: block;
+  width: 100%;
+  height: 21px;
+  padding: 0 !important;
+  font-size: 14px;
+  border-bottom: 1px solid #9f9f9f;
+  color: #555;
+  border-top: 0px;
+  box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0);
+  border-left: 0px;
+  border-right: 0px;
+  background-color: #fff;
+  background-image: none;
+  border-radius: 0px;
+}
+.form-group {
+  margin-bottom: 0 !important;
 }
