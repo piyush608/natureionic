@@ -145,4 +145,8 @@ export class HomeComponent implements OnInit {
   addProduct() {
     this.router.navigateByUrl("/add/product");
   }
+
+  addList() {
+    this.router.navigateByUrl("/add/list");
+  }
 }

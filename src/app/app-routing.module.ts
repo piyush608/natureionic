@@ -24,6 +24,7 @@ import { NewslettersComponent } from "./components/newsletters/newsletters.compo
 import { NotificationsComponent } from "./components/notifications/notifications.component";
 import { ReportComponent } from "./components/report/report.component";
 import { DeactivateAccountComponent } from "./components/deactivate-account/deactivate-account.component";
+import { ListComponent } from "./components/list/list.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -36,6 +37,15 @@ const routes: Routes = [
     path: "add",
     canActivate: [AuthGuard],
     children: [
+      {
+        path: "",
+        redirectTo: "add/list",
+        pathMatch: "full"
+      },
+      {
+        path: "list",
+        component: ListComponent
+      },
       {
         path: "business",
         component: AddBusinessComponent
