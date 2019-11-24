@@ -1,0 +1,82 @@
+<div class="container-fluid m-auto">
+  <div class="row justify-content-md-center main-content">
+    <div class="col-11">
+      <h1>Post to commmunity forum</h1>
+      <div class="row">
+        <div class="col-md-12" style="margin-top: 15px;">
+          <button class="btnphoto" [class.active]="tab === 'photo'" (click)="changeTab('photo')">
+            <img *ngIf="tab === 'photo'; else showgrayPost" src="/assets/images/textPostIconColor.svg"
+              style="width:20px; margin-right:20px;">
+            <ng-template #showgrayPost>
+              <img src="/assets/images/textPostIconGray.svg" style="width:20px; margin-right:20px;">
+            </ng-template>
+            Photo, Video & Text
+          </button>
+          <button class="btnlink" [class.active]="tab === 'link'" (click)="changeTab('link')">
+            <img *ngIf="tab === 'link'; else showgrayLink" src="/assets/images/linkPostIconColor.svg"
+              style="width:20px; margin-right:20px;">
+            <ng-template #showgrayLink>
+              <img src="/assets/images/linkPostIconGray.svg" style="width:20px; margin-right:20px;">
+            </ng-template>
+            Link Post
+          </button>
+        </div>
+        <div class="col-12">
+          <div class="well" *ngIf="tab === 'photo'">
+            <form>
+              <div class="form-group">
+                <label for="email">Topic Tilte *</label>
+                <input type="text" class="form-control" id="email" placeholder="Your post title" name="title"
+                  [(ngModel)]="forum.title">
+              </div>
+              <div class="form-group">
+                <label for="comment">Description (optional)</label>
+                <textarea name="description" [(ngModel)]="forum.description" type="text" class="form-control" rows="5"
+                  id="comment" placeholder="Add details.."></textarea>
+              </div>
+              <div class="form-group">
+                <label for="tag">Tag (Only one):</label>
+                <input type="text" class="form-control" id="tag" placeholder="e.g. permaculture " name="tag">
+              </div>
+              <div class="form-group">
+                <label for="photo">Upload photo</label><BR>
+                <div class="upload_photo_wrapper" *ngIf="localImage">
+                  <img [src]="localImage" alt="}" class="imagecheck-image" />
+                </div>
+                <div class="upload_photo_wrapper" *ngIf="!localImage">
+                  <button class="btn shadow_btn upload_photo">+</button>
+                  <input type="file" (change)="uploadImage($event)" />
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="well" *ngIf="tab === 'link'">
+            <form>
+              <div class="form-group">
+                <label for="tilte">Topic Tilte*</label>
+                <input type="text" class="form-control" id="tilte" placeholder="Your post title" name="title"
+                  [(ngModel)]="forum.title">
+              </div>
+              <div class="form-group">
+                <label for="link">Link</label>
+                <input type="text" class="form-control" id="link" placeholder="http://" name="link"
+                  [(ngModel)]="forum.link">
+              </div>
+              <div class="form-group">
+                <label for="tag">Tag(Only one):</label>
+                <input type="text" class="form-control" id="tag" placeholder="e.g. permaculture " name="email">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+      <div style="padding: 20px;text-align: center">
+        <button class="submit_business" (click)="addForum()" id="submitButton">
+          Submit
+        </button>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

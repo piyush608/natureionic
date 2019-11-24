@@ -48,6 +48,8 @@ import { NotificationsComponent } from "./components/notifications/notifications
 import { ReportComponent } from "./components/report/report.component";
 import { DeactivateAccountComponent } from "./components/deactivate-account/deactivate-account.component";
 import { ListComponent } from "./components/list/list.component";
+import { AddForumComponent } from "./components/add-forum/add-forum.component";
+import { ViewForumComponent } from "./components/view-forum/view-forum.component";
 
 @NgModule({
   declarations: [
@@ -65,9 +67,11 @@ import { ListComponent } from "./components/list/list.component";
     AddProductComponent,
     AddBlogComponent,
     AddVlogComponent,
+    AddForumComponent,
     SuccessModalComponent,
     ViewProductComponent,
     ViewRecipeComponent,
+    ViewForumComponent,
     NotFoundComponent,
     FooterComponent,
     PopoverMenuComponent,

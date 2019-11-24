@@ -8,6 +8,14 @@ import { environment } from "src/environments/environment";
 export class ForumService {
   constructor(private http: HttpClient) {}
 
+  create(forum) {
+    return this.http.post(environment.FORUM_URL + "/create", forum);
+  }
+
+  update(_id, forum) {
+    return this.http.patch(environment.FORUM_URL + "/update/" + _id, forum);
+  }
+
   getRandom() {
     return this.http.get(environment.FORUM_URL + "/random");
   }
