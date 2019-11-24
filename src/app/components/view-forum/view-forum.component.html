@@ -7,53 +7,48 @@
           <div class="post-footer-option">
             <ul class="list-unstyled">
               <li><a href="#"># Vegan</a></li>
-              <li><a href="#">Post 2h ago</a></li>
-              <li><a href="#"><button class="btnlink"><img src="/assets/images/share.png" style="width:15px; ">
-                    Share</button></a>
+              <li><a href="#">Post {{ publishedTime }}</a></li>
+              <li>
+                <a href="#">
+                  <button class="btnlink"><img src="/assets/images/share.png" style="width:15px;">
+                    Share
+                  </button>
+                </a>
               </li>
             </ul>
           </div>
         </div>
         <div class="col-12">
-          <h3>Where to buy this organic fruit jam in NY?</h3>
+          <h3>{{ forum.title }}</h3>
         </div>
         <div class="col-12">
-          <div class="head">
+          <div class="head" *ngIf="forum.addedBy">
             <small>
-              <img src="/assets/images/member-05-270x270.jpg" class="profile">
-              <strong class='user'>Jennifer C.Espara</strong>
+              <img [src]="addedUserImage" class="profile">
+              <strong class='user'>{{ forum.addedBy.name }}</strong>
               <img src="/assets/images/locationGray@2x.png"
-                style="width: 13px;  margin-left: 22px; margin-right:10px;">Stoten Island, NY
+                style="width: 13px;  margin-left: 22px; margin-right:10px;">{{ userLocation.city }},
+              {{ userLocation.state }}
             </small>
           </div>
         </div>
         <div class="col-12">
           <p class="txt-cmt">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin non lorem elementum, accumsan magna sed,
-            faucibus
-            mauris.
-            Nulla pellentesque ante nibh, ac hendrerit ante fermentum sed. Nunc in libero dictum, porta nibh
-            pellentesque,
-            ultrices dolor.
-            Curabitur nunc ipsum, blandit vel aliquam id, aliquam vel velit. Vestibulum ante ipsum primis in faucibus
-            orci
-            luctus et
-            ultrices posuere cubilia Curae; Sed sit amet mi dignissim, pretium justo non, lacinia libero. Nulla
-            facilisi.
-            Donec id sem velit. </p>
+            {{ forum.description }}
+          </p>
         </div>
-        <div class="col-12">
+        <div class="col-12" *ngIf="forum.type === 'photo'">
           <p>
-            <img src="/assets/images/shortcutAddBiz.png"
-              style="width: 300px; height: 200px; border-radius: 15px; margin-bottom: 10px;">
+            <img [src]="viewedPhoto" style="width: 300px; height: 200px; border-radius: 15px; margin-bottom: 10px;">
           </p>
         </div>
         <div class="col-12">
           <div class="post-footer-option">
             <ul class="list-unstyled">
-              <li><a href="#"><img src="/assets/images/like.png" width="20px"> 298</a></li>
-              <li><a href="#"><img src="/assets/images/thumbs-down-silhouette.png" width="20px"> 11</a></li>
-              <li><a href="#"><img src="/assets/images/chat.png" width="20px"> 38</a></li>
+              <li><a href="#"><img src="/assets/images/like.png" width="20px"> {{ forum.likes }}</a></li>
+              <li><a href="#"><img src="/assets/images/thumbs-down-silhouette.png" width="20px">
+                  {{ forum.dislikes }}</a></li>
+              <li><a href="#"><img src="/assets/images/chat.png" width="20px"> {{ forum.commentsCount }}</a></li>
               <li>
                 <div class="dropdown">
                   <img src="/assets/images/inPostMore.png" width="28px">

@@ -16,6 +16,10 @@ export class ForumService {
     return this.http.patch(environment.FORUM_URL + "/update/" + _id, forum);
   }
 
+  getDetails(_id) {
+    return this.http.get(environment.FORUM_URL + "/getDetails/" + _id);
+  }
+
   getRandom() {
     return this.http.get(environment.FORUM_URL + "/random");
   }
