@@ -8,12 +8,15 @@ import { Router } from "@angular/router";
   styleUrls: ["./community.component.scss"]
 })
 export class CommunityComponent implements OnInit {
+  public randomForums = [];
+  public latestForums = [];
+
   constructor(private angForum: ForumService, private router: Router) {}
 
   ngOnInit() {
     this.angForum.getRandom().subscribe(
       res => {
-        console.log(res);
+        this.randomForums = res["forums"];
       },
       err => {
         console.log(err);
@@ -22,7 +25,7 @@ export class CommunityComponent implements OnInit {
 
     this.angForum.getLatest().subscribe(
       res => {
-        console.log(res);
+        this.latestForums = res["forums"];
       },
       err => {
         console.log(err);

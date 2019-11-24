@@ -50,6 +50,7 @@ import { DeactivateAccountComponent } from "./components/deactivate-account/deac
 import { ListComponent } from "./components/list/list.component";
 import { AddForumComponent } from "./components/add-forum/add-forum.component";
 import { ViewForumComponent } from "./components/view-forum/view-forum.component";
+import { ForumCardComponent } from "./components/forum-card/forum-card.component";
 
 @NgModule({
   declarations: [
@@ -86,7 +87,8 @@ import { ViewForumComponent } from "./components/view-forum/view-forum.component
     NotificationsComponent,
     ReportComponent,
     DeactivateAccountComponent,
-    ListComponent
+    ListComponent,
+    ForumCardComponent
   ],
   entryComponents: [
     SuccessModalComponent,

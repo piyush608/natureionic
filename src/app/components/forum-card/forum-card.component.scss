@@ -1,0 +1,70 @@
+.discussion-card {
+  min-height: 222px;
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+  margin-top: 20px;
+}
+.discussion-card:last-child {
+  margin-right: -4px;
+}
+.discussion-card .card-body {
+  padding: 0.7rem;
+}
+.discussion-info {
+  padding-right: 15px;
+}
+.discussion-info h2 {
+  font-size: 0.8em;
+  color: rgb(72, 72, 72);
+}
+.discussion-info p {
+  font-size: 0.7em;
+  color: #868686;
+}
+.discussion-img {
+  height: 94px;
+  border-radius: 10px;
+}
+.discussion-tag {
+  color: #00b2aa;
+  font-size: 0.9em;
+  margin-right: 15px;
+}
+.discussion-time {
+  color: #b2b2b2;
+  font-size: 0.7em;
+}
+.grid-section {
+  display: grid;
+  grid-template-columns: 1fr 6fr;
+  align-items: center;
+}
+.grid-section h2 {
+  font-size: 0.9em;
+  color: #b2b2b2;
+  margin-top: 0 !important;
+}
+.discussionuser-img {
+  width: 30px;
+  height: 30px;
+  border-radius: 100%;
+}
+.discussion-commentlist li {
+  display: inline-block;
+  margin-right: 20px;
+}
+.discussion-commentlist li:last-child {
+  margin-right: 0px;
+}
+.discussion-commentlist li span {
+  font-size: 0.7em;
+  color: #b2b2b2;
+}
+.discussion-commentlist li img {
+  width: 12px;
+  margin-right: 5px;
+}
+.background-property {
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
