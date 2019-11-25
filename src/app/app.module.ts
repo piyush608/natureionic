@@ -53,6 +53,7 @@ import { ViewForumComponent } from "./components/view-forum/view-forum.component
 import { ForumCardComponent } from "./components/forum-card/forum-card.component";
 import { AddGroupComponent } from "./components/add-group/add-group.component";
 import { ViewGroupComponent } from "./components/view-group/view-group.component";
+import { GroupCardComponent } from "./components/group-card/group-card.component";
 
 @NgModule({
   declarations: [
@@ -92,7 +93,8 @@ import { ViewGroupComponent } from "./components/view-group/view-group.component
     ReportComponent,
     DeactivateAccountComponent,
     ListComponent,
-    ForumCardComponent
+    ForumCardComponent,
+    GroupCardComponent
   ],
   entryComponents: [
     SuccessModalComponent,

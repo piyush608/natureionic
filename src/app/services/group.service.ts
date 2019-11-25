@@ -16,6 +16,10 @@ export class GroupService {
     return this.http.patch(environment.GROUP_URL + "/update/" + _id, group);
   }
 
+  getCityGroups(city) {
+    return this.http.get(environment.GROUP_URL + "/getCityGroups/" + city);
+  }
+
   getDetails(_id) {
     return this.http.get(environment.GROUP_URL + "/getDetails/" + _id);
   }
