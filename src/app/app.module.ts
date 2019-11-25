@@ -51,6 +51,7 @@ import { ListComponent } from "./components/list/list.component";
 import { AddForumComponent } from "./components/add-forum/add-forum.component";
 import { ViewForumComponent } from "./components/view-forum/view-forum.component";
 import { ForumCardComponent } from "./components/forum-card/forum-card.component";
+import { AddGroupComponent } from "./components/add-group/add-group.component";
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { ForumCardComponent } from "./components/forum-card/forum-card.component
     AddBlogComponent,
     AddVlogComponent,
     AddForumComponent,
+    AddGroupComponent,
     SuccessModalComponent,
     ViewProductComponent,
     ViewRecipeComponent,

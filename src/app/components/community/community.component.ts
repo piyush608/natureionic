@@ -36,4 +36,8 @@ export class CommunityComponent implements OnInit {
   addForum() {
     this.router.navigateByUrl("/add/forum");
   }
+
+  addGroup() {
+    this.router.navigateByUrl("/add/group");
+  }
 }

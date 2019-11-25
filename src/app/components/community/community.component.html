@@ -53,6 +53,18 @@
 					</div>
 					<div class="row mt-4">
 						<div class="col-3">
+							<div class="media-container-row">
+								<div class="wrap-img" style="box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 10px 0px;  border-radius: 15px;">
+									<div style="text-align:center;padding:10px;">
+										<p style="padding-top:30px; font-size:15px; font-weight:400;">Oops! There is no group near you.
+											Explore other
+											areas or create a group</p>
+										<img src="/assets/images/addIcon.png" style="width: 35px; cursor: pointer;" (click)="addGroup()">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-3">
 							<div class="background-property explore-groupimg explore-groupimg1">
 							</div>
 							<h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
@@ -67,66 +79,57 @@
 							</div>
 							<h2 class="mt-3 sub-heading">Biking for Good Cause/ Central Florida</h2>
 						</div>
-						<div class="col-3">
-							<div class="background-property explore-groupimg explore-groupimg4">
-							</div>
-							<h2 class="mt-3 sub-heading">Healthy Diet Weekend Workshop</h2>
-						</div>
 					</div>
 				</div>
 			</div>
 			<hr>
 			<div class="row">
-				<div class="col-12">
-					<div class="row mt-4">
-						<div class="col-9">
-							<div class="row">
-								<div class="col-12">
-									<h2 class="mt-4 main-heading">Trending discussions<span class="show-more">Show More
-											<img src="/assets/images/arrow-pointing-to-right.svg"></span>
-									</h2>
-									<div class="row mt-4">
-										<div class="col-4" *ngFor="let forum of randomForums">
-											<app-forum-card [forum]="forum"></app-forum-card>
-										</div>
-									</div>
-								</div>
-							</div>
-							<div class="row">
-								<div class="col-12">
-									<h2 class="mt-4 main-heading">Latest discussions<span class="show-more">Show
-											More
-											<img src="/assets/images/arrow-pointing-to-right.svg"></span>
-									</h2>
-									<div class="row mt-4">
-										<div class="col-4" *ngFor="let forum of latestForums">
-											<app-forum-card [forum]="forum"></app-forum-card>
-										</div>
-									</div>
+				<div class="col-9">
+					<div class="row">
+						<div class="col-12">
+							<h2 class="mt-4 main-heading">Trending discussions<span class="show-more">Show More
+									<img src="/assets/images/arrow-pointing-to-right.svg"></span>
+							</h2>
+							<div class="row mt-4">
+								<div class="col-4" *ngFor="let forum of randomForums">
+									<app-forum-card [forum]="forum"></app-forum-card>
 								</div>
 							</div>
 						</div>
-						<div class="col-3">
-							<div class="popular-topiccard">
-								<div class="popular-cardpadding">
-									<h2>Popular topics</h2>
-									<button type="button" class="btn btn-outline-primary btn-sm"># Kambucha</button>
-									<button type="button" class="btn btn-outline-primary btn-sm"># Cleansig</button>
-									<button type="button" class="btn btn-outline-primary btn-sm">#
-										Cancer-fighting</button>
-									<button type="button" class="btn btn-outline-primary btn-sm"># Keto</button>
-									<button type="button" class="btn btn-outline-primary btn-sm">#
-										Zero-waste</button>
-									<button type="button" class="btn btn-outline-primary btn-sm">#
-										HomeRemedy</button>
-									<button type="button" class="btn btn-outline-primary btn-sm"># Detox</button>
-									<button class="btn btn-outline-primary btn-sm"># Keto</button>
-									<button type="button" class="btn btn-outline-primary btn-sm">#
-										Zero-waste</button>
-									<button type="button" class="btn btn-outline-primary btn-sm">#
-										HomeRemedy</button>
+					</div>
+					<div class="row">
+						<div class="col-12">
+							<h2 class="mt-4 main-heading">Latest discussions<span class="show-more">Show
+									More
+									<img src="/assets/images/arrow-pointing-to-right.svg"></span>
+							</h2>
+							<div class="row mt-4">
+								<div class="col-4" *ngFor="let forum of latestForums">
+									<app-forum-card [forum]="forum"></app-forum-card>
 								</div>
 							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-3">
+					<div class="popular-topiccard">
+						<div class="popular-cardpadding">
+							<h2>Popular topics</h2>
+							<button type="button" class="btn btn-outline-primary btn-sm"># Kambucha</button>
+							<button type="button" class="btn btn-outline-primary btn-sm"># Cleansig</button>
+							<button type="button" class="btn btn-outline-primary btn-sm">#
+								Cancer-fighting</button>
+							<button type="button" class="btn btn-outline-primary btn-sm"># Keto</button>
+							<button type="button" class="btn btn-outline-primary btn-sm">#
+								Zero-waste</button>
+							<button type="button" class="btn btn-outline-primary btn-sm">#
+								HomeRemedy</button>
+							<button type="button" class="btn btn-outline-primary btn-sm"># Detox</button>
+							<button class="btn btn-outline-primary btn-sm"># Keto</button>
+							<button type="button" class="btn btn-outline-primary btn-sm">#
+								Zero-waste</button>
+							<button type="button" class="btn btn-outline-primary btn-sm">#
+								HomeRemedy</button>
 						</div>
 					</div>
 				</div>

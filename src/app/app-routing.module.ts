@@ -27,6 +27,7 @@ import { DeactivateAccountComponent } from "./components/deactivate-account/deac
 import { ListComponent } from "./components/list/list.component";
 import { AddForumComponent } from "./components/add-forum/add-forum.component";
 import { ViewForumComponent } from "./components/view-forum/view-forum.component";
+import { AddGroupComponent } from "./components/add-group/add-group.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -71,6 +72,10 @@ const routes: Routes = [
       {
         path: "forum",
         component: AddForumComponent
+      },
+      {
+        path: "group",
+        component: AddGroupComponent
       }
     ]
   },
