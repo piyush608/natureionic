@@ -28,6 +28,7 @@ import { ListComponent } from "./components/list/list.component";
 import { AddForumComponent } from "./components/add-forum/add-forum.component";
 import { ViewForumComponent } from "./components/view-forum/view-forum.component";
 import { AddGroupComponent } from "./components/add-group/add-group.component";
+import { ViewGroupComponent } from "./components/view-group/view-group.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -108,6 +109,10 @@ const routes: Routes = [
       {
         path: "forum/:_id",
         component: ViewForumComponent
+      },
+      {
+        path: "group/:_id",
+        component: ViewGroupComponent
       }
     ]
   },

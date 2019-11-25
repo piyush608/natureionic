@@ -52,6 +52,7 @@ import { AddForumComponent } from "./components/add-forum/add-forum.component";
 import { ViewForumComponent } from "./components/view-forum/view-forum.component";
 import { ForumCardComponent } from "./components/forum-card/forum-card.component";
 import { AddGroupComponent } from "./components/add-group/add-group.component";
+import { ViewGroupComponent } from "./components/view-group/view-group.component";
 
 @NgModule({
   declarations: [
@@ -75,6 +76,7 @@ import { AddGroupComponent } from "./components/add-group/add-group.component";
     ViewProductComponent,
     ViewRecipeComponent,
     ViewForumComponent,
+    ViewGroupComponent,
     NotFoundComponent,
     FooterComponent,
     PopoverMenuComponent,
