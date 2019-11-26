@@ -1,60 +1,41 @@
 import {
   Component,
   OnInit,
+  NgZone,
   ViewChild,
-  ElementRef,
-  NgZone
+  ElementRef
 } from "@angular/core";
-import { ForumService } from "src/app/services/forum.service";
-import { Router } from "@angular/router";
-import { LocationService } from "src/app/services/location.service";
-import { MapsAPILoader } from "@agm/core";
+import { CategoryService } from "src/app/services/category.service";
 import { GroupService } from "src/app/services/group.service";
+import { MapsAPILoader } from "@agm/core";
+import { LocationService } from "src/app/services/location.service";
+import { Router } from "@angular/router";
 
 @Component({
-  selector: "app-community",
-  templateUrl: "./community.component.html",
-  styleUrls: ["./community.component.scss"]
+  selector: "app-explore-group",
+  templateUrl: "./explore-group.component.html",
+  styleUrls: ["./explore-group.component.scss"]
 })
-export class CommunityComponent implements OnInit {
+export class ExploreGroupComponent implements OnInit {
   @ViewChild("search", { static: false }) public searchElementRef: ElementRef;
+  public categories = [];
+  public groups = [];
   public city: string;
   public state: string;
   public country: string;
-  public place: string;
-  public randomForums = [];
-  public latestForums = [];
-  public groups = [];
+  public place: any;
 
   constructor(
-    private angForum: ForumService,
-    private router: Router,
-    private angLocation: LocationService,
+    private angCategory: CategoryService,
+    private angGroup: GroupService,
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
-    private angGroup: GroupService
+    private angLocation: LocationService,
+    private router: Router
   ) {}
 
   ngOnInit() {
     this.getCurrentPosition();
-
-    this.angForum.getRandom().subscribe(
-      res => {
-        this.randomForums = res["forums"];
-      },
-      err => {
-        console.log(err);
-      }
-    );
-
-    this.angForum.getLatest().subscribe(
-      res => {
-        this.latestForums = res["forums"];
-      },
-      err => {
-        console.log(err);
-      }
-    );
 
     this.mapsAPILoader.load().then(() => {
       let autocomplete = new google.maps.places.Autocomplete(
@@ -93,6 +74,7 @@ export class CommunityComponent implements OnInit {
     this.angLocation
       .codeLatLng(lat, lng)
       .then(location => {
+        console.log(location);
         this.city = location.city;
         this.state = location.stateSN;
         this.country = location.country;
@@ -106,10 +88,23 @@ export class CommunityComponent implements OnInit {
   }
 
   getGrpoups() {
-    this.angGroup.getCityGroups(this.city).subscribe(
+    this.angCategory.getCategories("group").subscribe(
       res => {
-        console.log(res);
-        this.groups = res["groups"];
+        this.categories = res["categories"];
+
+        this.categories.forEach(category => {
+          this.angGroup.getCategoryGroups(category._id, this.city).subscribe(
+            resp => {
+              console.log(resp);
+              resp["groups"].forEach(groups => {
+                this.groups.push(groups);
+              });
+            },
+            err => {
+              console.log(err);
+            }
+          );
+        });
       },
       err => {
         console.log(err);
@@ -117,15 +112,7 @@ export class CommunityComponent implements OnInit {
     );
   }
 
-  addForum() {
-    this.router.navigateByUrl("/add/forum");
-  }
-
   addGroup() {
     this.router.navigateByUrl("/add/group");
-  }
-
-  exploreGroup() {
-    this.router.navigateByUrl("/explore/group");
   }
 }

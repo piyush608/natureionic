@@ -1,0 +1,62 @@
+<div class="container-fluid">
+  <div class="row justify-content-md-center main-content">
+    <div class="col-11">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mt-4 main-heading"> Explore Groups in Your Area </h2>
+          <div class="row">
+            <div class="col-5">
+              <div class="row location-grid">
+                <div class="col-8">
+                  <div class="row">
+                    <div class="col-2">
+                      <img src="/assets/images/location.svg" alt="">
+                    </div>
+                    <div class="col-10" style="padding-left: 0;">
+                      <input type="text" [(ngModel)]="place" placeholder="Type city name"
+                        class="form-control pl-0 input_style" autocorrect="off" autocapitalize="off" spellcheck="off"
+                        #search>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-4">
+                  <span class="change-location">Change Location</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row" *ngIf="groups.length > 0; else showNoGroup">
+            <div class="col-12 pr-0" *ngFor="let category of categories">
+              <h3 class="sub-heading">
+                {{ category.name }} <span class="show-more">Show More <img
+                    src="/assets/images/arrow-pointing-to-right.svg"></span>
+              </h3>
+              <div class="row" style="margin-top: 25px;">
+                <div class="col-3" *ngFor="let group of groups">
+                  <app-group-card [group]="group" *ngIf="category._id === group.category"></app-group-card>
+                </div>
+              </div>
+            </div>
+          </div>
+          <ng-template #showNoGroup>
+            <div class="row mt-4">
+              <div class="col-3">
+                <div class="media-container-row">
+                  <div class="wrap-img" style="box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 10px 0px;  border-radius: 15px;">
+                    <div style="text-align:center;padding:10px;">
+                      <p style="padding-top:30px; font-size:15px; font-weight:400;">Oops! There is no group near you.
+                        Explore other
+                        areas or create a group</p>
+                      <img src="/assets/images/addIcon.png" style="width: 35px; cursor: pointer;" (click)="addGroup()">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>
