@@ -27,4 +27,12 @@ export class ForumService {
   getLatest() {
     return this.http.get(environment.FORUM_URL + "/latest");
   }
+
+  getAllLatests(skip) {
+    return this.http.get(environment.FORUM_URL + "/getAllLatests/" + skip);
+  }
+
+  getAllTrending(skip) {
+    return this.http.get(environment.FORUM_URL + "/getAllTrending/" + skip);
+  }
 }

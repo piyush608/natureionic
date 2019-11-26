@@ -57,6 +57,7 @@ import { GroupCardComponent } from "./components/group-card/group-card.component
 import { ExploreRecipeComponent } from "./components/explore-recipe/explore-recipe.component";
 import { ExploreProductComponent } from "./components/explore-product/explore-product.component";
 import { ExploreGroupComponent } from "./components/explore-group/explore-group.component";
+import { ExploreForumComponent } from "./components/explore-forum/explore-forum.component";
 
 @NgModule({
   declarations: [
@@ -100,7 +101,8 @@ import { ExploreGroupComponent } from "./components/explore-group/explore-group.
     GroupCardComponent,
     ExploreRecipeComponent,
     ExploreProductComponent,
-    ExploreGroupComponent
+    ExploreGroupComponent,
+    ExploreForumComponent
   ],
   entryComponents: [
     SuccessModalComponent,

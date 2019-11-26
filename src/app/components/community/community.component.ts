@@ -128,4 +128,8 @@ export class CommunityComponent implements OnInit {
   exploreGroup() {
     this.router.navigateByUrl("/explore/group");
   }
+
+  exploreForum(type) {
+    this.router.navigateByUrl("/explore/forum/" + type);
+  }
 }
