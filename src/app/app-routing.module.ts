@@ -33,6 +33,7 @@ import { ExploreRecipeComponent } from "./components/explore-recipe/explore-reci
 import { ExploreProductComponent } from "./components/explore-product/explore-product.component";
 import { ExploreGroupComponent } from "./components/explore-group/explore-group.component";
 import { ExploreForumComponent } from "./components/explore-forum/explore-forum.component";
+import { ExploreBlogComponent } from "./components/explore-blog/explore-blog.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -139,6 +140,10 @@ const routes: Routes = [
       {
         path: "forum/:type",
         component: ExploreForumComponent
+      },
+      {
+        path: "article",
+        component: ExploreBlogComponent
       }
     ]
   },

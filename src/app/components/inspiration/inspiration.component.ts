@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { BlogService } from "src/app/services/blog.service";
 import { CategoryService } from "src/app/services/category.service";
 import { VlogService } from "src/app/services/vlog.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-inspiration",
@@ -15,7 +16,8 @@ export class InspirationComponent implements OnInit {
   constructor(
     private angBlog: BlogService,
     private angCategory: CategoryService,
-    private angVlog: VlogService
+    private angVlog: VlogService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -45,5 +47,9 @@ export class InspirationComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  exploreBlog() {
+    this.router.navigateByUrl("/explore/article");
   }
 }
