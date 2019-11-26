@@ -84,59 +84,54 @@
 					</div>
 				</div>
 			</ng-template>
-		</div>
-	</div>
-	<hr>
-	<div class="row">
-		<div class="col-9">
 			<div class="row">
-				<div class="col-12">
-					<h2 class="mt-4 main-heading">Trending discussions<span class="show-more">Show More
-							<img src="/assets/images/arrow-pointing-to-right.svg"></span>
-					</h2>
-					<div class="row mt-4">
-						<div class="col-4" *ngFor="let forum of randomForums">
-							<app-forum-card [forum]="forum"></app-forum-card>
+				<div class="col-9">
+					<div class="row">
+						<h2 class="mt-4 main-heading">Trending discussions<span class="show-more">Show More
+								<img src="/assets/images/arrow-pointing-to-right.svg"></span>
+						</h2>
+						<div class="row mt-4">
+							<div class="col-4" *ngFor="let forum of randomForums">
+								<app-forum-card [forum]="forum"></app-forum-card>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<h2 class="mt-4 main-heading">Latest discussions<span class="show-more">Show More
+								<img src="/assets/images/arrow-pointing-to-right.svg"></span>
+						</h2>
+						<div class="row mt-4">
+							<div class="col-4" *ngFor="let forum of latestForums">
+								<app-forum-card [forum]="forum"></app-forum-card>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
-			<div class="row">
-				<div class="col-12">
-					<h2 class="mt-4 main-heading">Latest discussions<span class="show-more">Show
-							More
-							<img src="/assets/images/arrow-pointing-to-right.svg"></span>
-					</h2>
-					<div class="row mt-4">
-						<div class="col-4" *ngFor="let forum of latestForums">
-							<app-forum-card [forum]="forum"></app-forum-card>
+				<div class="col-3">
+					<div class="popular-topiccard">
+						<div class="popular-cardpadding">
+							<h2>Popular topics</h2>
+							<button type="button" class="btn btn-outline-primary btn-sm"># Kambucha</button>
+							<button type="button" class="btn btn-outline-primary btn-sm"># Cleansig</button>
+							<button type="button" class="btn btn-outline-primary btn-sm">#
+								Cancer-fighting</button>
+							<button type="button" class="btn btn-outline-primary btn-sm"># Keto</button>
+							<button type="button" class="btn btn-outline-primary btn-sm">#
+								Zero-waste</button>
+							<button type="button" class="btn btn-outline-primary btn-sm">#
+								HomeRemedy</button>
+							<button type="button" class="btn btn-outline-primary btn-sm"># Detox</button>
+							<button class="btn btn-outline-primary btn-sm"># Keto</button>
+							<button type="button" class="btn btn-outline-primary btn-sm">#
+								Zero-waste</button>
+							<button type="button" class="btn btn-outline-primary btn-sm">#
+								HomeRemedy</button>
 						</div>
 					</div>
-				</div>
-			</div>
-		</div>
-		<div class="col-3">
-			<div class="popular-topiccard">
-				<div class="popular-cardpadding">
-					<h2>Popular topics</h2>
-					<button type="button" class="btn btn-outline-primary btn-sm"># Kambucha</button>
-					<button type="button" class="btn btn-outline-primary btn-sm"># Cleansig</button>
-					<button type="button" class="btn btn-outline-primary btn-sm">#
-						Cancer-fighting</button>
-					<button type="button" class="btn btn-outline-primary btn-sm"># Keto</button>
-					<button type="button" class="btn btn-outline-primary btn-sm">#
-						Zero-waste</button>
-					<button type="button" class="btn btn-outline-primary btn-sm">#
-						HomeRemedy</button>
-					<button type="button" class="btn btn-outline-primary btn-sm"># Detox</button>
-					<button class="btn btn-outline-primary btn-sm"># Keto</button>
-					<button type="button" class="btn btn-outline-primary btn-sm">#
-						Zero-waste</button>
-					<button type="button" class="btn btn-outline-primary btn-sm">#
-						HomeRemedy</button>
 				</div>
 			</div>
 		</div>
 	</div>
+	<hr>
 	<app-footer></app-footer>
 </div>

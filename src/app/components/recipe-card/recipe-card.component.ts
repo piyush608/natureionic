@@ -18,9 +18,7 @@ export class RecipeCardComponent implements OnInit {
 
     if (this.recipe.addedBy.photo.length > 0) {
       this.recipe.addedBy.photo.forEach(photo => {
-        if (photo.isCurrent === "true") {
-          this.userImage = photo.image.thumb200Url;
-        }
+        this.userImage = photo.image.thumb200Url;
       });
     } else {
       this.userImage =

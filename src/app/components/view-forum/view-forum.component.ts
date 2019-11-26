@@ -28,13 +28,13 @@ export class ViewForumComponent implements OnInit {
     this.angForum.getDetails(this.route.snapshot.params._id).subscribe(
       res => {
         this.forum = res["forum"];
-        this.viewedPhoto = this.forum.photos[0].thumb400Url;
+
+        if (this.forum.photos.length > 0)
+          this.viewedPhoto = this.forum.photos[0].thumb400Url;
 
         if (this.forum.addedBy.photo.length > 0) {
           this.forum.addedBy.photo.forEach(photo => {
-            if (photo.isCurrent === "true") {
-              this.addedUserImage = photo.image.thumb200Url;
-            }
+            this.addedUserImage = photo.image.thumb200Url;
           });
         } else {
           this.addedUserImage =

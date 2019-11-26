@@ -18,9 +18,7 @@ export class ProductCardComponent implements OnInit {
 
     if (this.product.addedBy.photo.length > 0) {
       this.product.addedBy.photo.forEach(photo => {
-        if (photo.isCurrent === "true") {
-          this.userImage = photo.image.thumb200Url;
-        }
+        this.userImage = photo.image.thumb200Url;
       });
     } else {
       this.userImage =

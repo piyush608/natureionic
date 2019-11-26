@@ -1,7 +1,7 @@
 <div class="container-fluid">
   <!----------top section----------->
   <div class="row main-content justify-content-md-center">
-    <div class="col-11">
+    <div class="col-11" *ngIf="forum">
       <div class="row comment">
         <div class="col-12">
           <div class="post-footer-option">
@@ -22,7 +22,7 @@
           <h3>{{ forum.title }}</h3>
         </div>
         <div class="col-12">
-          <div class="head" *ngIf="forum.addedBy">
+          <div class="head" *ngIf="userLocation">
             <small>
               <img [src]="addedUserImage" class="profile">
               <strong class='user'>{{ forum.addedBy.name }}</strong>
@@ -33,9 +33,14 @@
           </div>
         </div>
         <div class="col-12">
-          <p class="txt-cmt">
+          <p class="txt-cmt" *ngIf="forum.type === 'photo'; else showLink">
             {{ forum.description }}
           </p>
+          <ng-template #showLink>
+            <p class="txt-cmt">
+              {{ forum.link }}
+            </p>
+          </ng-template>
         </div>
         <div class="col-12" *ngIf="forum.type === 'photo'">
           <p>
