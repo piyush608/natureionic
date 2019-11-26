@@ -52,4 +52,8 @@ export class InspirationComponent implements OnInit {
   exploreBlog() {
     this.router.navigateByUrl("/explore/article");
   }
+
+  exploreVlog() {
+    this.router.navigateByUrl("/explore/vlog");
+  }
 }

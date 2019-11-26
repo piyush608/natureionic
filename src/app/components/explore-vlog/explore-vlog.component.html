@@ -1,0 +1,17 @@
+<div class="container-fluid">
+  <div class="row justify-content-md-center main-content">
+    <div class="col-11">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="mt-4 main-heading">Vlogs Feed</h2>
+          <div class="row" style="margin-top: 25px;">
+            <div class="col-3" *ngFor="let vlog of vlogs">
+              <app-vlog-card [vlog]="vlog"></app-vlog-card>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer></app-footer>
+</div>

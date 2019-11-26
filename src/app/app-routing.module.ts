@@ -34,6 +34,7 @@ import { ExploreProductComponent } from "./components/explore-product/explore-pr
 import { ExploreGroupComponent } from "./components/explore-group/explore-group.component";
 import { ExploreForumComponent } from "./components/explore-forum/explore-forum.component";
 import { ExploreBlogComponent } from "./components/explore-blog/explore-blog.component";
+import { ExploreVlogComponent } from "./components/explore-vlog/explore-vlog.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -144,6 +145,10 @@ const routes: Routes = [
       {
         path: "article",
         component: ExploreBlogComponent
+      },
+      {
+        path: "vlog",
+        component: ExploreVlogComponent
       }
     ]
   },

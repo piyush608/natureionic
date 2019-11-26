@@ -59,6 +59,7 @@ import { ExploreProductComponent } from "./components/explore-product/explore-pr
 import { ExploreGroupComponent } from "./components/explore-group/explore-group.component";
 import { ExploreForumComponent } from "./components/explore-forum/explore-forum.component";
 import { ExploreBlogComponent } from "./components/explore-blog/explore-blog.component";
+import { ExploreVlogComponent } from "./components/explore-vlog/explore-vlog.component";
 
 @NgModule({
   declarations: [
@@ -104,7 +105,8 @@ import { ExploreBlogComponent } from "./components/explore-blog/explore-blog.com
     ExploreProductComponent,
     ExploreGroupComponent,
     ExploreForumComponent,
-    ExploreBlogComponent
+    ExploreBlogComponent,
+    ExploreVlogComponent
   ],
   entryComponents: [
     SuccessModalComponent,

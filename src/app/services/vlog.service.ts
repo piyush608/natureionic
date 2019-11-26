@@ -23,4 +23,8 @@ export class VlogService {
   getUserVlogs(_id) {
     return this.http.get(environment.VLOG_URL + "/getUserVlogs/" + _id);
   }
+
+  getAll(skip) {
+    return this.http.get(environment.VLOG_URL + "/getAll/" + skip);
+  }
 }
