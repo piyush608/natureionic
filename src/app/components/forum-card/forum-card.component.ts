@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { LocalService } from "src/app/services/local.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-forum-card",
@@ -13,7 +14,7 @@ export class ForumCardComponent implements OnInit {
   public description: string;
   public publishedTime: any;
 
-  constructor(private angLocal: LocalService) {}
+  constructor(private angLocal: LocalService, private router: Router) {}
 
   ngOnInit() {
     if (this.forum.photos.length > 0)
@@ -41,5 +42,9 @@ export class ForumCardComponent implements OnInit {
         this.forum.timestamp
       );
     }, 45000);
+  }
+
+  openForum() {
+    this.router.navigateByUrl("/view/forum/" + this.forum._id);
   }
 }

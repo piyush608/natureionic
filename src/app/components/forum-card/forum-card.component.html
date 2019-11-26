@@ -1,4 +1,4 @@
-<div class="card discussion-card border-0" *ngIf="forum">
+<div class="card discussion-card border-0" *ngIf="forum" (click)="openForum()">
   <div class="card-body">
     <span class="discussion-tag"># vegan</span>
     <span class="discussion-time">Posted {{ publishedTime }}</span>
@@ -27,7 +27,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-5" *ngIf="forum.type === 'photo'" style="padding-left: 0;">
+        <div class="col-5" style="padding-left: 0;">
           <div class="discussion-img background-property" [ngStyle]="{ 'background-image': 'url(' + thumbnail + ')'}">
           </div>
         </div>
