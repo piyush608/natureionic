@@ -30,6 +30,7 @@ import { ViewForumComponent } from "./components/view-forum/view-forum.component
 import { AddGroupComponent } from "./components/add-group/add-group.component";
 import { ViewGroupComponent } from "./components/view-group/view-group.component";
 import { ExploreRecipeComponent } from "./components/explore-recipe/explore-recipe.component";
+import { ExploreProductComponent } from "./components/explore-product/explore-product.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -124,6 +125,10 @@ const routes: Routes = [
       {
         path: "recipe",
         component: ExploreRecipeComponent
+      },
+      {
+        path: "product",
+        component: ExploreProductComponent
       }
     ]
   },

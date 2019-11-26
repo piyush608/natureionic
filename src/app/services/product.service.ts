@@ -36,4 +36,10 @@ export class ProductService {
       environment.HUNTEDPRODUCT_URL + "/getUserProducts/" + _id
     );
   }
+
+  getCategoryProducts(cat) {
+    return this.http.get(
+      environment.HUNTEDPRODUCT_URL + "/getCategoryProducts/" + cat
+    );
+  }
 }
