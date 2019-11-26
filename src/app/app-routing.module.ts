@@ -29,6 +29,7 @@ import { AddForumComponent } from "./components/add-forum/add-forum.component";
 import { ViewForumComponent } from "./components/view-forum/view-forum.component";
 import { AddGroupComponent } from "./components/add-group/add-group.component";
 import { ViewGroupComponent } from "./components/view-group/view-group.component";
+import { ExploreRecipeComponent } from "./components/explore-recipe/explore-recipe.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -113,6 +114,16 @@ const routes: Routes = [
       {
         path: "group/:_id",
         component: ViewGroupComponent
+      }
+    ]
+  },
+  {
+    path: "explore",
+    canActivate: [AuthGuard],
+    children: [
+      {
+        path: "recipe",
+        component: ExploreRecipeComponent
       }
     ]
   },

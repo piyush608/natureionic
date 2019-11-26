@@ -54,6 +54,7 @@ import { ForumCardComponent } from "./components/forum-card/forum-card.component
 import { AddGroupComponent } from "./components/add-group/add-group.component";
 import { ViewGroupComponent } from "./components/view-group/view-group.component";
 import { GroupCardComponent } from "./components/group-card/group-card.component";
+import { ExploreRecipeComponent } from "./components/explore-recipe/explore-recipe.component";
 
 @NgModule({
   declarations: [
@@ -94,7 +95,8 @@ import { GroupCardComponent } from "./components/group-card/group-card.component
     DeactivateAccountComponent,
     ListComponent,
     ForumCardComponent,
-    GroupCardComponent
+    GroupCardComponent,
+    ExploreRecipeComponent
   ],
   entryComponents: [
     SuccessModalComponent,

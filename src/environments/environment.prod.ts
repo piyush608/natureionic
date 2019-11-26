@@ -1,4 +1,4 @@
-const URL = "https://dev.ntrhub.com/api/v3";
+const URL = "https://temp.ntrhub.com/api/v3";
 
 export const environment = {
   production: true,

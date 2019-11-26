@@ -28,7 +28,6 @@ export class HomeComponent implements OnInit {
   public categories = [];
   public recipes = [];
   public products = [];
-  public locationInput: boolean = false;
 
   constructor(
     private angRecipe: RecipeService,
@@ -130,10 +129,6 @@ export class HomeComponent implements OnInit {
       });
   }
 
-  changeLocation() {
-    this.locationInput = !this.locationInput;
-  }
-
   addBusiness() {
     this.router.navigateByUrl("/add/business");
   }
@@ -148,5 +143,9 @@ export class HomeComponent implements OnInit {
 
   addList() {
     this.router.navigateByUrl("/add/list");
+  }
+
+  exploreRecipes() {
+    this.router.navigateByUrl("/explore/recipe");
   }
 }

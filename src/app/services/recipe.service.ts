@@ -31,4 +31,8 @@ export class RecipeService {
   getDetails(_id) {
     return this.http.get(environment.RECIPE_URL + "/getDetails/" + _id);
   }
+
+  getCategoryRecipes(cat) {
+    return this.http.get(environment.RECIPE_URL + "/getCategoryRecipes/" + cat);
+  }
 }
