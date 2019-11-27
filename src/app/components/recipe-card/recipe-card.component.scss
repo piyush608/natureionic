@@ -34,6 +34,7 @@
   display: block;
 }
 .recipe-info {
+  width: 60%;
   padding: 17px;
 }
 .recipe-info h3 {
@@ -58,7 +59,7 @@
 .recipe-category {
   display: grid;
   align-items: center;
-  grid-template-columns: 1.5fr 1.5fr;
+  grid-template-columns: 2.5fr 1.5fr;
   margin-bottom: 10px;
 }
 .recipe-category p {

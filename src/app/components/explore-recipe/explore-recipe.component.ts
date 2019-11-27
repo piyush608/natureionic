@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RecipeService } from "src/app/services/recipe.service";
 import { CategoryService } from "src/app/services/category.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-explore-recipe",
@@ -13,7 +14,8 @@ export class ExploreRecipeComponent implements OnInit {
 
   constructor(
     private angRecipe: RecipeService,
-    private angCategory: CategoryService
+    private angCategory: CategoryService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -22,7 +24,7 @@ export class ExploreRecipeComponent implements OnInit {
         this.categories = res["categories"];
 
         this.categories.forEach(category => {
-          this.angRecipe.getCategoryRecipes(category._id).subscribe(
+          this.angRecipe.getCategoryRecipes(category._id, "0").subscribe(
             resp => {
               resp["recipes"].forEach(recipe => {
                 this.recipes.push(recipe);
@@ -38,5 +40,9 @@ export class ExploreRecipeComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  exploreCategory(_id) {
+    this.router.navigateByUrl("/explore/recipe/category/" + _id);
   }
 }

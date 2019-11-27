@@ -35,6 +35,7 @@ import { ExploreGroupComponent } from "./components/explore-group/explore-group.
 import { ExploreForumComponent } from "./components/explore-forum/explore-forum.component";
 import { ExploreBlogComponent } from "./components/explore-blog/explore-blog.component";
 import { ExploreVlogComponent } from "./components/explore-vlog/explore-vlog.component";
+import { ExploreRecipeCategoryComponent } from "./components/explore-recipe-category/explore-recipe-category.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -128,7 +129,21 @@ const routes: Routes = [
     children: [
       {
         path: "recipe",
-        component: ExploreRecipeComponent
+        children: [
+          {
+            path: "",
+            redirectTo: "/explore/recipe/all",
+            pathMatch: "full"
+          },
+          {
+            path: "all",
+            component: ExploreRecipeComponent
+          },
+          {
+            path: "category/:cat",
+            component: ExploreRecipeCategoryComponent
+          }
+        ]
       },
       {
         path: "product",

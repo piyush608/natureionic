@@ -11,4 +11,8 @@ export class CategoryService {
   getCategories(type) {
     return this.http.get(environment.CATEGORY_URL + "/getCategories/" + type);
   }
+
+  getDetails(_id) {
+    return this.http.get(environment.CATEGORY_URL + "/getDetails/" + _id);
+  }
 }

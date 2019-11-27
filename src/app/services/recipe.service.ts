@@ -32,7 +32,9 @@ export class RecipeService {
     return this.http.get(environment.RECIPE_URL + "/getDetails/" + _id);
   }
 
-  getCategoryRecipes(cat) {
-    return this.http.get(environment.RECIPE_URL + "/getCategoryRecipes/" + cat);
+  getCategoryRecipes(cat, skip) {
+    return this.http.get(
+      environment.RECIPE_URL + "/getCategoryRecipes/" + cat + "/" + skip
+    );
   }
 }
