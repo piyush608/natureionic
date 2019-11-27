@@ -9,7 +9,7 @@
   margin-bottom: 20px;
 }
 .recipe-image {
-  width: 55%;
+  width: 40%;
   border-radius: 15px;
 }
 .background-property {
@@ -40,16 +40,6 @@
   font-size: 1em;
   height: 33px;
 }
-.recipe-category {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 1.5fr 4fr;
-  margin-bottom: 10px;
-}
-.recipe-category p {
-  text-align: right;
-  font-size: 0.9em;
-}
 .recipe-uploadergrid {
   display: grid;
   grid-template-columns: 0.85fr 4fr;
@@ -68,7 +58,7 @@
 .recipe-category {
   display: grid;
   align-items: center;
-  grid-template-columns: 1.5fr 4fr;
+  grid-template-columns: 1.5fr 1.5fr;
   margin-bottom: 10px;
 }
 .recipe-category p {
