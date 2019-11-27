@@ -103,55 +103,10 @@
             <div class="col-11 pr-0">
               <div class="horizontal-scroll w-100 p-1 mt-4">
                 <div class="d-inline-flex">
-                  <div class="card popular-placescard border-0">
-                    <div class="card-header border-0 p-0 popular-img1 background-property">
-                      <div class="bookmark-div">
-                        <img src="/assets/images/bookmark.svg">
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <button type="button" class="btn btn-primary">Cafe</button>
-                      <h3>Bike & Bite Organic Bean</h3>
-                      <p class="mb-0"><img src="/assets/images/category/maps-and-flags.svg">Orlando, FL</p>
-                    </div>
+                  <div class="card popular-placescard border-0" *ngFor="let business of businesses">
+                    <app-business-card [business]="business"></app-business-card>
                   </div>
-                  <div class="card popular-placescard border-0">
-                    <div class="card-header border-0 p-0 popular-img2 background-property">
-                      <div class="bookmark-div">
-                        <img src="/assets/images/bookmark.svg">
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <button type="button" class="btn btn-primary">Restaurant</button>
-                      <h3>James Bob's Organic Cafe & Bakery</h3>
-                      <p class="mb-0"><img src="/assets/images/category/maps-and-flags.svg">Orlando, FL</p>
-                    </div>
-                  </div>
-                  <div class="card popular-placescard border-0">
-                    <div class="card-header border-0 p-0 popular-img3 background-property">
-                      <div class="bookmark-div">
-                        <img src="/assets/images/bookmark.svg">
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <button type="button" class="btn btn-primary">Grocery</button>
-                      <h3>Bike & Bite Organic Bean</h3>
-                      <p class="mb-0"><img src="/assets/images/category/maps-and-flags.svg">Orlando, FL</p>
-                    </div>
-                  </div>
-                  <div class="card popular-placescard border-0">
-                    <div class="card-header border-0 p-0 popular-img1 background-property">
-                      <div class="bookmark-div">
-                        <img src="/assets/images/bookmark.svg">
-                      </div>
-                    </div>
-                    <div class="card-body">
-                      <button type="button" class="btn btn-primary">Cafe</button>
-                      <h3>Bike & Bite Organic Bean</h3>
-                      <p class="mb-0"><img src="/assets/images/category/maps-and-flags.svg">Orlando, FL</p>
-                    </div>
-                  </div>
-                  <div class="card popular-placescard border-0" (click)="addBusiness()">
+                  <div class="card add-popular-placescard border-0" (click)="addBusiness()">
                     <img class="add-icon" src="/assets/images/addIcon.svg">
                   </div>
                 </div>

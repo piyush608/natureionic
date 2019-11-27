@@ -30,4 +30,8 @@ export class BusinessService {
       }
     });
   }
+
+  getPopular(city) {
+    return this.http.get(environment.BUSINESS_URL + "/getPopular/" + city);
+  }
 }

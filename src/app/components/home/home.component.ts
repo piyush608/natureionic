@@ -12,6 +12,7 @@ import { Router } from "@angular/router";
 import { LocationService } from "src/app/services/location.service";
 import { UserService } from "src/app/services/user.service";
 import { MapsAPILoader } from "@agm/core";
+import { BusinessService } from "src/app/services/business.service";
 
 @Component({
   selector: "app-home",
@@ -28,6 +29,7 @@ export class HomeComponent implements OnInit {
   public categories = [];
   public recipes = [];
   public products = [];
+  public businesses = [];
 
   constructor(
     private angRecipe: RecipeService,
@@ -37,7 +39,8 @@ export class HomeComponent implements OnInit {
     private angLocation: LocationService,
     private angUser: UserService,
     private mapsAPILoader: MapsAPILoader,
-    private ngZone: NgZone
+    private ngZone: NgZone,
+    private angBusiness: BusinessService
   ) {}
 
   ngOnInit() {
@@ -123,10 +126,24 @@ export class HomeComponent implements OnInit {
         this.state = location.stateSN;
         this.country = location.country;
         this.place = this.city + ", " + this.state;
+
+        this.getBusinesses();
       })
       .catch(err => {
         console.log(err);
       });
+  }
+
+  getBusinesses() {
+    this.angBusiness.getPopular(this.city).subscribe(
+      res => {
+        console.log(res);
+        this.businesses = res["businesses"];
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 
   addBusiness() {
