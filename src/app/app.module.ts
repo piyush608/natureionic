@@ -63,6 +63,7 @@ import { ExploreVlogComponent } from "./components/explore-vlog/explore-vlog.com
 import { ExploreRecipeCategoryComponent } from "./components/explore-recipe-category/explore-recipe-category.component";
 import { ExploreProductCategoryComponent } from "./components/explore-product-category/explore-product-category.component";
 import { BusinessCardComponent } from "./components/business-card/business-card.component";
+import { ExploreBusinessComponent } from "./components/explore-business/explore-business.component";
 
 @NgModule({
   declarations: [
@@ -112,7 +113,8 @@ import { BusinessCardComponent } from "./components/business-card/business-card.
     ExploreVlogComponent,
     ExploreRecipeCategoryComponent,
     ExploreProductCategoryComponent,
-    BusinessCardComponent
+    BusinessCardComponent,
+    ExploreBusinessComponent
   ],
   entryComponents: [
     SuccessModalComponent,

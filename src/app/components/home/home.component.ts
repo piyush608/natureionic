@@ -162,6 +162,10 @@ export class HomeComponent implements OnInit {
     this.router.navigateByUrl("/add/list");
   }
 
+  exploreBusiness() {
+    this.router.navigateByUrl("/explore/business/all");
+  }
+
   exploreRecipes() {
     this.router.navigateByUrl("/explore/recipe/all");
   }

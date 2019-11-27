@@ -34,4 +34,16 @@ export class BusinessService {
   getPopular(city) {
     return this.http.get(environment.BUSINESS_URL + "/getPopular/" + city);
   }
+
+  getCategoryBusinesses(city, cat, skip) {
+    return this.http.get(
+      environment.BUSINESS_URL +
+        "/getCategoryBusinesses/" +
+        city +
+        "/" +
+        cat +
+        "/" +
+        skip
+    );
+  }
 }

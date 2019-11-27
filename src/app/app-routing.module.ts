@@ -37,6 +37,7 @@ import { ExploreBlogComponent } from "./components/explore-blog/explore-blog.com
 import { ExploreVlogComponent } from "./components/explore-vlog/explore-vlog.component";
 import { ExploreRecipeCategoryComponent } from "./components/explore-recipe-category/explore-recipe-category.component";
 import { ExploreProductCategoryComponent } from "./components/explore-product-category/explore-product-category.component";
+import { ExploreBusinessComponent } from "./components/explore-business/explore-business.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -128,6 +129,20 @@ const routes: Routes = [
     path: "explore",
     canActivate: [AuthGuard],
     children: [
+      {
+        path: "business",
+        children: [
+          {
+            path: "",
+            redirectTo: "/explore/business/all",
+            pathMatch: "full"
+          },
+          {
+            path: "all",
+            component: ExploreBusinessComponent
+          }
+        ]
+      },
       {
         path: "recipe",
         children: [
