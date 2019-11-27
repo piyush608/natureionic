@@ -37,9 +37,9 @@ export class ProductService {
     );
   }
 
-  getCategoryProducts(cat) {
+  getCategoryProducts(cat, skip) {
     return this.http.get(
-      environment.HUNTEDPRODUCT_URL + "/getCategoryProducts/" + cat
+      environment.HUNTEDPRODUCT_URL + "/getCategoryProducts/" + cat + "/" + skip
     );
   }
 }

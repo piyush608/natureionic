@@ -146,10 +146,10 @@ export class HomeComponent implements OnInit {
   }
 
   exploreRecipes() {
-    this.router.navigateByUrl("/explore/recipe");
+    this.router.navigateByUrl("/explore/recipe/all");
   }
 
   exploreProducts() {
-    this.router.navigateByUrl("/explore/product");
+    this.router.navigateByUrl("/explore/product/all");
   }
 }

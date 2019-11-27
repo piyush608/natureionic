@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CategoryService } from "src/app/services/category.service";
 import { ProductService } from "src/app/services/product.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-explore-product",
@@ -13,7 +14,8 @@ export class ExploreProductComponent implements OnInit {
 
   constructor(
     private angCategory: CategoryService,
-    private angProduct: ProductService
+    private angProduct: ProductService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -22,9 +24,8 @@ export class ExploreProductComponent implements OnInit {
         this.categories = res["categories"];
 
         this.categories.forEach(category => {
-          this.angProduct.getCategoryProducts(category._id).subscribe(
+          this.angProduct.getCategoryProducts(category._id, "0").subscribe(
             resp => {
-              console.log(resp);
               resp["products"].forEach(product => {
                 this.products.push(product);
               });
@@ -39,5 +40,9 @@ export class ExploreProductComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  exploreCategory(_id) {
+    this.router.navigateByUrl("/explore/product/category/" + _id);
   }
 }
