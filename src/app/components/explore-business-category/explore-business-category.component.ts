@@ -1,28 +1,28 @@
 import {
   Component,
   OnInit,
+  NgZone,
   ViewChild,
-  ElementRef,
-  NgZone
+  ElementRef
 } from "@angular/core";
 import { CategoryService } from "src/app/services/category.service";
 import { BusinessService } from "src/app/services/business.service";
 import { LocationService } from "src/app/services/location.service";
 import { MapsAPILoader } from "@agm/core";
-import { Router } from "@angular/router";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
-  selector: "app-explore-business",
-  templateUrl: "./explore-business.component.html",
-  styleUrls: ["./explore-business.component.scss"]
+  selector: "app-explore-business-category",
+  templateUrl: "./explore-business-category.component.html",
+  styleUrls: ["./explore-business-category.component.scss"]
 })
-export class ExploreBusinessComponent implements OnInit {
+export class ExploreBusinessCategoryComponent implements OnInit {
   @ViewChild("search", { static: false }) public searchElementRef: ElementRef;
-  public categories = [];
-  public businesses = [];
+  public category: any;
   public city: string;
   public state: string;
   public place: any;
+  public businesses = [];
 
   constructor(
     private angCategory: CategoryService,
@@ -30,13 +30,13 @@ export class ExploreBusinessComponent implements OnInit {
     private angLocation: LocationService,
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
-    private router: Router
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit() {
-    this.angCategory.getCategories("business").subscribe(
+    this.angCategory.getDetails(this.route.snapshot.params.cat).subscribe(
       res => {
-        this.categories = res["categories"];
+        this.category = res["category"];
       },
       err => {
         console.log(err);
@@ -92,23 +92,17 @@ export class ExploreBusinessComponent implements OnInit {
   }
 
   getBusinesses() {
-    this.categories.forEach(category => {
-      this.angBusiness
-        .getCategoryBusinesses(this.city, category._id, "0")
-        .subscribe(
-          resp => {
-            resp["businesses"].forEach(businesses => {
-              this.businesses.push(businesses);
-            });
-          },
-          err => {
-            console.log(err);
-          }
-        );
-    });
-  }
-
-  exploreCategory(_id) {
-    this.router.navigateByUrl("/explore/business/category/" + _id);
+    this.angBusiness
+      .getCategoryBusinesses(this.city, this.route.snapshot.params.cat, "0")
+      .subscribe(
+        resp => {
+          resp["businesses"].forEach(businesses => {
+            this.businesses.push(businesses);
+          });
+        },
+        err => {
+          console.log(err);
+        }
+      );
   }
 }

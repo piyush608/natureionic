@@ -25,16 +25,14 @@
               </div>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12 pr-0" *ngFor="let category of categories">
+          <div class="row" *ngIf="category">
+            <div class="col-12 pr-0">
               <h3 class="sub-heading">
-                {{ category.name }} <span class="show-more" (click)="exploreCategory(category._id)">Show More <img
-                    src="/assets/images/arrow-pointing-to-right.svg"></span>
+                {{ category.name }}
               </h3>
               <div class="row" style="margin-top: 25px;">
                 <div class="col-3" *ngFor="let business of businesses">
-                  <app-business-card [business]="business" *ngIf="category._id === business.category._id">
-                  </app-business-card>
+                  <app-business-card [business]="business"></app-business-card>
                 </div>
               </div>
             </div>
