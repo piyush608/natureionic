@@ -311,23 +311,8 @@
     <div class="row filter-row" *ngIf="tab === 'group'">
       <div class="col-11 m-auto">
         <div class="row pt-4" *ngIf="addedGroups.length > 0; else showNoGroups">
-          <div class="col-3">
-            <div class="background-property explore-groupimg explore-groupimg1"></div>
-            <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
-          </div>
-          <div class="col-3">
-            <div class="background-property explore-groupimg explore-groupimg2"></div>
-            <h2 class="mt-3 sub-heading">Orlando Yoga Gathering</h2>
-          </div>
-          <div class="col-3">
-            <div class="background-property explore-groupimg explore-groupimg3"></div>
-            <h2 class="mt-3 sub-heading">
-              Biking for Good Cause/ Central Florida
-            </h2>
-          </div>
-          <div class="col-3">
-            <div class="background-property explore-groupimg explore-groupimg4"></div>
-            <h2 class="mt-3 sub-heading">Healthy Diet Weekend Workshop</h2>
+          <div class="col-3" *ngFor="let group of addedGroups">
+            <app-group-card [group]="group"></app-group-card>
           </div>
         </div>
         <ng-template #showNoGroups>
@@ -346,7 +331,7 @@
                       <img src="/assets/images/Mask Group 199.png" alt="" />
                     </div>
                     <div>
-                      <img src="/assets/images/addIcon.png" alt="" />
+                      <img src="/assets/images/addIcon.png" alt="" (click)="addGroup()" />
                     </div>
                   </div>
                 </div>
