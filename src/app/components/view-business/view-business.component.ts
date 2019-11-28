@@ -25,6 +25,8 @@ export class ViewBusinessComponent implements OnInit {
   ngOnInit() {
     this.angBusiness.getDetails(this.route.snapshot.params._id).subscribe(
       res => {
+        console.log(res);
+
         this.business = res["business"];
         this.viewedPhoto = this.business.photos[0].thumb400Url;
         this.mapImage =
@@ -40,9 +42,7 @@ export class ViewBusinessComponent implements OnInit {
 
         if (this.business.addedBy.photo.length > 0) {
           this.business.addedBy.photo.forEach(photo => {
-            if (photo.isCurrent === "true") {
-              this.addedUserImage = photo.image.thumb200Url;
-            }
+            this.addedUserImage = photo.image.thumb200Url;
           });
         } else {
           this.addedUserImage =
