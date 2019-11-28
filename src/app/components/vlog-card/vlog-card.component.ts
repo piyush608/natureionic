@@ -38,4 +38,8 @@ export class VlogCardComponent implements OnInit {
 
     return video_id;
   }
+
+  openVlog() {
+    window.open(this.vlog.url, "_blank");
+  }
 }

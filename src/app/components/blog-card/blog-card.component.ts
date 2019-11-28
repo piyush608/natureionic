@@ -14,4 +14,8 @@ export class BlogCardComponent implements OnInit {
   ngOnInit() {
     this.thumbnail = this.blog.photos[0].thumb400Url;
   }
+
+  openBlog() {
+    window.open(this.blog.url, "_blank");
+  }
 }
