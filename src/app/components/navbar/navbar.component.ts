@@ -11,6 +11,7 @@ import { UserService } from "src/app/services/user.service";
 })
 export class NavbarComponent implements OnInit {
   public profileImage: any;
+  public nav: string;
 
   constructor(
     public popoverController: PopoverController,
@@ -37,6 +38,16 @@ export class NavbarComponent implements OnInit {
         console.log(err);
       }
     );
+
+    if (this.router.url === "/home") {
+      this.nav = "home";
+    } else if (this.router.url === "/community") {
+      this.nav = "community";
+    } else if (this.router.url === "/inspiration") {
+      this.nav = "inspiration";
+    } else if (this.router.url === "/profile") {
+      this.nav = "profile";
+    }
   }
 
   async presentPopover(ev: any) {
