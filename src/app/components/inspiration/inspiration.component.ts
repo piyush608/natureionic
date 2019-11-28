@@ -12,6 +12,7 @@ import { Router } from "@angular/router";
 export class InspirationComponent implements OnInit {
   public blogs = [];
   public vlogs = [];
+  public categories = [];
 
   constructor(
     private angBlog: BlogService,
@@ -23,7 +24,7 @@ export class InspirationComponent implements OnInit {
   ngOnInit() {
     this.angCategory.getCategories("blog").subscribe(
       res => {
-        console.log(res);
+        this.categories = res["categories"];
       },
       err => {
         console.log(err);
@@ -55,5 +56,9 @@ export class InspirationComponent implements OnInit {
 
   exploreVlog() {
     this.router.navigateByUrl("/explore/vlog");
+  }
+
+  exploreCategory(_id) {
+    this.router.navigateByUrl("/explore/article/category/" + _id);
   }
 }
