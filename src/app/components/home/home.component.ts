@@ -176,4 +176,12 @@ export class HomeComponent implements OnInit {
   exploreCategory(_id) {
     this.router.navigateByUrl("/explore/business/category/" + _id);
   }
+
+  exploreBlog() {
+    this.router.navigateByUrl("/explore/article/all");
+  }
+
+  addForum() {
+    this.router.navigateByUrl("/add/forum");
+  }
 }
