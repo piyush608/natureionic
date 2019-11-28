@@ -46,46 +46,10 @@
         <div class="col-11 pr-0">
           <div class="horizontal-scroll w-100 p-1 mt-4">
             <div class="d-inline-flex">
-              <div class="card border-0 find-cards text-center">
-                <div class="card-body p-2">
+              <div class="card border-0 find-cards text-center" *ngFor="let category of categories">
+                <div class="card-body p-2" (click)="exploreCategory(category._id)">
                   <img src="/assets/images/category/cafe.svg" alt="">
-                  <p class="mb-0">Cafe</p>
-                </div>
-              </div>
-              <div class="card border-0 find-cards text-center">
-                <div class="card-body p-2">
-                  <img src="/assets/images/category/restrautant.svg" alt="">
-                  <p class="mb-0">Restaurant</p>
-                </div>
-              </div>
-              <div class="card border-0 find-cards text-center">
-                <div class="card-body p-2">
-                  <img src="/assets/images/category/grocery.svg" alt="">
-                  <p class="mb-0">Grocery</p>
-                </div>
-              </div>
-              <div class="card border-0 find-cards text-center">
-                <div class="card-body p-2">
-                  <img src="/assets/images/category/health.svg" alt="">
-                  <p class="mb-0">Health</p>
-                </div>
-              </div>
-              <div class="card border-0 find-cards text-center">
-                <div class="card-body p-2">
-                  <img src="/assets/images/category/produce.svg" alt="">
-                  <p class="mb-0">Artisan Produce</p>
-                </div>
-              </div>
-              <div class="card border-0 find-cards text-center">
-                <div class="card-body p-2">
-                  <img src="/assets/images/category/farmer.svg" alt="">
-                  <p class="mb-0">Farmers' Market</p>
-                </div>
-              </div>
-              <div class="card border-0 find-cards text-center">
-                <div class="card-body p-2">
-                  <img src="/assets/images/category/bath.svg" alt="">
-                  <p class="mb-0">Bath & Beauty</p>
+                  <p class="mb-0">{{ category.name }}</p>
                 </div>
               </div>
             </div>

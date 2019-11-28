@@ -137,7 +137,6 @@ export class HomeComponent implements OnInit {
   getBusinesses() {
     this.angBusiness.getPopular(this.city).subscribe(
       res => {
-        console.log(res);
         this.businesses = res["businesses"];
       },
       err => {
@@ -172,5 +171,9 @@ export class HomeComponent implements OnInit {
 
   exploreProducts() {
     this.router.navigateByUrl("/explore/product/all");
+  }
+
+  exploreCategory(_id) {
+    this.router.navigateByUrl("/explore/business/category/" + _id);
   }
 }
