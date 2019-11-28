@@ -74,7 +74,6 @@ export class ExploreGroupComponent implements OnInit {
     this.angLocation
       .codeLatLng(lat, lng)
       .then(location => {
-        console.log(location);
         this.city = location.city;
         this.state = location.stateSN;
         this.country = location.country;
@@ -93,17 +92,18 @@ export class ExploreGroupComponent implements OnInit {
         this.categories = res["categories"];
 
         this.categories.forEach(category => {
-          this.angGroup.getCategoryGroups(category._id, this.city).subscribe(
-            resp => {
-              console.log(resp);
-              resp["groups"].forEach(groups => {
-                this.groups.push(groups);
-              });
-            },
-            err => {
-              console.log(err);
-            }
-          );
+          this.angGroup
+            .getCategoryGroups(category._id, this.city, "0")
+            .subscribe(
+              resp => {
+                resp["groups"].forEach(groups => {
+                  this.groups.push(groups);
+                });
+              },
+              err => {
+                console.log(err);
+              }
+            );
         });
       },
       err => {
@@ -114,5 +114,9 @@ export class ExploreGroupComponent implements OnInit {
 
   addGroup() {
     this.router.navigateByUrl("/add/group");
+  }
+
+  exploreCategory(_id) {
+    this.router.navigateByUrl("/explore/group/category/" + _id);
   }
 }

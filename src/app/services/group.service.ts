@@ -28,9 +28,15 @@ export class GroupService {
     return this.http.get(environment.GROUP_URL + "/getUserGroups/" + _id);
   }
 
-  getCategoryGroups(cat, city) {
+  getCategoryGroups(cat, city, skip) {
     return this.http.get(
-      environment.GROUP_URL + "/getCategoryGroups/" + cat + "/" + city
+      environment.GROUP_URL +
+        "/getCategoryGroups/" +
+        cat +
+        "/" +
+        city +
+        "/" +
+        skip
     );
   }
 }

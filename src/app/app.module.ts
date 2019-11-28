@@ -65,6 +65,7 @@ import { ExploreProductCategoryComponent } from "./components/explore-product-ca
 import { BusinessCardComponent } from "./components/business-card/business-card.component";
 import { ExploreBusinessComponent } from "./components/explore-business/explore-business.component";
 import { ExploreBusinessCategoryComponent } from "./components/explore-business-category/explore-business-category.component";
+import { ExploreGroupCategoryComponent } from "./components/explore-group-category/explore-group-category.component";
 
 @NgModule({
   declarations: [
@@ -116,7 +117,8 @@ import { ExploreBusinessCategoryComponent } from "./components/explore-business-
     ExploreProductCategoryComponent,
     BusinessCardComponent,
     ExploreBusinessComponent,
-    ExploreBusinessCategoryComponent
+    ExploreBusinessCategoryComponent,
+    ExploreGroupCategoryComponent
   ],
   entryComponents: [
     SuccessModalComponent,

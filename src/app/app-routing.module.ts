@@ -39,6 +39,7 @@ import { ExploreRecipeCategoryComponent } from "./components/explore-recipe-cate
 import { ExploreProductCategoryComponent } from "./components/explore-product-category/explore-product-category.component";
 import { ExploreBusinessComponent } from "./components/explore-business/explore-business.component";
 import { ExploreBusinessCategoryComponent } from "./components/explore-business-category/explore-business-category.component";
+import { ExploreGroupCategoryComponent } from "./components/explore-group-category/explore-group-category.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -186,7 +187,21 @@ const routes: Routes = [
       },
       {
         path: "group",
-        component: ExploreGroupComponent
+        children: [
+          {
+            path: "",
+            redirectTo: "explore/group/all",
+            pathMatch: "full"
+          },
+          {
+            path: "all",
+            component: ExploreGroupComponent
+          },
+          {
+            path: "category/:cat",
+            component: ExploreGroupCategoryComponent
+          }
+        ]
       },
       {
         path: "forum/:type",
