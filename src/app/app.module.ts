@@ -66,6 +66,7 @@ import { BusinessCardComponent } from "./components/business-card/business-card.
 import { ExploreBusinessComponent } from "./components/explore-business/explore-business.component";
 import { ExploreBusinessCategoryComponent } from "./components/explore-business-category/explore-business-category.component";
 import { ExploreGroupCategoryComponent } from "./components/explore-group-category/explore-group-category.component";
+import { ExploreBlogCategoryComponent } from "./components/explore-blog-category/explore-blog-category.component";
 
 @NgModule({
   declarations: [
@@ -93,6 +94,7 @@ import { ExploreGroupCategoryComponent } from "./components/explore-group-catego
     NotFoundComponent,
     FooterComponent,
     PopoverMenuComponent,
+    BusinessCardComponent,
     RecipeCardComponent,
     ProductCardComponent,
     EditProfileComponent,
@@ -115,10 +117,10 @@ import { ExploreGroupCategoryComponent } from "./components/explore-group-catego
     ExploreVlogComponent,
     ExploreRecipeCategoryComponent,
     ExploreProductCategoryComponent,
-    BusinessCardComponent,
     ExploreBusinessComponent,
     ExploreBusinessCategoryComponent,
-    ExploreGroupCategoryComponent
+    ExploreGroupCategoryComponent,
+    ExploreBlogCategoryComponent
   ],
   entryComponents: [
     SuccessModalComponent,

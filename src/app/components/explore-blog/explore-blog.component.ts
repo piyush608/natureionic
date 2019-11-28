@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { CategoryService } from "src/app/services/category.service";
 import { BlogService } from "src/app/services/blog.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-explore-blog",
@@ -13,7 +14,8 @@ export class ExploreBlogComponent implements OnInit {
 
   constructor(
     private angCategory: CategoryService,
-    private angBlog: BlogService
+    private angBlog: BlogService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -22,9 +24,8 @@ export class ExploreBlogComponent implements OnInit {
         this.categories = res["categories"];
 
         this.categories.forEach(category => {
-          this.angBlog.getCategoryBlogs(category._id).subscribe(
+          this.angBlog.getCategoryBlogs(category._id, "0").subscribe(
             resp => {
-              console.log(resp);
               resp["blogs"].forEach(blog => {
                 this.blogs.push(blog);
               });
@@ -39,5 +40,9 @@ export class ExploreBlogComponent implements OnInit {
         console.log(err);
       }
     );
+  }
+
+  exploreCatgeory(_id) {
+    this.router.navigateByUrl("/explore/article/category/" + _id);
   }
 }

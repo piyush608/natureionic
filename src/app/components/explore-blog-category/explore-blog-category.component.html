@@ -4,15 +4,14 @@
       <div class="row">
         <div class="col-12">
           <h2 class="mt-4 main-heading">Inspiration Feed</h2>
-          <div class="row">
-            <div class="col-12 pr-0" *ngFor="let category of categories">
+          <div class="row" *ngIf="category">
+            <div class="col-12 pr-0">
               <h3 class="sub-heading">
-                {{ category.name }} <span class="show-more" (click)="exploreCatgeory(category._id)">Show More <img
-                    src="/assets/images/arrow-pointing-to-right.svg"></span>
+                {{ category.name }}
               </h3>
               <div class="row" style="margin-top: 25px;">
                 <div class="col-3" *ngFor="let blog of blogs">
-                  <app-blog-card *ngIf="category._id === blog.category._id" [blog]="blog"></app-blog-card>
+                  <app-blog-card [blog]="blog"></app-blog-card>
                 </div>
               </div>
             </div>

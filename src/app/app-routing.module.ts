@@ -40,6 +40,7 @@ import { ExploreProductCategoryComponent } from "./components/explore-product-ca
 import { ExploreBusinessComponent } from "./components/explore-business/explore-business.component";
 import { ExploreBusinessCategoryComponent } from "./components/explore-business-category/explore-business-category.component";
 import { ExploreGroupCategoryComponent } from "./components/explore-group-category/explore-group-category.component";
+import { ExploreBlogCategoryComponent } from "./components/explore-blog-category/explore-blog-category.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
@@ -209,7 +210,21 @@ const routes: Routes = [
       },
       {
         path: "article",
-        component: ExploreBlogComponent
+        children: [
+          {
+            path: "",
+            redirectTo: "/explore/article/all",
+            pathMatch: "full"
+          },
+          {
+            path: "all",
+            component: ExploreBlogComponent
+          },
+          {
+            path: "category/:cat",
+            component: ExploreBlogCategoryComponent
+          }
+        ]
       },
       {
         path: "vlog",

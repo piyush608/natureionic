@@ -28,7 +28,9 @@ export class BlogService {
     return this.http.get(environment.BLOG_URL + "/getUserBlogs/" + _id);
   }
 
-  getCategoryBlogs(cat) {
-    return this.http.get(environment.BLOG_URL + "/getCategoryBlogs/" + cat);
+  getCategoryBlogs(cat, skip) {
+    return this.http.get(
+      environment.BLOG_URL + "/getCategoryBlogs/" + cat + "/" + skip
+    );
   }
 }
