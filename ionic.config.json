@@ -1,5 +1,7 @@
 {
   "name": "naturehub-app",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

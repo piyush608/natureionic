@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from "@angular/core";
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "app-vlog-card",
@@ -9,8 +10,9 @@ export class VlogCardComponent implements OnInit {
   @Input() vlog: any;
   public thumbnail: any;
   public userImage: any;
+  public isBookmarked: boolean = false;
 
-  constructor() {}
+  constructor(private storage: Storage) {}
 
   ngOnInit() {
     this.thumbnail =
@@ -27,6 +29,14 @@ export class VlogCardComponent implements OnInit {
         "https://ui-avatars.com/api/?name=" +
         this.vlog.addedBy.name.split(" ").join("+");
     }
+
+    this.storage.get("user").then(user => {
+      if (
+        user.bookmarkedVlogs.findIndex(index => index === this.vlog._id) === -1
+      )
+        this.isBookmarked = false;
+      else this.isBookmarked = true;
+    });
   }
 
   getVideoId() {

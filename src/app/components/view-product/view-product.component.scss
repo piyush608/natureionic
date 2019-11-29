@@ -25,18 +25,28 @@
   background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
   border: 0px;
   padding: 6px 15px;
+  margin-bottom: 10px;
   color: white;
   display: inline;
 }
-.business_type:focus {
-  outline: none;
-}
 .bookmark {
   display: inline;
-  padding: 0px 10px;
+  padding: 9px 9px;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  background: #e3e3e3;
+  justify-content: center;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.bookmark img {
+  width: 17px;
+  height: 17px;
 }
 .heart {
   display: inline;
+  height: 20px;
 }
 .likes {
   display: inline;
@@ -44,7 +54,9 @@
 }
 .share_btn {
   padding: 6px 15px;
+  margin-bottom: 10px;
   display: inline;
+  float: right;
 }
 .shadow_btn {
   border: 0px;
@@ -115,4 +127,8 @@
 }
 .user-info p {
   margin-bottom: 0 !important;
+}
+
+button {
+  outline: none;
 }

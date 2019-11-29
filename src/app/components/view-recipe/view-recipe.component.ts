@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { RecipeService } from "src/app/services/recipe.service";
 import { Recipe } from "src/app/models/recipe.model";
 import { ActivatedRoute } from "@angular/router";
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "app-view-recipe",
@@ -12,10 +13,12 @@ export class ViewRecipeComponent implements OnInit {
   public recipe = new Recipe();
   public viewedPhoto: any;
   public addedUserImage: any;
+  public isBookmarked: boolean = false;
 
   constructor(
     private angRecipe: RecipeService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private storage: Storage
   ) {}
 
   ngOnInit() {
@@ -40,6 +43,16 @@ export class ViewRecipeComponent implements OnInit {
         console.log(err);
       }
     );
+
+    this.storage.get("user").then(user => {
+      if (
+        user.bookmarkedRecipes.findIndex(
+          index => index === this.route.snapshot.params._id
+        ) === -1
+      )
+        this.isBookmarked = false;
+      else this.isBookmarked = true;
+    });
   }
 
   changePhoto(URL) {

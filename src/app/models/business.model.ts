@@ -32,7 +32,7 @@ export class Business {
     this.source = "externel";
     this.emailStatus = false;
     this.sponsered = false;
-    this.status = false;
+    this.status = true;
     this.likedBy = [];
     this.timing = [];
     this.photos = [];

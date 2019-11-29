@@ -8,7 +8,10 @@
       {{ blog.category.name }}
     </button>
     <div class="bookmark-div">
-      <img src="/assets/images/bookmark.svg" />
+      <img *ngIf="isBookmarked === true; else showNoBookmark" src="/assets/images/bookmark.svg">
+      <ng-template #showNoBookmark>
+        <img src="/assets/images/bookmark-grey.svg">
+      </ng-template>
     </div>
   </div>
 </div>

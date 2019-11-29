@@ -6,7 +6,12 @@
           <div class="product_info">
             <div class="all_icons">
               <button class="product_type"> {{ recipe.category.name }} </button>
-              <img class="bookmark" src="/assets/images/bookmarked.png" alt="" />
+              <div class="bookmark">
+                <img *ngIf="isBookmarked === true; else showNoBookmark" src="/assets/images/bookmark.svg">
+                <ng-template #showNoBookmark>
+                  <img src="/assets/images/bookmark-grey.svg">
+                </ng-template>
+              </div>
               <img class="heart" src="/assets/images/like.png" alt="" />
               <p class="likes"> {{ recipe.likes }} like</p>
               <button class="shadow_btn share_btn">

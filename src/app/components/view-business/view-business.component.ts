@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { BusinessService } from "src/app/services/business.service";
 import { Business } from "src/app/models/business.model";
 import { LocationService } from "src/app/services/location.service";
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "app-view-business",
@@ -15,18 +16,18 @@ export class ViewBusinessComponent implements OnInit {
   public mapImage: any;
   public userLocation: any;
   public addedUserImage: any;
+  public isBookmarked: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private angBusiness: BusinessService,
-    private angLocation: LocationService
+    private angLocation: LocationService,
+    private storage: Storage
   ) {}
 
   ngOnInit() {
     this.angBusiness.getDetails(this.route.snapshot.params._id).subscribe(
       res => {
-        console.log(res);
-
         this.business = res["business"];
         this.viewedPhoto = this.business.photos[0].thumb400Url;
         this.mapImage =
@@ -60,6 +61,16 @@ export class ViewBusinessComponent implements OnInit {
         console.log(err);
       }
     );
+
+    this.storage.get("user").then(user => {
+      if (
+        user.bookmarkedBusinesses.findIndex(
+          index => index === this.route.snapshot.params._id
+        ) === -1
+      )
+        this.isBookmarked = false;
+      else this.isBookmarked = true;
+    });
   }
 
   changePhoto(URL) {

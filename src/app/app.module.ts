@@ -67,6 +67,7 @@ import { ExploreBusinessComponent } from "./components/explore-business/explore-
 import { ExploreBusinessCategoryComponent } from "./components/explore-business-category/explore-business-category.component";
 import { ExploreGroupCategoryComponent } from "./components/explore-group-category/explore-group-category.component";
 import { ExploreBlogCategoryComponent } from "./components/explore-blog-category/explore-blog-category.component";
+import { IonicStorageModule } from "@ionic/storage";
 
 @NgModule({
   declarations: [
@@ -135,6 +136,7 @@ import { ExploreBlogCategoryComponent } from "./components/explore-blog-category
       libraries: ["places"]
     }),
     IonicModule.forRoot(),
+    IonicStorageModule.forRoot(),
     AppRoutingModule,
     HttpClientModule,
     NavbarComponentModule,

@@ -178,7 +178,7 @@ export class HomeComponent implements OnInit {
   }
 
   exploreBlog() {
-    this.router.navigateByUrl("/explore/article/all");
+    this.router.navigateByUrl("/inspiration");
   }
 
   addForum() {
