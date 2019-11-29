@@ -1,7 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RecipeService } from "src/app/services/recipe.service";
 import { Recipe } from "src/app/models/recipe.model";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Storage } from "@ionic/storage";
 import { UserService } from "src/app/services/user.service";
 
@@ -22,7 +22,8 @@ export class ViewRecipeComponent implements OnInit {
     private angRecipe: RecipeService,
     private route: ActivatedRoute,
     private storage: Storage,
-    private angUser: UserService
+    private angUser: UserService,
+    private router: Router
   ) {}
 
   ngOnInit() {
@@ -33,9 +34,7 @@ export class ViewRecipeComponent implements OnInit {
 
         if (this.recipe.addedBy.photo.length > 0) {
           this.recipe.addedBy.photo.forEach(photo => {
-            if (photo.isCurrent === "true") {
-              this.addedUserImage = photo.image.thumb200Url;
-            }
+            this.addedUserImage = photo.image.thumb200Url;
           });
         } else {
           this.addedUserImage =
@@ -129,6 +128,12 @@ export class ViewRecipeComponent implements OnInit {
       err => {
         console.log(err);
       }
+    );
+  }
+
+  exploreCategory() {
+    this.router.navigateByUrl(
+      "/explore/recipe/category/" + this.recipe.category._id
     );
   }
 }

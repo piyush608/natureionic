@@ -5,7 +5,7 @@
         <div class="col-md-4">
           <div class="product_info">
             <div class="all_icons">
-              <button class="product_type"> {{ recipe.category.name }} </button>
+              <button class="product_type" (click)="exploreCategory()"> {{ recipe.category.name }} </button>
               <div class="bookmark" (click)="bookmark()">
                 <img *ngIf="isBookmarked === true; else showNoBookmark" src="/assets/images/bookmark.svg">
                 <ng-template #showNoBookmark>
@@ -27,7 +27,7 @@
               <img *ngFor="let photo of recipe.photos" (click)="changePhoto(photo.thumb400Url)"
                 [src]="photo.thumb200Url" alt="" class="all_thumbnails" />
             </div>
-            <div class="staff_pick">
+            <div class="staff_pick" *ngIf="recipe.featured === true">
               <img src="/assets/images/NHstaffPick@2x.png" alt="" class="circle_img" />
               <p class="nh_pick">Naturehub Staff pick</p>
             </div>
@@ -100,14 +100,14 @@
           <div style="padding-top:18px;">Ingredients</div>
           <ul>
             <li *ngFor="let ingredient of recipe.ingredients">
-              {{ ingredient }}
+              <p>{{ ingredient }}</p>
             </li>
           </ul>
 
           <div style="padding-top:18px;">Steps</div>
           <ul>
             <li *ngFor="let step of recipe.steps">
-              {{ step }}
+              <p style="line-height: 1.7em;">{{ step }}</p>
             </li>
           </ul>
         </div>
