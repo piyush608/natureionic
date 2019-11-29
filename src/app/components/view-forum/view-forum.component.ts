@@ -20,6 +20,7 @@ export class ViewForumComponent implements OnInit {
   public publishedTime: any;
   private user: any;
   public isLiked: boolean = false;
+  public disLiked: boolean = false;
 
   constructor(
     private angForum: ForumService,
@@ -77,6 +78,14 @@ export class ViewForumComponent implements OnInit {
       )
         this.isLiked = false;
       else this.isLiked = true;
+
+      if (
+        user.dislikedForums.findIndex(
+          index => index === this.route.snapshot.params._id
+        ) === -1
+      )
+        this.disLiked = false;
+      else this.disLiked = true;
     });
 
     this.angUser.user.subscribe(res => {
@@ -88,6 +97,19 @@ export class ViewForumComponent implements OnInit {
     if (this.isLiked === false) {
       this.user.likedForums.push(this.forum._id);
       this.forum.likes += 1;
+
+      if (
+        this.user.dislikedForums.findIndex(
+          index => index === this.route.snapshot.params._id
+        ) !== -1
+      ) {
+        this.user.dislikedForums.splice(
+          this.user.dislikedForums.findIndex(index => index === this.forum._id),
+          1
+        );
+        this.forum.dislikes -= 1;
+      }
+
       this.update();
       this.updateForum();
     } else {
@@ -100,6 +122,37 @@ export class ViewForumComponent implements OnInit {
       this.updateForum();
     }
     this.isLiked = !this.isLiked;
+  }
+
+  dislike() {
+    if (this.disLiked === false) {
+      this.user.dislikedForums.push(this.forum._id);
+      this.forum.dislikes += 1;
+
+      if (
+        this.user.likedForums.findIndex(
+          index => index === this.route.snapshot.params._id
+        ) !== -1
+      ) {
+        this.user.likedForums.splice(
+          this.user.likedForums.findIndex(index => index === this.forum._id),
+          1
+        );
+        this.forum.likes -= 1;
+      }
+
+      this.update();
+      this.updateForum();
+    } else {
+      this.user.dislikedForums.splice(
+        this.user.dislikedForums.findIndex(index => index === this.forum._id),
+        1
+      );
+      this.forum.dislikes -= 1;
+      this.update();
+      this.updateForum();
+    }
+    this.disLiked = !this.disLiked;
   }
 
   update() {

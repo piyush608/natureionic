@@ -1,7 +1,13 @@
 <div class="card alternative-card border-0">
   <div class="card-header border-0 p-0 background-property" [ngStyle]="{ 'background-image': 'url(' + thumbnail + ')'}">
     <div class="row">
-      <div class="col-12">
+      <div class="col-4 align-self-start">
+        <div *ngIf="vlog.copyright === true; else showNoCopy" class="copyright">OC</div>
+        <ng-template #showNoCopy>
+          <div class="copyright">Shared</div>
+        </ng-template>
+      </div>
+      <div class="col-3 offset-5 align-self-end">
         <div class="bookmark-div" (click)="bookmark()">
           <img *ngIf="isBookmarked === true; else showNoBookmark" src="/assets/images/bookmark.svg">
           <ng-template #showNoBookmark>
