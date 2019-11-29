@@ -15,6 +15,7 @@ export class ViewRecipeComponent implements OnInit {
   public viewedPhoto: any;
   public addedUserImage: any;
   public isBookmarked: boolean = false;
+  public isLiked: boolean = false;
   private user: any;
 
   constructor(
@@ -56,6 +57,18 @@ export class ViewRecipeComponent implements OnInit {
       )
         this.isBookmarked = false;
       else this.isBookmarked = true;
+
+      if (
+        user.likedRecipes.findIndex(
+          index => index === this.route.snapshot.params._id
+        ) === -1
+      )
+        this.isLiked = false;
+      else this.isLiked = true;
+    });
+
+    this.angUser.user.subscribe(res => {
+      this.user = res;
     });
   }
 
@@ -76,13 +89,42 @@ export class ViewRecipeComponent implements OnInit {
       );
       this.update();
     }
+    this.isBookmarked = !this.isBookmarked;
+  }
+
+  like() {
+    if (this.isLiked === false) {
+      this.user.likedRecipes.push(this.recipe._id);
+      this.recipe.likes += 1;
+      this.update();
+      this.updateRecipe();
+    } else {
+      this.user.likedRecipes.splice(
+        this.user.likedRecipes.findIndex(index => index === this.recipe._id),
+        1
+      );
+      this.recipe.likes -= 1;
+      this.update();
+      this.updateRecipe();
+    }
+    this.isLiked = !this.isLiked;
   }
 
   update() {
     this.angUser.update(this.user._id, this.user).subscribe(
       res => {
-        this.storage.set("user", this.user);
-        this.isBookmarked = !this.isBookmarked;
+        this.angUser.setUser(this.user);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  updateRecipe() {
+    this.angRecipe.update(this.recipe._id, this.recipe).subscribe(
+      res => {
+        console.log(res);
       },
       err => {
         console.log(err);

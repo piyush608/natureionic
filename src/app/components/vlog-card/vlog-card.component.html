@@ -14,7 +14,7 @@
       <img src="/assets/images/share.svg" />
     </div>
   </div>
-  <div class="card-body" (click)="openVlog()">
+  <div class="card-body">
     <ul class="alternative-list pl-0 mb-2">
       <li>
         <span>07:50</span>
@@ -23,13 +23,18 @@
         <img src="/assets/images/eye.svg" alt="" class="mr-2 img-1" />10.1K
       </li>
       <li>
-        <img src="/assets/images/like.svg" alt="" class="mr-2 img-2" /> {{ vlog.likes }}
+        <img class="mr-2 img-2" src="/assets/images/like.svg" *ngIf="isLiked === true; else showNoLike"
+          (click)="like()" />
+        <ng-template #showNoLike>
+          <img class="mr-2 img-2" src="/assets/images/like-grey.svg" (click)="like()" />
+        </ng-template>
+        {{ vlog.likes }}
       </li>
     </ul>
-    <h3>
+    <h3 (click)="openVlog()">
       {{ vlog.title }}
     </h3>
-    <div class="alternative-grid">
+    <div class="alternative-grid" (click)="openVlog()">
       <div class="alternative-img background-property" [ngStyle]="{ 'background-image': 'url(' + userImage + ')'}">
       </div>
       <div class="alternative-name">

@@ -17,6 +17,7 @@ export class User {
   likedBusinesses: Array<any>;
   likedRecipes: Array<any>;
   likedProducts: Array<any>;
+  likedVlogs: Array<any>;
   likedForums: Array<any>;
   dislikedForums: Array<any>;
   bookmarkedBusinesses: Array<any>;
@@ -53,6 +54,7 @@ export class User {
     this.likedBusinesses = [];
     this.likedRecipes = [];
     this.likedProducts = [];
+    this.likedVlogs = [];
     this.likedForums = [];
     this.dislikedForums = [];
     this.bookmarkedBusinesses = [];

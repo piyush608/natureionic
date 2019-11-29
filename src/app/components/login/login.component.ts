@@ -4,7 +4,7 @@ import { Platform } from "@ionic/angular";
 import { Router } from "@angular/router";
 import { AuthService } from "src/app/services/auth.service";
 import { User } from "src/app/models/user.model";
-import { Storage } from "@ionic/storage";
+import { UserService } from "src/app/services/user.service";
 
 @Component({
   selector: "app-login",
@@ -19,7 +19,7 @@ export class LoginComponent implements OnInit {
     private router: Router,
     private platform: Platform,
     private angPlatform: PlatformService,
-    private storage: Storage
+    private angUser: UserService
   ) {}
 
   ngOnInit() {
@@ -35,7 +35,7 @@ export class LoginComponent implements OnInit {
   login() {
     this.angAuth.login(this.user).subscribe(
       res => {
-        this.storage.set("user", res["user"]);
+        this.angUser.setUser(res["user"]);
         this.angAuth.setToken(res["token"]);
         this.angAuth.loggedIn.next(true);
         this.router.navigateByUrl("/home");

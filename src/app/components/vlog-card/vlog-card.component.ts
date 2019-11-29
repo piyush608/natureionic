@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { Storage } from "@ionic/storage";
 import { UserService } from "src/app/services/user.service";
+import { GroupService } from "src/app/services/group.service";
+import { VlogService } from "src/app/services/vlog.service";
 
 @Component({
   selector: "app-vlog-card",
@@ -13,8 +15,13 @@ export class VlogCardComponent implements OnInit {
   public userImage: any;
   private user: any;
   public isBookmarked: boolean = false;
+  public isLiked: boolean = false;
 
-  constructor(private storage: Storage, private angUser: UserService) {}
+  constructor(
+    private storage: Storage,
+    private angUser: UserService,
+    private angVlog: VlogService
+  ) {}
 
   ngOnInit() {
     this.thumbnail =
@@ -35,10 +42,22 @@ export class VlogCardComponent implements OnInit {
     this.storage.get("user").then(user => {
       this.user = user;
       if (
-        user.bookmarkedVlogs.findIndex(index => index === this.vlog._id) === -1
+        this.user.bookmarkedVlogs.findIndex(
+          index => index === this.vlog._id
+        ) === -1
       )
         this.isBookmarked = false;
       else this.isBookmarked = true;
+
+      if (
+        this.user.likedVlogs.findIndex(index => index === this.vlog._id) === -1
+      )
+        this.isLiked = false;
+      else this.isLiked = true;
+    });
+
+    this.angUser.user.subscribe(res => {
+      this.user = res;
     });
   }
 
@@ -67,13 +86,43 @@ export class VlogCardComponent implements OnInit {
       );
       this.update();
     }
+    this.isBookmarked = !this.isBookmarked;
+  }
+
+  like() {
+    if (this.isLiked === false) {
+      this.user.likedVlogs.push(this.vlog._id);
+      this.vlog.likes += 1;
+      this.update();
+      this.updateVlog();
+    } else {
+      this.user.likedVlogs.splice(
+        this.user.likedVlogs.findIndex(index => index === this.vlog._id),
+        1
+      );
+      this.vlog.likes -= 1;
+      this.update();
+      this.updateVlog();
+    }
+    this.isLiked = !this.isLiked;
   }
 
   update() {
+    console.log(this.user);
     this.angUser.update(this.user._id, this.user).subscribe(
       res => {
-        this.storage.set("user", this.user);
-        this.isBookmarked = !this.isBookmarked;
+        this.angUser.setUser(this.user);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  updateVlog() {
+    this.angVlog.update(this.vlog._id, this.vlog).subscribe(
+      res => {
+        console.log(res);
       },
       err => {
         console.log(err);

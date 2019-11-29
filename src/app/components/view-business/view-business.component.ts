@@ -19,6 +19,7 @@ export class ViewBusinessComponent implements OnInit {
   public addedUserImage: any;
   private user: any;
   public isBookmarked: boolean = false;
+  public isLiked: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
@@ -74,6 +75,18 @@ export class ViewBusinessComponent implements OnInit {
       )
         this.isBookmarked = false;
       else this.isBookmarked = true;
+
+      if (
+        user.likedBusinesses.findIndex(
+          index => index === this.route.snapshot.params._id
+        ) === -1
+      )
+        this.isLiked = false;
+      else this.isLiked = true;
+    });
+
+    this.angUser.user.subscribe(res => {
+      this.user = res;
     });
   }
 
@@ -94,13 +107,44 @@ export class ViewBusinessComponent implements OnInit {
       );
       this.update();
     }
+    this.isBookmarked = !this.isBookmarked;
+  }
+
+  like() {
+    if (this.isLiked === false) {
+      this.user.likedBusinesses.push(this.business._id);
+      this.business.likes += 1;
+      this.update();
+      this.updateBusiness();
+    } else {
+      this.user.likedBusinesses.splice(
+        this.user.likedBusinesses.findIndex(
+          index => index === this.business._id
+        ),
+        1
+      );
+      this.business.likes -= 1;
+      this.update();
+      this.updateBusiness();
+    }
+    this.isLiked = !this.isLiked;
   }
 
   update() {
     this.angUser.update(this.user._id, this.user).subscribe(
       res => {
-        this.storage.set("user", this.user);
-        this.isBookmarked = !this.isBookmarked;
+        this.angUser.setUser(this.user);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  updateBusiness() {
+    this.angBusiness.update(this.business._id, this.business).subscribe(
+      res => {
+        console.log(res);
       },
       err => {
         console.log(err);

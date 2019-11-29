@@ -12,7 +12,11 @@
                   <img src="/assets/images/bookmark-grey.svg">
                 </ng-template>
               </div>
-              <img class="heart" src="/assets/images/like.png" alt="" />
+              <img class="heart" src="/assets/images/like.svg" *ngIf="isLiked === true; else showNoLike"
+                (click)="like()" />
+              <ng-template #showNoLike>
+                <img class="heart" src="/assets/images/like-grey.svg" (click)="like()" />
+              </ng-template>
               <p class="likes"> {{ product.likes }} like</p>
               <button class="shadow_btn share_btn">
                 <img src="/assets/images/share.png" /> Share

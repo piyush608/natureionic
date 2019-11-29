@@ -12,6 +12,10 @@ export class VlogService {
     return this.http.post(environment.VLOG_URL + "/create", vlog);
   }
 
+  update(_id, vlog) {
+    return this.http.patch(environment.VLOG_URL + "/update/" + _id, vlog);
+  }
+
   getRandom() {
     return this.http.get(environment.VLOG_URL + "/random");
   }

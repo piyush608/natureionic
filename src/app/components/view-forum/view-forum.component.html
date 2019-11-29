@@ -50,7 +50,14 @@
         <div class="col-12">
           <div class="post-footer-option">
             <ul class="list-unstyled">
-              <li><a href="#"><img src="/assets/images/like.png" width="20px"> {{ forum.likes }}</a></li>
+              <li>
+                <img width="20px" src="/assets/images/like.svg" *ngIf="isLiked === true; else showNoLike"
+                  (click)="like()" />
+                <ng-template #showNoLike>
+                  <img width="20px" src="/assets/images/like-grey.svg" (click)="like()" />
+                </ng-template>
+                {{ forum.likes }}
+              </li>
               <li><a href="#"><img src="/assets/images/thumbs-down-silhouette.png" width="20px">
                   {{ forum.dislikes }}</a></li>
               <li><a href="#"><img src="/assets/images/chat.png" width="20px"> {{ forum.commentsCount }}</a></li>

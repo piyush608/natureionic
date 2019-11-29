@@ -4,6 +4,8 @@ import { ActivatedRoute } from "@angular/router";
 import { Forum } from "src/app/models/forum.model";
 import { LocationService } from "src/app/services/location.service";
 import { LocalService } from "src/app/services/local.service";
+import { Storage } from "@ionic/storage";
+import { UserService } from "src/app/services/user.service";
 
 @Component({
   selector: "app-view-forum",
@@ -16,12 +18,16 @@ export class ViewForumComponent implements OnInit {
   public viewedPhoto: string;
   public userLocation: any;
   public publishedTime: any;
+  private user: any;
+  public isLiked: boolean = false;
 
   constructor(
     private angForum: ForumService,
     private route: ActivatedRoute,
     private angLocation: LocationService,
-    private angLocal: LocalService
+    private angLocal: LocalService,
+    private storage: Storage,
+    private angUser: UserService
   ) {}
 
   ngOnInit() {
@@ -56,6 +62,61 @@ export class ViewForumComponent implements OnInit {
             this.forum.timestamp
           );
         }, 45000);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+
+    this.storage.get("user").then(user => {
+      this.user = user;
+      if (
+        user.likedForums.findIndex(
+          index => index === this.route.snapshot.params._id
+        ) === -1
+      )
+        this.isLiked = false;
+      else this.isLiked = true;
+    });
+
+    this.angUser.user.subscribe(res => {
+      this.user = res;
+    });
+  }
+
+  like() {
+    if (this.isLiked === false) {
+      this.user.likedForums.push(this.forum._id);
+      this.forum.likes += 1;
+      this.update();
+      this.updateForum();
+    } else {
+      this.user.likedForums.splice(
+        this.user.likedForums.findIndex(index => index === this.forum._id),
+        1
+      );
+      this.forum.likes -= 1;
+      this.update();
+      this.updateForum();
+    }
+    this.isLiked = !this.isLiked;
+  }
+
+  update() {
+    this.angUser.update(this.user._id, this.user).subscribe(
+      res => {
+        this.angUser.setUser(this.user);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  updateForum() {
+    this.angForum.update(this.forum._id, this.forum).subscribe(
+      res => {
+        console.log(res);
       },
       err => {
         console.log(err);

@@ -1,4 +1,4 @@
-<div class="card discussion-card border-0" *ngIf="forum" (click)="openForum()">
+<div class="card discussion-card border-0" *ngIf="forum">
   <div class="card-body">
     <span class="discussion-tag"># vegan</span>
     <span class="discussion-time">Posted {{ publishedTime }}</span>
@@ -11,13 +11,16 @@
       <div class="row" *ngIf="forum.photos.length > 0; else showLink">
         <div class="col-7">
           <div class="discussion-info">
-            <div style="height: 90px;">
+            <div style="height: 90px;" (click)="openForum()">
               <h2 class="mt-2">{{ forum.title }}</h2>
               <p class="mb-0">{{ description }}</p>
             </div>
             <ul class="pl-0 mb-0 discussion-commentlist mt-3">
               <li>
-                <img src="/assets/images/like.svg" alt="no-image">
+                <img src="/assets/images/like.svg" *ngIf="isLiked === true; else showNoLike" (click)="like()" />
+                <ng-template #showNoLike>
+                  <img src="/assets/images/like-grey.svg" (click)="like()" />
+                </ng-template>
                 <span>{{ forum.likes }}</span>
               </li>
               <li>
@@ -27,7 +30,7 @@
             </ul>
           </div>
         </div>
-        <div class="col-5" style="padding-left: 0;">
+        <div class="col-5" style="padding-left: 0;" (click)="openForum()">
           <div class="discussion-img background-property" [ngStyle]="{ 'background-image': 'url(' + thumbnail + ')'}">
           </div>
         </div>
@@ -35,13 +38,16 @@
       <ng-template #showLink>
         <div class="col-12">
           <div class="discussion-info">
-            <div style="height: 90px;">
+            <div style="height: 90px;" (click)="openForum()">
               <h2 class="mt-2">{{ forum.title }}</h2>
               <p class="mb-0">{{ forum.link }}</p>
             </div>
             <ul class="pl-0 mb-0 discussion-commentlist mt-3">
               <li>
-                <img src="/assets/images/like.svg" alt="no-image">
+                <img src="/assets/images/like.svg" *ngIf="isLiked === true; else showNoLike" (click)="like()" />
+                <ng-template #showNoLike>
+                  <img src="/assets/images/like-grey.svg" (click)="like()" />
+                </ng-template>
                 <span>{{ forum.likes }}</span>
               </li>
               <li>

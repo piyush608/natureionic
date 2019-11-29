@@ -33,6 +33,10 @@ export class BusinessCardComponent implements OnInit {
         this.isBookmarked = false;
       else this.isBookmarked = true;
     });
+
+    this.angUser.user.subscribe(res => {
+      this.user = res;
+    });
   }
 
   openBusiness() {
@@ -57,7 +61,7 @@ export class BusinessCardComponent implements OnInit {
   update() {
     this.angUser.update(this.user._id, this.user).subscribe(
       res => {
-        this.storage.set("user", this.user);
+        this.angUser.setUser(this.user);
         this.isBookmarked = !this.isBookmarked;
       },
       err => {

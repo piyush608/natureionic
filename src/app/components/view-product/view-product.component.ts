@@ -17,6 +17,7 @@ export class ViewProductComponent implements OnInit {
   public addedUserImage: any;
   public userLocation: any;
   public isBookmarked: boolean = false;
+  public isLiked: boolean = false;
   private user: any;
 
   constructor(
@@ -65,6 +66,18 @@ export class ViewProductComponent implements OnInit {
       )
         this.isBookmarked = false;
       else this.isBookmarked = true;
+
+      if (
+        user.likedProducts.findIndex(
+          index => index === this.route.snapshot.params._id
+        ) === -1
+      )
+        this.isLiked = false;
+      else this.isLiked = true;
+    });
+
+    this.angUser.user.subscribe(res => {
+      this.user = res;
     });
   }
 
@@ -85,13 +98,42 @@ export class ViewProductComponent implements OnInit {
       );
       this.update();
     }
+    this.isBookmarked = !this.isBookmarked;
+  }
+
+  like() {
+    if (this.isLiked === false) {
+      this.user.likedProducts.push(this.product._id);
+      this.product.likes += 1;
+      this.update();
+      this.updateProduct();
+    } else {
+      this.user.likedProducts.splice(
+        this.user.likedProducts.findIndex(index => index === this.product._id),
+        1
+      );
+      this.product.likes -= 1;
+      this.update();
+      this.updateProduct();
+    }
+    this.isLiked = !this.isLiked;
   }
 
   update() {
     this.angUser.update(this.user._id, this.user).subscribe(
       res => {
-        this.storage.set("user", this.user);
-        this.isBookmarked = !this.isBookmarked;
+        this.angUser.setUser(this.user);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  updateProduct() {
+    this.angProduct.update(this.product._id, this.product).subscribe(
+      res => {
+        console.log(res);
       },
       err => {
         console.log(err);
