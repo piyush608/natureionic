@@ -1,6 +1,14 @@
 <div class="card Inspiration-card border-0">
   <div class="card-header border-0 p-0 background-property" [ngStyle]="{ 'background-image': 'url(' + thumbnail + ')'}"
     (click)="openBlog()">
+    <div class="row">
+      <div class="col-4 align-self-start">
+        <div *ngIf="blog.copyright === true; else showNoCopy" class="copyright">OC</div>
+        <ng-template #showNoCopy>
+          <div class="copyright">Shared</div>
+        </ng-template>
+      </div>
+    </div>
   </div>
   <div class="card-body">
     <h3 (click)="openBlog()">{{ blog.title }}</h3>
