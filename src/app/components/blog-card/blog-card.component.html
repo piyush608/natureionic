@@ -1,13 +1,15 @@
-<div class="card Inspiration-card border-0" (click)="openBlog()">
-  <div class="card-header border-0 p-0 background-property" [ngStyle]="{ 'background-image': 'url(' + thumbnail + ')'}">
+<div class="card Inspiration-card border-0">
+  <div class="card-header border-0 p-0 background-property" [ngStyle]="{ 'background-image': 'url(' + thumbnail + ')'}"
+    (click)="openBlog()">
   </div>
   <div class="card-body">
-    <h3>{{ blog.title }}</h3>
-    <p class="mb-0"> {{ blog.addedBy.name }} <span>/</span> {{ blog.timestamp | date:'mediumDate' }}</p>
+    <h3 (click)="openBlog()">{{ blog.title }}</h3>
+    <p (click)="openBlog()" class="mb-0"> {{ blog.addedBy.name }} <span>/</span>
+      {{ blog.timestamp | date:'mediumDate' }}</p>
     <button type="button" class="btn btn-primary mb-0 mt-2">
       {{ blog.category.name }}
     </button>
-    <div class="bookmark-div">
+    <div class="bookmark-div" (click)="bookmark()">
       <img *ngIf="isBookmarked === true; else showNoBookmark" src="/assets/images/bookmark.svg">
       <ng-template #showNoBookmark>
         <img src="/assets/images/bookmark-grey.svg">

@@ -4,6 +4,7 @@ import { Product } from "src/app/models/product.model";
 import { ActivatedRoute } from "@angular/router";
 import { LocationService } from "src/app/services/location.service";
 import { Storage } from "@ionic/storage";
+import { UserService } from "src/app/services/user.service";
 
 @Component({
   selector: "app-view-product",
@@ -16,12 +17,14 @@ export class ViewProductComponent implements OnInit {
   public addedUserImage: any;
   public userLocation: any;
   public isBookmarked: boolean = false;
+  private user: any;
 
   constructor(
     private angProduct: ProductService,
     private route: ActivatedRoute,
     private angLocation: LocationService,
-    private storage: Storage
+    private storage: Storage,
+    private angUser: UserService
   ) {}
 
   ngOnInit() {
@@ -54,6 +57,7 @@ export class ViewProductComponent implements OnInit {
     );
 
     this.storage.get("user").then(user => {
+      this.user = user;
       if (
         user.bookmarkedProducts.findIndex(
           index => index === this.route.snapshot.params._id
@@ -66,5 +70,32 @@ export class ViewProductComponent implements OnInit {
 
   changePhoto(URL) {
     this.viewedPhoto = URL;
+  }
+
+  bookmark() {
+    if (this.isBookmarked === false) {
+      this.user.bookmarkedProducts.push(this.product._id);
+      this.update();
+    } else {
+      this.user.bookmarkedProducts.splice(
+        this.user.bookmarkedProducts.findIndex(
+          index => index === this.product._id
+        ),
+        1
+      );
+      this.update();
+    }
+  }
+
+  update() {
+    this.angUser.update(this.user._id, this.user).subscribe(
+      res => {
+        this.storage.set("user", this.user);
+        this.isBookmarked = !this.isBookmarked;
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 }

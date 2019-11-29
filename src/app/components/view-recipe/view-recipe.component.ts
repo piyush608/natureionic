@@ -3,6 +3,7 @@ import { RecipeService } from "src/app/services/recipe.service";
 import { Recipe } from "src/app/models/recipe.model";
 import { ActivatedRoute } from "@angular/router";
 import { Storage } from "@ionic/storage";
+import { UserService } from "src/app/services/user.service";
 
 @Component({
   selector: "app-view-recipe",
@@ -14,11 +15,13 @@ export class ViewRecipeComponent implements OnInit {
   public viewedPhoto: any;
   public addedUserImage: any;
   public isBookmarked: boolean = false;
+  private user: any;
 
   constructor(
     private angRecipe: RecipeService,
     private route: ActivatedRoute,
-    private storage: Storage
+    private storage: Storage,
+    private angUser: UserService
   ) {}
 
   ngOnInit() {
@@ -45,6 +48,7 @@ export class ViewRecipeComponent implements OnInit {
     );
 
     this.storage.get("user").then(user => {
+      this.user = user;
       if (
         user.bookmarkedRecipes.findIndex(
           index => index === this.route.snapshot.params._id
@@ -57,5 +61,32 @@ export class ViewRecipeComponent implements OnInit {
 
   changePhoto(URL) {
     this.viewedPhoto = URL;
+  }
+
+  bookmark() {
+    if (this.isBookmarked === false) {
+      this.user.bookmarkedRecipes.push(this.recipe._id);
+      this.update();
+    } else {
+      this.user.bookmarkedRecipes.splice(
+        this.user.bookmarkedRecipes.findIndex(
+          index => index === this.recipe._id
+        ),
+        1
+      );
+      this.update();
+    }
+  }
+
+  update() {
+    this.angUser.update(this.user._id, this.user).subscribe(
+      res => {
+        this.storage.set("user", this.user);
+        this.isBookmarked = !this.isBookmarked;
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 }

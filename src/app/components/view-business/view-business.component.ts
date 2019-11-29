@@ -4,6 +4,7 @@ import { BusinessService } from "src/app/services/business.service";
 import { Business } from "src/app/models/business.model";
 import { LocationService } from "src/app/services/location.service";
 import { Storage } from "@ionic/storage";
+import { UserService } from "src/app/services/user.service";
 
 @Component({
   selector: "app-view-business",
@@ -16,13 +17,15 @@ export class ViewBusinessComponent implements OnInit {
   public mapImage: any;
   public userLocation: any;
   public addedUserImage: any;
+  private user: any;
   public isBookmarked: boolean = false;
 
   constructor(
     private route: ActivatedRoute,
     private angBusiness: BusinessService,
     private angLocation: LocationService,
-    private storage: Storage
+    private storage: Storage,
+    private angUser: UserService
   ) {}
 
   ngOnInit() {
@@ -63,6 +66,7 @@ export class ViewBusinessComponent implements OnInit {
     );
 
     this.storage.get("user").then(user => {
+      this.user = user;
       if (
         user.bookmarkedBusinesses.findIndex(
           index => index === this.route.snapshot.params._id
@@ -75,5 +79,32 @@ export class ViewBusinessComponent implements OnInit {
 
   changePhoto(URL) {
     this.viewedPhoto = URL;
+  }
+
+  bookmark() {
+    if (this.isBookmarked === false) {
+      this.user.bookmarkedBusinesses.push(this.business._id);
+      this.update();
+    } else {
+      this.user.bookmarkedBusinesses.splice(
+        this.user.bookmarkedBusinesses.findIndex(
+          index => index === this.business._id
+        ),
+        1
+      );
+      this.update();
+    }
+  }
+
+  update() {
+    this.angUser.update(this.user._id, this.user).subscribe(
+      res => {
+        this.storage.set("user", this.user);
+        this.isBookmarked = !this.isBookmarked;
+      },
+      err => {
+        console.log(err);
+      }
+    );
   }
 }

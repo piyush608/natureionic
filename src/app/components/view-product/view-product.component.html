@@ -6,7 +6,7 @@
           <div class="product_info">
             <div class="all_icons">
               <button class="product_type"> {{ product.category.name }} </button>
-              <div class="bookmark">
+              <div class="bookmark" (click)="bookmark()">
                 <img *ngIf="isBookmarked === true; else showNoBookmark" src="/assets/images/bookmark.svg">
                 <ng-template #showNoBookmark>
                   <img src="/assets/images/bookmark-grey.svg">
