@@ -40,6 +40,22 @@
           </div>
         </div>
         <div class="col-md-4">
+          <h3 class="head_color">Product Photos</h3>
+          <div>
+            <form action="" class="add_product">
+              <div class="business_photos">
+                <div class="upload_photo_wrapper" *ngFor="let localFile of localFiles">
+                  <img [src]="localFile" alt="}" class="imagecheck-image" />
+                </div>
+                <div class="upload_photo_wrapper">
+                  <button class="shadow_btn upload_photo">+</button>
+                  <input type="file" (change)="uploadImage($event)" />
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-4">
           <h3 class="head_color">Company / Founder</h3>
           <div>
             <form action="" class="add_product">
@@ -52,36 +68,20 @@
               <div class="product_input">
                 <label for="comp_desc">Tell us something about the company/founder. *</label>
                 <textarea type="text"
-                  placeholder="Somethinga bout the company or founder ex. mission, purpose, brand etc"
+                  placeholder="Something about the company or founder ex. mission, purpose, brand etc"
                   class="form-control pl-0 input_style" rows="4" [(ngModel)]="product.ownerDescription"
                   name="ownerDescription"></textarea>
               </div>
               <div class="product_input">
                 <label for="comp_img">Upload an image of the company or the founder.</label>
                 <div class="comp_photos">
-                  <div class="upload_photo_wrapper" *ngIf="localUserImage">
+                  <div class="upload_photo_wrapper" style="width: 75px;" *ngIf="localUserImage">
                     <img [src]="localUserImage" alt="}" class="imagecheck-image" />
                   </div>
-                  <div class="upload_photo_wrapper" *ngIf="!localUserImage">
+                  <div class="upload_photo_wrapper" style="width: 75px;" *ngIf="!localUserImage">
                     <button class="btn shadow_btn upload_photo">+</button>
                     <input type="file" (change)="uploadUserImage($event)" />
                   </div>
-                </div>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <h3 class="head_color">Photos</h3>
-          <div>
-            <form action="" class="add_product">
-              <div class="business_photos">
-                <div class="upload_photo_wrapper" *ngFor="let localFile of localFiles">
-                  <img [src]="localFile" alt="}" class="imagecheck-image" />
-                </div>
-                <div class="upload_photo_wrapper">
-                  <button class="shadow_btn upload_photo">+</button>
-                  <input type="file" (change)="uploadImage($event)" />
                 </div>
               </div>
             </form>
