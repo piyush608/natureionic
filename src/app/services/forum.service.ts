@@ -35,4 +35,11 @@ export class ForumService {
   getAllTrending(skip) {
     return this.http.get(environment.FORUM_URL + "/getAllTrending/" + skip);
   }
+
+  submitComment(_id, comment) {
+    return this.http.post(
+      environment.FORUM_URL + "/addComment/" + _id,
+      comment
+    );
+  }
 }

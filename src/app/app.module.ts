@@ -68,6 +68,7 @@ import { ExploreBusinessCategoryComponent } from "./components/explore-business-
 import { ExploreGroupCategoryComponent } from "./components/explore-group-category/explore-group-category.component";
 import { ExploreBlogCategoryComponent } from "./components/explore-blog-category/explore-blog-category.component";
 import { IonicStorageModule } from "@ionic/storage";
+import { CommentCardComponent } from "./components/comment-card/comment-card.component";
 
 @NgModule({
   declarations: [
@@ -121,7 +122,8 @@ import { IonicStorageModule } from "@ionic/storage";
     ExploreBusinessComponent,
     ExploreBusinessCategoryComponent,
     ExploreGroupCategoryComponent,
-    ExploreBlogCategoryComponent
+    ExploreBlogCategoryComponent,
+    CommentCardComponent
   ],
   entryComponents: [
     SuccessModalComponent,

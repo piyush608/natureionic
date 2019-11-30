@@ -1,0 +1,23 @@
+<div class="col-12">
+  <div class="row head">
+    <small>
+      <img [src]="addedUserImage" class="profile">
+      <strong class='user'>{{ comment.addedBy.name }}</strong>
+      <img src="/assets/images/locationGray@2x.png" style="width: 13px;  margin-left: 22px; margin-right:10px;">
+      <span *ngIf="userLocation">{{ userLocation.city }}, {{ userLocation.state }}</span>
+    </small>
+  </div>
+  <div class="row">
+    <p class="txt-cmt"> {{ comment.comment }} </p>
+  </div>
+  <div class="row">
+    <button class="reply">Reply</button>
+    <div class="dropdown cmticon">
+      <img src="/assets/images/inPostMore.png" width="28px">
+      <div class="dropdown-content">
+        <a href="#">Delete</a>
+        <a href="#">Report inappropriate content</a>
+      </div>
+    </div>
+  </div>
+</div>

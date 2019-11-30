@@ -6,6 +6,7 @@ import { LocationService } from "src/app/services/location.service";
 import { LocalService } from "src/app/services/local.service";
 import { Storage } from "@ionic/storage";
 import { UserService } from "src/app/services/user.service";
+import { Comment } from "src/app/models/comment.model";
 
 @Component({
   selector: "app-view-forum",
@@ -14,6 +15,7 @@ import { UserService } from "src/app/services/user.service";
 })
 export class ViewForumComponent implements OnInit {
   public forum = new Forum();
+  public comment = new Comment();
   public addedUserImage: string;
   public viewedPhoto: string;
   public userLocation: any;
@@ -21,6 +23,11 @@ export class ViewForumComponent implements OnInit {
   private user: any;
   public isLiked: boolean = false;
   public disLiked: boolean = false;
+  private addedBy = {
+    name: "",
+    zipcode: "",
+    photo: ""
+  };
 
   constructor(
     private angForum: ForumService,
@@ -71,6 +78,8 @@ export class ViewForumComponent implements OnInit {
 
     this.storage.get("user").then(user => {
       this.user = user;
+      this.addedBy.name = user.name;
+      this.addedBy.zipcode = user.zipcode;
       if (
         user.likedForums.findIndex(
           index => index === this.route.snapshot.params._id
@@ -87,6 +96,15 @@ export class ViewForumComponent implements OnInit {
         this.disLiked = false;
       else this.disLiked = true;
     });
+
+    this.angUser.getProfileImage().subscribe(
+      res => {
+        this.addedBy.photo = res["user"].photo;
+      },
+      err => {
+        console.log(err);
+      }
+    );
 
     this.angUser.user.subscribe(res => {
       this.user = res;
@@ -170,6 +188,21 @@ export class ViewForumComponent implements OnInit {
     this.angForum.update(this.forum._id, this.forum).subscribe(
       res => {
         console.log(res);
+      },
+      err => {
+        console.log(err);
+      }
+    );
+  }
+
+  submitComment() {
+    this.angForum.submitComment(this.forum._id, this.comment).subscribe(
+      res => {
+        console.log(this.addedBy);
+        this.forum.commentsCount += 1;
+        this.comment.addedBy = this.addedBy;
+        this.forum.comments.push(this.comment);
+        this.comment = new Comment();
       },
       err => {
         console.log(err);

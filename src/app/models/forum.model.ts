@@ -1,6 +1,6 @@
 export class Forum {
   _id: string;
-  commentsCollection: Array<any>;
+  comments: Array<any>;
   reportCount: number;
   reportedBy: Array<any>;
   photos: Array<any>;
@@ -19,7 +19,7 @@ export class Forum {
   group: any;
 
   constructor() {
-    this.commentsCollection = [];
+    this.comments = [];
     this.reportedBy = [];
     this.photos = [];
     this.timestamp = new Date();

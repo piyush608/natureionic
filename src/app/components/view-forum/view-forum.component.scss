@@ -27,11 +27,16 @@ h3 {
 b,
 strong {
   font-weight: 700;
-  font-size: 20px;
+  font-size: 19px;
 }
 .small,
 small {
   font-size: 17px;
+}
+span {
+  font-weight: normal;
+  font-size: 14px;
+  color: #9f9f9f;
 }
 hr {
   margin-top: 25px;
@@ -150,4 +155,7 @@ a:hover {
 }
 .dropdown:hover .dropbtn {
   background-color: #3e8e41;
+}
+button {
+  outline: none;
 }

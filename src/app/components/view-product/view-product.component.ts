@@ -36,9 +36,7 @@ export class ViewProductComponent implements OnInit {
 
         if (this.product.addedBy.photo.length > 0) {
           this.product.addedBy.photo.forEach(photo => {
-            if (photo.isCurrent === "true") {
-              this.addedUserImage = photo.image.thumb200Url;
-            }
+            this.addedUserImage = photo.image.thumb200Url;
           });
         } else {
           this.addedUserImage =
