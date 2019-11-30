@@ -42,4 +42,10 @@ export class ForumService {
       comment
     );
   }
+
+  getGroupForums(_id, skip) {
+    return this.http.get(
+      environment.FORUM_URL + "/getGroupForums/" + _id + "/" + skip
+    );
+  }
 }

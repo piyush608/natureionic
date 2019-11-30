@@ -4,6 +4,7 @@ import { LoadingController } from "@ionic/angular";
 import { ImageService } from "src/app/services/image.service";
 import { ForumService } from "src/app/services/forum.service";
 import { Router } from "@angular/router";
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "app-add-forum",
@@ -21,11 +22,19 @@ export class AddForumComponent implements OnInit {
     private loadingController: LoadingController,
     private angImage: ImageService,
     private angForum: ForumService,
-    private router: Router
+    private router: Router,
+    private storage: Storage
   ) {}
 
   ngOnInit() {
     this.forum.type = "photo";
+
+    this.storage.get("group_post").then(data => {
+      if (data) {
+        this.forum.group = data.group;
+        this.forum.public = false;
+      }
+    });
   }
 
   changeTab(type) {
@@ -53,6 +62,8 @@ export class AddForumComponent implements OnInit {
     this.angForum.create(this.forum).subscribe(
       res => {
         this.forum = res["newForum"];
+
+        this.storage.remove("group_post");
 
         if (this.forum.type === "photo") {
           this.angImage

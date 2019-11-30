@@ -7,7 +7,7 @@
       <div class="row">
         <div class="col-md-10">
           <h2>{{ group.name }}</h2><BR>
-          <button type="submit" class="category">Start a Conversation</button>
+          <button type="submit" class="category" (click)="addForum()">Start a Conversation</button>
         </div>
         <div class="col-md-2">
           <div class="sort">Join Group </div><BR>
@@ -17,14 +17,14 @@
 
       <section class="clients cid-qyvf5b5WEt" id="clients-2" data-rv-view="777">
         <div class="row">
-          <div class="col-sm-9">
+          <div class="col-9">
             <div class="row">
-              <div class="col-sm-4">
-
+              <div class="col-4" *ngFor="let forum of forums">
+                <app-forum-card [forum]="forum"></app-forum-card>
               </div>
             </div>
           </div>
-          <div class="col-sm-3">
+          <div class="col-3">
             <div class="well" *ngIf="group.addedBy">
               <h4><b>Group created by</b></h4>
               <p class="card-text rec_card_text">
@@ -36,7 +36,7 @@
               <ul class="topics">
                 <li><img src="/assets/images/groupLocation.png" />{{ group.city }}, {{ group.state }}</li>
                 <li><img src="/assets/images/groupMember.png" />{{ group.membersCount }} Members</li>
-                <li><img src="/assets/images/groupPost.png" />20 Post</li>
+                <li><img src="/assets/images/groupPost.png" />{{ forums.length }} Post</li>
               </ul>
             </div>
           </div>
