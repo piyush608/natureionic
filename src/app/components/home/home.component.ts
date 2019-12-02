@@ -13,6 +13,7 @@ import { LocationService } from "src/app/services/location.service";
 import { UserService } from "src/app/services/user.service";
 import { MapsAPILoader } from "@agm/core";
 import { BusinessService } from "src/app/services/business.service";
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "app-home",
@@ -40,7 +41,8 @@ export class HomeComponent implements OnInit {
     private angUser: UserService,
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
-    private angBusiness: BusinessService
+    private angBusiness: BusinessService,
+    private storage: Storage
   ) {}
 
   ngOnInit() {
@@ -102,8 +104,19 @@ export class HomeComponent implements OnInit {
   }
 
   getCurrentPosition() {
-    this.angLocation.getPosition().then(res => {
-      this.getLatLngCode(res._lat, res._long);
+    this.storage.get("place").then(place => {
+      if (place) {
+        this.place = place;
+
+        this.storage.get("city").then(city => {
+          this.city = city;
+          this.getBusinesses();
+        });
+      } else {
+        this.angLocation.getPosition().then(res => {
+          this.getLatLngCode(res._lat, res._long);
+        });
+      }
     });
   }
 
@@ -126,6 +139,9 @@ export class HomeComponent implements OnInit {
         this.state = location.stateSN;
         this.country = location.country;
         this.place = this.city + ", " + this.state;
+
+        this.storage.set("place", this.place);
+        this.storage.set("city", this.city);
 
         this.getBusinesses();
       })

@@ -10,6 +10,7 @@ import { Router } from "@angular/router";
 import { LocationService } from "src/app/services/location.service";
 import { MapsAPILoader } from "@agm/core";
 import { GroupService } from "src/app/services/group.service";
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "app-community",
@@ -32,7 +33,8 @@ export class CommunityComponent implements OnInit {
     private angLocation: LocationService,
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
-    private angGroup: GroupService
+    private angGroup: GroupService,
+    private storage: Storage
   ) {}
 
   ngOnInit() {
@@ -84,8 +86,19 @@ export class CommunityComponent implements OnInit {
   }
 
   getCurrentPosition() {
-    this.angLocation.getPosition().then(res => {
-      this.getLatLngCode(res._lat, res._long);
+    this.storage.get("place").then(place => {
+      if (place) {
+        this.place = place;
+
+        this.storage.get("city").then(city => {
+          this.city = city;
+          this.getGrpoups();
+        });
+      } else {
+        this.angLocation.getPosition().then(res => {
+          this.getLatLngCode(res._lat, res._long);
+        });
+      }
     });
   }
 
@@ -95,8 +108,10 @@ export class CommunityComponent implements OnInit {
       .then(location => {
         this.city = location.city;
         this.state = location.stateSN;
-        this.country = location.country;
         this.place = this.city + ", " + this.state;
+
+        this.storage.set("place", this.place);
+        this.storage.set("city", this.city);
 
         this.getGrpoups();
       })
@@ -108,7 +123,6 @@ export class CommunityComponent implements OnInit {
   getGrpoups() {
     this.angGroup.getCityGroups(this.city).subscribe(
       res => {
-        console.log(res);
         this.groups = res["groups"];
       },
       err => {

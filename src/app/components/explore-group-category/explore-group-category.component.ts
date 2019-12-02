@@ -10,6 +10,7 @@ import { LocationService } from "src/app/services/location.service";
 import { MapsAPILoader } from "@agm/core";
 import { GroupService } from "src/app/services/group.service";
 import { CategoryService } from "src/app/services/category.service";
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "app-explore-group-category",
@@ -31,10 +32,13 @@ export class ExploreGroupCategoryComponent implements OnInit {
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
     private angLocation: LocationService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private storage: Storage
   ) {}
 
   ngOnInit() {
+    this.getCurrentPosition();
+
     this.angCategory.getDetails(this.route.snapshot.params.cat).subscribe(
       res => {
         this.category = res["category"];
@@ -72,8 +76,19 @@ export class ExploreGroupCategoryComponent implements OnInit {
   }
 
   getCurrentPosition() {
-    this.angLocation.getPosition().then(res => {
-      this.getLatLngCode(res._lat, res._long);
+    this.storage.get("place").then(place => {
+      if (place) {
+        this.place = place;
+
+        this.storage.get("city").then(city => {
+          this.city = city;
+          this.getGrpoups();
+        });
+      } else {
+        this.angLocation.getPosition().then(res => {
+          this.getLatLngCode(res._lat, res._long);
+        });
+      }
     });
   }
 
@@ -84,6 +99,9 @@ export class ExploreGroupCategoryComponent implements OnInit {
         this.city = location.city;
         this.state = location.stateSN;
         this.place = this.city + ", " + this.state;
+
+        this.storage.set("place", this.place);
+        this.storage.set("city", this.city);
 
         this.getGrpoups();
       })

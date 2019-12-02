@@ -10,6 +10,7 @@ import { GroupService } from "src/app/services/group.service";
 import { MapsAPILoader } from "@agm/core";
 import { LocationService } from "src/app/services/location.service";
 import { Router } from "@angular/router";
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "app-explore-group",
@@ -31,7 +32,8 @@ export class ExploreGroupComponent implements OnInit {
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
     private angLocation: LocationService,
-    private router: Router
+    private router: Router,
+    private storage: Storage
   ) {}
 
   ngOnInit() {
@@ -65,8 +67,19 @@ export class ExploreGroupComponent implements OnInit {
   }
 
   getCurrentPosition() {
-    this.angLocation.getPosition().then(res => {
-      this.getLatLngCode(res._lat, res._long);
+    this.storage.get("place").then(place => {
+      if (place) {
+        this.place = place;
+
+        this.storage.get("city").then(city => {
+          this.city = city;
+          this.getGrpoups();
+        });
+      } else {
+        this.angLocation.getPosition().then(res => {
+          this.getLatLngCode(res._lat, res._long);
+        });
+      }
     });
   }
 
@@ -76,8 +89,10 @@ export class ExploreGroupComponent implements OnInit {
       .then(location => {
         this.city = location.city;
         this.state = location.stateSN;
-        this.country = location.country;
         this.place = this.city + ", " + this.state;
+
+        this.storage.set("place", this.place);
+        this.storage.set("city", this.city);
 
         this.getGrpoups();
       })

@@ -10,6 +10,7 @@ import { BusinessService } from "src/app/services/business.service";
 import { LocationService } from "src/app/services/location.service";
 import { MapsAPILoader } from "@agm/core";
 import { Router } from "@angular/router";
+import { Storage } from "@ionic/storage";
 
 @Component({
   selector: "app-explore-business",
@@ -30,10 +31,13 @@ export class ExploreBusinessComponent implements OnInit {
     private angLocation: LocationService,
     private mapsAPILoader: MapsAPILoader,
     private ngZone: NgZone,
-    private router: Router
+    private router: Router,
+    private storage: Storage
   ) {}
 
   ngOnInit() {
+    this.getCurrentPosition();
+
     this.angCategory.getCategories("business").subscribe(
       res => {
         this.categories = res["categories"];
@@ -71,8 +75,19 @@ export class ExploreBusinessComponent implements OnInit {
   }
 
   getCurrentPosition() {
-    this.angLocation.getPosition().then(res => {
-      this.getLatLngCode(res._lat, res._long);
+    this.storage.get("place").then(place => {
+      if (place) {
+        this.place = place;
+
+        this.storage.get("city").then(city => {
+          this.city = city;
+          this.getBusinesses();
+        });
+      } else {
+        this.angLocation.getPosition().then(res => {
+          this.getLatLngCode(res._lat, res._long);
+        });
+      }
     });
   }
 
@@ -83,6 +98,9 @@ export class ExploreBusinessComponent implements OnInit {
         this.city = location.city;
         this.state = location.stateSN;
         this.place = this.city + ", " + this.state;
+
+        this.storage.set("place", this.place);
+        this.storage.set("city", this.city);
 
         this.getBusinesses();
       })
