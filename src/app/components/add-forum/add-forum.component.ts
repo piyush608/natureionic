@@ -33,6 +33,8 @@ export class AddForumComponent implements OnInit {
       if (data) {
         this.forum.group = data.group;
         this.forum.public = false;
+
+        this.storage.remove("group_post");
       }
     });
   }
@@ -62,8 +64,6 @@ export class AddForumComponent implements OnInit {
     this.angForum.create(this.forum).subscribe(
       res => {
         this.forum = res["newForum"];
-
-        this.storage.remove("group_post");
 
         if (this.forum.type === "photo") {
           this.angImage

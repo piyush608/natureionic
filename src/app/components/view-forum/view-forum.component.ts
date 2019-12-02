@@ -126,6 +126,7 @@ export class ViewForumComponent implements OnInit {
           1
         );
         this.forum.dislikes -= 1;
+        this.disLiked = !this.disLiked;
       }
 
       this.update();
@@ -157,6 +158,7 @@ export class ViewForumComponent implements OnInit {
           1
         );
         this.forum.likes -= 1;
+        this.isLiked = !this.isLiked;
       }
 
       this.update();
@@ -198,7 +200,6 @@ export class ViewForumComponent implements OnInit {
   submitComment() {
     this.angForum.submitComment(this.forum._id, this.comment).subscribe(
       res => {
-        console.log(this.addedBy);
         this.forum.commentsCount += 1;
         this.comment.addedBy = this.addedBy;
         this.forum.comments.push(this.comment);

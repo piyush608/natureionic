@@ -58,8 +58,14 @@
                 </ng-template>
                 {{ forum.likes }}
               </li>
-              <li><a href="#"><img src="/assets/images/thumbs-down-silhouette.png" width="20px">
-                  {{ forum.dislikes }}</a></li>
+              <li>
+                <img src="/assets/images/dislike.svg" width="20px" *ngIf="disLiked === true; else showNoDislike"
+                  (click)="dislike()" />
+                <ng-template #showNoDislike>
+                  <img width="20px" src="/assets/images/dislike-grey.svg" (click)="dislike()" />
+                </ng-template>
+                {{ forum.dislikes }}
+              </li>
               <li><a href="#"><img src="/assets/images/chat.png" width="20px"> {{ forum.commentsCount }}</a></li>
               <li>
                 <div class="dropdown">
