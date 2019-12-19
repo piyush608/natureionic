@@ -11,10 +11,12 @@
                     src="/assets/images/arrow-pointing-to-right.svg"></span>
               </h3>
               <div class="row" style="margin-top: 25px;">
-                <div class="border-0 recipe-card col-4" *ngFor="let recipe of recipes">
+                <div class="border-0 recipe-card col-md-4" *ngFor="let recipe of recipes">
                   <app-recipe-card *ngIf="category._id === recipe.category._id" [recipe]="recipe"></app-recipe-card>
                 </div>
               </div>
+
+              <button class="more"  (click)="exploreCategory(category._id)">Show more</button>
             </div>
           </div>
         </div>

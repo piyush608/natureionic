@@ -3,7 +3,7 @@
 }
 .popular-placescard {
   cursor: pointer;
-  width: 250px;
+  width: 100%;
   margin-bottom: 20px;
   margin-right: 30px;
   box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
@@ -12,9 +12,21 @@
   border-radius: 16px;
   height: 140px;
 }
+@media (max-width: 768px) { 
+  .popular-placescard .card-header {
+    border-radius: 16px;
+    height: 110px;
+  }
+}
 .popular-placescard .card-body h3 {
   font-size: 1em;
   height: 38px;
+}
+@media (max-width: 768px) { 
+  .popular-placescard .card-body h3 {
+    font-size: 13PX;
+    height: 38px;
+  }
 }
 .popular-placescard .card-body p {
   font-size: 0.8em;
@@ -68,4 +80,8 @@
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
+}
+.sub-heading
+{
+  margin-top:50px;
 }

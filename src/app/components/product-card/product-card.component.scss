@@ -4,6 +4,7 @@
   margin-bottom: 20px;
   box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
 }
+
 .popular-placescard .card-header {
   border-radius: 16px;
   height: 140px;
@@ -12,6 +13,13 @@
   font-size: 1em;
   height: 38px;
   margin-top: 0 !important;
+}
+@media (max-width: 768px) {
+  .popular-placescard .card-body h3 {
+    font-size: 13px;
+    height: auto;
+    margin-top: 0 !important;
+  }
 }
 .popular-placescard .card-body p {
   font-size: 0.8em;
@@ -33,6 +41,16 @@
   border: 0px;
   margin-bottom: 10px;
 }
+@media (max-width: 768px) {
+  .btn-primary {
+    padding: 0px 10px;
+    border-radius: 20px;
+    font-size: 0.8em;
+    background: linear-gradient(145deg, #ff6969 35%, #ffcd5a 100%);
+    border: 0px;
+    margin-bottom: 10px;
+  } }
+
 .btn-primary:focus,
 .btn-outline-primary:focus,
 .btn-secondary:focus,
@@ -71,13 +89,24 @@
   height: 30px;
   border-radius: 50%;
 }
+
 .recipe-uploadername h2 {
   font-size: 0.9em;
   color: #b2b2b2;
   margin-top: 0 !important;
 }
+@media (max-width: 768px) {
+  .recipe-uploadername h2 {
+    font-size: 13px;
+    color: #b2b2b2;
+    margin-top: 0 !important;
+  } 
+}
 .background-property {
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
+}
+.sub-heading{
+  margin-top: 60px;
 }

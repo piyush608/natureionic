@@ -2,12 +2,10 @@ ion-content {
   --background: url("../../../assets/images/fullScaleBg.png") no-repeat center
     center;
 }
-
 .logo {
   width: 200px;
   margin-left: 50px;
 }
-
 .btn-sm {
   border-radius: 50px !important;
   font-size: 12px;
@@ -154,6 +152,8 @@ label {
   border-top: 0.5px solid white;
   padding-top: 20px;
   word-spacing: 2px;
+  margin-top: 210px;
+  
 }
 
 a {
@@ -169,7 +169,7 @@ hr {
   font-size: 12px;
 }
 
-.footer-policy {
+.footer-policy  u{
   color: white;
 }
 
@@ -177,6 +177,12 @@ hr {
   color: #00b2aa;
   font-weight: 900;
 }
+@media (max-width: 768px) {
+.forget {
+  color: #00b2aa;
+  font-weight: 400;
+  font-size: 14px;
+}}
 
 .account {
   font-size: 0.75rem !important;
@@ -184,6 +190,7 @@ hr {
 }
 
 @media (max-width: 999px) {
+
   .logo {
     width: 200px;
     margin-left: 0px;
@@ -201,6 +208,7 @@ hr {
     margin: 0 auto;
     border-radius: 10px;
     margin-top: 10px;
+    display: none;
   }
   h4 {
     font-size: 25px;
@@ -210,7 +218,9 @@ hr {
     font-size: 11px;
     color: #fff;
     border-top: 1px solid white;
-    padding-top: 10px;
+    
+    padding-top: 50px;
+    margin-top: 100px;
     word-spacing: 2px;
   }
   .main-content {
@@ -225,8 +235,10 @@ hr {
 
 @media (max-width: 576px) {
   .logo {
-    width: 150px;
-    margin-left: 0px;
+    width: 230px;
+    margin-left: 50px;
+    margin-top: 40px;
+    
   }
   .btn-sm {
     border-radius: 50px 50px 50px 50px;
@@ -251,8 +263,9 @@ hr {
 
 @media (max-width: 400px) {
   .logo {
-    width: 150px;
-    margin-left: 0px;
+    width: 230px;
+    margin-left: 50px;
+    margin-top: 40px;
   }
   h4 {
     font-size: 16px;
@@ -269,7 +282,9 @@ hr {
     font-size: 11px;
     color: #fff;
     border-top: 1px solid white;
-    padding-top: 10px;
+    padding-top: 50px;
+    margin-top: 100px;
+    
     word-spacing: 2px;
   }
   .main-content {
@@ -308,5 +323,130 @@ hr {
   }
   .footer {
     padding: 10px 40px;
+  }
+}
+.headingde{
+font-size: 40px;
+
+}
+
+
+
+.form-control-mob {
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: .375rem .75rem;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #495057;
+  font-weight: 400px;
+  background-color: #fff;
+  background-clip: padding-box;
+  border-radius: 0;
+  border: 1px solid #ced4da00;
+  border-bottom: 1px solid #c1c0c0;
+  transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+.has-search .form-control-mob {
+  padding-left: 30px;
+}
+
+.has-search .form-control-mob-feedback {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  width: 1.375rem;
+  height: 1.375rem;
+  line-height: 2.375rem;
+  text-align: center;
+  pointer-events: none;
+  margin-top: 7px;
+  color: #aaa;
+}
+.signup-form {
+  font-size: 18px;
+}
+
+
+.card1 {
+  width: 40%;
+  margin: 0 auto;
+  border-radius: 10px;
+  margin-top: 10px;
+ 
+}
+@media (max-width: 999px) {
+  .card1 {
+    width: 100%;
+    margin: 0 auto;  
+    border-radius: 10px;
+    margin-top: 30px;
+  }
+}
+@media (max-width: 576px) {
+  .card1 {
+    width: 100%;
+    margin: 0 auto;
+    display: block;
+    border-radius: 10px;
+    margin-top: 30px;
+  }
+}
+
+
+.hedesk{
+  font-size: 20px;  
+  color:white;
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .hedesk{
+    font-size: 20px;
+    display: none;    
+  }  
+}
+.headmob{
+  font-size: 20px;  
+  color:white;
+  text-align: center; 
+  font-weight: 600;
+}
+@media (max-width: 768px) {
+  .headmob{
+    font-size: 20px;  
+    color:white;   
+  
+    text-align: center;
+    font-weight: 600;
+  } 
+}
+
+.btnmob{
+  margin-left: 40%;
+  margin-right: 30%;
+  margin-top: 30px;
+  width:250px; 
+  font-size: 18px;
+  height: 40px;
+  font-weight: 400;
+  margin-right: 15px;
+}
+@media (max-width: 768px) {
+  .btnmob{   
+    margin-left: 10%;
+    margin-top: 30px;
+    width:80%; 
+    font-size: 16px;
+    height: 40px;
+    font-weight: 400;
+    margin-right: 15px;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .btndesk{
+    display: none; 
   }
 }

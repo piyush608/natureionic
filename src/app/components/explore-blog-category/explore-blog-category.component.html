@@ -10,7 +10,7 @@
                 {{ category.name }}
               </h3>
               <div class="row" style="margin-top: 25px;">
-                <div class="col-3" *ngFor="let blog of blogs">
+                <div class="col-md-3 col-12 blog" *ngFor="let blog of blogs">
                   <app-blog-card [blog]="blog"></app-blog-card>
                 </div>
               </div>

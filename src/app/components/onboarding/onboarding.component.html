@@ -4,17 +4,16 @@
       <!-----------------Start first -------------->
       <div class="tab" *ngIf="firstTab === true">
         <div class="row">
-          <div class="col-md-4"
-            style="background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: center;">
+          <div class="col-md-4" class="tabfirst">
             <img src="/assets/img/logo.png" class="logo">
             <div style="margin-left: 50px;">
-              <h3 class="leftfont">Welcome to NatureHub <BR>Conscious Community</h3>
-              <p> Alright, let's set this up! Tell us a bit about yourself.</p>
+              <h3 class="leftfont">Welcome to NatureHub Conscious Community</h3>
+              <p id="leftpar"> Alright, let's set this up! Tell us a bit about yourself.</p>
             </div>
           </div>
 
           <div class="col-md-8">
-            <div class="container" style="width: 50%;   margin-top: 74px;">
+            <div class="container tabfirstright" >
               <center>
                 <div class="circle">
                   <div class="circle__inner">
@@ -59,20 +58,19 @@
       <!-----------------Start second -------------->
       <div class="tab" *ngIf="secondTab === true">
         <div class="row">
-          <div class="col-md-4"
-            style="background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: right;">
+          <div class="col-md-4" class="tabsecond">
             <img src="/assets/img/logo.png" class="logo">
             <div style="margin-left: 50px;">
               <h3 class="leftfont">Let’s start the journey!</h3>
-              <p>Let us know a little bit more about you. This information <br>will help us bring you a best conscious
+              <p id="leftpar">Let us know a little bit more about you. This information will help us bring you a best conscious
                 living journey. </p>
             </div>
           </div>
           <div class="col-md-8">
-            <div class="container" style="width: 75%;   margin-top: 74px;">
-              <h1>What's better describe you?</h1><BR>
+            <div class="container tabsecondright">
+              <h3 class="headh1">What's better describe you?</h3><BR>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/a-curious-newbie.png" class='select_img change-img' id=1
                       (click)="selectTypes('conscious')" *ngIf="types.conscious === false; else showConscious"
@@ -88,7 +86,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/busy-city-explorer.png" class='select_img Busy' id=2
                       (click)="selectTypes('cityExplore')" *ngIf="types.cityExplore === false; else showCityExplore"
@@ -104,7 +102,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/follow-a-diet.png" class='select_img follow' id=3
                       (click)="selectTypes('diet')" *ngIf="types.diet === false; else showDiet" style="width:100%">
@@ -118,7 +116,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/foodie.png" class='select_img foodie' id=4
                       (click)="selectTypes('foodie')" *ngIf="types.foodie === false; else showFoodie"
@@ -132,7 +130,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/green-thumb.png" class='select_img green' id=5
                       (click)="selectTypes('greenThumb')" *ngIf="types.greenThumb === false; else showGreenThumb"
@@ -146,7 +144,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/activist.png" class='select_img activist' id=6
                       (click)="selectTypes('activist')" *ngIf="types.activist === false; else showActivist"
@@ -160,7 +158,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/parent.png" class='select_img parent' id=7
                       (click)="selectTypes('parent')" *ngIf="types.parent === false; else showParent"
@@ -174,7 +172,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/health-enthusiast.png" class='select_img health' id=8
                       (click)="selectTypes('healthEnthusiast')"
@@ -188,7 +186,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/Yogi-and-workout-addict.png" class='select_img yogi' id=9
                       (click)="selectTypes('yogi')" *ngIf="types.yogi === false; else showYogi" style="width:100%">
@@ -217,18 +215,17 @@
       <!-----------------Start Third -------------->
       <div class="tab" *ngIf="thirdTab === true">
         <div class="row">
-          <div class="col-md-4"
-            style="background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: right;">
+          <div class="col-md-4" class="tabthird">
             <img src="/assets/img/logo.png" class="logo">
             <div style="margin-left: 50px;">
               <h3 class="leftfont">Tell us what you care <BR>about!</h3>
             </div>
           </div>
           <div class="col-md-8">
-            <div class="container" style="width: 75%;   margin-top: 74px;">
-              <h3>What topic you care the most? you can select multiple topics.</h3><BR>
+            <div class="container tabthirdright" >
+              <h3 >What topic you care the most? you can select multiple topics.</h3><BR>
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/nutrition food and recepies.png" class='select_img nutrition' id=01
                       (click)="selectTopics('nutrition')" *ngIf="topics.nutrition === false; else showNutrition"
@@ -242,7 +239,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/local business stores and restaurants.png" class='select_img local'
                       id=02 (click)="selectTopics('localBusiness')"
@@ -257,7 +254,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/sustainability and environment news.png"
                       class='select_img sustainability' id=03
@@ -273,7 +270,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/health and wellbeing.png" class='select_img wellbeing' id=04
                       (click)="selectTopics('health')" *ngIf="topics.health === false; else showHealth"
@@ -287,7 +284,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/activity and exercise.png" class='select_img exercise' id=05
                       (click)="selectTopics('activity')" *ngIf="topics.activity === false; else showActivity"
@@ -301,7 +298,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/gardening.png" id="Gardening" class='select_img gardening' id=06
                       (click)="selectTopics('gardening')" *ngIf="topics.gardening === false; else showGardening"
@@ -315,7 +312,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/sustainable living tips and diy.png" class='select_img tips' id=07
                       (click)="selectTopics('diy')" *ngIf="topics.diy === false; else showDIY"
@@ -329,7 +326,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/ethical fashion and beauty.png" class='select_img ethical' id=08
                       (click)="selectTopics('fashion')" *ngIf="topics.fashion === false; else showFashion"
@@ -343,7 +340,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 col-6">
                   <div class="thumbnail">
                     <img src="/assets/icons/grey/people and their stories.png" class='select_img people' id=09
                       (click)="selectTopics('people')" *ngIf="topics.people === false; else showPeople"
@@ -367,8 +364,7 @@
       <!-----------------Start Fourth -------------->
       <div class="tab" *ngIf="fourthTab === true">
         <div class="row">
-          <div class="col-md-4"
-            style="background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: right;">
+          <div class="col-md-4" class="tabfour">
             <img src="/assets/img/logo.png" class="logo">
             <div style="margin-left: 50px;">
               <h3 class="leftfont">
@@ -376,8 +372,8 @@
             </div>
           </div>
           <div class="col-md-8">
-            <div class="container" style="width: 75%;   margin-top: 74px;">
-              <h2>Do you have special diet preference?</h2><BR>
+            <div class="container tabfourright" >
+              <h3 class="headh1">Do you have special diet preference?</h3><BR>
               <div class="row">
                 <div class="col-sm-12 col-md-12">
                   <button type="button" (click)="selectDiet('organic')"
@@ -500,7 +496,7 @@
       <!-----------------End Fourth -------------->
 
       <!-----------------Tabs -------------->
-      <div style="position: absolute;  bottom: 254px; margin-left:50px;">
+      <div class="slidepoint">
         <div class="row">
           <div class="col-md-5">
             <button type="button" id="nextBtn" (click)="nextStep()" class="next">Next</button>

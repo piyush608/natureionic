@@ -4,6 +4,7 @@
       <div class="row">
         <div class="col-12">
           <h2 class="mt-4 main-heading"> Popular Alternative Products </h2>
+          
           <div class="row">
             <div class="col-12 pr-0" *ngFor="let category of categories">
               <h3 class="sub-heading">
@@ -11,13 +12,18 @@
                     src="/assets/images/arrow-pointing-to-right.svg"></span>
               </h3>
               <div class="row" style="margin-top: 25px;">
-                <div class="border-0 product-card col-3" *ngFor="let product of products">
+                <div class="border-0 product-card col-md-3 col-6" *ngFor="let product of products">
                   <app-product-card *ngIf="category._id === product.category._id" [product]="product">
-                  </app-product-card>
+                  </app-product-card>                  
                 </div>
+                <button class="more" (click)="exploreCategory(category._id)">Show more</button>
               </div>
             </div>
+
+           
           </div>
+
+         
         </div>
       </div>
     </div>

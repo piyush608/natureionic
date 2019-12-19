@@ -1,11 +1,9 @@
 .container-fluid {
   overflow: scroll;
 }
-
 .main-content {
   margin-bottom: 50px;
 }
-
 .add_business {
   border: 1px solid #b9b1b1;
   border-radius: 10px;
@@ -45,6 +43,12 @@ input {
   color: #00b2aa;
   padding-left: 30px;
 }
+@media (max-width: 768px) and (max-width: 1024px){ 
+  .head_color {
+    color: #00b2aa;
+    padding-left: 0px;
+  }
+} 
 .shadow_btn {
   border: 0px;
   border-radius: 46px;
@@ -100,13 +104,11 @@ input {
   margin-right: 20px;
   margin-bottom: 20px;
 }
-
 .upload_photo_wrapper img {
   flex-shrink: 0;
   min-width: 100%;
   min-height: 100%;
 }
-
 .upload_photo {
   color: #ff6969;
   background-color: white;
@@ -120,13 +122,18 @@ input {
   justify-content: flex-end;
 }
 .code {
-  flex: 0.5;
-  margin-right: 9px;
+  width: 150px;
+  margin-right: 9px; 
 }
+@media (max-width: 768px) and (max-width: 1024px){ 
+  .code {   
+    margin-right: 9px;
+    width: 66px;
+  }
+} 
 .phn_number {
   flex: 2;
 }
-
 .upload_photo_wrapper input[type="file"] {
   font-size: 100px;
   position: absolute;
@@ -143,7 +150,6 @@ input {
   border-radius: 10px;
   margin-top: 9px;
 }
-
 button {
   outline: none;
 }

@@ -45,6 +45,12 @@ textarea {
   color: #00b2aa;
   padding-left: 30px;
 }
+@media (max-width: 768px) and (max-width: 1024px){ 
+  .head_color {
+    color: #00b2aa;
+    padding-left: 0px;
+  }
+} 
 .more_ing {
   cursor: pointer;
   color: #00b2aa !important;

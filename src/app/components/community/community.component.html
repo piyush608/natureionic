@@ -6,16 +6,16 @@
 	<div class="row main-content">
 		<div class="col-11 m-auto">
 			<div class="row">
-				<div class="col-md-5">
+				<div class="col-md-5 col-12">
 					<div class="search">
 						<input type="text" class="searchTerm" placeholder="Search the Community" style="width:70%;">
 						<button type="submit" class="searchButton">Search </button>
 					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 col-6">
 					<button class="btngroup" (click)="addForum()">Start a Conversation</button>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-3 col-6">
 					<button class="btngroup">Join a Group</button>
 				</div>
 			</div>
@@ -23,13 +23,13 @@
 				<div class="col-12">
 					<h2 class="mt-4 main-heading">Naturehub Community Groups</h2>
 					<div class="row mt-4 community-grouprow">
-						<div class="col-6">
+						<div class="col-sm-6">
 							<div class="community-groupcard background-property community-groupcardimg1">
 							</div>
 							<h2 class="mt-3">NatureHub Platform Q & A: Ask anything to NatureHub!</h2>
 							<p class="mb-0">We are real human we'd like to ----</p>
 						</div>
-						<div class="col-6">
+						<div class="col-sm-6">
 							<div class="community-groupcard  background-property community-groupcardimg2">
 							</div>
 							<h2 class="mt-3">NatureHub channel. Meet the influencers!</h2>
@@ -44,31 +44,28 @@
 							More
 							<img src="/assets/images/arrow-pointing-to-right.svg"></span></h2>
 				</div>
-				<div class="col-4">
-					<div class="row location-grid">
-						<div class="col-8">
-							<div class="row">
-								<div class="col-2">
-									<img src="/assets/images/location.svg" alt="">
-								</div>
-								<div class="col-10" style="padding-left: 0;">
-									<input type="text" [(ngModel)]="place" placeholder="Type city name"
+				<div class="col-12">
+						<div class="row">  
+								<div class="col-12">            
+								  <ul class="breadcrumb">
+									<li><img src="/assets/images/location.svg" style="width:20px; margin-right: 10px;"></li>
+									<li><input type="text" [(ngModel)]="place" placeholder="Type city name"
 										class="form-control pl-0 input_style" autocorrect="off" autocapitalize="off" spellcheck="off"
-										#search>
-								</div>
-							</div>
-						</div>
-						<div class="col-4">
-							<span class="change-location">Change Location</span>
-						</div>
-					</div>
+										#search> </li>
+									<li><a href="#">Change Location</a></li>
+								  </ul>
+								</div> 
+							</div> 
+					
 				</div>
 			</div>
 			<div class="row mt-4" *ngIf="groups.length > 0; else showNoGroup">
-				<div class="col-3" *ngFor="let group of groups">
+				<div class="col-md-3" *ngFor="let group of groups">
 					<app-group-card [group]="group"></app-group-card>
 				</div>
+				<button class="more" (click)="exploreGroup()">Show more</button>
 			</div>
+			
 			<ng-template #showNoGroup>
 				<div class="row mt-4">
 					<div class="col-3">
@@ -93,9 +90,10 @@
 								<img src="/assets/images/arrow-pointing-to-right.svg"></span>
 						</h2>
 						<div class="row mt-4">
-							<div class="col-4" *ngFor="let forum of randomForums">
+							<div class="col-md-4" *ngFor="let forum of randomForums">
 								<app-forum-card [forum]="forum"></app-forum-card>
 							</div>
+							<button class="more" (click)="exploreForum('trending')">Show more</button>
 						</div>
 					</div>
 					<div class="row">
@@ -104,13 +102,14 @@
 								<img src="/assets/images/arrow-pointing-to-right.svg"></span>
 						</h2>
 						<div class="row mt-4">
-							<div class="col-4" *ngFor="let forum of latestForums">
+							<div class="col-md-4" *ngFor="let forum of latestForums">
 								<app-forum-card [forum]="forum"></app-forum-card>
 							</div>
+							<button class="more" (click)="exploreForum('latest')">Show more</button>
 						</div>
 					</div>
 				</div>
-				<div class="col-3">
+				<div class="col-md-3">
 					<div class="popular-topiccard">
 						<div class="popular-cardpadding">
 							<h2>Popular topics</h2>

@@ -4,6 +4,7 @@
 a {
   color: #9f9f9f;
 }
+
 p {
   margin-top: 0;
   margin-bottom: 0rem;
@@ -95,6 +96,29 @@ input.invalid {
   text-align: center;
   font-weight: bold;
   width: 200px;
+}
+@media only screen and (max-width: 480px) {
+  .caption1 {
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .caption1 {
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    font-size: 14px;
+  }
+}
+@media only screen and (min-width: 992px){
+  .caption1 {
+    text-align: center;
+    font-weight: bold;
+    width: 200px;
+  }
 }
 .caption1 p {
   text-align: center;
@@ -249,6 +273,35 @@ input.invalid {
   font-size: 40px;
   margin-top: 35%;
 }
+@media only screen and (max-width: 480px) {
+  .leftfont {
+    line-height: 35px;
+    color: #4a4848;
+    text-align: center;
+    font-size: 25px;
+    padding-right: 20px;
+    margin-top: 7%;
+  }  
+}
+@media only screen and (min-width: 768px){
+  .leftfont {
+    line-height: 55px;
+    color: #4a4848;
+    text-align: center;
+    font-size: 40px;
+    margin-top: 7%;
+  }
+}
+@media only screen and (min-width: 992px){
+  .leftfont {
+    line-height: 45px;
+    color: #4a4848;
+    text-align: left;
+    font-size: 40px;
+    margin-top: 35%;
+  }
+}
+
 hr {
   margin-top: 4rem;
   margin-bottom: 1rem;
@@ -301,6 +354,14 @@ hr {
   margin-top: 7px;
   margin-left: 25px;
 }
+@media only screen and (max-width: 480px) {
+  .nav-bullets {
+    margin-top: 7px;
+    margin-left: 37px;
+  }
+}
+@media only screen and (min-width: 768px){
+}
 #prevBtn {
   display: inline;
   position: relative;
@@ -319,4 +380,288 @@ hr {
 }
 .circle__inner img {
   cursor: pointer;
+}
+
+.tabfirst{
+  background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: center;
+  width: 30%;
+  height:1000px;
+}
+@media only screen and (max-width: 480px) {
+  .tabfirst{
+    background-image:url('/assets/img/backgroundMask.png'); background-position: center;
+    width: 100%;
+    height:300px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .tabfirst{
+    background-image:url('/assets/img/backgroundMask.png');  background-position: center;
+    width: 100%;
+    height:300px;
+  }
+}
+@media only screen and (min-width: 992px){
+  .tabfirst{
+  background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: center;
+  width: 30%;
+  height:1000px;
+}}
+
+.tabsecond{
+  background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: right;
+  width: 30%;
+}
+@media only screen and (max-width: 480px) {
+  .tabsecond{
+    background-image:url('/assets/img/backgroundMask.png');  background-position: right;
+    width: 100%;
+    height:300px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .tabsecond{
+    background-image:url('/assets/img/backgroundMask.png');   height:1000px; background-position: right;
+    width: 100%;
+    height:300px;
+  }
+}
+@media only screen and (min-width: 992px){
+  .tabsecond{
+    background-image:url('/assets/img/backgroundMask.png'); background-position: right;
+    width: 30%;
+    height:1000px;
+  }
+}
+
+
+.tabthird{
+  background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: right;
+  width: 30%;
+}
+@media only screen and (max-width: 480px) {
+  .tabthird{
+    background-image:url('/assets/img/backgroundMask.png');  background-position: right;
+    width: 100%;
+    height:300px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .tabthird{
+    background-image:url('/assets/img/backgroundMask.png');  background-position: right;
+    width: 100%;
+    height:300px;
+  }
+}
+@media only screen and (min-width: 992px){
+  .tabthird{
+    background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: right;
+    width: 30%;
+  }
+}
+.tabfour{
+  background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: right;
+  width: 30%;
+}
+@media only screen and (max-width: 480px) {
+  .tabfour{
+    background-image:url('/assets/img/backgroundMask.png');  background-position: right;
+    height:300px;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 768px){
+  .tabfour{
+    background-image:url('/assets/img/backgroundMask.png');  background-position: right;
+    height:300px;
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 992px){
+  .tabfour{
+    background-image:url('/assets/img/backgroundMask.png'); height:1000px; background-position: right;
+    width: 30%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.tabfirstright{
+  width: 50%;   margin-top: 74px;
+}
+@media only screen and (max-width: 480px) {
+  .tabfirstright{
+    width: 90%;   margin-top: 74px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .tabfirstright{
+    width: 90%;   margin-top: 74px;
+    margin-left: 30%;
+  }
+}
+@media only screen and (min-width: 992px){
+  .tabfirstright{
+    width: 50%;   margin-top: 74px;
+  }
+}
+.tabsecondright{
+  width: 75%;   margin-top: 74px;
+}
+@media only screen and (max-width: 480px) {
+  .tabsecondright{
+    width: 90%;   margin-top: 74px;   
+  }
+}
+@media only screen and (min-width: 768px){
+  .tabsecondright{
+    width: 100%;   margin-top: 74px;
+    margin-left: 24%;
+  }
+}
+@media only screen and (min-width: 992px){
+  .tabsecondright{
+    width: 75%;   margin-top: 74px;
+  }
+}
+.tabthirdright{
+  width: 75%;   margin-top: 74px;
+}
+@media only screen and (max-width: 480px) {
+  .tabthirdright{
+    width: 90%;   margin-top: 74px;  
+  }
+}
+@media only screen and (min-width: 768px){
+  .tabthirdright{
+    width: 100%;   margin-top: 74px;
+    margin-left: 25%;
+  }
+}
+@media only screen and (min-width: 992px){
+  .tabthirdright{
+    width: 75%;   margin-top: 74px;
+  }
+}
+.tabfourright{
+  width: 75%;   margin-top: 74px;
+}
+@media only screen and (max-width: 480px) {
+  .tabfourright{
+    width: 90%;   margin-top: 74px;    
+  }
+}
+@media only screen and (min-width: 768px){
+  .tabfourright{
+    width: 100%;   margin-top: 74px;
+    margin-left: 24%;
+  }
+}
+@media only screen and (min-width: 992px){
+  .tabfourright{
+    width: 75%;   margin-top: 74px;
+  }
+}
+
+
+
+
+
+
+.headh1{
+  font-size: 2em;
+}
+@media only screen and (max-width: 480px) {
+ .headh1{  
+  font-size: 20px;
+}}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.slidepoint{
+  position: absolute;  bottom: 254px; margin-left:50px;
+}
+@media only screen and (max-width: 480px) {
+  .slidepoint{
+    position: absolute;
+    bottom: -110px;
+    margin-left: 28%;
+  }
+}
+@media only screen and (min-width: 768px){
+  .slidepoint{
+    position: absolute;   margin-left:50px;
+    margin-left: 28%;
+    bottom: -80px;
+  }
+}
+@media only screen and (min-width: 992px){
+  .slidepoint{
+    position: absolute;  bottom: 254px; margin-left:50px;
+  }
+}
+#prevBtn{
+
+}
+@media only screen and (max-width: 480px) {
+  #prevBtn{
+  display: none;
+}}
+@media only screen and (min-width: 768px){
+  #prevBtn{
+    display: none;
+}}
+#leftpar{
+  text-align: left;
+}
+@media only screen and (max-width: 480px) {
+  #leftpar{
+    text-align: center;
+    width: 70%;
+    margin-left: 12%;
+  }
+}
+@media only screen and (min-width: 768px){
+  #leftpar{
+    text-align: center;
+    width: 70%;
+    margin-left: 12%;
+  }
+}
+@media only screen and (min-width: 992px){
+
+}
+.tabsecond p{
+  text-align: left;
+  width:70%;
+}
+@media only screen and (max-width: 480px) {
+  .tabsecond p{
+    text-align: center;
+  }
 }

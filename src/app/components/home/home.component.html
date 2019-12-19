@@ -1,47 +1,55 @@
 <div class="container-fluid">
   <div class="row main-content">
     <div class="col-11 m-auto">
+        <h2 class="mt-4 main-heading">How you feel like today, {{ username }}?</h2>
       <div class="row">
         <div class="col-12">
-          <h2 class="mt-4 main-heading">How you feel like today, {{ username }}?</h2>
-          <div class="d-flex mt-4">
-            <div class="background-property feel-likeimg likeimg1" (click)="exploreBusiness()">
-              <h2 class="feel-likeheading text-center mb-0">Explore Local</h2>
+            <div class="row">
+                <div class="col-sm-3 col-6">
+                <div class="background-property feel-likeimg likeimg1" (click)="exploreBusiness()">
+                    <h2 class="feel-likeheading text-center mb-0">Explore Local</h2>
+                  </div>
             </div>
-            <div class="background-property feel-likeimg likeimg2" (click)="addForum()">
-              <h2 class="feel-likeheading text-center mb-0">Ask Something</h2>
+            <div class="col-sm-3 col-6">
+                <div class="background-property feel-likeimg likeimg2" (click)="addForum()">
+                    <h2 class="feel-likeheading text-center mb-0">Ask Something</h2>
+                  </div>
             </div>
-            <div class="background-property feel-likeimg likeimg3" (click)="exploreBlog()">
-              <h2 class="feel-likeheading text-center mb-0">Get Inspiration</h2>
+            <div class="col-sm-3 col-6">
+                <div class="background-property feel-likeimg likeimg3" (click)="exploreBlog()">
+                    <h2 class="feel-likeheading text-center mb-0">Get Inspiration</h2>
+                  </div>
             </div>
-            <div class="background-property feel-likeimg likeimg4">
-              <h2 class="feel-likeheading text-center mb-0" (click)="addList()">Add A List</h2>
+            <div class="col-sm-3 col-6">
+                <div class="background-property feel-likeimg likeimg4">
+                    <h2 class="feel-likeheading text-center mb-0" (click)="addList()">Add A List</h2>
+                  </div>
             </div>
           </div>
         </div>
       </div>
+
       <div class="row">
-        <div class="col-4">
-          <h2 class="mt-4 main-heading">Find Good, Find Green, Find Local<sup>TM</sup></h2>
-          <div class="row location-grid">
-            <div class="col-8">
-              <div class="row">
-                <div class="col-2">
-                  <img src="/assets/images/location.svg" alt="">
-                </div>
-                <div class="col-10" style="padding-left: 0;">
-                  <input type="text" [(ngModel)]="place" placeholder="Type city name"
-                    class="form-control pl-0 input_style" autocorrect="off" autocapitalize="off" spellcheck="off"
-                    #search>
-                </div>
-              </div>
-            </div>
-            <div class="col-4">
-              <span class="change-location">Change Location</span>
-            </div>
-          </div>
+        <div class="col-12">
+          <h2 class="mt-4 main-heading">Find Good, Find Green, Find Local<sup>TM</sup></h2> 
+          
+          <div class="row">  
+            <div class="col-12">            
+              <ul class="breadcrumb">
+                <li><img src="/assets/images/location.svg" style="width:20px; margin-right: 10px;"></li>
+                <li><input type="text" [(ngModel)]="place" placeholder="Type city name"
+                  class="form-control" autocorrect="off" autocapitalize="off" spellcheck="off" 
+                  #search>  </li>
+                <li><a href="#">Change Location</a></li>
+              </ul>
+            </div>   
+          </div>   
         </div>
       </div>
+
+     
+
+    
       <div class="row">
         <div class="col-11 pr-0">
           <div class="horizontal-scroll w-100 p-1 mt-4">
@@ -80,8 +88,11 @@
               <img src="/assets/images/moreBtn.svg" class="more-btn float-right d-block">
             </div>
           </div>
+          <button class="more" (click)="exploreBusiness()">Show more</button>
         </div>
       </div>
+
+
       <div class="row">
         <div class="col-12">
           <h2 class="mt-4 main-heading">Local Must Visit<span><button type="button"
@@ -128,15 +139,12 @@
       </div>
       <a class="learn-tag" href="https://naturehub.com">
         <div class="row mt-2">
-          <div class="col-6">
+          <div class="col-md-6">
             <div class="background-property naturehub-cards naturehub-card1">
-              <h2 class="mb-0">Learn more<br>
-                about<br>
-                Naturehub
-              </h2>
+              <h2 class="mb-0">Learn more<br> about<br> Naturehub </h2>
             </div>
           </div>
-          <div class="col-6">
+          <div class="col-md-6">
             <div class="background-property naturehub-cards naturehub-card2">
               <button type="button" class="btn btn-success">Invite More Friends</button>
             </div>
@@ -179,6 +187,7 @@
               <img src="/assets/images/moreBtn.svg" class="more-btn float-right d-block">
             </div>
           </div>
+          <button class="more" (click)="exploreRecipes()">Show more</button>
         </div>
       </div>
       <div class="row">
@@ -202,10 +211,12 @@
               <img src="/assets/images/moreBtn.svg" class="more-btn float-right d-block">
             </div>
           </div>
+          <button class="more"  (click)="exploreProducts()">Show more</button>
         </div>
       </div>
+      
       <div class="row mt-4">
-        <div class="col-6">
+        <div class="col-md-6">
           <div class="add-cards background-property add-cardimg1">
             <h2>Have some healthy, toxic free, or eco-friendly recipes to share?</h2>
             <button type="button" class="btn btn-secondary">
@@ -215,7 +226,7 @@
             </button>
           </div>
         </div>
-        <div class="col-6">
+        <div class="col-md-6">
           <div class="add-cards background-property add-cardimg2">
             <h2>We invite you to join to our community discussion. You can be the one influence....</h2>
             <button type="button" class="btn btn-secondary">Yes, I am in</button>

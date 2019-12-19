@@ -18,7 +18,32 @@
 .show-more {
   font-size: 0.7em;
   color: #00b2aa;
+  display: block;
   margin-left: 15px;
+}
+@media only screen and (max-width: 480px) {
+  .show-more {    
+    font-size: 0.7em;
+    display: none;
+    color: #00b2aa;
+    margin-left: 15px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .show-more {   
+    font-size: 0.7em;
+    color: #00b2aa;
+    display: none;
+    margin-left: 15px;
+  }
+}
+@media only screen and (min-width: 992px){  
+  .show-more {   
+    font-size: 0.7em;
+    display: block;
+    color: #00b2aa;
+    margin-left: 15px;
+  }
 }
 .show-more img {
   width: 13px;
@@ -179,6 +204,25 @@
 }
 .follow-cardimg2 {
   background: url("../../../assets/images/bannerRight@3x.png");
+  display: block;
+}
+@media only screen and (max-width: 480px) {
+  .follow-cardimg2 {
+    background: url("../../../assets/images/bannerRight@3x.png");
+    display: none;
+  }
+}
+@media only screen and (min-width: 768px){
+  .follow-cardimg2 {
+    background: url("../../../assets/images/bannerRight@3x.png");
+    display: block;
+  }
+}
+@media only screen and (min-width: 992px){  
+  .follow-cardimg2 {
+    background: url("../../../assets/images/bannerRight@3x.png");
+    display: block;
+  }
 }
 .influencers-row {
   padding-top: 100px;
@@ -326,6 +370,19 @@ p {
   font-size: 2em;
   color: rgb(72, 72, 72);
 }
+@media only screen and (max-width: 480px) {
+  .community-leaderrow h2 {
+    font-size: 18px;
+    color: rgb(72, 72, 72);
+  }
+}
+@media only screen and (min-width: 768px){
+  .community-leaderrow h2 {
+    font-size: 18px;
+    color: rgb(72, 72, 72);
+  }
+}
+
 .community-leaderrow p {
   font-size: 0.9em;
   line-height: 23px;
@@ -346,4 +403,66 @@ p {
 .alternative-cardsdiv {
   padding-top: 40px;
   padding-bottom: 110px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.more{
+  background-color:white;
+  border: 1px solid #c5c5c5;
+  border-radius: 30px; 
+  width: 100%;
+  color:#c5c5c5;
+  font-weight: 400;  
+  padding: 10px 0px 10px 0px;
+}
+@media only screen and (max-width: 480px) {
+  .more{
+    background-color:white;
+    border: 1px solid #c5c5c5;
+    border-radius: 30px; 
+    width: 100%;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color:#c5c5c5;
+    font-weight: 400;  
+    padding: 10px 0px 10px 0px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .more{
+    background-color:white;
+    border: 1px solid #c5c5c5;
+    border-radius: 30px; 
+    width: 100%;
+    display: block;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    color:#c5c5c5;
+    font-weight: 400;  
+    padding: 10px 0px 10px 0px;
+  }
+}
+@media only screen and (min-width: 992px){  
+  .more{
+    background-color:white;
+    border: 1px solid #c5c5c5;
+    border-radius: 30px; 
+    width: 100%;
+    display: none;
+    color:#c5c5c5;
+    font-weight: 400;  
+    padding: 10px 0px 10px 0px;
+  }
 }

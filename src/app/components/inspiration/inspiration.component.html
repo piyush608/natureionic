@@ -2,7 +2,7 @@
   <div class="row main-content">
     <div class="col-11 m-auto">
       <div class="row">
-        <div class="col-6 pr-0">
+        <div class="col-md-6 pr-0 ">
           <div class="follow-card follow-cardimg1 background-property vertical-align">
             <h2>Follow Consicous living parcticer, Become one to influence others.</h2>
             <div class="d-flex mt-2">
@@ -21,14 +21,14 @@
             </div>
           </div>
         </div>
-        <div class="col-6 follow-card follow-cardimg2 background-property pl-0"></div>
+        <div class="col-md-6 col-6 follow-card follow-cardimg2 background-property pl-0"></div>
       </div>
       <div class="row influencers-row">
         <div class="col-12">
           <h2 class="pt-4 main-heading">Highlighted Inspiring Influencers<span class="show-more">Show More
               <img src="/assets/images/arrow-pointing-to-right.svg"></span></h2>
           <div class="row influencers-row">
-            <div class="col-3">
+            <div class="col-md-3 col-12">
               <div class="influencers-card background-property influencers-cardimg1">
                 <div class="influencer-border vertical-align mx-auto">
                   <div class="background-property influencers-img1 influencers-img mx-auto"></div>
@@ -39,7 +39,7 @@
                   accusamus aliquid tenetur atque quos eaque.</p>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-3 col-12">
               <div class="influencers-card background-property influencers-cardimg2">
                 <div class="influencer-border vertical-align mx-auto">
                   <div class="background-property influencers-img2 influencers-img mx-auto"></div>
@@ -50,7 +50,7 @@
                   accusamus aliquid tenetur atque quos eaque.</p>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-3 col-12">
               <div class="influencers-card background-property influencers-cardimg3">
                 <div class="influencer-border vertical-align mx-auto">
                   <div class="background-property influencers-img3 influencers-img mx-auto"></div>
@@ -61,7 +61,7 @@
                   accusamus aliquid tenetur atque quos eaque.</p>
               </div>
             </div>
-            <div class="col-3">
+            <div class="col-md-3 col-12">
               <div class="influencers-card background-property influencers-cardimg4">
                 <div class="influencer-border vertical-align mx-auto">
                   <div class="background-property influencers-img4 influencers-img mx-auto"></div>
@@ -72,6 +72,7 @@
                   accusamus aliquid tenetur atque quos eaque.</p>
               </div>
             </div>
+            <button class="more" >Show more</button>
           </div>
         </div>
       </div>
@@ -80,14 +81,14 @@
         <div class="col-12">
           <h2 class="pt-4 main-heading">Inspiration Feed</h2>
           <div class="row inspiration-div justify-content-md-center">
-            <div class="inspiration-category card col-2" *ngFor="let category of categories">
+            <div class="inspiration-category card col-md-2 col-6" *ngFor="let category of categories">
               <h2 class="mb-0 text-center" (click)="exploreCategory(category._id)">{{ category.name }}</h2>
             </div>
           </div>
 
           <div class="inspiration-cardsdiv">
             <div class="row">
-              <div class="col-3" *ngFor="let blog of blogs">
+              <div class="col-md-3 col-12" *ngFor="let blog of blogs">
                 <app-blog-card [blog]="blog"></app-blog-card>
               </div>
             </div>
@@ -100,7 +101,7 @@
       </div>
       <div class="alternative-cardsdiv">
         <div class="row">
-          <div class="col-3" *ngFor="let vlog of vlogs">
+          <div class="col-md-3 col-12" *ngFor="let vlog of vlogs">
             <app-vlog-card [vlog]="vlog"></app-vlog-card>
           </div>
         </div>
@@ -110,11 +111,11 @@
         </div>
       </div>
       <div class="row community-leaderrow">
-        <div class="col-7">
+        <div class="col-md-7">
           <div class="background-property community-leaderimg">
           </div>
         </div>
-        <div class="col-5 vertical-align">
+        <div class="col-md-5 vertical-align">
           <h2>Are you a community leader?</h2>
           <p class="mb-0">Naturehub is a community of healthy lifestyle enthusiasts & environmentally
             consicous
@@ -125,5 +126,6 @@
       </div>
     </div>
   </div>
+  
   <app-footer></app-footer>
 </div>

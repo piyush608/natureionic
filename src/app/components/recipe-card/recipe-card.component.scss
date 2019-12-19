@@ -41,6 +41,13 @@
   font-size: 1em;
   height: 33px;
 }
+ @media (max-width: 768px) and (max-width: 1024px){ 
+  .recipe-info h3 {
+    font-size: 14px;
+    height: 33px;
+  }
+} 
+
 .recipe-uploadergrid {
   display: grid;
   grid-template-columns: 0.85fr 4fr;
@@ -51,6 +58,17 @@
   height: 30px;
   border-radius: 50%;
 }
+@media (max-width: 768px) and (max-width: 1024px){ 
+  .recipe-uploaderimg {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+} 
+
+
+
 .recipe-uploadername h2 {
   font-size: 0.9em;
   color: #b2b2b2;

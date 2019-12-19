@@ -4,3 +4,21 @@
 .main-content {
   margin-bottom: 55px;
 }
+.blog{
+  width: 100%;
+}
+@media only screen and (max-width: 480px) {
+  .blog{
+    width: 25%;
+  }
+}
+@media only screen and (min-width: 768px){
+  .blog{
+    width: 50%;
+  }
+}
+@media only screen and (min-width: 992px){
+  .blog{
+    width: 100%;
+  }
+}
