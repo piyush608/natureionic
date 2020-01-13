@@ -1,6 +1,63 @@
 <div class="container-fluid">
-  <div class="row" style="height: 100vh;">
-    <div class="col-3">
+ <!----------left side slide--------->
+
+ <div id="main">  
+  <ion-buttons slot="start">
+    <ion-menu-button><img src="assets/images/left-arrow.png" class="left-arrow">	</ion-menu-button>    
+  </ion-buttons>
+
+  <section class="wrapper main-wrapper row" id="mobileform">
+    <div class="col-md-12">
+      <section class="box">
+        <h3 class="heading">Newsletter</h3><BR>
+        <img src="/assets/images/newsletterPhoto.png" class="newsletter-img">
+        <p>Get inspiring and actionable sustainablity, conscious, and healthy lifestyle tips delivered straight to
+          your
+          inbox every Saturday</p>
+        <form class="form-inline">
+          <div class="form-group">
+            <input type="email" class="newsletter"  placeholder="Your email">
+          </div>
+          <button type="submit" class="category" data-toggle="modal"
+            data-target=".bs-example-modal-sm">Subscribe</button>
+        </form>
+        <BR><BR><BR>
+        <a href="" class="unsub">Unsubscribe. I don't want to receive newsletter anymore.</a>
+      </section>
+    </div>
+  </section>
+  
+</div>
+
+
+<ion-split-pane contentId="main-content" id="mobileform">
+  <ion-menu contentId="main-content" type="overlay">
+    <ion-header>     
+    </ion-header>
+    <ion-content>    
+      <div class="row" id="left-back">
+      <div class="mob">
+      <a href="/settings/account"> <span class="menu-title">Account</span></a><br>
+      <a href="/settings/security"> <span class="menu-title">Security</span></a><br>
+      <a href="/settings/newsletter"> <span class="menu-title active">Newsletter</span></a><br>
+      <a href="/settings/notifications"> <span class="menu-title">Notification</span></a><br>
+      <a href="/settings/report"> <span class="menu-title">Report</span></a><br>
+      <!-- <li><a href="/settings/data-expert"><span class="menu-title">Data Export</span></a></li> -->
+      <a href="/settings/deactive-account"> <span class="menu-title">Deactivate Account</span></a><br>
+    </div>
+  </div>
+    </ion-content>
+  </ion-menu>  
+</ion-split-pane>
+<!----------End left side slide--------->
+
+
+
+
+
+
+  <div class="row top" >
+    <div class="col-md-3 expandit">
       <div class="page-sidebar expandit">
         <div class="sidebar-inner" id="main-menu-wrapper">
           <ul class="wraplist" style="height: auto;">
@@ -15,10 +72,10 @@
         </div>
       </div>
     </div>
-    <div class="col-9">
+    <div class="col-md-9 expandit">
       <section id="main-content">
         <section class="wrapper main-wrapper row">
-          <div class="col-md-7">
+          <div class="col-md-12">
             <section class="box">
               <h3 class="heading">Newsletter</h3><BR>
               <img src="/assets/images/newsletterPhoto.png" class="newsletter-img">
@@ -27,7 +84,7 @@
                 inbox every Saturday</p>
               <form class="form-inline">
                 <div class="form-group">
-                  <input type="email" class="newsletter" id="email" placeholder="Your email">
+                  <input type="email" class="newsletter"  placeholder="Your email">
                 </div>
                 <button type="submit" class="category" data-toggle="modal"
                   data-target=".bs-example-modal-sm">Subscribe</button>

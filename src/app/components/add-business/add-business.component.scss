@@ -1,6 +1,28 @@
 .container-fluid {
-  overflow: scroll;
+  overflow: scroll;  
 }
+.container {
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1200px){
+  .container {
+      max-width: 1450px;
+  }}
+  
 .main-content {
   margin-bottom: 50px;
 }

@@ -1,10 +1,11 @@
 <div class="container-fluid container-padding">
+  
   <div class="row">
-    <div class="col-11 m-auto">
+    <div class="col-12 m-auto">
       <div class="row">
         <div class="col-10 m-auto">
           <div class="row">
-            <div class="col-4">
+            <div class="col-lg-4 col-md-6 col-xl-4">
               <div class="profile-img background-property ml-auto mr-auto" (click)="openEditProfile()"
                 [ngStyle]="{ 'background-image': 'url(' + profileImage + ')'}"></div>
               <div class="mt-4 profileimg-row">
@@ -33,7 +34,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-8 profile-info">
+            <div class="col-lg-8 col-md-6 col-xl-8 profile-info">
               <div class="d-flex">
                 <h1 class="mb-0"> {{ user.name }} </h1>
                 <button type="button" class="btn btn-outline-primary edit-button" (click)="openEditProfile()">
@@ -57,8 +58,33 @@
               <p>
                 {{ user.about }}
               </p>
+
+              
+
               <div class="preferences-div">
                 <h2>Preference</h2>
+               
+                <div class="row" >
+                  <div class="col-lg-2 col-md-4 col-xl-2 col-4">
+                    <div class=" vertical-center preferences-imgdiv" id="preferencesmob">
+                      <img src="/assets/images/grocery.svg" />
+                    </div>
+                    <h6 class="pre-h2"  id="preferencesmob">Vegetaria</h6>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-xl-2 col-4">
+                    <div class=" vertical-center preferences-imgdiv" id="preferencesmob">
+                      <img src="/assets/images/grocery.svg" />
+                    </div>
+                    <h6 class="pre-h2"  id="preferencesmob">Gluten Free</h6>
+                  </div>
+                  <div class="col-lg-2 col-md-4 col-xl-2 col-4">
+                    <div class=" vertical-center preferences-imgdiv" id="preferencesmob">
+                      <img src="/assets/images/grocery.svg" />
+                    </div>
+                    <h6 class="pre-h2"  id="preferencesmob">Fair Trade</h6>
+                  </div>
+                </div>
+
                 <ul class="pl-0 preference-list">
                   <li>
                     <div class=" vertical-center preferences-imgdiv">
@@ -86,47 +112,50 @@
       </div>
     </div>
   </div>
+
+
   <div class="main-content">
     <div class="border-top profile-subnav bg-light">
       <div class="row">
-        <div class="col-10 m-auto">
+        <div class="col-12 m-auto">
+          <div class="Feed">
           <ul class="nav">
-            <li class="nav-item">
+            <li class="nav-item de2">
               <a class="nav-link" (click)="changeTab('collection')">
                 <button type="button" class="btn btn-secondary" [class.active]="tab === 'collection'">
                   My Collection
                 </button>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item de2">
               <a class="nav-link" (click)="changeTab('group')">
                 <button type="button" class="btn btn-secondary" [class.active]="tab === 'group'">
                   My Groups
                 </button>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item de2">
               <a class="nav-link" (click)="changeTab('recipe')">
                 <button type="button" class="btn btn-secondary" [class.active]="tab === 'recipe'">
                   Recipes
                 </button>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item de2">
               <a class="nav-link" (click)="changeTab('product')">
                 <button type="button" class="btn btn-secondary" [class.active]="tab === 'product'">
                   Recommended Products
                 </button>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item de2">
               <a class="nav-link" (click)="changeTab('blog')">
                 <button type="button" class="btn btn-secondary" [class.active]="tab === 'blog'">
                   Blog
                 </button>
               </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item de2">
               <a class="nav-link" (click)="changeTab('vlog')">
                 <button type="button" class="btn btn-secondary" [class.active]="tab === 'vlog'">
                   Vlog
@@ -135,12 +164,13 @@
             </li>
           </ul>
         </div>
+        </div>
       </div>
     </div>
     <div class="row" *ngIf="tab === 'collection'">
       <div class="col-11 m-auto">
         <div class="row collection-row">
-          <div class="col-3">
+          <div class="col-lg-3 col-md-12 col-xl-3 expandit">
             <ul class="list-group list-group-flush follower-side-collist">
               <li class="list-group-item pl-0" [class.active-tab]="collectionTab === 'business'"
                 (click)="changeCollectionTab('business')">
@@ -168,62 +198,64 @@
               </li>
             </ul>
           </div>
-          <div class="col-9" *ngIf="collectionTab === 'business'">
+          <div class="col-lg-9 col-md-12 col-xl-9" *ngIf="collectionTab === 'business'">
             <div class="row saved-message" *ngIf="bookmarkedBusinesses.length === 0; else showBookmarkedBusinesses">
               <h3>Saved Businesses</h3>
               <p class="h6">When you see something you like, tap the bookmark button to save it.</p>
             </div>
             <ng-template #showBookmarkedBusinesses>
+              <div class="categroy-all">
               <ul class="category-list horizontal-scroll w-100 p-1">
                 <li>
-                  <button type="button" class="btn btn-info selected-category-button">
+                  <button type="button" class="btn btn-info selected-category-button de2">
                     All
                   </button>
                 </li>
-                <li>
-                  <button type="button" class="btn btn-info">
+                <li >
+                  <button type="button" class="btn btn-info de2">
                     Grocery
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="btn btn-info">Cafe</button>
+                  <button type="button" class="btn btn-info de2">Cafe</button>
                 </li>
                 <li>
-                  <button type="button" class="btn btn-info">Resturant</button>
+                  <button type="button" class="btn btn-info de2">Resturant</button>
                 </li>
                 <li>
-                  <button type="button" class="btn btn-info">Health</button>
+                  <button type="button" class="btn btn-info de2">Health</button>
                 </li>
                 <li>
-                  <button type="button" class="btn btn-info">
+                  <button type="button" class="btn btn-info de2">
                     Artisan Produce
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="btn btn-info">
+                  <button type="button" class="btn btn-info de2">
                     Bath & Beauty
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="btn btn-info">Resturant</button>
+                  <button type="button" class="btn btn-info de2">Resturant</button>
                 </li>
                 <li>
-                  <button type="button" class="btn btn-info">Health</button>
+                  <button type="button" class="btn btn-info de2">Health</button>
                 </li>
                 <li>
-                  <button type="button" class="btn btn-info">
+                  <button type="button" class="btn btn-info de2">
                     Bath & Beauty
                   </button>
                 </li>
                 <li>
-                  <button type="button" class="btn btn-info">Resturant</button>
+                  <button type="button" class="btn btn-info" de2>Resturant</button>
                 </li>
                 <li>
-                  <button type="button" class="btn btn-info">Health</button>
+                  <button type="button" class="btn btn-info de2">Health</button>
                 </li>
               </ul>
+            </div>
               <div class="row">
-                <div class="col-4">
+                <div class="col-lg-4 col-md-6 col-xl-4">
                   <div class="card popular-placescard border-0">
                     <div class="card-header border-0 p-0 popular-img1 background-property">
                       <div class="bookmark-div">
@@ -239,7 +271,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4 col-md-6 col-xl-4">
                   <div class="card popular-placescard border-0">
                     <div class="card-header border-0 p-0 popular-img1 background-property">
                       <div class="bookmark-div">
@@ -255,7 +287,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-4">
+                <div class="col-lg-4 col-md-6 col-xl-4">
                   <div class="card popular-placescard border-0">
                     <div class="card-header border-0 p-0 popular-img1 background-property">
                       <div class="bookmark-div">
@@ -309,7 +341,7 @@
       </div>
     </div>
     <div class="row filter-row" *ngIf="tab === 'group'">
-      <div class="col-11 m-auto">
+      <div class="m-auto" id="fullwidth">
         <div class="row pt-4" *ngIf="addedGroups.length > 0; else showNoGroups">
           <div class="col-3" *ngFor="let group of addedGroups">
             <app-group-card [group]="group"></app-group-card>
@@ -317,7 +349,7 @@
         </div>
         <ng-template #showNoGroups>
           <div class="row pt-3">
-            <div class="col-6">
+            <div class="col-lg-6 col-md-12 col-xl-6">
               <div class="card Inspiration-card border-0">
                 <div class="border-0 p-0  background-property"></div>
                 <div class="card-body">
@@ -337,22 +369,22 @@
                 </div>
               </div>
             </div>
-            <div class="row col-6">
-              <div class="col-6">
+            <div class="row col-lg-6 col-md-12 col-xl-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="background-property explore-groupimg explore-groupimg1"></div>
                 <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="background-property explore-groupimg explore-groupimg3"></div>
                 <h2 class="mt-3 sub-heading">
                   Biking for Good Cause/ Central Florida
                 </h2>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="background-property explore-groupimg explore-groupimg1"></div>
                 <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="background-property explore-groupimg explore-groupimg1"></div>
                 <h2 class="mt-3 sub-heading">Plants & Seeds Exchange in Orlando</h2>
               </div>
@@ -363,7 +395,7 @@
       </div>
     </div>
     <div class="row filter-row" *ngIf="tab === 'recipe'">
-      <div class="col-11 m-auto">
+      <div class=" m-auto" id="fullwidth">
         <div class="row" *ngIf="addedRecipes.length > 0; else showNoRecipes">
           <div class="col-4" *ngFor="let recipe of addedRecipes">
             <app-recipe-card [recipe]="recipe"></app-recipe-card>
@@ -410,7 +442,7 @@
         </div> -->
         <ng-template #showNoRecipes>
           <div class="row pt-3">
-            <div class="col-5">
+            <div class="col-lg-5 col-md-12 col-xl-5">
               <div class="card Inspiration-card border-0">
                 <div class="border-0 p-0  background-property"></div>
                 <div class="card-body">
@@ -426,8 +458,8 @@
                 </div>
               </div>
             </div>
-            <div class="row col-7">
-              <div class="col-6">
+            <div class="row col-lg-7 col-md-12 col-xl-7">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="card border-0 recipe-card">
                   <div class="d-flex">
                     <div class="recipe-image recipe-img3 background-property">
@@ -453,7 +485,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="card border-0 recipe-card">
                   <div class="d-flex">
                     <div class="recipe-image recipe-img3 background-property">
@@ -485,7 +517,7 @@
       </div>
     </div>
     <div class="row filter-row" *ngIf="tab === 'product'">
-      <div class="col-11 m-auto">
+      <div class="m-auto" id="fullwidth">
         <div class="row pt-3" *ngIf="addedProducts.length > 0; else showNoProducts">
           <div class="col-3" *ngFor="let product of addedProducts">
             <app-product-card [product]="product"></app-product-card>
@@ -498,7 +530,7 @@
         </div>
         <ng-template #showNoProducts>
           <div class="row pt-3">
-            <div class="col-6">
+            <div class="col-lg-6 col-md-12 col-xl-6">
               <div class="card Inspiration-card border-0">
                 <div class="border-0 p-0  background-property"></div>
                 <div class="card-body">
@@ -514,8 +546,8 @@
                 </div>
               </div>
             </div>
-            <div class="row col-6">
-              <div class="col-6">
+            <div class="row col-lg-6 col-md-12 col-xl-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="card Inspiration-card border-0">
                   <div class="card-header border-0 p-0 popular-img1 background-property"></div>
                   <div class="card-body">
@@ -530,7 +562,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="card Inspiration-card border-0">
                   <div class="card-header border-0 p-0 popular-img1 background-property"></div>
                   <div class="card-body">
@@ -545,7 +577,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="card Inspiration-card border-0">
                   <div class="card-header border-0 p-0 popular-img1 background-property"></div>
                   <div class="card-body">
@@ -560,7 +592,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="card Inspiration-card border-0">
                   <div class="card-header border-0 p-0 popular-img1 background-property"></div>
                   <div class="card-body">
@@ -581,7 +613,7 @@
       </div>
     </div>
     <div class="row filter-row" *ngIf="tab === 'blog'">
-      <div class="col-11 m-auto">
+      <div class=" m-auto" id="fullwidth">
         <div class="row pt-3" *ngIf="addedBlogs.length > 0; else showNoBlogs">
           <div class="col-3" *ngFor="let blog of addedBlogs">
             <app-blog-card [blog]="blog"></app-blog-card>
@@ -594,7 +626,7 @@
         </div>
         <ng-template #showNoBlogs>
           <div class="row pt-3">
-            <div class="col-6">
+            <div class="col-lg-6 col-md-12 col-xl-6">
               <div class="card Inspiration-card border-0">
                 <div class="border-0 p-0 background-property"></div>
                 <div class="card-body">
@@ -610,8 +642,8 @@
                 </div>
               </div>
             </div>
-            <div class="row col-6">
-              <div class="col-6" style="margin-top: 20px;">
+            <div class="row col-lg-6 col-md-12 col-xl-6">
+              <div class="col-lg-6 col-md-6 col-xl-6" style="margin-top: 20px;">
                 <div class="card Inspiration-card border-0">
                   <div class="card-header border-0 p-0 popular-img1 background-property"></div>
                   <div class="card-body">
@@ -626,7 +658,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="card Inspiration-card border-0">
                   <div class="card-header border-0 p-0 popular-img1 background-property"></div>
                   <div class="card-body">
@@ -641,7 +673,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="card Inspiration-card border-0">
                   <div class="card-header border-0 p-0 popular-img1 background-property"></div>
                   <div class="card-body">
@@ -656,7 +688,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="card Inspiration-card border-0">
                   <div class="card-header border-0 p-0 popular-img1 background-property"></div>
                   <div class="card-body">
@@ -677,7 +709,7 @@
       </div>
     </div>
     <div class="row filter-row" *ngIf="tab === 'vlog'">
-      <div class="col-11 m-auto">
+      <div class="m-auto" id="fullwidth">
         <div class="row pt-3" *ngIf="addedVlogs.length > 0; else showNoVlogs">
           <div class="col-3" *ngFor="let vlog of addedVlogs">
             <app-vlog-card [vlog]="vlog"></app-vlog-card>
@@ -692,7 +724,7 @@
         </div>
         <ng-template #showNoVlogs>
           <div class="row pt-3">
-            <div class="col-6">
+            <div class="col-lg-6 col-md-12 col-xl-6">
               <div class="card Inspiration-card border-0">
                 <div class="border-0 p-0  background-property"></div>
                 <div class="card-body">
@@ -710,8 +742,8 @@
                 </div>
               </div>
             </div>
-            <div class="row col-6">
-              <div class="col-6">
+            <div class="row col-lg-6 col-md-12 col-xl-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="card alternative-card border-0">
                   <div class="card-header border-0 p-0 local-img4 background-property">
                     <div class="row">
@@ -744,7 +776,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="card alternative-card border-0">
                   <div class="card-header border-0 p-0 local-img4 background-property">
                     <div class="row">
@@ -777,7 +809,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="card alternative-card border-0">
                   <div class="card-header border-0 p-0 local-img4 background-property">
                     <div class="row">
@@ -810,7 +842,7 @@
                   </div>
                 </div>
               </div>
-              <div class="col-6">
+              <div class="col-lg-6 col-md-6 col-xl-6">
                 <div class="card alternative-card border-0">
                   <div class="card-header border-0 p-0 local-img4 background-property">
                     <div class="row">

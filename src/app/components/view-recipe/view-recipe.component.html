@@ -1,8 +1,9 @@
 <div class="container-fluid m-auto">
+  <div class="container">
   <div class="row main-content justify-content-md-center">
-    <div class="col-11">
+    <div class="col-12">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-lg-4 col-md-12 col-xl-4">
           <div class="product_info">
             <div class="all_icons">
               <button class="product_type" (click)="exploreCategory()"> {{ recipe.category.name }} </button>
@@ -33,7 +34,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 name_map">
+        <div class="col-lg-4 col-md-12 col-xl-4 name_map">
           <h1>
             {{ recipe.name }}
           </h1>
@@ -96,7 +97,7 @@
             </p>
           </div>
         </div>
-        <div class="col-md-4 name_map">
+        <div class="col-lg-4 col-md-12 col-xl-4 name_map">
           <div style="padding-top:18px;">Ingredients</div>
           <ul>
             <li *ngFor="let ingredient of recipe.ingredients">
@@ -115,4 +116,5 @@
     </div>
   </div>
   <app-footer></app-footer>
+</div>
 </div>

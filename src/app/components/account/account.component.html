@@ -1,6 +1,74 @@
+
+
+
+ 
+
+
+
+   
+
+  
+
+
+
 <div class="container-fluid">
-  <div class="row" style="height: 100vh;">
-    <div class="col-3">
+  <!----------left side slide--------->
+
+<div id="main">  
+  <ion-buttons slot="start">
+    <ion-menu-button><img src="assets/images/left-arrow.png" class="left-arrow">	</ion-menu-button>    
+  </ion-buttons>
+
+  <section class="wrapper main-wrapper row" id="mobileform">
+    <div class="col-md-9">
+      <section class="box">
+        <h3 class="heading">Account</h3><BR>
+        <form action="#">
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" [(ngModel)]="user.newEmail" class="form-control" id="email"
+              placeholder="youremail@xxxx.com" >
+          </div>
+          <div class="form-group" *ngIf="confirmed">
+            <label for="email">Password</label>
+            <p class="pass-vali">For Security, please confirm you password</p>
+            <input type="password" name="password" [(ngModel)]="user.password" class="form-control" id="password"
+              placeholder="xxxxxxxxxxxxx" style="width: 50%; background-color: white;">
+          </div>
+          <button type="submit" class="category" (click)="confirm()">{{ buttonText }}</button>
+        </form>
+      </section>
+    </div>
+  </section>
+  
+</div>
+
+
+<ion-split-pane contentId="main-content" id="mobileform">
+  <ion-menu contentId="main-content" type="overlay">
+    <ion-header>     
+    </ion-header>
+    <ion-content>    
+      <div class="row" id="left-back">
+      <div class="mob">
+      <a href="/settings/account"> <span class="menu-title active">Account</span></a><br>
+      <a href="/settings/security"> <span class="menu-title">Security</span></a><br>
+      <a href="/settings/newsletter"> <span class="menu-title">Newsletter</span></a><br>
+      <a href="/settings/notifications"> <span class="menu-title">Notification</span></a><br>
+      <a href="/settings/report"> <span class="menu-title">Report</span></a><br>
+      <!-- <li><a href="/settings/data-expert"><span class="menu-title">Data Export</span></a></li> -->
+      <a href="/settings/deactive-account"> <span class="menu-title">Deactivate Account</span></a><br>
+    </div>
+  </div>
+    </ion-content>
+  </ion-menu>  
+</ion-split-pane>
+<!----------End left side slide--------->
+
+
+
+  <div class="row top" >
+    <div class="col-md-3 expandit">
       <div class="page-sidebar expandit">
         <div class="sidebar-inner" id="main-menu-wrapper">
           <ul class="wraplist" style="height: auto;">
@@ -15,7 +83,7 @@
         </div>
       </div>
     </div>
-    <div class="col-9">
+    <div class="col-md-9 expandit">
       <section id="main-content">
         <section class="wrapper main-wrapper row">
           <div class="col-md-9">
@@ -25,7 +93,7 @@
                 <div class="form-group">
                   <label for="email">Email</label>
                   <input type="email" name="email" [(ngModel)]="user.newEmail" class="form-control" id="email"
-                    placeholder="youremail@xxxx.com" style="width: 50%; background-color: #f1f1f1;">
+                    placeholder="youremail@xxxx.com" >
                 </div>
                 <div class="form-group" *ngIf="confirmed">
                   <label for="email">Password</label>

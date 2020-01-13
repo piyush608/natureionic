@@ -1,6 +1,61 @@
 <div class="container-fluid">
-  <div class="row" style="height: 100vh;">
-    <div class="col-3">
+<!----------left side slide--------->
+
+<div id="main">  
+  <ion-buttons slot="start">
+    <ion-menu-button><img src="assets/images/left-arrow.png" class="left-arrow">	</ion-menu-button>    
+  </ion-buttons>
+
+  <section class="wrapper main-wrapper row" id="mobileform">
+    <div class="col-md-12">
+      <section class="box">
+        <h3 class="heading">Report a Problem</h3><BR>
+        <form action="#">
+          <div class="form-group">
+            <select class="select-report">
+              <option>Report a Problem</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="email">Please describe the issue. We will get back to you soon.</label>
+            <textarea class="form-control" rows="8" id="comment" name="feedback" [(ngModel)]="feedback.feedback"
+              placeholder="Please describe the issue"></textarea>
+          </div>
+          <button type="submit" class="category" (click)="submitReport()">Send</button>
+        </form>
+      </section>
+    </div>
+  </section>
+  
+</div>
+
+
+<ion-split-pane contentId="main-content" id="mobileform">
+  <ion-menu contentId="main-content" type="overlay">
+    <ion-header>     
+    </ion-header>
+    <ion-content>    
+      <div class="row" id="left-back">
+      <div class="mob">
+      <a href="/settings/account"> <span class="menu-title">Account</span></a><br>
+      <a href="/settings/security"> <span class="menu-title">Security</span></a><br>
+      <a href="/settings/newsletter"> <span class="menu-title">Newsletter</span></a><br>
+      <a href="/settings/notifications"> <span class="menu-title">Notification</span></a><br>
+      <a href="/settings/report"> <span class="menu-title active">Report</span></a><br>
+      <!-- <li><a href="/settings/data-expert"><span class="menu-title">Data Export</span></a></li> -->
+      <a href="/settings/deactive-account"> <span class="menu-title">Deactivate Account</span></a><br>
+    </div>
+  </div>
+    </ion-content>
+  </ion-menu>  
+</ion-split-pane>
+<!----------End left side slide--------->
+
+
+
+
+  <div class="row top" >
+    <div class="col-md-3 expandit">
       <div class="page-sidebar expandit">
         <div class="sidebar-inner" id="main-menu-wrapper">
           <ul class="wraplist" style="height: auto;">
@@ -15,10 +70,10 @@
         </div>
       </div>
     </div>
-    <div class="col-9">
+    <div class="col-md-9 expandit">
       <section id="main-content">
         <section class="wrapper main-wrapper row">
-          <div class="col-md-7">
+          <div class="col-md-12">
             <section class="box">
               <h3 class="heading">Report a Problem</h3><BR>
               <form action="#">

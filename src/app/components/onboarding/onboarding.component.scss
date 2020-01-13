@@ -389,16 +389,18 @@ hr {
 }
 @media only screen and (max-width: 480px) {
   .tabfirst{
-    background-image:url('/assets/img/backgroundMask.png'); background-position: center;
+    background-image:url('/assets/img/iPhone8Plus_BG.png');
     width: 100%;
     height:300px;
+    background-position: top;
   }
 }
 @media only screen and (min-width: 768px){
   .tabfirst{
-    background-image:url('/assets/img/backgroundMask.png');  background-position: center;
+    background-image:url('/assets/img/ipad_BG.png'); 
     width: 100%;
     height:300px;
+    background-position: top;
   }
 }
 @media only screen and (min-width: 992px){
@@ -414,14 +416,14 @@ hr {
 }
 @media only screen and (max-width: 480px) {
   .tabsecond{
-    background-image:url('/assets/img/backgroundMask.png');  background-position: right;
+    background-image:url('/assets/img/iPhone8Plus_BG.png'); background-position: top;
     width: 100%;
     height:300px;
   }
 }
 @media only screen and (min-width: 768px){
   .tabsecond{
-    background-image:url('/assets/img/backgroundMask.png');   height:1000px; background-position: right;
+    background-image:url('/assets/img/ipad_BG.png');   background-position: top;
     width: 100%;
     height:300px;
   }
@@ -441,14 +443,14 @@ hr {
 }
 @media only screen and (max-width: 480px) {
   .tabthird{
-    background-image:url('/assets/img/backgroundMask.png');  background-position: right;
+    background-image:url('/assets/img/iPhone8Plus_BG.png');  background-position: top;
     width: 100%;
     height:300px;
   }
 }
 @media only screen and (min-width: 768px){
   .tabthird{
-    background-image:url('/assets/img/backgroundMask.png');  background-position: right;
+    background-image:url('/assets/img/ipad_BG.png');   background-position: top;
     width: 100%;
     height:300px;
   }
@@ -465,14 +467,14 @@ hr {
 }
 @media only screen and (max-width: 480px) {
   .tabfour{
-    background-image:url('/assets/img/backgroundMask.png');  background-position: right;
+    background-image:url('/assets/img/iPhone8Plus_BG.png');  background-position: top;
     height:300px;
     width: 100%;
   }
 }
 @media only screen and (min-width: 768px){
   .tabfour{
-    background-image:url('/assets/img/backgroundMask.png');  background-position: right;
+    background-image:url('/assets/img/ipad_BG.png');   background-position: top;
     height:300px;
     width: 100%;
   }
@@ -638,6 +640,7 @@ hr {
 }}
 #leftpar{
   text-align: left;
+  margin-left: 0%;
 }
 @media only screen and (max-width: 480px) {
   #leftpar{
@@ -654,7 +657,11 @@ hr {
   }
 }
 @media only screen and (min-width: 992px){
-
+  #leftpar{
+    text-align:left;
+    width: 70%;    
+    margin-left: 0%;
+  }
 }
 .tabsecond p{
   text-align: left;

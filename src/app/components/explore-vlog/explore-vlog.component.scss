@@ -14,3 +14,25 @@
   width: 13px;
   margin-left: 5px;
 }
+.vlog{
+  position: relative;
+  left: 0px;
+}
+@media only screen and (max-width: 480px) {
+  .vlog{
+    position: relative;
+    left: 21px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .vlog{
+    position: relative;
+    left: 0px;
+  }
+}
+@media only screen and (min-width: 992px){
+  .vlog{
+    position: relative;
+    left: 0px;
+  }
+}

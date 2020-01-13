@@ -1,6 +1,27 @@
 .container-fluid {
-  overflow: scroll;
+  overflow: scroll;  
 }
+.container {
+  width: 100%;
+  padding-right: 10px;
+  padding-left: 0px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media only screen and (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 1200px){
+  .container {
+      max-width: 1450px;
+  }}
 .main-content {
   margin-bottom: 55px;
 }
@@ -20,6 +41,41 @@
   position: relative;
   border: 7px solid #ffffff;
 }
+@media only screen and (max-width: 480px) {
+  .profile-img {
+    width: 130px;
+    height: 130px;
+    margin-top: 25px;
+    margin-left: 31%;
+    border-radius: 100%;
+    position: relative;
+    border: 7px solid #ffffff;
+  }
+}
+@media only screen and (min-width: 768px){
+  .profile-img {
+    width: 130px;
+    height: 130px;
+    margin-top: 25px;
+    margin-left: 40%;
+    border-radius: 100%;
+    position: relative;
+    border: 7px solid #ffffff;
+  }
+}
+@media only screen and (min-width: 992px){  
+  .profile-img {
+    width: 130px;
+    height: 130px;
+    margin-top: 25px;
+    border-radius: 100%;
+    position: relative;
+    border: 7px solid #ffffff;
+  }
+}
+
+
+
 .profile-img:before {
   content: "";
   display: block;
@@ -60,9 +116,30 @@ form {
   margin-bottom: 40px;
 }
 .editprofile-info {
-  width: calc(100% - 144px);
+  width: 100%;
   padding-left: 100px;
 }
+@media only screen and (max-width: 480px) {
+  .editprofile-info {
+    width: 100%;
+    padding-left: 20px;
+  }
+}
+@media only screen and (min-width: 768px){
+  .editprofile-info {
+    width: 100%;
+    padding-left: 20px;
+  }
+}
+@media only screen and (min-width: 992px){  
+  .editprofile-info {
+    width: 100%;
+    padding-left: 100px;
+  }
+}
+
+
+
 .edit-profilegroup label {
   font-size: 0.9em;
   line-height: 2;
@@ -96,8 +173,29 @@ form {
 .choose-file {
   cursor: pointer;
 }
+@media only screen and (max-width: 480px) {
+  .choose-file {
+    cursor: pointer;
+    margin-left: 30%;
+  }
+}
+@media only screen and (min-width: 768px){
+  .choose-file {
+    cursor: pointer;
+    margin-left: 40%;
+  }
+}
+@media only screen and (min-width: 992px){  
+  .choose-file {
+    cursor: pointer;
+  }
+}
+
+
 .choose-file h2 {
   font-size: 0.9em;
+  text-align: left;
+  margin-left: 20px;
 }
 .form-control:focus {
   outline: none;

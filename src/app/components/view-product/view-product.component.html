@@ -1,8 +1,9 @@
 <div class="container-fluid m-auto">
+  <div class="container">
   <div class="row main-content justify-content-md-center">
-    <div class="col-11">
+    <div class="col-12">
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-lg-4 col-md-12 col-xl-4">
           <div class="product_info">
             <div class="all_icons">
               <button class="product_type"> {{ product.category.name }} </button>
@@ -33,7 +34,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 name_map">
+        <div class="col-lg-4 col-md-12 col-xl-4 name_map">
           <h1>
             {{ product.name }}
           </h1>
@@ -54,7 +55,7 @@
             </div>
           </div>
         </div>
-        <div class="col-md-4 name_map" *ngIf="product.ownerImage">
+        <div class="col-lg-4 col-md-12 col-xl-4 name_map" *ngIf="product.ownerImage">
           <div style="padding-top:18px;">Company / Founder</div>
           <div class="comp">
             <img [src]="product.ownerImage.thumb200Url" alt="" class="circle_img" />
@@ -68,4 +69,5 @@
     </div>
   </div>
   <app-footer></app-footer>
+</div>
 </div>

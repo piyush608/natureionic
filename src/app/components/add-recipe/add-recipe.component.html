@@ -1,9 +1,10 @@
 <div class="container-fluid m-auto">
+  <div class="container">
   <div class="row justify-content-md-center main-content">
-    <div class="col-11 first" *ngIf="firstStep === true">
+    <div class="col-12"  *ngIf="firstStep === true">
       <h1>Add a recipe</h1>
       <div class="row">
-        <div class="col-md-4">
+        <div class="col-lg-4 col-md-12 col-xl-4">
           <h3 class="head_color">Description</h3>
           <div>
             <form action="" class="add_recipe">
@@ -29,7 +30,7 @@
             </form>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-lg-4 col-md-12 col-xl-4">
           <h3 class="head_color">Ingredients</h3>
           <div>
             <form action="" class="add_recipe ing-content">
@@ -52,7 +53,7 @@
             </form>
           </div>
         </div>
-        <div class="col-md-4">
+        <div class="col-lg-4 col-md-12 col-xl-4">
           <h3 class="head_color">Buy Ingredients(Optional)</h3>
           <div>
             <form action="" class="add_recipe">
@@ -229,4 +230,5 @@
     </div>
   </div>
   <app-footer></app-footer>
+</div>
 </div>

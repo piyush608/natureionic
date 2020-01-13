@@ -1,170 +1,179 @@
 <div class="container-fluid mb-4 container-padding">
+  <div class="container">
   <div class="row main-content">
-    <div class="col-11 m-auto">
-      <div class="d-flex">
-        <div>
-          <div class="profile-img background-property" [ngStyle]="{ 'background-image': 'url(' + localFile + ')'}">
-          </div>
-          <label class="choose-file text-center w-100">
-            <h2 class="mt-4">Change Photo</h2>
-            <input type="file" class="choose-input" (change)="uploadImage($event)" />
-          </label>
-        </div>
+    <div class="col-12 m-auto">
+
+    <div class="row">
+      <div class="col-lg-2 col-md-12 col-xl-2">
+        <div class="profile-img background-property" [ngStyle]="{ 'background-image': 'url(' + localFile + ')'}">  </div>
+        <label class="choose-file text-center w-100">
+          <h2 class="mt-4">Change Photo</h2>
+          <input type="file" class="choose-input" (change)="uploadImage($event)" />
+        </label>
+      
+      </div>
+      <div class="col-lg-8 col-md-12 col-xl-8">
         <div class="editprofile-info">
-          <h2 class="edit-heading">Your Profile</h2>
-          <form>
-            <div class="form-group edit-profilegroup">
-              <label for="exampleInputEmail1">Display Name (Required)</label>
-              <input type="text" name="name" [(ngModel)]="user.name" class="form-control pl-0" id="exampleInputEmail1"
-                aria-describedby="emailHelp" placeholder="Clark Lee" />
-            </div>
-            <div class="form-group edit-profilegroup">
-              <label for="exampleInputPassword1">Zipcode (Required)</label>
-              <input type="number" name="zipcode" [(ngModel)]="user.zipcode" class="form-control pl-0"
-                id="exampleInputPassword1" placeholder="93102" />
-              <small id="emailHelp" class="form-text text-muted"><img src="/assets/images/info.svg" alt=""
-                  class="info-img mr-1" />Your Personal information will be kept strictly confidential
-                and will not be solid, reused.</small>
-            </div>
-            <div class="form-group edit-profilegroup">
-              <label for="exampleFormControlTextarea1">Something about you?</label>
-              <textarea class="form-control textarea-resize" name="about" [(ngModel)]="user.about"
-                id="exampleFormControlTextarea1" placeholder="Please describe yourself" rows="3"></textarea>
-            </div>
-            <!-- <div class="form-group edit-profilegroup">
-              <label for="exampleFormControlTextarea1">My top 10 preferences</label>
-              <div class="d-flex flex-wrap">
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+        <h2 class="edit-heading">Your Profile</h2>
+        <form>
+          <div class="form-group edit-profilegroup">
+            <label for="exampleInputEmail1">Display Name (Required)</label>
+            <input type="text" name="name" [(ngModel)]="user.name" class="form-control pl-0" id="exampleInputEmail1"
+              aria-describedby="emailHelp" placeholder="Clark Lee" />
+          </div>
+          <div class="form-group edit-profilegroup">
+            <label for="exampleInputPassword1">Zipcode (Required)</label>
+            <input type="number" name="zipcode" [(ngModel)]="user.zipcode" class="form-control pl-0"
+              id="exampleInputPassword1" placeholder="93102" />
+            <small id="emailHelp" class="form-text text-muted"><img src="/assets/images/info.svg" alt=""
+                class="info-img mr-1" />Your Personal information will be kept strictly confidential
+              and will not be solid, reused.</small>
+          </div>
+          <div class="form-group edit-profilegroup">
+            <label for="exampleFormControlTextarea1">Something about you?</label>
+            <textarea class="form-control textarea-resize" name="about" [(ngModel)]="user.about"
+              id="exampleFormControlTextarea1" placeholder="Please describe yourself" rows="3"></textarea>
+          </div>
+          <!-- <div class="form-group edit-profilegroup">
+            <label for="exampleFormControlTextarea1">My top 10 preferences</label>
+            <div class="d-flex flex-wrap">
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
-                <div class="preference-div">
-                  <div class="preference-imgdiv">
-                    <div class="background-property preference-img preference-img1 mx-auto"></div>
-                  </div>
-                  <p class="text-center">Vegan</p>
+                <p class="text-center">Vegan</p>
+              </div>
+              <div class="preference-div">
+                <div class="preference-imgdiv">
+                  <div class="background-property preference-img preference-img1 mx-auto"></div>
                 </div>
+                <p class="text-center">Vegan</p>
               </div>
             </div>
-            <div class="form-group form-check checkbox pl-0">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1" />
-              <label class="form-check-label" for="exampleCheck1">Show your preference to the public.</label>
-            </div> -->
-            <button type="submit" class="btn btn-primary" (click)="update()">Save</button>
-          </form>
-        </div>
+          </div>
+          <div class="form-group form-check checkbox pl-0">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" />
+            <label class="form-check-label" for="exampleCheck1">Show your preference to the public.</label>
+          </div> -->
+          <button type="submit" class="btn btn-primary" (click)="update()">Save</button>
+        </form>
       </div>
+      </div>
+    </div>
+
+
+
+
+     
     </div>
   </div>
   <app-footer></app-footer>
-</div>
+</div></div>

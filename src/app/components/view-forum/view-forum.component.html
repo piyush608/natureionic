@@ -27,8 +27,9 @@
               <img [src]="addedUserImage" class="profile">
               <strong class='user'>{{ forum.addedBy.name }}</strong>
               <img src="/assets/images/locationGray@2x.png"
-                style="width: 13px;  margin-left: 22px; margin-right:10px;">{{ userLocation.city }},
-              {{ userLocation.state }}
+                style="width: 13px;  margin-left: 12px; margin-right:10px;">
+                <strong class='user'>{{ userLocation.city }},
+                {{ userLocation.state }}</strong>
             </small>
           </div>
         </div>
@@ -85,7 +86,7 @@
 
 
       <!-------------Commnet textbox------>
-      <div class="" style="margin-right: -15px; margin-left: -15px;">
+      <div class="comment-text">
         <textarea [(ngModel)]="comment.comment" name="comment" class="form-control" rows="9" id="comment"
           placeholder="Your reply" style="border-radius:15px; font-size:17px;"></textarea>
         <img src="/assets/images/commentPhoto.png" class="upload">

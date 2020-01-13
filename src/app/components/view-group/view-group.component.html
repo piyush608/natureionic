@@ -1,15 +1,116 @@
 <div class="container-fluid">
+  <div class="container">
   <!----------top section----------->
   <div class="row main-content justify-content-md-center">
-    <div class="col-11">
-      <img [src]="viewedPhoto"
-        style="width:100%; border-radius:15px; margin-bottom:30px; height: 250px; object-fit: cover;">
+    <div class="col-12">
+      <img [src]="viewedPhoto"  class="topimg">
+
+        
+
+<!----------for mobile---->
+    <div class="row">
+      <div class="col-md-6 col-6">
+        <button type="submit" class="btnjoin-mob" style="float: right;">Join Group</button>
+      </div>
+      <div class="col-md-6 col-6">
+        <button type="submit col-6" class="btnjoin-mob">Invite Friend</button>
+      </div>
+    </div>
+
+   <h2 id="mobile-profile">{{ group.name }}</h2><BR>
+    
+      <div class="row" >
+        <div class="col-md-5 col-5">         
+          <center> <h4 class="group-mob">Group created by</h4></center>   
+        </div>
+        <div class="col-md-3 col-3">
+          <center><img [src]="addedUserImage" class="profile" id="mobile-profile"></center> 
+        </div>
+        <div class="col-md-4 col-4">
+          <center><h4 class="group-name"> Group name</h4></center> 
+        </div>
+      </div>
+
+
+    <div class="well" id="mobile-profile">
+          <div class="row">
+            <div class="col-md-4 col-4">
+              <center><p class="member"><img src="/assets/images/groupMember.png" /><BR>{{ group.membersCount }} Members </p> </center>   
+            </div>
+            <div class="col-md-4 col-4">
+              <center><p class="member"><img src="/assets/images/groupPost.png" /><BR>{{ forums.length }} Post</p></center> 
+            </div>
+            <div class="col-md-4 col-4">
+              <center><p class="member"><img src="/assets/images/groupLocation.png" /><BR>{{ group.city }}, {{ group.state }}</p></center> 
+            </div>
+          </div>
+    </div>
+
+    <div class="row" id="mobile-profile">
+      <div class="col-md-12">
+        <center><button type="submit" class="category" (click)="addForum()" style="width:100%; height:50px;">Start a Conversation</button></center>
+      </div>         
+    </div>
+
+
+
+    <!--------for tab----->
+  <h2 class="tab-h2">{{ group.name }}</h2>
+  
+    <div class="row">
+        <div class="col-md-4 col-4">
+          <div class="tab-well">
+            <h4>Group created by</h4>
+            <img [src]="addedUserImage" class="profile">
+            <h4 style="float: right;"> Group name</h4>
+          </div>       
+        </div>
+        <div class="col-md-8 col-8">
+          <div class="tab-well">
+                <div class="row">
+                    <div class="col-md-4 col-4">
+                      <center><p class="member-tab"><img src="/assets/images/groupLocation.png" /> {{ group.city }}, {{ group.state }}</p></center> 
+                    </div>
+                    <div class="col-md-4 col-4">
+                      <center><p class="member-tab"><img src="/assets/images/groupMember.png" /> {{ group.membersCount }} Members </p> </center> 
+                    </div>
+                    <div class="col-md-4 col-4">
+                      <center><p class="member-tab"><img src="/assets/images/groupPost.png" /> {{ forums.length }} Post</p></center> 
+                    </div>                  
+                </div>
+          </div>
+      </div>      
+    </div>
+
+    <div class="row">
+      <div class="col-md-6 col-6"><button type="submit" class="conver-tab" (click)="addForum()" style="width:100%; height:50px;">Start a Conversation</button></div>
+      <div class="col-md-6 col-6">        
+          <button type="submit" class="btnjoin-tab" style="float: right;">Join Group</button> 
+          <button type="submit col-6" class="btnjoin-tab">Invite Friend</button>      
+      </div>
+    </div>
+
+
+
+    <div class="row pro-mob">
+      <div class="col-lg-4 col-md-6 col-xl-4 "  *ngFor="let forum of forums">
+        <app-forum-card [forum]="forum"></app-forum-card>
+      </div>         
+    </div>
+    <!--------end tab-->
+
+    
+<!----------end mobile---->
+
+
+
+
       <div class="row">
-        <div class="col-md-10">
+        <div class="col-md-10"  id="clients-2">
           <h2>{{ group.name }}</h2><BR>
           <button type="submit" class="category" (click)="addForum()">Start a Conversation</button>
         </div>
-        <div class="col-md-2">
+        <div class="col-md-2"  id="clients-2">
           <div class="sort">Join Group </div><BR>
           <div class="sort">Invite Friend </div>
         </div>
@@ -45,4 +146,6 @@
     </div>
   </div>
   <app-footer></app-footer>
+</div>
+
 </div>

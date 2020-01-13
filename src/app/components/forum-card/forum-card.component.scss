@@ -4,6 +4,45 @@
   box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
   margin-top: 20px;
 }
+@media only screen and (max-width: 480px) {
+.discussion-card{
+  cursor: pointer;
+  min-height: 222px;
+  box-shadow: 0 2px 7px 0 
+  rgba(100, 100, 100, 0.22);
+  margin-top: 20px;
+  width: 322px;
+  position: relative;
+  right: 17px;
+}}
+@media only screen and (max-width: 375px) {
+  .discussion-card{
+    cursor: pointer;
+    min-height: 222px;
+    box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+    margin-top: 20px;
+    width: 300px;
+    position: relative;
+    right: 20px;
+  }}
+@media only screen and (min-width: 768px){
+  .discussion-card {
+    cursor: pointer;
+    min-height: 222px;
+    box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+    margin-top: 20px;
+    
+  }
+}
+@media only screen and (min-width: 992px){  
+  .discussion-card {
+    cursor: pointer;
+    min-height: 222px;
+    box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+    margin-top: 20px;
+  }
+}
+
 .discussion-card:last-child {
   margin-right: -4px;
 }
@@ -42,6 +81,24 @@
   height: 94px;
   border-radius: 10px;
 }
+@media only screen and (max-width: 480px) {
+.discussion-img{
+  height: 94px;
+  border-radius: 10px;
+  width:100px;
+}}
+@media only screen and (min-width: 768px){
+  .discussion-img{
+    height: 94px;
+    border-radius: 10px;
+    width:100px;
+}}
+@media only screen and (min-width: 992px){  
+  .discussion-img{
+    height: 94px;
+    border-radius: 10px;
+    width:100px;
+}}
 .discussion-tag {
   color: #00b2aa;
   font-size: 0.9em;
@@ -85,4 +142,50 @@
   background-position: center !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
+}
+
+
+.discussion-card1 {
+  cursor: pointer;
+  min-height: 222px;
+  box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+  margin-top: 20px;
+}
+@media only screen and (max-width: 480px) {
+.discussion-card1{
+  cursor: pointer;
+  min-height: 222px;
+  box-shadow: 0 2px 7px 0 
+  rgba(100, 100, 100, 0.22);
+  margin-top: 20px;
+  width: 322px;
+  position: relative;
+  right: 17px;
+}}
+@media only screen and (max-width: 375px) {
+  .discussion-card1{
+    cursor: pointer;
+    min-height: 222px;
+    box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+    margin-top: 20px;
+    width: 300px;
+    position: relative;
+    right: 20px;
+  }}
+@media only screen and (min-width: 768px){
+  .discussion-card1 {
+    cursor: pointer;
+    min-height: 222px;
+    box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+    margin-top: 20px;
+    
+  }
+}
+@media only screen and (min-width: 992px){  
+  .discussion-card1 {
+    cursor: pointer;
+    min-height: 222px;
+    box-shadow: 0 2px 7px 0 rgba(100, 100, 100, 0.22);
+    margin-top: 20px;
+  }
 }

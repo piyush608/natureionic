@@ -24,71 +24,75 @@
         <div class="col-md-6 col-6 follow-card follow-cardimg2 background-property pl-0"></div>
       </div>
       <div class="row influencers-row">
+
         <div class="col-12">
           <h2 class="pt-4 main-heading">Highlighted Inspiring Influencers<span class="show-more">Show More
               <img src="/assets/images/arrow-pointing-to-right.svg"></span></h2>
-          <div class="row influencers-row">
-            <div class="col-md-3 col-12">
-              <div class="influencers-card background-property influencers-cardimg1">
-                <div class="influencer-border vertical-align mx-auto">
-                  <div class="background-property influencers-img1 influencers-img mx-auto"></div>
-                </div>
-                <h2>Clarks Lee</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur dolores ut
-                  molestias perferendis. Ipsa assumenda dolore molestias! Inventore quasi odio
-                  accusamus aliquid tenetur atque quos eaque.</p>
-              </div>
-            </div>
-            <div class="col-md-3 col-12">
-              <div class="influencers-card background-property influencers-cardimg2">
-                <div class="influencer-border vertical-align mx-auto">
-                  <div class="background-property influencers-img2 influencers-img mx-auto"></div>
-                </div>
-                <h2>Clarks Lee</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur dolores ut
-                  molestias perferendis. Ipsa assumenda dolore molestias! Inventore quasi odio
-                  accusamus aliquid tenetur atque quos eaque.</p>
-              </div>
-            </div>
-            <div class="col-md-3 col-12">
-              <div class="influencers-card background-property influencers-cardimg3">
-                <div class="influencer-border vertical-align mx-auto">
-                  <div class="background-property influencers-img3 influencers-img mx-auto"></div>
-                </div>
-                <h2>Clarks Lee</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur dolores ut
-                  molestias perferendis. Ipsa assumenda dolore molestias! Inventore quasi odio
-                  accusamus aliquid tenetur atque quos eaque.</p>
-              </div>
-            </div>
-            <div class="col-md-3 col-12">
-              <div class="influencers-card background-property influencers-cardimg4">
-                <div class="influencer-border vertical-align mx-auto">
-                  <div class="background-property influencers-img4 influencers-img mx-auto"></div>
-                </div>
-                <h2>Clarks Lee</h2>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur dolores ut
-                  molestias perferendis. Ipsa assumenda dolore molestias! Inventore quasi odio
-                  accusamus aliquid tenetur atque quos eaque.</p>
-              </div>
+
+              <div class="Feed influencers-row">
+                  <div class="col-lg-4 col-md-6 col-xl-3 testi">
+                      <div class="influencers-card background-property influencers-cardimg1">
+                          <div class="influencer-border vertical-align mx-auto">
+                            <div class="background-property influencers-img1 influencers-img mx-auto"></div>
+                          </div>
+                          <h2>Clarks Lee</h2>
+                          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur dolores ut
+                            molestias perferendis. Ipsa assumenda dolore molestias! Inventore quasi odio
+                            accusamus aliquid tenetur atque quos eaque.</p>
+                        </div>
+                  </div>   
+                  <div class="col-lg-4 col-md-6 col-xl-3 testi">
+                      <div class="influencers-card background-property influencers-cardimg2">
+                          <div class="influencer-border vertical-align mx-auto">
+                            <div class="background-property influencers-img2 influencers-img mx-auto"></div>
+                          </div>
+                          <h2>Clarks Lee</h2>
+                          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur dolores ut
+                            molestias perferendis. Ipsa assumenda dolore molestias! Inventore quasi odio
+                            accusamus aliquid tenetur atque quos eaque.</p>
+                        </div>
+                  </div>    
+                  <div class="col-lg-4 col-md-6 col-xl-3 testi">
+                      <div class="influencers-card background-property influencers-cardimg3">
+                          <div class="influencer-border vertical-align mx-auto">
+                            <div class="background-property influencers-img3 influencers-img mx-auto"></div>
+                          </div>
+                          <h2>Clarks Lee</h2>
+                          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur dolores ut
+                            molestias perferendis. Ipsa assumenda dolore molestias! Inventore quasi odio
+                            accusamus aliquid tenetur atque quos eaque.</p>
+                        </div>
+                  </div>    
+                  <div class="col-lg-4 col-md-6 col-xl-3 testi">
+                      <div class="influencers-card background-property influencers-cardimg4">
+                          <div class="influencer-border vertical-align mx-auto">
+                            <div class="background-property influencers-img4 influencers-img mx-auto"></div>
+                          </div>
+                          <h2>Clarks Lee</h2>
+                          <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Consectetur dolores ut
+                            molestias perferendis. Ipsa assumenda dolore molestias! Inventore quasi odio
+                            accusamus aliquid tenetur atque quos eaque.</p>
+                        </div>
+                  </div>               
             </div>
             <button class="more" >Show more</button>
-          </div>
         </div>
       </div>
       <hr>
+
+
       <div class="row">
         <div class="col-12">
           <h2 class="pt-4 main-heading">Inspiration Feed</h2>
-          <div class="row inspiration-div justify-content-md-center">
-            <div class="inspiration-category card col-md-2 col-6" *ngFor="let category of categories">
-              <h2 class="mb-0 text-center" (click)="exploreCategory(category._id)">{{ category.name }}</h2>
-            </div>
-          </div>
+          <div class="Feed">
+                <div class="col-lg-4 col-md-6 col-xl-2 de2" *ngFor="let category of categories">
+                    <h2 class="mb-0 text-center feed-h2" (click)="exploreCategory(category._id)">{{ category.name }}</h2>
+                </div>              
+          </div>          
 
           <div class="inspiration-cardsdiv">
             <div class="row">
-              <div class="col-md-3 col-12" *ngFor="let blog of blogs">
+              <div class="col-lg-4 col-md-6 col-xl-3" *ngFor="let blog of blogs">
                 <app-blog-card [blog]="blog"></app-blog-card>
               </div>
             </div>
@@ -101,7 +105,7 @@
       </div>
       <div class="alternative-cardsdiv">
         <div class="row">
-          <div class="col-md-3 col-12" *ngFor="let vlog of vlogs">
+          <div class="col-lg-4 col-md-6 col-xl-3" *ngFor="let vlog of vlogs">
             <app-vlog-card [vlog]="vlog"></app-vlog-card>
           </div>
         </div>
